@@ -1,4 +1,4 @@
-name: Collect outage data
+name: Collect outage and forecast data
 
 on:
   workflow_dispatch:
@@ -24,8 +24,17 @@ jobs:
       - name: Run outage collection
         run: node scripts/fetch-outages.js
 
-      - name: Commit outage outputs
+      - name: Fetch county forecast intelligence
+        run: node scripts/fetch-county-weather-forecast.js
+
+      - name: Merge county forecast into outage data
+        run: node scripts/apply-county-weather-forecast.js
+
+      - name: Build training rows
+        run: node scripts/training_rows.js
+
+      - name: Commit outage and forecast outputs
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update TXDRMAP outage data"
-          file_pattern: outages.json history/outage-history.json
+          commit_message: "Update TXDRMAP outage and forecast data"
+          file_pattern: outages.json history/outage-history.json history/county-weather-forecast.json history/training-data.json
