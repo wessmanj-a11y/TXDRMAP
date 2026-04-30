@@ -1,26 +1,44 @@
 # TXDRMAP Migration Plan
 
 ## Current findings
-- DRMAP has two overlapping workflows (`fetch-outages.yml` and `fetch-outages-v2.yml`), which creates maintenance drift.
-- Legacy workflow still references older ML paths.
-- TXDRMAP should use ONE clean pipeline only.
+- DRMAP has overlapping workflows and maintenance drift.
+- TXDRMAP is being rebuilt as modular production architecture.
+- Core outage fetch has been rebuilt first.
 
-## Recommended migration order
-1. Copy `scripts/fetch-outages.js`
-2. Copy `scripts/fetch-county-weather-forecast.js`
-3. Copy `scripts/apply-county-weather-forecast.js`
-4. Copy `scripts/train-ml-risk.py`
-5. Copy `scripts/apply-ml-risk-v2.py`
-6. Add `requirements.txt`
-7. Add ONE workflow only
+## Phase 1 complete
+- requirements.txt
+- fetch-outages.js
+- fetch-county-weather-forecast.js scaffold
+- apply-county-weather-forecast.js scaffold
+- ml_train.py scaffold
+
+## Phase 2 now underway
+### Priority:
+1. Replace forecast scaffold with full county forecast engine
+2. Add historical dataset builder
+3. Add ML metadata + scoring engine
+4. Add single production workflow
+5. Validate outages.json schema compatibility with dashboard
+
+## Architecture direction
+### Modular target:
+- scripts/fetch-outages.js
+- scripts/fetch-county-weather-forecast.js
+- scripts/apply-county-weather-forecast.js
+- scripts/build-training-data.js
+- scripts/train-ml-risk.py
+- scripts/apply-ml-risk-v2.py
 
 ## Critical rule
-Do NOT migrate old `apply-ml-risk.py` or duplicate workflows.
+No duplicate workflows.
+No legacy DRMAP v1 scripts.
+No giant monolithic pipeline.
 
 ## Goal state
-TXDRMAP becomes the clean production repo with:
+TXDRMAP becomes clean production repo with:
 - outages.json
 - outage-history.json
 - county-weather-forecast.json
+- training-data.json
 - ml-risk-model.joblib
 - ml-risk-metadata.json
