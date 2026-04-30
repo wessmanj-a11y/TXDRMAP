@@ -1,8 +1,8 @@
 {
-  "updated": "2026-04-30T23:24:58.710Z",
+  "updated": "2026-04-30T23:30:09.912Z",
   "source": "NWS hourly forecast via api.weather.gov county centroids",
-  "count": 248,
-  "errorCount": 6,
+  "count": 252,
+  "errorCount": 2,
   "forecasts": [
     {
       "county": "Anderson",
@@ -2513,6 +2513,25 @@
       "periodsUsed": 12
     },
     {
+      "county": "King",
+      "key": "king",
+      "lat": 33.68975,
+      "lon": -100.26512,
+      "nwsOffice": "LUB",
+      "gridId": "LUB",
+      "gridX": 108,
+      "gridY": 36,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/LUB/108,36/forecast/hourly",
+      "forecastWindMax6h": 10,
+      "forecastWindMax12h": 10,
+      "forecastPrecipChanceMax12h": 76,
+      "forecastTempMax12h": 62,
+      "forecastTempMin12h": 54,
+      "forecastStormRisk": 7,
+      "forecastSummary12h": "Chance Rain Showers",
+      "periodsUsed": 12
+    },
+    {
       "county": "Kinney",
       "key": "kinney",
       "lat": 29.26022,
@@ -2665,6 +2684,25 @@
       "periodsUsed": 12
     },
     {
+      "county": "Lee",
+      "key": "lee",
+      "lat": 30.24745,
+      "lon": -96.96326,
+      "nwsOffice": "EWX",
+      "gridId": "EWX",
+      "gridX": 185,
+      "gridY": 89,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/185,89/forecast/hourly",
+      "forecastWindMax6h": 10,
+      "forecastWindMax12h": 10,
+      "forecastPrecipChanceMax12h": 87,
+      "forecastTempMax12h": 75,
+      "forecastTempMin12h": 64,
+      "forecastStormRisk": 25,
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "periodsUsed": 12
+    },
+    {
       "county": "Leon",
       "key": "leon",
       "lat": 31.33023,
@@ -2681,6 +2719,25 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 25,
       "forecastSummary12h": "Showers And Thunderstorms Likely",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Liberty",
+      "key": "liberty",
+      "lat": 30.21567,
+      "lon": -94.8519,
+      "nwsOffice": "HGX",
+      "gridId": "HGX",
+      "gridX": 83,
+      "gridY": 115,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/83,115/forecast/hourly",
+      "forecastWindMax6h": 10,
+      "forecastWindMax12h": 10,
+      "forecastPrecipChanceMax12h": 60,
+      "forecastTempMax12h": 76,
+      "forecastTempMin12h": 65,
+      "forecastStormRisk": 22,
+      "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -2738,6 +2795,25 @@
       "forecastTempMin12h": 70,
       "forecastStormRisk": 19,
       "forecastSummary12h": "Mostly Cloudy",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Llano",
+      "key": "llano",
+      "lat": 30.6553,
+      "lon": -98.60642,
+      "nwsOffice": "EWX",
+      "gridId": "EWX",
+      "gridX": 124,
+      "gridY": 109,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/124,109/forecast/hourly",
+      "forecastWindMax6h": 10,
+      "forecastWindMax12h": 10,
+      "forecastPrecipChanceMax12h": 87,
+      "forecastTempMax12h": 70,
+      "forecastTempMin12h": 61,
+      "forecastStormRisk": 25,
+      "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -4725,22 +4801,6 @@
     {
       "county": "Kenedy",
       "error": "404 Not Found"
-    },
-    {
-      "county": "King",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Lee",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Liberty",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Llano",
-      "error": "503 Service Unavailable"
     }
   ]
 }
