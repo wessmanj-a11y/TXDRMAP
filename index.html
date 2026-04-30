@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DRMAP v2 — Texas Resilience Command Center</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="css/styles-v2.css" />
+</head>
+
+<body>
+<header>
+  <div class="wrap header-inner">
+    <div>
+      <div class="badge">Texas Resilience Command Center</div>
+      <h1>County-level disruption dashboard</h1>
+      <p>Current severity, forecast threat, ML-assisted risk, outage trend, weather alerts, road closures, hospital capacity, grid stress, and county-level operational intelligence.</p>
+    </div>
+    <div class="header-actions">
+      <button id="refreshBtn">↻ Refresh</button>
+      <select id="basemap">
+        <option value="streets">Street Map</option>
+        <option value="dark">Dark Map</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main class="wrap layout">
+  <section class="metrics" id="metrics"></section>
+
+  <section class="left-rail">
+    <div class="card status-box">
+      <div class="status-title"><span class="status-dot"></span>Data Status</div>
+      <div id="sourceStatus">Starting...</div>
+    </div>
+
+    <div class="card side-card">
+      <h3 class="panel-title">24-Hour Outage Trend</h3>
+      <p class="muted-small">Statewide outages and selected county outages by snapshot.</p>
+      <canvas id="outageTrendChart" height="250"></canvas>
+    </div>
+
+    <div class="card side-card">
+      <h3 class="panel-title">Top Operational Priorities</h3>
+      <div id="topCounties"></div>
+    </div>
+  </section>
+
+  <section class="map-area">
+    <div class="card map-card">
+      <div class="map-header">
+        <div>
+          <h2>Texas county intelligence map</h2>
+          <p>Click a county for severity, prediction, forecast threat, trend, and outage details.</p>
+        </div>
+        <div class="controls" id="modeControls"></div>
+      </div>
+
+      <div id="map"></div>
+
+      <div class="legend">
+        <span><i class="swatch" style="background:#334155"></i> Low</span>
+        <span><i class="swatch" style="background:#facc15"></i> Elevated</span>
+        <span><i class="swatch" style="background:#f97316"></i> High</span>
+        <span><i class="swatch" style="background:#dc2626"></i> Severe</span>
+        <span><i class="swatch" style="background:rgba(239,68,68,.35)"></i> NWS polygon</span>
+        <span><i class="swatch" style="background:#22c55e"></i> outage point</span>
+        <span><i class="swatch" style="background:#38bdf8"></i> radar layer</span>
+      </div>
+    </div>
+  </section>
+
+  <aside>
+    <div class="card side-card" id="selectedCountyPanel"></div>
+
+    <div class="card side-card">
+      <h3 class="panel-title">Top Predicted-Risk Counties</h3>
+      <div id="topPredicted"></div>
+    </div>
+
+    <div class="card side-card">
+      <h3 class="panel-title">Top Outage Points</h3>
+      <table class="table">
+        <thead><tr><th>County</th><th>Customers</th><th>Cause</th></tr></thead>
+        <tbody id="pointTable"></tbody>
+      </table>
+    </div>
+
+    <div class="card side-card">
+      <h3 class="panel-title">Hospital Occupancy Trend</h3>
+      <p class="muted-small">Weekly statewide Texas hospital occupancy from CDC/HHS.</p>
+      <canvas id="hospitalTrendChart" height="220"></canvas>
+    </div>
+
+    <div class="card side-card">
+      <h3 class="panel-title">Impactful Road Closures</h3>
+      <p class="muted-small">DriveTexas closures and detours that may affect restoration access.</p>
+      <table class="table">
+        <thead><tr><th>County</th><th>Road</th><th>Risk</th></tr></thead>
+        <tbody id="roadTable"></tbody>
+      </table>
+    </div>
+
+    <div class="card side-card source-note">
+      Predictive risk now blends rules, outage momentum, ML scoring, and forecast weather features where available.
+    </div>
+  </aside>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/config-v2.js"></script>
+<script src="js/state-v2.js"></script>
+<script src="js/helpers-v2.js"></script>
+<script src="js/data-v2.js"></script>
+<script src="js/map-v2.js"></script>
+<script src="js/ui-metrics-v2.js"></script>
+<script src="js/ui-panel-v2.js"></script>
+<script src="js/ui-tables-v2.js"></script>
+<script src="js/charts-v2.js"></script>
+<script src="js/controls-v2.js"></script>
+<script src="js/app-v2.js"></script>
+</body>
+</html>
