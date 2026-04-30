@@ -1,0 +1,21 @@
+const STATE = {
+  map: null,
+  baseLayer: null,
+  countyLayer: null,
+  weatherLayer: null,
+  pointLayer: null,
+  radarLayer: null,
+  roadLayer: null,
+  countyGeo: null,
+  outageData: null,
+  nwsAlerts: [],
+  countyData: {},
+  selectedCounty: CONFIG.defaultCounty,
+  mode: "severity",
+  showWeatherPolys: true,
+  showPoints: true,
+  showRadar: false,
+  showRoads: true,
+  outageTrendChart: null,
+  hospitalTrendChart: null
+};
