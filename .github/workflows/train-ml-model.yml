@@ -1,0 +1,45 @@
+name: Train ML model
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Refresh training rows
+        run: node scripts/training_rows.js
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Train ML model
+        run: python scripts/ml_train.py
+
+      - name: Apply ML scoring
+        run: python scripts/ml_score.py
+
+      - name: Commit ML outputs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update TXDRMAP ML model and scoring"
+          file_pattern: outages.json history/training-data.json history/ml-risk-metadata.json history/ml-risk-model.joblib
