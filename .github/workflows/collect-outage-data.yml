@@ -1,4 +1,4 @@
-name: Collect outage and forecast data
+name: Collect outage forecast and ML data
 
 on:
   workflow_dispatch:
@@ -33,8 +33,22 @@ jobs:
       - name: Build training rows
         run: node scripts/training_rows.js
 
-      - name: Commit outage and forecast outputs
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Train ML risk model
+        run: python scripts/ml_train.py
+
+      - name: Score ML risk
+        run: python scripts/ml_score.py
+
+      - name: Commit outage forecast and ML outputs
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update TXDRMAP outage and forecast data"
-          file_pattern: outages.json history/outage-history.json history/county-weather-forecast.json history/training-data.json
+          commit_message: "Update TXDRMAP outage forecast and ML data"
+          file_pattern: outages.json history/outage-history.json history/county-weather-forecast.json history/training-data.json history/ml-risk-metadata.json history/ml-risk-model.joblib
