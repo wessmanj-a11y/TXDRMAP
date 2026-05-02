@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-02T16:26:34.264186+00:00",
+  "updated": "2026-05-02T17:45:45.576956+00:00",
   "source": "scripts/ml_train.py",
   "points": [
     {
@@ -9,7 +9,8 @@
       "positiveExamples": 339,
       "accuracy": 0.7539,
       "precision": 0.6375,
-      "recall": 0.6
+      "recall": 0.6,
+      "f1": 0.6182
     },
     {
       "timestamp": "2026-05-02T07:03:39.038668+00:00",
@@ -18,7 +19,8 @@
       "positiveExamples": 339,
       "accuracy": 0.7539,
       "precision": 0.6375,
-      "recall": 0.6
+      "recall": 0.6,
+      "f1": 0.6182
     },
     {
       "timestamp": "2026-05-02T08:56:33.609955+00:00",
@@ -27,7 +29,8 @@
       "positiveExamples": 340,
       "accuracy": 0.7452,
       "precision": 0.6125,
-      "recall": 0.5765
+      "recall": 0.5765,
+      "f1": 0.594
     },
     {
       "timestamp": "2026-05-02T10:08:41.499158+00:00",
@@ -36,7 +39,8 @@
       "positiveExamples": 344,
       "accuracy": 0.7721,
       "precision": 0.6364,
-      "recall": 0.6512
+      "recall": 0.6512,
+      "f1": 0.6437
     },
     {
       "timestamp": "2026-05-02T11:08:45.870272+00:00",
@@ -45,7 +49,8 @@
       "positiveExamples": 349,
       "accuracy": 0.7563,
       "precision": 0.6022,
-      "recall": 0.6437
+      "recall": 0.6437,
+      "f1": 0.6223
     },
     {
       "timestamp": "2026-05-02T11:56:04.649076+00:00",
@@ -54,7 +59,8 @@
       "positiveExamples": 355,
       "accuracy": 0.7762,
       "precision": 0.6344,
-      "recall": 0.6629
+      "recall": 0.6629,
+      "f1": 0.6483
     },
     {
       "timestamp": "2026-05-02T13:11:39.925962+00:00",
@@ -63,7 +69,8 @@
       "positiveExamples": 361,
       "accuracy": 0.7619,
       "precision": 0.6064,
-      "recall": 0.6333
+      "recall": 0.6333,
+      "f1": 0.6196
     },
     {
       "timestamp": "2026-05-02T14:50:38.199996+00:00",
@@ -72,7 +79,8 @@
       "positiveExamples": 370,
       "accuracy": 0.7475,
       "precision": 0.587,
-      "recall": 0.587
+      "recall": 0.587,
+      "f1": 0.587
     },
     {
       "timestamp": "2026-05-02T15:27:52.428415+00:00",
@@ -81,7 +89,8 @@
       "positiveExamples": 380,
       "accuracy": 0.7411,
       "precision": 0.5714,
-      "recall": 0.6316
+      "recall": 0.6316,
+      "f1": 0.6
     },
     {
       "timestamp": "2026-05-02T16:26:34.243597+00:00",
@@ -90,7 +99,18 @@
       "positiveExamples": 395,
       "accuracy": 0.7562,
       "precision": 0.6019,
-      "recall": 0.6263
+      "recall": 0.6263,
+      "f1": 0.6139
+    },
+    {
+      "timestamp": "2026-05-02T17:45:45.564999+00:00",
+      "ok": true,
+      "rows": 1336,
+      "positiveExamples": 409,
+      "accuracy": 0.7814,
+      "precision": 0.6283,
+      "recall": 0.6961,
+      "f1": 0.6605
     }
   ]
 }
