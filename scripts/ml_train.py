@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 import joblib
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, precision_score, recall_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from sklearn.model_selection import train_test_split
 
 TRAINING_FILE = Path('history/training-data.json')
@@ -79,7 +79,8 @@ def not_ready(reason, rows=0, positives=0):
         'positiveExamples': positives,
         'accuracy': None,
         'precision': None,
-        'recall': None
+        'recall': None,
+        'f1': None
     })
     print(reason)
 
@@ -134,7 +135,8 @@ def main():
     metrics = {
         'accuracy': round(float(accuracy_score(y_test, preds)), 4),
         'precision': round(float(precision_score(y_test, preds, zero_division=0)), 4),
-        'recall': round(float(recall_score(y_test, preds, zero_division=0)), 4)
+        'recall': round(float(recall_score(y_test, preds, zero_division=0)), 4),
+        'f1': round(float(f1_score(y_test, preds, zero_division=0)), 4)
     }
 
     timestamp = utc_now()
