@@ -22,6 +22,38 @@ function renderOutageTrendChart(){
   ], false));
 }
 
+function renderMLAccuracyChart(){
+  const canvas = document.getElementById("mlAccuracyChart");
+  if(!canvas) return;
+
+  const history = STATE.outageData?.mlAccuracyHistory?.points || [];
+  const valid = history.filter(p => p.ok && p.accuracy !== null);
+
+  if(!valid.length){
+    if(STATE.mlAccuracyChart) STATE.mlAccuracyChart.destroy();
+    return;
+  }
+
+  const labels = valid.map(p =>
+    new Date(p.timestamp).toLocaleDateString([], { month:"short", day:"numeric" })
+  );
+
+  const accuracy = valid.map(p => safeNum(p.accuracy * 100));
+  const precision = valid.map(p => safeNum(p.precision * 100));
+  const recall = valid.map(p => safeNum(p.recall * 100));
+
+  if(STATE.mlAccuracyChart) STATE.mlAccuracyChart.destroy();
+
+  STATE.mlAccuracyChart = new Chart(
+    canvas.getContext("2d"),
+    chartConfig(labels, [
+      { label:"Accuracy %", data:accuracy },
+      { label:"Precision %", data:precision },
+      { label:"Recall %", data:recall }
+    ], true)
+  );
+}
+
 function renderHospitalTrendChart(){
   const canvas = document.getElementById("hospitalTrendChart");
   if(!canvas) return;
