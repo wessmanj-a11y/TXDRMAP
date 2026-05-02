@@ -47,9 +47,34 @@ def write_metadata(payload):
     write_json(METADATA_FILE, payload)
 
 
+def calculate_f1_from_precision_recall(precision, recall):
+    try:
+        p = float(precision)
+        r = float(recall)
+        if p <= 0 or r <= 0:
+            return 0.0
+        return round(float(2 * (p * r) / (p + r)), 4)
+    except Exception:
+        return None
+
+
+def backfill_f1(points):
+    for point in points:
+        if point.get('f1') is not None:
+            continue
+        precision = point.get('precision')
+        recall = point.get('recall')
+        if precision is None or recall is None:
+            point['f1'] = None
+        else:
+            point['f1'] = calculate_f1_from_precision_recall(precision, recall)
+    return points
+
+
 def append_accuracy_history(entry):
     history = read_json(ACCURACY_HISTORY_FILE, {'updated': None, 'points': []})
     points = history.get('points', [])
+    points = backfill_f1(points)
     points.append(entry)
     points = points[-MAX_HISTORY_POINTS:]
     write_json(ACCURACY_HISTORY_FILE, {
