@@ -199,9 +199,7 @@ function applyWeather(outages, alerts) {
       row.maxAlertUrgencyScore = Math.max(row.maxAlertUrgencyScore, urgScore);
       row.maxAlertCertaintyScore = Math.max(row.maxAlertCertaintyScore, certScore);
       if (expiresIn !== null && expiresIn >= 0) {
-        row.soonestAlertExpirationMinutes = row.soonestAlertExpirationMinutes === null
-          ? expiresIn
-          : Math.min(row.soonestAlertExpirationMinutes, expiresIn);
+        row.soonestAlertExpirationMinutes = row.soonestAlertExpirationMinutes === null ? expiresIn : Math.min(row.soonestAlertExpirationMinutes, expiresIn);
       }
       row.weatherEvents.push({
         event: p.event || "Weather alert",
@@ -342,6 +340,17 @@ function baseCountyRow(county, pop) {
   };
 }
 
+function initializeAllTexasCounties(counties, countyPopulation) {
+  const byCounty = new Map();
+  for (const f of counties.features || []) {
+    if (f.properties.STATE !== "48") continue;
+    const county = f.properties.NAME;
+    const pop = countyPopulation.get(keyCounty(county)) || {};
+    byCounty.set(county, baseCountyRow(county, pop));
+  }
+  return byCounty;
+}
+
 function snapshotCounty(row) {
   return {
     county: row.county,
@@ -388,8 +397,9 @@ async function main() {
     fetchCountyPopulation().catch(() => new Map())
   ]);
 
-  const byCounty = new Map();
+  const byCounty = initializeAllTexasCounties(counties, countyPopulation);
   const outagePoints = [];
+
   for (const f of points) {
     const p = f.properties || {};
     const coords = f.geometry?.coordinates;
@@ -403,11 +413,8 @@ async function main() {
     if (!county) continue;
     const point = { county, customersOut: customers, outageCause: p.OutageCause || p.Cause || "Unknown", estimatedRestoration: p.EstimatedRestoration || p.ETR || null, lat, lon };
     outagePoints.push(point);
-    if (!byCounty.has(county)) {
-      const pop = countyPopulation.get(keyCounty(county)) || {};
-      byCounty.set(county, baseCountyRow(county, pop));
-    }
     const row = byCounty.get(county);
+    if (!row) continue;
     row.customersOut += customers;
     row.incidents += 1;
     row.maxSingleOutage = Math.max(row.maxSingleOutage, customers);
@@ -421,7 +428,7 @@ async function main() {
   const historyByCounty = buildHistorySummary(outages, previousSnapshots);
   for (const row of outages) {
     row.percentCustomersOut = row.estimatedCustomers > 0 ? Number(((row.customersOut / row.estimatedCustomers) * 100).toFixed(3)) : 0;
-    const historyRow = historyByCounty[row.county] || { change6h: 0, change12h: 0, change24h: row.customersOut, trendVelocity: 0, sevenDayPeak: row.customersOut };
+    const historyRow = historyByCounty[row.county] || { change6h: 0, change12h: 0, change24h: 0, trendVelocity: 0, sevenDayPeak: row.customersOut };
     row.currentSeverity = computeCurrentSeverity(row);
     row.predictedRisk = computePredictedRisk(row, historyRow);
     row.blendedPredictedRisk = row.predictedRisk;
@@ -440,13 +447,9 @@ async function main() {
     ].join(" + ");
   }
 
-  outages.sort((a, b) => b.currentSeverity - a.currentSeverity);
-  const snapshot = {
-    timestamp: new Date().toISOString(),
-    totalCustomersOut: outages.reduce((s, o) => s + o.customersOut, 0),
-    countiesImpacted: outages.length,
-    counties: outages.map(snapshotCounty)
-  };
+  outages.sort((a, b) => b.currentSeverity - a.currentSeverity || b.predictedRisk - a.predictedRisk);
+  const countiesWithOutages = outages.filter(o => o.customersOut > 0).length;
+  const snapshot = { timestamp: new Date().toISOString(), totalCustomersOut: outages.reduce((s, o) => s + o.customersOut, 0), countiesImpacted: countiesWithOutages, countiesTotal: outages.length, counties: outages.map(snapshotCounty) };
   const newSnapshots = [...previousSnapshots, snapshot].filter(s => {
     const t = new Date(s.timestamp).getTime();
     return Number.isFinite(t) && Date.now() - t <= 7 * 24 * 60 * 60 * 1000;
@@ -462,12 +465,12 @@ async function main() {
   const payload = {
     updated: new Date().toISOString(),
     sourceStatus: [
-      { name: "TDIS Power Outage Data", ok: true, rawPointRecords: points.length, pointRecordsUsed: outagePoints.length, countyRecords: outages.length },
+      { name: "TDIS Power Outage Data", ok: true, rawPointRecords: points.length, pointRecordsUsed: outagePoints.length, countyRecords: outages.length, countiesWithOutages },
       { name: "NWS Active Alerts", ok: true, activeTexasAlerts: nwsAlerts.length, structuredAlertFields: true },
       { name: "History", ok: true, snapshots: newSnapshots.length }
     ],
     count: outages.length,
-    countiesWithOutages: outages.length,
+    countiesWithOutages,
     totalCustomersOut: outages.reduce((s, o) => s + o.customersOut, 0),
     highestPredictedRisk: Math.max(0, ...outages.map(o => o.predictedRisk)),
     highestCurrentSeverity: Math.max(0, ...outages.map(o => o.currentSeverity)),
@@ -481,7 +484,7 @@ async function main() {
     history: newSnapshots.slice(-48)
   };
   await fs.writeFile(OUT, JSON.stringify(payload, null, 2));
-  console.log("SUCCESS: " + payload.totalCustomersOut + " customers out, " + payload.count + " counties");
+  console.log("SUCCESS: " + payload.totalCustomersOut + " customers out, " + payload.count + " counties, " + countiesWithOutages + " with outages");
 }
 
 main().catch(async err => {
