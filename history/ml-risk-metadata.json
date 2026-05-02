@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "updated": "2026-05-02T18:45:15.830179+00:00",
-  "rows": 1336,
-  "positiveExamples": 409,
+  "updated": "2026-05-02T19:46:55.371257+00:00",
+  "rows": 1519,
+  "positiveExamples": 431,
   "features": [
     "customersOut",
     "percentCustomersOut",
@@ -39,71 +39,71 @@
   "target": "worsened",
   "modelFile": "history/ml-risk-model.joblib",
   "metrics": {
-    "accuracy": 0.7725,
-    "precision": 0.6226,
-    "recall": 0.6471,
-    "f1": 0.6346
+    "accuracy": 0.7763,
+    "precision": 0.6095,
+    "recall": 0.5926,
+    "f1": 0.6009
   },
   "featureImportance": [
     {
       "feature": "percentCustomersOut",
-      "importance": 0.14292
+      "importance": 0.1351
     },
     {
       "feature": "trend12h",
-      "importance": 0.09944
-    },
-    {
-      "feature": "maxSingleOutage",
-      "importance": 0.08481
-    },
-    {
-      "feature": "sevenDayPeak",
-      "importance": 0.08451
-    },
-    {
-      "feature": "customersOut",
-      "importance": 0.08445
+      "importance": 0.1007
     },
     {
       "feature": "forecastPrecipChanceMax12h",
-      "importance": 0.08314
-    },
-    {
-      "feature": "trend24h",
-      "importance": 0.07639
+      "importance": 0.09667
     },
     {
       "feature": "trend6h",
-      "importance": 0.07568
+      "importance": 0.0797
     },
     {
       "feature": "trendVelocity",
-      "importance": 0.07532
+      "importance": 0.07885
+    },
+    {
+      "feature": "customersOut",
+      "importance": 0.07807
+    },
+    {
+      "feature": "maxSingleOutage",
+      "importance": 0.07779
+    },
+    {
+      "feature": "sevenDayPeak",
+      "importance": 0.07751
+    },
+    {
+      "feature": "trend24h",
+      "importance": 0.07713
     },
     {
       "feature": "forecastStormRisk",
-      "importance": 0.05082
+      "importance": 0.05696
     },
     {
       "feature": "incidents",
-      "importance": 0.04518
+      "importance": 0.04137
     },
     {
       "feature": "forecastWindMax12h",
-      "importance": 0.03193
+      "importance": 0.03537
     },
     {
       "feature": "forecastWindMax6h",
-      "importance": 0.03158
+      "importance": 0.03144
     },
     {
       "feature": "weatherRisk",
-      "importance": 0.02039
+      "importance": 0.01978
     },
     {
       "feature": "weatherAlerts",
-      "importance": 0.01341
+      "importance": 0.01358
     },
     {
       "feature": "alertWarningCount",
