@@ -30,8 +30,14 @@ jobs:
       - name: Fetch SPC outlook intelligence
         run: node scripts/fetch-spc.js
 
+      - name: Fetch FEMA county risk intelligence
+        run: node scripts/fetch-fema-risk.js
+
       - name: Run outage collection
         run: node scripts/fetch-outages.js
+
+      - name: Apply FEMA county risk intelligence
+        run: node scripts/apply-fema-risk.js
 
       - name: Fetch county forecast intelligence
         run: node scripts/fetch-county-weather-forecast.js
@@ -69,6 +75,7 @@ jobs:
             history/outage-history.json \
             history/county-weather-forecast.json \
             history/spc-outlook.json \
+            history/fema-county-risk.json \
             history/training-data.json \
             history/ml-risk-metadata.json \
             history/ml-risk-model.joblib \
