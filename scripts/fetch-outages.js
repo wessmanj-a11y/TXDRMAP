@@ -15,7 +15,7 @@ function num(v) {
 }
 
 async function fetchJson(url) {
-  const res = await fetch(url, { headers: { accept: "application/json,*/*" } });
+  const res = await fetch(url, { headers: { accept: "application/json,*/*", "user-agent": "TXDRMAP Texas Resilience Dashboard" } });
   if (!res.ok) throw new Error(res.status + " " + res.statusText + " " + url);
   return res.json();
 }
@@ -91,36 +91,128 @@ function getCustomersOut(p) {
   return num(p.CustomersOut ?? p.customersOut ?? p.CUSTOMERSOUT ?? p.CustomerCount ?? p.customersAffected ?? 0);
 }
 
+function severityScore(severity) {
+  const s = String(severity || "").toLowerCase();
+  if (s === "extreme") return 4;
+  if (s === "severe") return 3;
+  if (s === "moderate") return 2;
+  if (s === "minor") return 1;
+  return 0;
+}
+
+function urgencyScore(urgency) {
+  const u = String(urgency || "").toLowerCase();
+  if (u === "immediate") return 4;
+  if (u === "expected") return 3;
+  if (u === "future") return 2;
+  if (u === "past") return 1;
+  return 0;
+}
+
+function certaintyScore(certainty) {
+  const c = String(certainty || "").toLowerCase();
+  if (c === "observed") return 4;
+  if (c === "likely") return 3;
+  if (c === "possible") return 2;
+  if (c === "unlikely") return 1;
+  return 0;
+}
+
+function minutesUntil(value) {
+  const t = new Date(value || 0).getTime();
+  if (!Number.isFinite(t) || t <= 0) return null;
+  return Math.round((t - Date.now()) / 60000);
+}
+
+function alertTypeFlags(event) {
+  const e = String(event || "").toLowerCase();
+  return {
+    tornadoWarning: e.includes("tornado warning") ? 1 : 0,
+    tornadoWatch: e.includes("tornado watch") ? 1 : 0,
+    severeThunderstormWarning: e.includes("severe thunderstorm warning") ? 1 : 0,
+    severeThunderstormWatch: e.includes("severe thunderstorm watch") ? 1 : 0,
+    flashFloodWarning: e.includes("flash flood warning") ? 1 : 0,
+    floodWarning: e.includes("flood warning") && !e.includes("flash flood") ? 1 : 0,
+    winterStormWarning: e.includes("winter storm warning") || e.includes("ice storm warning") ? 1 : 0,
+    highWindWarning: e.includes("high wind warning") || e.includes("extreme wind warning") ? 1 : 0,
+    warning: e.includes("warning") ? 1 : 0,
+    watch: e.includes("watch") ? 1 : 0,
+    advisory: e.includes("advisory") ? 1 : 0
+  };
+}
+
 function weatherWeight(alert) {
   const p = alert.properties || {};
   const severity = String(p.severity || "").toLowerCase();
   const event = String(p.event || "").toLowerCase();
+  const urgency = String(p.urgency || "").toLowerCase();
+  const certainty = String(p.certainty || "").toLowerCase();
   let score = 0;
   if (severity === "extreme") score += 18;
   else if (severity === "severe") score += 12;
   else if (severity === "moderate") score += 6;
   else if (severity === "minor") score += 2;
+  if (urgency === "immediate") score += 10;
+  else if (urgency === "expected") score += 6;
+  if (certainty === "observed") score += 8;
+  else if (certainty === "likely") score += 5;
   if (event.includes("ice storm") || event.includes("winter storm")) score += 26;
   else if (event.includes("high wind") || event.includes("extreme wind")) score += 24;
-  else if (event.includes("severe thunderstorm warning")) score += 20;
+  else if (event.includes("tornado warning")) score += 30;
+  else if (event.includes("severe thunderstorm warning")) score += 24;
+  else if (event.includes("flash flood warning")) score += 14;
   else if (event.includes("severe thunderstorm watch")) score += 10;
-  else if (event.includes("tornado warning")) score += 18;
-  else if (event.includes("tornado watch")) score += 8;
+  else if (event.includes("tornado watch")) score += 10;
   else if (event.includes("flood")) score += 6;
   else if (event.includes("storm")) score += 8;
-  return Math.min(45, score);
+  return Math.min(60, score);
 }
 
 function applyWeather(outages, alerts) {
   for (const alert of alerts) {
-    const area = String(alert.properties?.areaDesc || "").toLowerCase();
+    const p = alert.properties || {};
+    const area = String(p.areaDesc || "").toLowerCase();
     const weight = weatherWeight(alert);
+    const flags = alertTypeFlags(p.event);
+    const sevScore = severityScore(p.severity);
+    const urgScore = urgencyScore(p.urgency);
+    const certScore = certaintyScore(p.certainty);
+    const expiresIn = minutesUntil(p.expires);
+
     for (const row of outages) {
-      if (area.includes(row.county.toLowerCase())) {
-        row.weatherAlerts += 1;
-        row.weatherRisk += weight;
-        row.weatherEvents.push({ event: alert.properties?.event || "Weather alert", severity: alert.properties?.severity || "Unknown", headline: alert.properties?.headline || "", weight });
+      if (!area.includes(row.county.toLowerCase())) continue;
+
+      row.weatherAlerts += 1;
+      row.weatherRisk += weight;
+      row.alertWarningCount += flags.warning;
+      row.alertWatchCount += flags.watch;
+      row.alertAdvisoryCount += flags.advisory;
+      row.tornadoWarningCount += flags.tornadoWarning;
+      row.tornadoWatchCount += flags.tornadoWatch;
+      row.severeThunderstormWarningCount += flags.severeThunderstormWarning;
+      row.severeThunderstormWatchCount += flags.severeThunderstormWatch;
+      row.flashFloodWarningCount += flags.flashFloodWarning;
+      row.floodWarningCount += flags.floodWarning;
+      row.winterStormWarningCount += flags.winterStormWarning;
+      row.highWindWarningCount += flags.highWindWarning;
+      row.maxAlertSeverityScore = Math.max(row.maxAlertSeverityScore, sevScore);
+      row.maxAlertUrgencyScore = Math.max(row.maxAlertUrgencyScore, urgScore);
+      row.maxAlertCertaintyScore = Math.max(row.maxAlertCertaintyScore, certScore);
+      if (expiresIn !== null && expiresIn >= 0) {
+        row.soonestAlertExpirationMinutes = row.soonestAlertExpirationMinutes === null
+          ? expiresIn
+          : Math.min(row.soonestAlertExpirationMinutes, expiresIn);
       }
+      row.weatherEvents.push({
+        event: p.event || "Weather alert",
+        severity: p.severity || "Unknown",
+        urgency: p.urgency || "Unknown",
+        certainty: p.certainty || "Unknown",
+        headline: p.headline || "",
+        effective: p.effective || null,
+        expires: p.expires || null,
+        weight
+      });
     }
   }
 }
@@ -144,10 +236,19 @@ function computeCurrentSeverity(row) {
 
 function computePredictedRisk(row, historyRow) {
   const weatherPressure = Math.min(35, row.weatherRisk * 0.25);
+  const activeWarningPressure = Math.min(25,
+    row.tornadoWarningCount * 12 +
+    row.severeThunderstormWarningCount * 9 +
+    row.highWindWarningCount * 10 +
+    row.winterStormWarningCount * 10 +
+    row.flashFloodWarningCount * 4 +
+    row.maxAlertSeverityScore * 2 +
+    row.maxAlertUrgencyScore * 2
+  );
   const currentFragility = row.customersOut > 0 ? Math.min(20, Math.log10(1 + row.customersOut) * 5) : 0;
   const incidentFragility = row.incidents > 0 ? Math.min(10, row.incidents * 0.75) : 0;
   const trendPressure = historyRow && historyRow.change24h > 0 ? Math.min(10, Math.log10(1 + historyRow.change24h) * 3) : 0;
-  return Math.round(Math.min(100, weatherPressure + currentFragility + incidentFragility + trendPressure));
+  return Math.round(Math.min(100, weatherPressure + activeWarningPressure + currentFragility + incidentFragility + trendPressure));
 }
 
 function computeRestorationDifficulty(row) {
@@ -202,6 +303,82 @@ function buildHistorySummary(currentCountyRows, previousSnapshots) {
   return out;
 }
 
+function baseCountyRow(county, pop) {
+  return {
+    state: "TX",
+    county,
+    utility: "TDIS Aggregate",
+    population: pop.population || null,
+    householdSize: pop.householdSize || null,
+    estimatedCustomers: pop.estimatedCustomers || null,
+    percentCustomersOut: 0,
+    customersOut: 0,
+    incidents: 0,
+    maxSingleOutage: 0,
+    weatherAlerts: 0,
+    weatherRisk: 0,
+    weatherEvents: [],
+    alertWarningCount: 0,
+    alertWatchCount: 0,
+    alertAdvisoryCount: 0,
+    tornadoWarningCount: 0,
+    tornadoWatchCount: 0,
+    severeThunderstormWarningCount: 0,
+    severeThunderstormWatchCount: 0,
+    flashFloodWarningCount: 0,
+    floodWarningCount: 0,
+    winterStormWarningCount: 0,
+    highWindWarningCount: 0,
+    maxAlertSeverityScore: 0,
+    maxAlertUrgencyScore: 0,
+    maxAlertCertaintyScore: 0,
+    soonestAlertExpirationMinutes: null,
+    roadClosures: 0,
+    roadClosureRisk: 0,
+    roadEvents: [],
+    restorationDifficulty: 0,
+    updated: new Date().toISOString(),
+    source: "TDIS Power_Outage_Data + NWS"
+  };
+}
+
+function snapshotCounty(row) {
+  return {
+    county: row.county,
+    customersOut: row.customersOut,
+    percentCustomersOut: row.percentCustomersOut,
+    incidents: row.incidents,
+    maxSingleOutage: row.maxSingleOutage,
+    currentSeverity: row.currentSeverity,
+    predictedRisk: row.predictedRisk,
+    restorationDifficulty: row.restorationDifficulty,
+    weatherAlerts: row.weatherAlerts,
+    weatherRisk: row.weatherRisk,
+    alertWarningCount: row.alertWarningCount || 0,
+    alertWatchCount: row.alertWatchCount || 0,
+    alertAdvisoryCount: row.alertAdvisoryCount || 0,
+    tornadoWarningCount: row.tornadoWarningCount || 0,
+    tornadoWatchCount: row.tornadoWatchCount || 0,
+    severeThunderstormWarningCount: row.severeThunderstormWarningCount || 0,
+    severeThunderstormWatchCount: row.severeThunderstormWatchCount || 0,
+    flashFloodWarningCount: row.flashFloodWarningCount || 0,
+    floodWarningCount: row.floodWarningCount || 0,
+    winterStormWarningCount: row.winterStormWarningCount || 0,
+    highWindWarningCount: row.highWindWarningCount || 0,
+    maxAlertSeverityScore: row.maxAlertSeverityScore || 0,
+    maxAlertUrgencyScore: row.maxAlertUrgencyScore || 0,
+    maxAlertCertaintyScore: row.maxAlertCertaintyScore || 0,
+    soonestAlertExpirationMinutes: row.soonestAlertExpirationMinutes,
+    roadClosures: row.roadClosures || 0,
+    roadClosureRisk: row.roadClosureRisk || 0,
+    trend6h: row.trend6h || 0,
+    trend12h: row.trend12h || 0,
+    trend24h: row.trend24h || 0,
+    trendVelocity: row.trendVelocity || 0,
+    sevenDayPeak: row.sevenDayPeak || 0
+  };
+}
+
 async function main() {
   const [counties, points, nws, hhsRows, countyPopulation] = await Promise.all([
     fetchJson(COUNTIES_URL),
@@ -228,7 +405,7 @@ async function main() {
     outagePoints.push(point);
     if (!byCounty.has(county)) {
       const pop = countyPopulation.get(keyCounty(county)) || {};
-      byCounty.set(county, { state: "TX", county, utility: "TDIS Aggregate", population: pop.population || null, householdSize: pop.householdSize || null, estimatedCustomers: pop.estimatedCustomers || null, percentCustomersOut: 0, customersOut: 0, incidents: 0, maxSingleOutage: 0, weatherAlerts: 0, weatherRisk: 0, weatherEvents: [], roadClosures: 0, roadClosureRisk: 0, roadEvents: [], restorationDifficulty: 0, updated: new Date().toISOString(), source: "TDIS Power_Outage_Data + NWS" });
+      byCounty.set(county, baseCountyRow(county, pop));
     }
     const row = byCounty.get(county);
     row.customersOut += customers;
@@ -255,11 +432,21 @@ async function main() {
     row.trend24h = historyRow.change24h;
     row.trendVelocity = historyRow.trendVelocity;
     row.sevenDayPeak = historyRow.sevenDayPeak;
-    row.predictionExplanation = [row.weatherAlerts > 0 ? row.weatherAlerts + " weather alert(s)" : "No county-matched weather alerts", row.customersOut > 0 ? row.customersOut.toLocaleString() + " current customers out" : "No current outage load", row.trend24h > 0 ? "24h trend worsening by " + row.trend24h.toLocaleString() : "24h trend stable or improving"].join(" + ");
+    row.predictionExplanation = [
+      row.weatherAlerts > 0 ? row.weatherAlerts + " weather alert(s)" : "No county-matched weather alerts",
+      row.alertWarningCount > 0 ? row.alertWarningCount + " active warning(s)" : "No active warnings",
+      row.customersOut > 0 ? row.customersOut.toLocaleString() + " current customers out" : "No current outage load",
+      row.trend24h > 0 ? "24h trend worsening by " + row.trend24h.toLocaleString() : "24h trend stable or improving"
+    ].join(" + ");
   }
 
   outages.sort((a, b) => b.currentSeverity - a.currentSeverity);
-  const snapshot = { timestamp: new Date().toISOString(), totalCustomersOut: outages.reduce((s, o) => s + o.customersOut, 0), countiesImpacted: outages.length, counties: outages.map(o => ({ county: o.county, customersOut: o.customersOut, percentCustomersOut: o.percentCustomersOut, incidents: o.incidents, maxSingleOutage: o.maxSingleOutage, currentSeverity: o.currentSeverity, predictedRisk: o.predictedRisk, restorationDifficulty: o.restorationDifficulty, weatherAlerts: o.weatherAlerts, weatherRisk: o.weatherRisk, roadClosures: o.roadClosures || 0, roadClosureRisk: o.roadClosureRisk || 0, trend6h: o.trend6h || 0, trend12h: o.trend12h || 0, trend24h: o.trend24h || 0, trendVelocity: o.trendVelocity || 0, sevenDayPeak: o.sevenDayPeak || 0 })) };
+  const snapshot = {
+    timestamp: new Date().toISOString(),
+    totalCustomersOut: outages.reduce((s, o) => s + o.customersOut, 0),
+    countiesImpacted: outages.length,
+    counties: outages.map(snapshotCounty)
+  };
   const newSnapshots = [...previousSnapshots, snapshot].filter(s => {
     const t = new Date(s.timestamp).getTime();
     return Number.isFinite(t) && Date.now() - t <= 7 * 24 * 60 * 60 * 1000;
@@ -272,7 +459,27 @@ async function main() {
     hospitalCapacity.latest = hospitalCapacity.trend[hospitalCapacity.trend.length - 1] || null;
   }
 
-  const payload = { updated: new Date().toISOString(), sourceStatus: [{ name: "TDIS Power Outage Data", ok: true, rawPointRecords: points.length, pointRecordsUsed: outagePoints.length, countyRecords: outages.length }, { name: "NWS Active Alerts", ok: true, activeTexasAlerts: nwsAlerts.length }, { name: "History", ok: true, snapshots: newSnapshots.length }], count: outages.length, countiesWithOutages: outages.length, totalCustomersOut: outages.reduce((s, o) => s + o.customersOut, 0), highestPredictedRisk: Math.max(0, ...outages.map(o => o.predictedRisk)), highestCurrentSeverity: Math.max(0, ...outages.map(o => o.currentSeverity)), highestRestorationDifficulty: Math.max(0, ...outages.map(o => o.restorationDifficulty || 0)), outages, outagePoints: outagePoints.sort((a, b) => b.customersOut - a.customersOut).slice(0, 5000), roadClosures: [], roadSummary: { count: 0, highRisk: 0, source: "not enabled in clean v1" }, hospitalCapacity, gridStress: { ok: false, level: "UNKNOWN" }, history: newSnapshots.slice(-48) };
+  const payload = {
+    updated: new Date().toISOString(),
+    sourceStatus: [
+      { name: "TDIS Power Outage Data", ok: true, rawPointRecords: points.length, pointRecordsUsed: outagePoints.length, countyRecords: outages.length },
+      { name: "NWS Active Alerts", ok: true, activeTexasAlerts: nwsAlerts.length, structuredAlertFields: true },
+      { name: "History", ok: true, snapshots: newSnapshots.length }
+    ],
+    count: outages.length,
+    countiesWithOutages: outages.length,
+    totalCustomersOut: outages.reduce((s, o) => s + o.customersOut, 0),
+    highestPredictedRisk: Math.max(0, ...outages.map(o => o.predictedRisk)),
+    highestCurrentSeverity: Math.max(0, ...outages.map(o => o.currentSeverity)),
+    highestRestorationDifficulty: Math.max(0, ...outages.map(o => o.restorationDifficulty || 0)),
+    outages,
+    outagePoints: outagePoints.sort((a, b) => b.customersOut - a.customersOut).slice(0, 5000),
+    roadClosures: [],
+    roadSummary: { count: 0, highRisk: 0, source: "not enabled in clean v1" },
+    hospitalCapacity,
+    gridStress: { ok: false, level: "UNKNOWN" },
+    history: newSnapshots.slice(-48)
+  };
   await fs.writeFile(OUT, JSON.stringify(payload, null, 2));
   console.log("SUCCESS: " + payload.totalCustomersOut + " customers out, " + payload.count + " counties");
 }
