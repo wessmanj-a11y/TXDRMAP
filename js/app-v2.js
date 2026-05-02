@@ -12,6 +12,7 @@ function renderAll(){
   renderPointTable();
   renderRoadTable();
   renderOutageTrendChart();
+  renderMLAccuracyChart();
   renderHospitalTrendChart();
 }
 
