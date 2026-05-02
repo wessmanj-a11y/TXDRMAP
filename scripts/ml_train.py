@@ -15,9 +15,17 @@ ACCURACY_HISTORY_FILE = Path('history/ml-accuracy-history.json')
 
 FEATURES = [
     'customersOut', 'percentCustomersOut', 'incidents', 'maxSingleOutage',
-    'weatherAlerts', 'weatherRisk', 'forecastWindMax6h', 'forecastWindMax12h',
-    'forecastPrecipChanceMax12h', 'forecastStormRisk', 'roadClosures',
-    'roadClosureRisk', 'trend6h', 'trend12h', 'trend24h', 'trendVelocity',
+    'weatherAlerts', 'weatherRisk',
+    'alertWarningCount', 'alertWatchCount', 'alertAdvisoryCount',
+    'tornadoWarningCount', 'tornadoWatchCount',
+    'severeThunderstormWarningCount', 'severeThunderstormWatchCount',
+    'flashFloodWarningCount', 'floodWarningCount',
+    'winterStormWarningCount', 'highWindWarningCount',
+    'maxAlertSeverityScore', 'maxAlertUrgencyScore', 'maxAlertCertaintyScore',
+    'forecastWindMax6h', 'forecastWindMax12h',
+    'forecastPrecipChanceMax12h', 'forecastStormRisk',
+    'roadClosures', 'roadClosureRisk',
+    'trend6h', 'trend12h', 'trend24h', 'trendVelocity',
     'sevenDayPeak'
 ]
 
@@ -26,15 +34,12 @@ MIN_ROWS = 200
 MIN_POSITIVES = 10
 MAX_HISTORY_POINTS = 500
 
-
 def utc_now():
     return datetime.now(timezone.utc).isoformat()
-
 
 def write_json(path, payload):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2))
-
 
 def read_json(path, fallback):
     try:
@@ -42,10 +47,8 @@ def read_json(path, fallback):
     except Exception:
         return fallback
 
-
 def write_metadata(payload):
     write_json(METADATA_FILE, payload)
-
 
 def calculate_f1_from_precision_recall(precision, recall):
     try:
@@ -56,7 +59,6 @@ def calculate_f1_from_precision_recall(precision, recall):
         return round(float(2 * (p * r) / (p + r)), 4)
     except Exception:
         return None
-
 
 def backfill_f1(points):
     for point in points:
@@ -70,7 +72,6 @@ def backfill_f1(points):
             point['f1'] = calculate_f1_from_precision_recall(precision, recall)
     return points
 
-
 def append_accuracy_history(entry):
     history = read_json(ACCURACY_HISTORY_FILE, {'updated': None, 'points': []})
     points = history.get('points', [])
@@ -82,7 +83,6 @@ def append_accuracy_history(entry):
         'source': 'scripts/ml_train.py',
         'points': points
     })
-
 
 def not_ready(reason, rows=0, positives=0):
     timestamp = utc_now()
@@ -108,7 +108,6 @@ def not_ready(reason, rows=0, positives=0):
         'f1': None
     })
     print(reason)
-
 
 def main():
     if not TRAINING_FILE.exists():
@@ -137,17 +136,13 @@ def main():
     y = df[TARGET].astype(int)
 
     X_train, X_test, y_train, y_test = train_test_split(
-        X,
-        y,
-        test_size=0.25,
-        random_state=42,
-        stratify=y
+        X, y, test_size=0.25, random_state=42, stratify=y
     )
 
     model = RandomForestClassifier(
-        n_estimators=300,
-        max_depth=10,
-        min_samples_leaf=4,
+        n_estimators=400,
+        max_depth=12,
+        min_samples_leaf=3,
         random_state=42,
         class_weight='balanced'
     )
@@ -191,7 +186,6 @@ def main():
 
     print('Trained ML model on ' + str(len(df)) + ' rows')
     print(metrics)
-
 
 if __name__ == '__main__':
     main()
