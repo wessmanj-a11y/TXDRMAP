@@ -39,6 +39,9 @@ jobs:
       - name: Merge county forecast into outage data
         run: node scripts/apply-county-weather-forecast.js
 
+      - name: Merge SPC outlook into outage data
+        run: node scripts/apply-spc-outlook.js
+
       - name: Build training rows
         run: node scripts/training_rows.js
 
