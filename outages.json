@@ -92,8 +92,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 39,
       "predictedRisk": 50,
-      "blendedPredictedRisk": 45,
-      "predictedRiskBand": "Elevated",
+      "blendedPredictedRisk": 25,
+      "predictedRiskBand": "Watch",
       "trend6h": 0,
       "trend12h": -8,
       "trend24h": 369,
@@ -107,9 +107,10 @@
       "forecastTempMin12h": 65,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.38,
-      "mlRiskScore": 38,
-      "mlRiskBand": "Watch"
+      "mlRiskProbability": 0.0502,
+      "mlRiskScore": 5,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -169,8 +170,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 37,
       "predictedRisk": 58,
-      "blendedPredictedRisk": 54,
-      "predictedRiskBand": "Elevated",
+      "blendedPredictedRisk": 32,
+      "predictedRiskBand": "Watch",
       "trend6h": 12,
       "trend12h": -96,
       "trend24h": 138,
@@ -184,9 +185,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.47,
-      "mlRiskScore": 47,
-      "mlRiskBand": "Watch"
+      "mlRiskProbability": 0.0975,
+      "mlRiskScore": 10,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -236,8 +238,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 36,
       "predictedRisk": 46,
-      "blendedPredictedRisk": 48,
-      "predictedRiskBand": "Watch",
+      "blendedPredictedRisk": 23,
+      "predictedRiskBand": "Low",
       "trend6h": 552,
       "trend12h": 440,
       "trend24h": 557,
@@ -251,9 +253,10 @@
       "forecastTempMin12h": 55,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.5,
-      "mlRiskScore": 50,
-      "mlRiskBand": "Elevated"
+      "mlRiskProbability": 0.045,
+      "mlRiskScore": 4,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -292,7 +295,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 32,
       "predictedRisk": 37,
-      "blendedPredictedRisk": 39,
+      "blendedPredictedRisk": 32,
       "predictedRiskBand": "Watch",
       "trend6h": 3866,
       "trend12h": 2501,
@@ -307,9 +310,10 @@
       "forecastTempMin12h": 63,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.43,
-      "mlRiskScore": 43,
-      "mlRiskBand": "Watch"
+      "mlRiskProbability": 0.2681,
+      "mlRiskScore": 27,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -348,8 +352,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 29,
       "predictedRisk": 29,
-      "blendedPredictedRisk": 32,
-      "predictedRiskBand": "Watch",
+      "blendedPredictedRisk": 16,
+      "predictedRiskBand": "Low",
       "trend6h": 308,
       "trend12h": 288,
       "trend24h": 181,
@@ -363,9 +367,10 @@
       "forecastTempMin12h": 64,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.37,
-      "mlRiskScore": 37,
-      "mlRiskBand": "Watch"
+      "mlRiskProbability": 0.0527,
+      "mlRiskScore": 5,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -419,9 +424,10 @@
       "forecastTempMin12h": 58,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.24,
+      "mlRiskProbability": 0.245,
       "mlRiskScore": 24,
-      "mlRiskBand": "Low"
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -460,7 +466,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 27,
       "predictedRisk": 20,
-      "blendedPredictedRisk": 23,
+      "blendedPredictedRisk": 11,
       "predictedRiskBand": "Low",
       "trend6h": 167,
       "trend12h": 167,
@@ -475,9 +481,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.28,
-      "mlRiskScore": 28,
-      "mlRiskBand": "Watch"
+      "mlRiskProbability": 0.0387,
+      "mlRiskScore": 4,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -516,8 +523,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 24,
       "predictedRisk": 18,
-      "blendedPredictedRisk": 16,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 28,
+      "predictedRiskBand": "Watch",
       "trend6h": -31,
       "trend12h": -94,
       "trend24h": 1,
@@ -531,9 +538,10 @@
       "forecastTempMin12h": 60,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.14,
-      "mlRiskScore": 14,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.3552,
+      "mlRiskScore": 36,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -572,7 +580,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 24,
       "predictedRisk": 18,
-      "blendedPredictedRisk": 19,
+      "blendedPredictedRisk": 23,
       "predictedRiskBand": "Low",
       "trend6h": 41,
       "trend12h": -33,
@@ -587,9 +595,10 @@
       "forecastTempMin12h": 60,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.2,
-      "mlRiskScore": 20,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.2686,
+      "mlRiskScore": 27,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -628,7 +637,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 23,
       "predictedRisk": 19,
-      "blendedPredictedRisk": 23,
+      "blendedPredictedRisk": 17,
       "predictedRiskBand": "Low",
       "trend6h": 385,
       "trend12h": 361,
@@ -643,9 +652,10 @@
       "forecastTempMin12h": 62,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.29,
-      "mlRiskScore": 29,
-      "mlRiskBand": "Watch"
+      "mlRiskProbability": 0.1477,
+      "mlRiskScore": 15,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -684,7 +694,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 23,
       "predictedRisk": 22,
-      "blendedPredictedRisk": 24,
+      "blendedPredictedRisk": 22,
       "predictedRiskBand": "Low",
       "trend6h": 115,
       "trend12h": 114,
@@ -699,9 +709,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.27,
-      "mlRiskScore": 27,
-      "mlRiskBand": "Watch"
+      "mlRiskProbability": 0.2175,
+      "mlRiskScore": 22,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -740,7 +751,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 22,
       "predictedRisk": 17,
-      "blendedPredictedRisk": 20,
+      "blendedPredictedRisk": 22,
       "predictedRiskBand": "Low",
       "trend6h": 132,
       "trend12h": 73,
@@ -755,9 +766,10 @@
       "forecastTempMin12h": 60,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.24,
-      "mlRiskScore": 24,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.271,
+      "mlRiskScore": 27,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -796,7 +808,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 21,
       "predictedRisk": 17,
-      "blendedPredictedRisk": 18,
+      "blendedPredictedRisk": 21,
       "predictedRiskBand": "Low",
       "trend6h": 53,
       "trend12h": 51,
@@ -811,9 +823,10 @@
       "forecastTempMin12h": 61,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.2,
-      "mlRiskScore": 20,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.2404,
+      "mlRiskScore": 24,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -852,8 +865,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 21,
       "predictedRisk": 15,
-      "blendedPredictedRisk": 13,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 33,
+      "predictedRiskBand": "Watch",
       "trend6h": -159,
       "trend12h": -23,
       "trend24h": -1055,
@@ -867,9 +880,10 @@
       "forecastTempMin12h": 61,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.11,
-      "mlRiskScore": 11,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.4683,
+      "mlRiskScore": 47,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -908,7 +922,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 20,
       "predictedRisk": 14,
-      "blendedPredictedRisk": 15,
+      "blendedPredictedRisk": 13,
       "predictedRiskBand": "Low",
       "trend6h": 25,
       "trend12h": 21,
@@ -923,9 +937,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.16,
-      "mlRiskScore": 16,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.1271,
+      "mlRiskScore": 13,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -979,9 +994,10 @@
       "forecastTempMin12h": 58,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.17,
-      "mlRiskScore": 17,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.1519,
+      "mlRiskScore": 15,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1035,9 +1051,10 @@
       "forecastTempMin12h": 64,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.18,
-      "mlRiskScore": 18,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.1739,
+      "mlRiskScore": 17,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1076,8 +1093,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 14,
       "predictedRisk": 10,
-      "blendedPredictedRisk": 10,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 29,
+      "predictedRiskBand": "Watch",
       "trend6h": 10,
       "trend12h": -39,
       "trend24h": -9,
@@ -1091,9 +1108,10 @@
       "forecastTempMin12h": null,
       "forecastStormRisk": 0,
       "forecastSummary12h": null,
-      "mlRiskProbability": 0.11,
-      "mlRiskScore": 11,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.4355,
+      "mlRiskScore": 44,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1132,7 +1150,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 14,
       "predictedRisk": 17,
-      "blendedPredictedRisk": 19,
+      "blendedPredictedRisk": 16,
       "predictedRiskBand": "Low",
       "trend6h": 82,
       "trend12h": 65,
@@ -1147,9 +1165,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.22,
-      "mlRiskScore": 22,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.1531,
+      "mlRiskScore": 15,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1199,7 +1218,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 12,
       "predictedRisk": 36,
-      "blendedPredictedRisk": 35,
+      "blendedPredictedRisk": 25,
       "predictedRiskBand": "Watch",
       "trend6h": 31,
       "trend12h": 31,
@@ -1214,9 +1233,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.33,
-      "mlRiskScore": 33,
-      "mlRiskBand": "Watch"
+      "mlRiskProbability": 0.1611,
+      "mlRiskScore": 16,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1255,7 +1275,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 12,
       "predictedRisk": 11,
-      "blendedPredictedRisk": 11,
+      "blendedPredictedRisk": 14,
       "predictedRiskBand": "Low",
       "trend6h": 10,
       "trend12h": 10,
@@ -1270,9 +1290,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.11,
-      "mlRiskScore": 11,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.165,
+      "mlRiskScore": 16,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1311,7 +1332,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 11,
       "predictedRisk": 7,
-      "blendedPredictedRisk": 8,
+      "blendedPredictedRisk": 12,
       "predictedRiskBand": "Low",
       "trend6h": 18,
       "trend12h": 18,
@@ -1326,9 +1347,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.09,
-      "mlRiskScore": 9,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.1605,
+      "mlRiskScore": 16,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1378,8 +1400,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 11,
       "predictedRisk": 23,
-      "blendedPredictedRisk": 21,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 32,
+      "predictedRiskBand": "Watch",
       "trend6h": -11,
       "trend12h": -90,
       "trend24h": 9,
@@ -1393,9 +1415,10 @@
       "forecastTempMin12h": 65,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Mostly Sunny",
-      "mlRiskProbability": 0.17,
-      "mlRiskScore": 17,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.3956,
+      "mlRiskScore": 40,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1434,7 +1457,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 11,
       "predictedRisk": 12,
-      "blendedPredictedRisk": 13,
+      "blendedPredictedRisk": 8,
       "predictedRiskBand": "Low",
       "trend6h": 25,
       "trend12h": 25,
@@ -1449,9 +1472,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.14,
-      "mlRiskScore": 14,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.044,
+      "mlRiskScore": 4,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1490,7 +1514,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 11,
       "predictedRisk": 12,
-      "blendedPredictedRisk": 13,
+      "blendedPredictedRisk": 8,
       "predictedRiskBand": "Low",
       "trend6h": 27,
       "trend12h": 26,
@@ -1505,9 +1529,10 @@
       "forecastTempMin12h": 60,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.14,
-      "mlRiskScore": 14,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.0383,
+      "mlRiskScore": 4,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1546,7 +1571,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 10,
       "predictedRisk": 11,
-      "blendedPredictedRisk": 11,
+      "blendedPredictedRisk": 16,
       "predictedRiskBand": "Low",
       "trend6h": 15,
       "trend12h": 15,
@@ -1561,9 +1586,10 @@
       "forecastTempMin12h": 61,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.12,
-      "mlRiskScore": 12,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.2016,
+      "mlRiskScore": 20,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1602,7 +1628,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 10,
       "predictedRisk": 16,
-      "blendedPredictedRisk": 17,
+      "blendedPredictedRisk": 18,
       "predictedRiskBand": "Low",
       "trend6h": 56,
       "trend12h": 73,
@@ -1617,9 +1643,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.19,
-      "mlRiskScore": 19,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.1985,
+      "mlRiskScore": 20,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1658,7 +1685,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 10,
       "predictedRisk": 9,
-      "blendedPredictedRisk": 9,
+      "blendedPredictedRisk": 11,
       "predictedRiskBand": "Low",
       "trend6h": 10,
       "trend12h": 10,
@@ -1673,9 +1700,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Mostly Sunny",
-      "mlRiskProbability": 0.1,
-      "mlRiskScore": 10,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.126,
+      "mlRiskScore": 13,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1714,7 +1742,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 10,
       "predictedRisk": 10,
-      "blendedPredictedRisk": 10,
+      "blendedPredictedRisk": 12,
       "predictedRiskBand": "Low",
       "trend6h": 13,
       "trend12h": 13,
@@ -1729,9 +1757,10 @@
       "forecastTempMin12h": 54,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.11,
-      "mlRiskScore": 11,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.1264,
+      "mlRiskScore": 13,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1770,7 +1799,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 10,
       "predictedRisk": 12,
-      "blendedPredictedRisk": 12,
+      "blendedPredictedRisk": 15,
       "predictedRiskBand": "Low",
       "trend6h": 15,
       "trend12h": 15,
@@ -1785,9 +1814,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.13,
-      "mlRiskScore": 13,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.1668,
+      "mlRiskScore": 17,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1826,7 +1856,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 10,
       "predictedRisk": 6,
-      "blendedPredictedRisk": 7,
+      "blendedPredictedRisk": 16,
       "predictedRiskBand": "Low",
       "trend6h": 11,
       "trend12h": -138,
@@ -1841,9 +1871,10 @@
       "forecastTempMin12h": 55,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.08,
-      "mlRiskScore": 8,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.2474,
+      "mlRiskScore": 25,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1882,7 +1913,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 9,
       "predictedRisk": 7,
-      "blendedPredictedRisk": 7,
+      "blendedPredictedRisk": 10,
       "predictedRiskBand": "Low",
       "trend6h": 5,
       "trend12h": 5,
@@ -1897,9 +1928,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.07,
-      "mlRiskScore": 7,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.1291,
+      "mlRiskScore": 13,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -1969,7 +2001,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 9,
       "predictedRisk": 25,
-      "blendedPredictedRisk": 23,
+      "blendedPredictedRisk": 46,
       "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": 1,
@@ -1984,9 +2016,10 @@
       "forecastTempMin12h": 68,
       "forecastStormRisk": 5,
       "forecastSummary12h": "Cloudy",
-      "mlRiskProbability": 0.2,
-      "mlRiskScore": 20,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.6448,
+      "mlRiskScore": 64,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2025,7 +2058,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 9,
       "predictedRisk": 10,
-      "blendedPredictedRisk": 10,
+      "blendedPredictedRisk": 12,
       "predictedRiskBand": "Low",
       "trend6h": 7,
       "trend12h": 7,
@@ -2040,9 +2073,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.1,
-      "mlRiskScore": 10,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.1265,
+      "mlRiskScore": 13,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2081,7 +2115,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 8,
       "predictedRisk": 6,
-      "blendedPredictedRisk": 6,
+      "blendedPredictedRisk": 13,
       "predictedRiskBand": "Low",
       "trend6h": 6,
       "trend12h": 6,
@@ -2096,9 +2130,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.07,
-      "mlRiskScore": 7,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.1891,
+      "mlRiskScore": 19,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2137,7 +2172,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 8,
       "predictedRisk": 12,
-      "blendedPredictedRisk": 13,
+      "blendedPredictedRisk": 21,
       "predictedRiskBand": "Low",
       "trend6h": 27,
       "trend12h": 27,
@@ -2152,9 +2187,10 @@
       "forecastTempMin12h": 63,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.14,
-      "mlRiskScore": 14,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.2756,
+      "mlRiskScore": 28,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2193,7 +2229,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 8,
       "predictedRisk": 6,
-      "blendedPredictedRisk": 6,
+      "blendedPredictedRisk": 14,
       "predictedRiskBand": "Low",
       "trend6h": 8,
       "trend12h": 8,
@@ -2208,9 +2244,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.07,
-      "mlRiskScore": 7,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.2098,
+      "mlRiskScore": 21,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2249,8 +2286,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 8,
       "predictedRisk": 6,
-      "blendedPredictedRisk": 6,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 31,
+      "predictedRiskBand": "Watch",
       "trend6h": 4,
       "trend12h": -128,
       "trend24h": -12,
@@ -2264,9 +2301,10 @@
       "forecastTempMin12h": 65,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Cloudy",
-      "mlRiskProbability": 0.06,
-      "mlRiskScore": 6,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.5109,
+      "mlRiskScore": 51,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2305,7 +2343,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 8,
       "predictedRisk": 10,
-      "blendedPredictedRisk": 9,
+      "blendedPredictedRisk": 20,
       "predictedRiskBand": "Low",
       "trend6h": -569,
       "trend12h": 11,
@@ -2320,9 +2358,10 @@
       "forecastTempMin12h": 58,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.08,
-      "mlRiskScore": 8,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.2944,
+      "mlRiskScore": 29,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2361,7 +2400,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 8,
       "predictedRisk": 10,
-      "blendedPredictedRisk": 11,
+      "blendedPredictedRisk": 13,
       "predictedRiskBand": "Low",
       "trend6h": 18,
       "trend12h": 17,
@@ -2376,9 +2415,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.12,
-      "mlRiskScore": 12,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.157,
+      "mlRiskScore": 16,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2417,7 +2457,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 7,
       "predictedRisk": 7,
-      "blendedPredictedRisk": 7,
+      "blendedPredictedRisk": 17,
       "predictedRiskBand": "Low",
       "trend6h": 5,
       "trend12h": -358,
@@ -2432,9 +2472,10 @@
       "forecastTempMin12h": 58,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.07,
-      "mlRiskScore": 7,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.2552,
+      "mlRiskScore": 26,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2473,8 +2514,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 7,
       "predictedRisk": 6,
-      "blendedPredictedRisk": 6,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 27,
+      "predictedRiskBand": "Watch",
       "trend6h": 4,
       "trend12h": 4,
       "trend24h": -17,
@@ -2488,9 +2529,10 @@
       "forecastTempMin12h": 61,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.06,
-      "mlRiskScore": 6,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.4413,
+      "mlRiskScore": 44,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2529,8 +2571,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 7,
       "predictedRisk": 5,
-      "blendedPredictedRisk": 5,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 34,
+      "predictedRiskBand": "Watch",
       "trend6h": 3,
       "trend12h": 3,
       "trend24h": -260,
@@ -2544,9 +2586,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.05,
-      "mlRiskScore": 5,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.5733,
+      "mlRiskScore": 57,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2585,8 +2628,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 7,
       "predictedRisk": 6,
-      "blendedPredictedRisk": 7,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 25,
+      "predictedRiskBand": "Watch",
       "trend6h": 9,
       "trend12h": 3,
       "trend24h": -25,
@@ -2600,9 +2643,10 @@
       "forecastTempMin12h": 61,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.08,
-      "mlRiskScore": 8,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.3973,
+      "mlRiskScore": 40,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2641,7 +2685,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 7,
       "predictedRisk": 7,
-      "blendedPredictedRisk": 7,
+      "blendedPredictedRisk": 13,
       "predictedRiskBand": "Low",
       "trend6h": 10,
       "trend12h": 9,
@@ -2656,9 +2700,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.08,
-      "mlRiskScore": 8,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.1839,
+      "mlRiskScore": 18,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2697,7 +2742,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 7,
       "predictedRisk": 6,
-      "blendedPredictedRisk": 7,
+      "blendedPredictedRisk": 18,
       "predictedRiskBand": "Low",
       "trend6h": 12,
       "trend12h": 13,
@@ -2712,9 +2757,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.08,
-      "mlRiskScore": 8,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.2703,
+      "mlRiskScore": 27,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2753,7 +2799,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 7,
       "predictedRisk": 8,
-      "blendedPredictedRisk": 8,
+      "blendedPredictedRisk": 23,
       "predictedRiskBand": "Low",
       "trend6h": 6,
       "trend12h": -40,
@@ -2768,9 +2814,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.08,
-      "mlRiskScore": 8,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.3557,
+      "mlRiskScore": 36,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2809,7 +2856,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 7,
       "predictedRisk": 5,
-      "blendedPredictedRisk": 5,
+      "blendedPredictedRisk": 14,
       "predictedRiskBand": "Low",
       "trend6h": 0,
       "trend12h": 0,
@@ -2824,9 +2871,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.04,
-      "mlRiskScore": 4,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.2162,
+      "mlRiskScore": 22,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2865,8 +2913,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 6,
       "predictedRisk": 5,
-      "blendedPredictedRisk": 5,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 29,
+      "predictedRiskBand": "Watch",
       "trend6h": 4,
       "trend12h": 4,
       "trend24h": -111,
@@ -2880,9 +2928,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.06,
-      "mlRiskScore": 6,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.4921,
+      "mlRiskScore": 49,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2921,7 +2970,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 6,
       "predictedRisk": 8,
-      "blendedPredictedRisk": 7,
+      "blendedPredictedRisk": 10,
       "predictedRiskBand": "Low",
       "trend6h": 0,
       "trend12h": 8,
@@ -2936,9 +2985,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.06,
-      "mlRiskScore": 6,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.1185,
+      "mlRiskScore": 12,
+      "mlRiskBand": "Low",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -2977,7 +3027,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 6,
       "predictedRisk": 5,
-      "blendedPredictedRisk": 5,
+      "blendedPredictedRisk": 21,
       "predictedRiskBand": "Low",
       "trend6h": -17,
       "trend12h": -48,
@@ -2992,9 +3042,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.04,
-      "mlRiskScore": 4,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.3358,
+      "mlRiskScore": 34,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3033,7 +3084,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 6,
       "predictedRisk": 7,
-      "blendedPredictedRisk": 7,
+      "blendedPredictedRisk": 19,
       "predictedRiskBand": "Low",
       "trend6h": 5,
       "trend12h": 4,
@@ -3048,9 +3099,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.07,
-      "mlRiskScore": 7,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.2854,
+      "mlRiskScore": 29,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3100,8 +3152,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 6,
       "predictedRisk": 15,
-      "blendedPredictedRisk": 14,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 37,
+      "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": -11,
       "trend24h": 0,
@@ -3115,9 +3167,10 @@
       "forecastTempMin12h": 69,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Mostly Sunny",
-      "mlRiskProbability": 0.12,
-      "mlRiskScore": 12,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.5492,
+      "mlRiskScore": 55,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3156,7 +3209,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 5,
       "predictedRisk": 6,
-      "blendedPredictedRisk": 6,
+      "blendedPredictedRisk": 20,
       "predictedRiskBand": "Low",
       "trend6h": 3,
       "trend12h": 3,
@@ -3171,9 +3224,10 @@
       "forecastTempMin12h": 56,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.06,
-      "mlRiskScore": 6,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.3116,
+      "mlRiskScore": 31,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3212,8 +3266,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 5,
       "predictedRisk": 4,
-      "blendedPredictedRisk": 4,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 33,
+      "predictedRiskBand": "Watch",
       "trend6h": 2,
       "trend12h": -1,
       "trend24h": -175,
@@ -3227,9 +3281,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.04,
-      "mlRiskScore": 4,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.5717,
+      "mlRiskScore": 57,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3268,8 +3323,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 5,
       "predictedRisk": 4,
-      "blendedPredictedRisk": 4,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 28,
+      "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": 0,
       "trend24h": -6,
@@ -3283,9 +3338,10 @@
       "forecastTempMin12h": 63,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.04,
-      "mlRiskScore": 4,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.4679,
+      "mlRiskScore": 47,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3324,8 +3380,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 5,
       "predictedRisk": 5,
-      "blendedPredictedRisk": 5,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 31,
+      "predictedRiskBand": "Watch",
       "trend6h": 3,
       "trend12h": 3,
       "trend24h": 1,
@@ -3339,9 +3395,10 @@
       "forecastTempMin12h": 58,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.05,
-      "mlRiskScore": 5,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.5215,
+      "mlRiskScore": 52,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3380,7 +3437,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 5,
       "predictedRisk": 6,
-      "blendedPredictedRisk": 6,
+      "blendedPredictedRisk": 21,
       "predictedRiskBand": "Low",
       "trend6h": 3,
       "trend12h": 3,
@@ -3395,9 +3452,10 @@
       "forecastTempMin12h": 56,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.06,
-      "mlRiskScore": 6,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.3281,
+      "mlRiskScore": 33,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3436,7 +3494,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 5,
       "predictedRisk": 4,
-      "blendedPredictedRisk": 4,
+      "blendedPredictedRisk": 17,
       "predictedRiskBand": "Low",
       "trend6h": 4,
       "trend12h": 4,
@@ -3451,9 +3509,10 @@
       "forecastTempMin12h": 56,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.05,
-      "mlRiskScore": 5,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.2806,
+      "mlRiskScore": 28,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3492,7 +3551,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 5,
       "predictedRisk": 4,
-      "blendedPredictedRisk": 4,
+      "blendedPredictedRisk": 22,
       "predictedRiskBand": "Low",
       "trend6h": 1,
       "trend12h": 1,
@@ -3507,9 +3566,10 @@
       "forecastTempMin12h": 58,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.04,
-      "mlRiskScore": 4,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.3705,
+      "mlRiskScore": 37,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3548,8 +3608,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 2,
-      "blendedPredictedRisk": 2,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 41,
+      "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": 0,
       "trend24h": -151,
@@ -3563,9 +3623,10 @@
       "forecastTempMin12h": 60,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.02,
-      "mlRiskScore": 2,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.7323,
+      "mlRiskScore": 73,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3604,8 +3665,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 2,
-      "blendedPredictedRisk": 2,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 38,
+      "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": -1,
       "trend24h": -439,
@@ -3619,9 +3680,10 @@
       "forecastTempMin12h": 60,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Mostly Sunny",
-      "mlRiskProbability": 0.02,
-      "mlRiskScore": 2,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.6771,
+      "mlRiskScore": 68,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3660,7 +3722,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 3,
-      "blendedPredictedRisk": 3,
+      "blendedPredictedRisk": 17,
       "predictedRiskBand": "Low",
       "trend6h": 1,
       "trend12h": 1,
@@ -3675,9 +3737,10 @@
       "forecastTempMin12h": 58,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.03,
-      "mlRiskScore": 3,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.282,
+      "mlRiskScore": 28,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3716,7 +3779,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 3,
-      "blendedPredictedRisk": 3,
+      "blendedPredictedRisk": 19,
       "predictedRiskBand": "Low",
       "trend6h": 1,
       "trend12h": 1,
@@ -3731,9 +3794,10 @@
       "forecastTempMin12h": 58,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.03,
-      "mlRiskScore": 3,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.3212,
+      "mlRiskScore": 32,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3772,7 +3836,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 3,
-      "blendedPredictedRisk": 3,
+      "blendedPredictedRisk": 20,
       "predictedRiskBand": "Low",
       "trend6h": 1,
       "trend12h": 1,
@@ -3787,9 +3851,10 @@
       "forecastTempMin12h": 61,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.03,
-      "mlRiskScore": 3,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.344,
+      "mlRiskScore": 34,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3828,8 +3893,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 2,
-      "blendedPredictedRisk": 2,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 36,
+      "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": 0,
       "trend24h": -4,
@@ -3843,9 +3908,10 @@
       "forecastTempMin12h": 61,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.02,
-      "mlRiskScore": 2,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.6393,
+      "mlRiskScore": 64,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3884,8 +3950,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 3,
-      "blendedPredictedRisk": 3,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 37,
+      "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": 1,
       "trend24h": 1,
@@ -3899,9 +3965,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.03,
-      "mlRiskScore": 3,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.643,
+      "mlRiskScore": 64,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3940,8 +4007,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 3,
-      "blendedPredictedRisk": 3,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 29,
+      "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": 0,
       "trend24h": -34,
@@ -3955,9 +4022,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.03,
-      "mlRiskScore": 3,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.5,
+      "mlRiskScore": 50,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -3996,8 +4064,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 3,
-      "blendedPredictedRisk": 3,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 31,
+      "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": 1,
       "trend24h": 1,
@@ -4011,9 +4079,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.03,
-      "mlRiskScore": 3,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.5349,
+      "mlRiskScore": 53,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4052,8 +4121,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 3,
-      "blendedPredictedRisk": 3,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 27,
+      "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": 0,
       "trend24h": 1,
@@ -4067,9 +4136,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.03,
-      "mlRiskScore": 3,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.4648,
+      "mlRiskScore": 46,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4108,7 +4178,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 3,
-      "blendedPredictedRisk": 3,
+      "blendedPredictedRisk": 19,
       "predictedRiskBand": "Low",
       "trend6h": 1,
       "trend12h": 1,
@@ -4123,9 +4193,10 @@
       "forecastTempMin12h": 58,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.03,
-      "mlRiskScore": 3,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.3167,
+      "mlRiskScore": 32,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4164,8 +4235,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 2,
-      "blendedPredictedRisk": 2,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 32,
+      "predictedRiskBand": "Watch",
       "trend6h": -1,
       "trend12h": -11,
       "trend24h": -2,
@@ -4179,9 +4250,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.02,
-      "mlRiskScore": 2,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.5595,
+      "mlRiskScore": 56,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4220,8 +4292,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 2,
-      "blendedPredictedRisk": 2,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 47,
+      "predictedRiskBand": "Watch",
       "trend6h": -1,
       "trend12h": -76,
       "trend24h": -11,
@@ -4235,9 +4307,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.02,
-      "mlRiskScore": 2,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.8285,
+      "mlRiskScore": 83,
+      "mlRiskBand": "High",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4276,8 +4349,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 3,
-      "blendedPredictedRisk": 3,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 40,
+      "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": 1,
       "trend24h": 1,
@@ -4291,9 +4364,10 @@
       "forecastTempMin12h": 61,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.03,
-      "mlRiskScore": 3,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.6956,
+      "mlRiskScore": 70,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4332,7 +4406,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 2,
-      "blendedPredictedRisk": 2,
+      "blendedPredictedRisk": 21,
       "predictedRiskBand": "Low",
       "trend6h": 1,
       "trend12h": 1,
@@ -4347,9 +4421,10 @@
       "forecastTempMin12h": 57,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.02,
-      "mlRiskScore": 2,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.3593,
+      "mlRiskScore": 36,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4388,8 +4463,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 2,
-      "blendedPredictedRisk": 2,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 34,
+      "predictedRiskBand": "Watch",
       "trend6h": 0,
       "trend12h": -2,
       "trend24h": -4,
@@ -4403,9 +4478,10 @@
       "forecastTempMin12h": 61,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.02,
-      "mlRiskScore": 2,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.6102,
+      "mlRiskScore": 61,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4444,8 +4520,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 2,
-      "blendedPredictedRisk": 2,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 38,
+      "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": -6,
       "trend24h": -37,
@@ -4459,9 +4535,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.02,
-      "mlRiskScore": 2,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.6801,
+      "mlRiskScore": 68,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4500,8 +4577,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 2,
-      "blendedPredictedRisk": 2,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 34,
+      "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": 1,
       "trend24h": -176,
@@ -4515,9 +4592,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.02,
-      "mlRiskScore": 2,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.6145,
+      "mlRiskScore": 61,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4556,8 +4634,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 3,
-      "blendedPredictedRisk": 3,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 38,
+      "predictedRiskBand": "Watch",
       "trend6h": 2,
       "trend12h": -2,
       "trend24h": -6,
@@ -4571,9 +4649,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.04,
-      "mlRiskScore": 4,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.6735,
+      "mlRiskScore": 67,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4612,7 +4691,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 5,
-      "blendedPredictedRisk": 5,
+      "blendedPredictedRisk": 22,
       "predictedRiskBand": "Low",
       "trend6h": 2,
       "trend12h": -55,
@@ -4627,9 +4706,10 @@
       "forecastTempMin12h": 55,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.05,
-      "mlRiskScore": 5,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.355,
+      "mlRiskScore": 36,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4668,8 +4748,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 2,
-      "blendedPredictedRisk": 2,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 32,
+      "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": 1,
       "trend24h": -264,
@@ -4683,9 +4763,10 @@
       "forecastTempMin12h": 62,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.02,
-      "mlRiskScore": 2,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.5556,
+      "mlRiskScore": 56,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4724,7 +4805,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 3,
-      "blendedPredictedRisk": 3,
+      "blendedPredictedRisk": 23,
       "predictedRiskBand": "Low",
       "trend6h": -4,
       "trend12h": 1,
@@ -4739,9 +4820,10 @@
       "forecastTempMin12h": 55,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.02,
-      "mlRiskScore": 2,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.4033,
+      "mlRiskScore": 40,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4780,7 +4862,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 3,
-      "blendedPredictedRisk": 3,
+      "blendedPredictedRisk": 19,
       "predictedRiskBand": "Low",
       "trend6h": 0,
       "trend12h": -1,
@@ -4795,9 +4877,10 @@
       "forecastTempMin12h": 61,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.02,
-      "mlRiskScore": 2,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.3235,
+      "mlRiskScore": 32,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4836,7 +4919,7 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 2,
-      "blendedPredictedRisk": 2,
+      "blendedPredictedRisk": 23,
       "predictedRiskBand": "Low",
       "trend6h": 1,
       "trend12h": 1,
@@ -4851,9 +4934,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.02,
-      "mlRiskScore": 2,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.4035,
+      "mlRiskScore": 40,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4892,8 +4976,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 2,
-      "blendedPredictedRisk": 2,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 33,
+      "predictedRiskBand": "Watch",
       "trend6h": -5,
       "trend12h": -26,
       "trend24h": -25,
@@ -4907,9 +4991,10 @@
       "forecastTempMin12h": 58,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.02,
-      "mlRiskScore": 2,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.5764,
+      "mlRiskScore": 58,
+      "mlRiskBand": "Elevated",
+      "mlScoringMode": "trained-model"
     },
     {
       "state": "TX",
@@ -4948,8 +5033,8 @@
       "source": "TDIS Power_Outage_Data + NWS",
       "currentSeverity": 4,
       "predictedRisk": 3,
-      "blendedPredictedRisk": 3,
-      "predictedRiskBand": "Low",
+      "blendedPredictedRisk": 25,
+      "predictedRiskBand": "Watch",
       "trend6h": 1,
       "trend12h": 1,
       "trend24h": 1,
@@ -4963,9 +5048,10 @@
       "forecastTempMin12h": 59,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
-      "mlRiskProbability": 0.03,
-      "mlRiskScore": 3,
-      "mlRiskBand": "Low"
+      "mlRiskProbability": 0.4295,
+      "mlRiskScore": 43,
+      "mlRiskBand": "Watch",
+      "mlScoringMode": "trained-model"
     }
   ],
   "outagePoints": [
@@ -72532,10 +72618,50 @@
   },
   "mlRisk": {
     "ok": true,
-    "mode": "fallback-scoring-until-trained-model-is-ready",
-    "updated": "2026-05-02T18:23:10.772690+00:00",
+    "mode": "trained-model",
+    "updated": "2026-05-02T18:45:17.008601+00:00",
     "rowsScored": 86,
     "metadataOk": true,
-    "note": "Stable TXDRMAP scoring scaffold. Can be upgraded to joblib model once enough training history exists."
+    "modelFile": "history/ml-risk-model.joblib",
+    "features": [
+      "customersOut",
+      "percentCustomersOut",
+      "incidents",
+      "maxSingleOutage",
+      "weatherAlerts",
+      "weatherRisk",
+      "alertWarningCount",
+      "alertWatchCount",
+      "alertAdvisoryCount",
+      "tornadoWarningCount",
+      "tornadoWatchCount",
+      "severeThunderstormWarningCount",
+      "severeThunderstormWatchCount",
+      "flashFloodWarningCount",
+      "floodWarningCount",
+      "winterStormWarningCount",
+      "highWindWarningCount",
+      "maxAlertSeverityScore",
+      "maxAlertUrgencyScore",
+      "maxAlertCertaintyScore",
+      "forecastWindMax6h",
+      "forecastWindMax12h",
+      "forecastPrecipChanceMax12h",
+      "forecastStormRisk",
+      "roadClosures",
+      "roadClosureRisk",
+      "trend6h",
+      "trend12h",
+      "trend24h",
+      "trendVelocity",
+      "sevenDayPeak"
+    ],
+    "metrics": {
+      "accuracy": 0.7725,
+      "precision": 0.6226,
+      "recall": 0.6471,
+      "f1": 0.6346
+    },
+    "fallbackReason": null
   }
 }
