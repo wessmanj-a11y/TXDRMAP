@@ -41,6 +41,7 @@ function renderMLAccuracyChart(){
   const accuracy = valid.map(p => safeNum(p.accuracy * 100));
   const precision = valid.map(p => safeNum(p.precision * 100));
   const recall = valid.map(p => safeNum(p.recall * 100));
+  const f1 = valid.map(p => safeNum((p.f1 ?? 0) * 100));
 
   if(STATE.mlAccuracyChart) STATE.mlAccuracyChart.destroy();
 
@@ -49,7 +50,8 @@ function renderMLAccuracyChart(){
     chartConfig(labels, [
       { label:"Accuracy %", data:accuracy },
       { label:"Precision %", data:precision },
-      { label:"Recall %", data:recall }
+      { label:"Recall %", data:recall },
+      { label:"F1 Score %", data:f1 }
     ], true)
   );
 }
