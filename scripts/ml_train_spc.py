@@ -22,8 +22,11 @@ FEATURES = [
     'highWindWarningCount', 'maxAlertSeverityScore', 'maxAlertUrgencyScore',
     'maxAlertCertaintyScore', 'spcRisk', 'forecastWindMax6h',
     'forecastWindMax12h', 'forecastPrecipChanceMax12h', 'forecastStormRisk',
-    'roadClosures', 'roadClosureRisk', 'trend6h', 'trend12h', 'trend24h',
-    'trendVelocity', 'sevenDayPeak'
+    'roadClosures', 'roadClosureRisk', 'femaRiskScore',
+    'baselineCountyFragility', 'femaExpectedAnnualLoss',
+    'femaSocialVulnerability', 'femaCommunityResilience',
+    'femaStrongWindRisk', 'femaTornadoRisk', 'trend6h', 'trend12h',
+    'trend24h', 'trendVelocity', 'sevenDayPeak'
 ]
 
 TARGET = 'worsened'
