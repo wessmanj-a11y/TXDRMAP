@@ -87,14 +87,16 @@ function processOutages(){
 async function loadData(){
   document.getElementById("sourceStatus").innerHTML = "Loading counties, outages, weather, forecast, and ML risk...";
 
-  const [geo, outages, nws] = await Promise.all([
+  const [geo, outages, nws, mlAccuracyHistory] = await Promise.all([
     fetchJson(CONFIG.countyGeoUrl),
     tryFetch(CONFIG.outageUrl + "?cb=" + Date.now()),
-    tryFetch(CONFIG.nwsAlertsUrl)
+    tryFetch(CONFIG.nwsAlertsUrl),
+    tryFetch("history/ml-accuracy-history.json?cb=" + Date.now())
   ]);
 
   STATE.countyGeo = geo;
   STATE.outageData = outages || { outages: [], outagePoints: [] };
+  STATE.outageData.mlAccuracyHistory = mlAccuracyHistory || { points: [] };
   STATE.nwsAlerts = nws?.features || [];
 
   initCounties();
@@ -106,6 +108,7 @@ async function loadData(){
     `NWS Texas alerts: ${STATE.nwsAlerts.length}`,
     `Forecast counties: ${STATE.outageData.weatherForecast?.countyForecasts ?? "—"}`,
     `ML risk: ${STATE.outageData.mlRisk?.ok ? "active" : "pending"}`,
+    `ML history points: ${(STATE.outageData.mlAccuracyHistory?.points || []).length}`,
     `Last update: ${STATE.outageData.updated || "unknown"}`
   ].join("<br>");
 }
