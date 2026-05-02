@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: txdrmap-data-pipeline
+  cancel-in-progress: true
+
 jobs:
   collect:
     runs-on: ubuntu-latest
@@ -15,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -48,7 +54,24 @@ jobs:
         run: python scripts/ml_score.py
 
       - name: Commit outage forecast and ML outputs
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Update TXDRMAP outage forecast and ML data"
-          file_pattern: outages.json history/outage-history.json history/county-weather-forecast.json history/training-data.json history/ml-risk-metadata.json history/ml-risk-model.joblib history/ml-accuracy-history.json
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add outages.json \
+            history/outage-history.json \
+            history/county-weather-forecast.json \
+            history/training-data.json \
+            history/ml-risk-metadata.json \
+            history/ml-risk-model.joblib \
+            history/ml-accuracy-history.json
+
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update TXDRMAP outage forecast and ML data"
+          git pull --rebase origin main
+          git push origin main
