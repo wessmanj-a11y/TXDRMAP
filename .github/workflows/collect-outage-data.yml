@@ -27,6 +27,9 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Fetch SPC outlook intelligence
+        run: node scripts/fetch-spc.js
+
       - name: Run outage collection
         run: node scripts/fetch-outages.js
 
@@ -62,6 +65,7 @@ jobs:
           git add outages.json \
             history/outage-history.json \
             history/county-weather-forecast.json \
+            history/spc-outlook.json \
             history/training-data.json \
             history/ml-risk-metadata.json \
             history/ml-risk-model.joblib \
