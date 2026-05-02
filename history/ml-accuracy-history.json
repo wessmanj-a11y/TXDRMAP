@@ -1,9 +1,18 @@
 {
-  "updated": "2026-05-02T06:49:53.729800+00:00",
+  "updated": "2026-05-02T07:03:39.058619+00:00",
   "source": "scripts/ml_train.py",
   "points": [
     {
       "timestamp": "2026-05-02T06:49:53.709733+00:00",
+      "ok": true,
+      "rows": 1023,
+      "positiveExamples": 339,
+      "accuracy": 0.7539,
+      "precision": 0.6375,
+      "recall": 0.6
+    },
+    {
+      "timestamp": "2026-05-02T07:03:39.038668+00:00",
       "ok": true,
       "rows": 1023,
       "positiveExamples": 339,
