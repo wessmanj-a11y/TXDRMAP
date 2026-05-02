@@ -17,5 +17,6 @@ const STATE = {
   showRadar: false,
   showRoads: true,
   outageTrendChart: null,
-  hospitalTrendChart: null
+  hospitalTrendChart: null,
+  mlAccuracyChart: null
 };
