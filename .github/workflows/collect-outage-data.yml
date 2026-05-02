@@ -51,4 +51,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update TXDRMAP outage forecast and ML data"
-          file_pattern: outages.json history/outage-history.json history/county-weather-forecast.json history/training-data.json history/ml-risk-metadata.json history/ml-risk-model.joblib
+          file_pattern: outages.json history/outage-history.json history/county-weather-forecast.json history/training-data.json history/ml-risk-metadata.json history/ml-risk-model.joblib history/ml-accuracy-history.json
