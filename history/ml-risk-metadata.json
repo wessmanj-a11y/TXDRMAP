@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "updated": "2026-05-03T19:43:50.617813+00:00",
-  "rows": 6267,
-  "positiveExamples": 603,
+  "updated": "2026-05-03T20:51:10.014938+00:00",
+  "rows": 6521,
+  "positiveExamples": 614,
   "features": [
     "customersOut",
     "percentCustomersOut",
@@ -47,123 +47,123 @@
   "target": "worsened",
   "modelFile": "history/ml-risk-model.joblib",
   "metrics": {
-    "accuracy": 0.8756,
-    "precision": 0.4225,
-    "recall": 0.7947,
-    "f1": 0.5517
+    "accuracy": 0.8731,
+    "precision": 0.4077,
+    "recall": 0.7597,
+    "f1": 0.5306
   },
   "featureImportance": [
     {
       "feature": "incidents",
-      "importance": 0.16082
-    },
-    {
-      "feature": "maxSingleOutage",
-      "importance": 0.13692
+      "importance": 0.14951
     },
     {
       "feature": "customersOut",
-      "importance": 0.13537
+      "importance": 0.14375
     },
     {
       "feature": "percentCustomersOut",
-      "importance": 0.1339
+      "importance": 0.13923
+    },
+    {
+      "feature": "maxSingleOutage",
+      "importance": 0.13548
     },
     {
       "feature": "trend24h",
-      "importance": 0.06052
+      "importance": 0.06135
     },
     {
       "feature": "forecastPrecipChanceMax12h",
-      "importance": 0.05439
-    },
-    {
-      "feature": "trend12h",
-      "importance": 0.04712
+      "importance": 0.05094
     },
     {
       "feature": "forecastStormRisk",
-      "importance": 0.04286
+      "importance": 0.04351
     },
     {
-      "feature": "trend6h",
-      "importance": 0.03491
+      "feature": "trend12h",
+      "importance": 0.04346
     },
     {
       "feature": "trendVelocity",
-      "importance": 0.0349
+      "importance": 0.03563
+    },
+    {
+      "feature": "trend6h",
+      "importance": 0.03469
     },
     {
       "feature": "sevenDayPeak",
-      "importance": 0.03388
-    },
-    {
-      "feature": "forecastWindMax12h",
-      "importance": 0.01525
+      "importance": 0.03384
     },
     {
       "feature": "forecastWindMax6h",
-      "importance": 0.01463
+      "importance": 0.01449
     },
     {
-      "feature": "femaSocialVulnerability",
-      "importance": 0.01347
-    },
-    {
-      "feature": "femaStrongWindRisk",
-      "importance": 0.01281
+      "feature": "forecastWindMax12h",
+      "importance": 0.01392
     },
     {
       "feature": "femaExpectedAnnualLoss",
-      "importance": 0.01194
-    },
-    {
-      "feature": "femaCommunityResilience",
-      "importance": 0.01068
-    },
-    {
-      "feature": "femaTornadoRisk",
-      "importance": 0.01009
+      "importance": 0.01326
     },
     {
       "feature": "femaRiskScore",
-      "importance": 0.00995
+      "importance": 0.01305
+    },
+    {
+      "feature": "femaCommunityResilience",
+      "importance": 0.0123
+    },
+    {
+      "feature": "femaTornadoRisk",
+      "importance": 0.01227
+    },
+    {
+      "feature": "femaSocialVulnerability",
+      "importance": 0.01107
+    },
+    {
+      "feature": "femaStrongWindRisk",
+      "importance": 0.01077
     },
     {
       "feature": "baselineCountyFragility",
-      "importance": 0.00939
+      "importance": 0.00996
     },
     {
       "feature": "weatherRisk",
-      "importance": 0.00692
+      "importance": 0.00787
     },
     {
       "feature": "weatherAlerts",
-      "importance": 0.00427
+      "importance": 0.00481
     },
     {
       "feature": "maxAlertSeverityScore",
-      "importance": 0.00133
-    },
-    {
-      "feature": "maxAlertCertaintyScore",
-      "importance": 0.00114
+      "importance": 0.00134
     },
     {
       "feature": "maxAlertUrgencyScore",
       "importance": 0.00107
     },
     {
+      "feature": "maxAlertCertaintyScore",
+      "importance": 0.001
+    },
+    {
       "feature": "alertWarningCount",
-      "importance": 0.00075
+      "importance": 0.00061
     },
     {
       "feature": "floodWarningCount",
-      "importance": 0.00058
+      "importance": 0.00054
     },
     {
       "feature": "alertAdvisoryCount",
-      "importance": 0.00014
+      "importance": 0.00027
     },
     {
       "feature": "alertWatchCount",
