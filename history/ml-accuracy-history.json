@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-03T11:44:24.382088+00:00",
+  "updated": "2026-05-03T13:23:32.169067+00:00",
   "source": "scripts/ml_train_spc.py",
   "points": [
     {
@@ -261,6 +261,16 @@
       "precision": 0.4667,
       "recall": 0.7368,
       "f1": 0.5714
+    },
+    {
+      "timestamp": "2026-05-03T13:23:32.141125+00:00",
+      "ok": true,
+      "rows": 4743,
+      "positiveExamples": 535,
+      "accuracy": 0.8879,
+      "precision": 0.5025,
+      "recall": 0.7612,
+      "f1": 0.6053
     }
   ]
 }
