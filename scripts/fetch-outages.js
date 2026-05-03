@@ -276,6 +276,14 @@ async function writeHistory(snapshots) {
   await fs.writeFile(HISTORY_OUT, JSON.stringify({ updated: new Date().toISOString(), snapshots }, null, 2));
 }
 
+function peakDecayWeight(ageHours) {
+  if (ageHours <= 24) return 1.0;
+  if (ageHours <= 48) return 0.75;
+  if (ageHours <= 72) return 0.55;
+  if (ageHours <= 120) return 0.35;
+  return 0.20;
+}
+
 function buildHistorySummary(currentCountyRows, previousSnapshots) {
   const now = Date.now();
   const recent = previousSnapshots.filter(s => {
@@ -295,8 +303,16 @@ function buildHistorySummary(currentCountyRows, previousSnapshots) {
     const trend6h = row.customersOut - (by6.get(row.county) || 0);
     const trend12h = row.customersOut - (by12.get(row.county) || 0);
     const trend24h = row.customersOut - (by24.get(row.county) || 0);
-    const sevenDayPeak = Math.max(row.customersOut, ...recent.flatMap(s => (s.counties || []).filter(c => c.county === row.county).map(c => c.customersOut || 0)));
-    out[row.county] = { county: row.county, change6h: trend6h, change12h: trend12h, change24h: trend24h, trendVelocity: trend6h - trend24h / 4, sevenDayPeak };
+    const historyValues = recent.flatMap(s => {
+      const snapshotTime = new Date(s.timestamp).getTime();
+      const ageHours = Number.isFinite(snapshotTime) ? (now - snapshotTime) / (60 * 60 * 1000) : 999;
+      return (s.counties || [])
+        .filter(c => c.county === row.county)
+        .map(c => ({ value: c.customersOut || 0, weighted: (c.customersOut || 0) * peakDecayWeight(ageHours) }));
+    });
+    const sevenDayPeak = Math.max(row.customersOut, ...historyValues.map(v => v.value));
+    const decayedSevenDayPeak = Math.round(Math.max(row.customersOut, ...historyValues.map(v => v.weighted)));
+    out[row.county] = { county: row.county, change6h: trend6h, change12h: trend12h, change24h: trend24h, trendVelocity: trend6h - trend24h / 4, sevenDayPeak, decayedSevenDayPeak };
   }
   return out;
 }
@@ -384,7 +400,8 @@ function snapshotCounty(row) {
     trend12h: row.trend12h || 0,
     trend24h: row.trend24h || 0,
     trendVelocity: row.trendVelocity || 0,
-    sevenDayPeak: row.sevenDayPeak || 0
+    sevenDayPeak: row.sevenDayPeak || 0,
+    decayedSevenDayPeak: row.decayedSevenDayPeak || 0
   };
 }
 
@@ -428,7 +445,7 @@ async function main() {
   const historyByCounty = buildHistorySummary(outages, previousSnapshots);
   for (const row of outages) {
     row.percentCustomersOut = row.estimatedCustomers > 0 ? Number(((row.customersOut / row.estimatedCustomers) * 100).toFixed(3)) : 0;
-    const historyRow = historyByCounty[row.county] || { change6h: 0, change12h: 0, change24h: 0, trendVelocity: 0, sevenDayPeak: row.customersOut };
+    const historyRow = historyByCounty[row.county] || { change6h: 0, change12h: 0, change24h: 0, trendVelocity: 0, sevenDayPeak: row.customersOut, decayedSevenDayPeak: row.customersOut };
     row.currentSeverity = computeCurrentSeverity(row);
     row.predictedRisk = computePredictedRisk(row, historyRow);
     row.blendedPredictedRisk = row.predictedRisk;
@@ -439,6 +456,7 @@ async function main() {
     row.trend24h = historyRow.change24h;
     row.trendVelocity = historyRow.trendVelocity;
     row.sevenDayPeak = historyRow.sevenDayPeak;
+    row.decayedSevenDayPeak = historyRow.decayedSevenDayPeak;
     row.predictionExplanation = [
       row.weatherAlerts > 0 ? row.weatherAlerts + " weather alert(s)" : "No county-matched weather alerts",
       row.alertWarningCount > 0 ? row.alertWarningCount + " active warning(s)" : "No active warnings",
