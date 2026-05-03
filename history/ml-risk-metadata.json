@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "updated": "2026-05-03T18:45:23.636445+00:00",
-  "rows": 5759,
-  "positiveExamples": 578,
+  "updated": "2026-05-03T19:43:50.617813+00:00",
+  "rows": 6267,
+  "positiveExamples": 603,
   "features": [
     "customersOut",
     "percentCustomersOut",
@@ -24,12 +24,20 @@
     "maxAlertSeverityScore",
     "maxAlertUrgencyScore",
     "maxAlertCertaintyScore",
+    "spcRisk",
     "forecastWindMax6h",
     "forecastWindMax12h",
     "forecastPrecipChanceMax12h",
     "forecastStormRisk",
     "roadClosures",
     "roadClosureRisk",
+    "femaRiskScore",
+    "baselineCountyFragility",
+    "femaExpectedAnnualLoss",
+    "femaSocialVulnerability",
+    "femaCommunityResilience",
+    "femaStrongWindRisk",
+    "femaTornadoRisk",
     "trend6h",
     "trend12h",
     "trend24h",
@@ -39,95 +47,123 @@
   "target": "worsened",
   "modelFile": "history/ml-risk-model.joblib",
   "metrics": {
-    "accuracy": 0.8674,
-    "precision": 0.4122,
-    "recall": 0.7448,
-    "f1": 0.5307
+    "accuracy": 0.8756,
+    "precision": 0.4225,
+    "recall": 0.7947,
+    "f1": 0.5517
   },
   "featureImportance": [
     {
-      "feature": "customersOut",
-      "importance": 0.16195
-    },
-    {
       "feature": "incidents",
-      "importance": 0.15299
-    },
-    {
-      "feature": "percentCustomersOut",
-      "importance": 0.15161
+      "importance": 0.16082
     },
     {
       "feature": "maxSingleOutage",
-      "importance": 0.13579
+      "importance": 0.13692
     },
     {
-      "feature": "forecastPrecipChanceMax12h",
-      "importance": 0.06823
+      "feature": "customersOut",
+      "importance": 0.13537
+    },
+    {
+      "feature": "percentCustomersOut",
+      "importance": 0.1339
     },
     {
       "feature": "trend24h",
-      "importance": 0.05702
+      "importance": 0.06052
+    },
+    {
+      "feature": "forecastPrecipChanceMax12h",
+      "importance": 0.05439
     },
     {
       "feature": "trend12h",
-      "importance": 0.04922
-    },
-    {
-      "feature": "trend6h",
-      "importance": 0.04188
-    },
-    {
-      "feature": "trendVelocity",
-      "importance": 0.0402
+      "importance": 0.04712
     },
     {
       "feature": "forecastStormRisk",
-      "importance": 0.04012
+      "importance": 0.04286
+    },
+    {
+      "feature": "trend6h",
+      "importance": 0.03491
+    },
+    {
+      "feature": "trendVelocity",
+      "importance": 0.0349
     },
     {
       "feature": "sevenDayPeak",
-      "importance": 0.03897
-    },
-    {
-      "feature": "forecastWindMax6h",
-      "importance": 0.01998
+      "importance": 0.03388
     },
     {
       "feature": "forecastWindMax12h",
-      "importance": 0.01638
+      "importance": 0.01525
+    },
+    {
+      "feature": "forecastWindMax6h",
+      "importance": 0.01463
+    },
+    {
+      "feature": "femaSocialVulnerability",
+      "importance": 0.01347
+    },
+    {
+      "feature": "femaStrongWindRisk",
+      "importance": 0.01281
+    },
+    {
+      "feature": "femaExpectedAnnualLoss",
+      "importance": 0.01194
+    },
+    {
+      "feature": "femaCommunityResilience",
+      "importance": 0.01068
+    },
+    {
+      "feature": "femaTornadoRisk",
+      "importance": 0.01009
+    },
+    {
+      "feature": "femaRiskScore",
+      "importance": 0.00995
+    },
+    {
+      "feature": "baselineCountyFragility",
+      "importance": 0.00939
     },
     {
       "feature": "weatherRisk",
-      "importance": 0.01071
+      "importance": 0.00692
     },
     {
       "feature": "weatherAlerts",
-      "importance": 0.00786
+      "importance": 0.00427
     },
     {
       "feature": "maxAlertSeverityScore",
-      "importance": 0.00176
-    },
-    {
-      "feature": "maxAlertUrgencyScore",
-      "importance": 0.00154
+      "importance": 0.00133
     },
     {
       "feature": "maxAlertCertaintyScore",
-      "importance": 0.00152
+      "importance": 0.00114
     },
     {
-      "feature": "floodWarningCount",
-      "importance": 0.0012
+      "feature": "maxAlertUrgencyScore",
+      "importance": 0.00107
     },
     {
       "feature": "alertWarningCount",
-      "importance": 0.00088
+      "importance": 0.00075
+    },
+    {
+      "feature": "floodWarningCount",
+      "importance": 0.00058
     },
     {
       "feature": "alertAdvisoryCount",
-      "importance": 0.00017
+      "importance": 0.00014
     },
     {
       "feature": "alertWatchCount",
@@ -159,6 +195,10 @@
     },
     {
       "feature": "highWindWarningCount",
+      "importance": 0.0
+    },
+    {
+      "feature": "spcRisk",
       "importance": 0.0
     },
     {
