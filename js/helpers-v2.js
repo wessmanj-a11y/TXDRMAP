@@ -83,11 +83,26 @@ function trendArrow(c){
 
 function historicalBadge(c){
   const ratio = safeNum(c.outageVsHistoricalMonthlyP95 || c.outageVsHistoricalP95);
+  const percentile = safeNum(c.historicalPercentileRank);
   const anomaly = safeNum(c.historicalAnomalyScore);
-  if(ratio >= 2 || anomaly >= 90) return { label:"Extreme outlier", cls:"bad" };
-  if(ratio >= 1 || anomaly >= 75) return { label:"Rare event", cls:"warn" };
-  if(safeNum(c.outageVsHistoricalAvg) >= 2 || anomaly >= 45) return { label:"Above normal", cls:"watch" };
+  if(percentile >= 99 || ratio >= 2 || anomaly >= 90) return { label:"Extreme outlier", cls:"bad" };
+  if(percentile >= 95 || ratio >= 1 || anomaly >= 75) return { label:"Rare event", cls:"warn" };
+  if(percentile >= 75 || safeNum(c.outageVsHistoricalAvg) >= 2 || anomaly >= 45) return { label:"Above normal", cls:"watch" };
   return { label:"Normal", cls:"good" };
+}
+
+function rarityLabel(c){
+  const p = safeNum(c.historicalPercentileRank || c.historicalAnomalyScore);
+  if(p >= 99) return { title:"99th+ percentile", detail:"Extreme county outlier", cls:"bad", pct:p };
+  if(p >= 95) return { title:"95th+ percentile", detail:"Rare county event", cls:"warn", pct:p };
+  if(p >= 75) return { title:"75th+ percentile", detail:"Above normal", cls:"watch", pct:p };
+  if(p > 0) return { title:`${Math.round(p)}th percentile`, detail:"Within normal range", cls:"good", pct:p };
+  return { title:"No percentile", detail:"Awaiting historical match", cls:"neutral", pct:0 };
+}
+
+function rarityBar(c){
+  const r = rarityLabel(c);
+  return `<div class="rarity-card ${r.cls}"><div><span class="rarity-label">County rarity</span><strong>${r.title}</strong><small>${r.detail}</small></div><div class="rarity-meter"><span style="width:${Math.min(100, Math.max(0, r.pct))}%"></span></div></div>`;
 }
 
 function confidenceBadge(c){
@@ -113,6 +128,8 @@ function countySparkline(c){
 
 function topDrivers(c){
   const drivers = [];
+  const rarity = rarityLabel(c);
+  if(rarity.pct >= 75) drivers.push(`${rarity.title} county outage rarity`);
   if(safeNum(c.customersOut) > 0) drivers.push(`${safeNum(c.customersOut).toLocaleString()} customers out`);
   if(safeNum(c.outageVsHistoricalMonthlyP95) >= 1) drivers.push(`${safeNum(c.outageVsHistoricalMonthlyP95).toFixed(1)}x monthly p95`);
   else if(safeNum(c.outageVsHistoricalAvg) >= 2) drivers.push(`${safeNum(c.outageVsHistoricalAvg).toFixed(1)}x historical avg`);
