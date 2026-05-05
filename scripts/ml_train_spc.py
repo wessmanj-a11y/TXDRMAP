@@ -29,30 +29,27 @@ FEATURES = [
     'historicalAvgPercentOut', 'historicalP95PercentOut', 'historicalP99PercentOut',
     'historicalMonthlyAvgPercentOut', 'historicalMonthlyP95PercentOut',
     'historicalOutageVolatilityScore', 'outageVsHistoricalAvg',
-    'outageVsHistoricalP95', 'outageVsHistoricalMonthlyP95',
-    'historicalAnomalyScore',
+    'outageVsHistoricalP95', 'outageVsHistoricalP99', 'outageVsHistoricalMonthlyP95',
+    'percentOutMinusHistoricalAvg', 'percentOutMinusHistoricalMonthlyP95',
+    'historicalPercentileRank', 'volatilityAdjustedAnomaly', 'historicalAnomalyScore',
     'trend6h', 'trend12h', 'trend24h', 'trendVelocity',
     'decayedSevenDayPeak', 'sevenDayPeak'
 ]
 
 TARGET = 'worsened'
 
-
 def now():
     return datetime.now(timezone.utc).isoformat()
-
 
 def write_json(path, payload):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2))
-
 
 def read_json(path, fallback):
     try:
         return json.loads(path.read_text())
     except Exception:
         return fallback
-
 
 def calc_f1(p, r):
     try:
@@ -61,7 +58,6 @@ def calc_f1(p, r):
         return 0.0 if p <= 0 or r <= 0 else round(2 * p * r / (p + r), 4)
     except Exception:
         return None
-
 
 def append_history(entry):
     history = read_json(ACCURACY_HISTORY_FILE, {'points': []})
@@ -72,14 +68,12 @@ def append_history(entry):
     points.append(entry)
     write_json(ACCURACY_HISTORY_FILE, {'updated': now(), 'source': 'scripts/ml_train_spc.py', 'points': points[-500:]})
 
-
 def not_ready(reason, rows=0, positives=0):
     ts = now()
     payload = {'ok': False, 'reason': reason, 'updated': ts, 'rows': rows, 'positiveExamples': positives, 'features': FEATURES, 'target': TARGET}
     write_json(METADATA_FILE, payload)
     append_history({'timestamp': ts, 'ok': False, 'reason': reason, 'rows': rows, 'positiveExamples': positives, 'accuracy': None, 'precision': None, 'recall': None, 'f1': None})
     print(reason)
-
 
 def main():
     if not TRAINING_FILE.exists():
@@ -137,7 +131,6 @@ def main():
     append_history({'timestamp': ts, 'ok': True, 'rows': len(df), 'positiveExamples': positives, **metrics})
     print('Trained ML model on ' + str(len(df)) + ' rows')
     print(metrics)
-
 
 if __name__ == '__main__':
     main()
