@@ -1,0 +1,133 @@
+name: Backfill historical baselines into outage history and retrain ML
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: txdrmap-historical-ml-backfill
+  cancel-in-progress: true
+
+jobs:
+  backfill-and-retrain:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync latest main
+        shell: bash
+        run: |
+          git fetch origin main
+          git checkout main
+          git reset --hard origin/main
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Verify required historical files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f history/historical-county-baselines.json || (echo "Missing history/historical-county-baselines.json" && exit 1)
+          test -f history/outage-history.json || (echo "Missing history/outage-history.json" && exit 1)
+
+      - name: Backfill historical baselines across outage history
+        run: node scripts/backfill-historical-baselines-history.js
+
+      - name: Rebuild training rows from enriched history
+        run: node scripts/training_rows.js
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Retrain ML model on backfilled history
+        run: python scripts/ml_train_spc.py
+
+      - name: Re-score current outages
+        run: python scripts/ml_score_spc.py
+
+      - name: Show backfill summary
+        shell: bash
+        run: |
+          echo "Backfill metadata:"
+          grep -n "historicalBaselineBackfill" -n history/outage-history.json | head || true
+          echo "Training rows:"
+          ls -lh history/training-data.json || true
+          echo "ML metadata:"
+          ls -lh history/ml-risk-metadata.json || true
+
+      - name: Commit backfilled ML outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          GENERATED_FILES=(
+            history/outage-history.json
+            history/training-data.json
+            history/ml-risk-metadata.json
+            history/ml-risk-model.joblib
+            history/ml-accuracy-history.json
+            outages.json
+          )
+
+          stage_and_commit() {
+            git add "${GENERATED_FILES[@]}"
+            if git diff --cached --quiet; then
+              echo "No backfill changes to commit."
+              return 1
+            fi
+            git commit -m "Backfill historical baselines into outage history and retrain ML"
+            return 0
+          }
+
+          if ! stage_and_commit; then
+            exit 0
+          fi
+
+          if git push origin main; then
+            echo "Backfill pushed successfully."
+            exit 0
+          fi
+
+          echo "Push failed because main changed. Re-applying on latest main."
+
+          tmpdir="$(mktemp -d)"
+          for file in "${GENERATED_FILES[@]}"; do
+            if [ -e "$file" ]; then
+              mkdir -p "$tmpdir/$(dirname "$file")"
+              cp -f "$file" "$tmpdir/$file"
+            fi
+          done
+
+          git fetch origin main
+          git reset --hard origin/main
+
+          for file in "${GENERATED_FILES[@]}"; do
+            if [ -e "$tmpdir/$file" ]; then
+              mkdir -p "$(dirname "$file")"
+              cp -f "$tmpdir/$file" "$file"
+            fi
+          done
+
+          if ! stage_and_commit; then
+            echo "No backfill changes after sync."
+            exit 0
+          fi
+
+          git push origin main
