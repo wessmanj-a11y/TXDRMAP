@@ -18,13 +18,40 @@ async function tryFetch(url){
   catch { return null; }
 }
 
+function colorByScore(v){
+  const score = safeNum(v);
+  if(score >= 80) return "#dc2626";  // Severe
+  if(score >= 60) return "#f97316";  // High
+  if(score >= 40) return "#facc15";  // Elevated
+  if(score >= 20) return "#60a5fa";  // Watch
+  return "#334155";                  // Low
+}
+
+function colorByOutagePercent(v){
+  const pct = safeNum(v);
+  if(pct >= 10) return "#dc2626";
+  if(pct >= 5) return "#f97316";
+  if(pct >= 1) return "#facc15";
+  if(pct > 0) return "#60a5fa";
+  return "#334155";
+}
+
 function colorByValue(v, max){
+  // Fallback for non-risk values only. Risk modes should use activeColor().
   if(!v) return "#334155";
   const p = v / Math.max(1, max);
   if(p > .76) return "#dc2626";
   if(p > .52) return "#f97316";
   if(p > .30) return "#facc15";
   return "#60a5fa";
+}
+
+function activeColor(c, max){
+  if(STATE.mode === "outage") return colorByOutagePercent(c.percentCustomersOut || 0);
+  if(STATE.mode === "prediction") return colorByScore(c.blendedPredictedRisk || c.predictedRisk || 0);
+  if(STATE.mode === "forecast") return colorByScore(c.forecastStormRisk || 0);
+  if(STATE.mode === "weather") return colorByScore(c.weatherRisk || 0);
+  return colorByScore(c.currentSeverity || 0);
 }
 
 function activeValue(c){
