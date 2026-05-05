@@ -2,6 +2,7 @@ function renderControls(){
   const buttons = [
     ["severity", "Severity"],
     ["prediction", "Predicted Risk"],
+    ["rarity", "County Rarity"],
     ["forecast", "Forecast Threat"],
     ["outage", "Outages"],
     ["weather", "Weather"],
@@ -11,10 +12,11 @@ function renderControls(){
     ["roads", "Road Closures"]
   ];
 
-  document.getElementById("modeControls").innerHTML = buttons.map(([id,label]) => `<button id="${id}Btn">${label}</button>`).join("");
+  document.getElementById("modeControls").innerHTML = buttons.map(([id,label]) => `<button id="${id}Btn" title="${id === 'rarity' ? 'How unusual current outages are relative to this county historical baseline' : label}">${label}</button>`).join("");
 
   document.getElementById("severityBtn").onclick = () => setMode("severity");
   document.getElementById("predictionBtn").onclick = () => setMode("prediction");
+  document.getElementById("rarityBtn").onclick = () => setMode("rarity");
   document.getElementById("forecastBtn").onclick = () => setMode("forecast");
   document.getElementById("outageBtn").onclick = () => setMode("outage");
   document.getElementById("weatherBtn").onclick = () => setMode("weather");
@@ -34,7 +36,7 @@ function setMode(mode){
 }
 
 function setButtonState(){
-  ["severity","prediction","forecast","outage","weather"].forEach(mode => {
+  ["severity","prediction","rarity","forecast","outage","weather"].forEach(mode => {
     const b = document.getElementById(mode + "Btn");
     if(!b) return;
     b.classList.toggle("active", STATE.mode === mode);
