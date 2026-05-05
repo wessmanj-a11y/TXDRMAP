@@ -2,10 +2,21 @@ function renderPanel(){
   const c = STATE.countyData[keyCounty(STATE.selectedCounty)] || STATE.countyData["harris"] || Object.values(STATE.countyData)[0];
   if(!c) return;
 
+  const trend = trendArrow(c);
+  const history = historicalBadge(c);
+  const confidence = confidenceBadge(c);
+  const drivers = topDrivers(c);
+
   document.getElementById("selectedCountyPanel").innerHTML = `
     <div class="panel-title">Selected County</div>
     <h2>${c.name} County</h2>
     <span class="pill">${c.mlRiskBand || c.predictedRiskBand || priorityLabel(c.blendedPredictedRisk || c.predictedRisk)}</span>
+    <div class="badge-row">
+      <span class="context-pill ${trend.cls}">${trend.icon} ${trend.label}</span>
+      <span class="context-pill ${history.cls}">${history.label}</span>
+      <span class="context-pill ${confidence.cls}">${confidence.label}</span>
+    </div>
+    <div class="sparkline-box"><strong>24h trajectory:</strong> <span class="sparkline">${countySparkline(c)}</span></div>
 
     <div class="mini-grid">
       <div class="mini"><strong>${safeNum(c.currentSeverity)}</strong><span>Current severity</span></div>
@@ -18,11 +29,11 @@ function renderPanel(){
       <div class="mini"><strong>${safeNum(c.percentCustomersOut).toFixed(3)}%</strong><span>Percent customers out</span></div>
       <div class="mini"><strong>${safeNum(c.incidents)}</strong><span>Outage incidents</span></div>
       <div class="mini"><strong>${safeNum(c.trend24h) >= 0 ? "+" : ""}${safeNum(c.trend24h).toLocaleString()}</strong><span>24h trend</span></div>
-      <div class="mini"><strong>${safeNum(c.sevenDayPeak).toLocaleString()}</strong><span>7-day peak</span></div>
-      <div class="mini"><strong>${safeNum(c.roadClosures)}</strong><span>Road closures</span></div>
+      <div class="mini"><strong>${safeNum(c.outageVsHistoricalAvg).toFixed(2)}x</strong><span>Vs historical avg</span></div>
+      <div class="mini"><strong>${safeNum(c.historicalAnomalyScore)}</strong><span>Historical anomaly</span></div>
     </div>
 
-    <div class="explain"><strong>Prediction explanation:</strong><br>${c.predictionExplanation || "No prediction explanation available."}<br><br><strong>Forecast:</strong> ${c.forecastSummary12h || "No forecast summary available."}</div>
+    <div class="explain"><strong>Why this county:</strong><br>${drivers.length ? drivers.map(d => `• ${d}`).join('<br>') : '• No dominant drivers detected.'}<br><br><strong>Prediction explanation:</strong><br>${c.predictionExplanation || "No prediction explanation available."}<br><br><strong>Forecast:</strong> ${c.forecastSummary12h || "No forecast summary available."}</div>
     <div id="countyIncidentsList">${renderCountyIncidents(c)}</div>
   `;
 }
