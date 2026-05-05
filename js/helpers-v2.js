@@ -20,11 +20,11 @@ async function tryFetch(url){
 
 function colorByScore(v){
   const score = safeNum(v);
-  if(score >= 80) return "#dc2626";  // Severe
-  if(score >= 60) return "#f97316";  // High
-  if(score >= 40) return "#facc15";  // Elevated
-  if(score >= 20) return "#60a5fa";  // Watch
-  return "#334155";                  // Low
+  if(score >= 80) return "#dc2626";
+  if(score >= 60) return "#f97316";
+  if(score >= 40) return "#facc15";
+  if(score >= 20) return "#60a5fa";
+  return "#334155";
 }
 
 function colorByOutagePercent(v){
@@ -37,7 +37,6 @@ function colorByOutagePercent(v){
 }
 
 function colorByValue(v, max){
-  // Fallback for non-risk values only. Risk modes should use activeColor().
   if(!v) return "#334155";
   const p = v / Math.max(1, max);
   if(p > .76) return "#dc2626";
@@ -68,4 +67,65 @@ function priorityLabel(score){
   if(score >= 40) return "Elevated";
   if(score >= 20) return "Watch";
   return "Routine";
+}
+
+function trendArrow(c){
+  const velocity = safeNum(c.trendVelocity);
+  const trend6h = safeNum(c.trend6h);
+  const trend24h = safeNum(c.trend24h);
+  const signal = velocity || trend6h || trend24h;
+  if(signal >= 500) return { icon:"↑↑", label:"Rapidly worsening", cls:"bad" };
+  if(signal >= 100) return { icon:"↑", label:"Worsening", cls:"warn" };
+  if(signal <= -500) return { icon:"↓↓", label:"Rapidly improving", cls:"good" };
+  if(signal <= -100) return { icon:"↓", label:"Improving", cls:"good" };
+  return { icon:"→", label:"Stable", cls:"neutral" };
+}
+
+function historicalBadge(c){
+  const ratio = safeNum(c.outageVsHistoricalMonthlyP95 || c.outageVsHistoricalP95);
+  const anomaly = safeNum(c.historicalAnomalyScore);
+  if(ratio >= 2 || anomaly >= 90) return { label:"Extreme outlier", cls:"bad" };
+  if(ratio >= 1 || anomaly >= 75) return { label:"Rare event", cls:"warn" };
+  if(safeNum(c.outageVsHistoricalAvg) >= 2 || anomaly >= 45) return { label:"Above normal", cls:"watch" };
+  return { label:"Normal", cls:"good" };
+}
+
+function confidenceBadge(c){
+  const ml = safeNum(c.mlRiskScore);
+  const rule = safeNum(c.predictedRisk);
+  const blended = safeNum(c.blendedPredictedRisk || c.predictedRisk);
+  const agreement = Math.abs(ml - rule);
+  const hasHistory = safeNum(c.outageVsHistoricalAvg) > 0 || safeNum(c.historicalAvgPercentOut) > 0;
+  const hasForecast = safeNum(c.forecastStormRisk) > 0 || safeNum(c.forecastPrecipChanceMax12h) > 0;
+  if(hasHistory && hasForecast && agreement <= 20 && blended >= 40) return { label:"High confidence", cls:"good" };
+  if((hasHistory || hasForecast) && agreement <= 35) return { label:"Medium confidence", cls:"watch" };
+  return { label:"Low confidence", cls:"neutral" };
+}
+
+function countySparkline(c){
+  const vals = [safeNum(c.trend24h), safeNum(c.trend12h), safeNum(c.trend6h), safeNum(c.trendVelocity), safeNum(c.customersOut)];
+  const min = Math.min(...vals);
+  const max = Math.max(...vals);
+  const chars = "▁▂▃▄▅▆▇█";
+  if(max === min) return "▁▁▁▁▁";
+  return vals.map(v => chars[Math.max(0, Math.min(chars.length - 1, Math.round(((v - min) / (max - min)) * (chars.length - 1))))]).join("");
+}
+
+function topDrivers(c){
+  const drivers = [];
+  if(safeNum(c.customersOut) > 0) drivers.push(`${safeNum(c.customersOut).toLocaleString()} customers out`);
+  if(safeNum(c.outageVsHistoricalMonthlyP95) >= 1) drivers.push(`${safeNum(c.outageVsHistoricalMonthlyP95).toFixed(1)}x monthly p95`);
+  else if(safeNum(c.outageVsHistoricalAvg) >= 2) drivers.push(`${safeNum(c.outageVsHistoricalAvg).toFixed(1)}x historical avg`);
+  if(safeNum(c.forecastStormRisk) >= 40) drivers.push(`Forecast risk ${safeNum(c.forecastStormRisk)}`);
+  if(safeNum(c.trend6h) > 100) drivers.push(`6h trend +${safeNum(c.trend6h).toLocaleString()}`);
+  if(safeNum(c.weatherAlerts) > 0) drivers.push(`${safeNum(c.weatherAlerts)} active alerts`);
+  if(safeNum(c.mlRiskScore) >= 45) drivers.push(`ML risk ${safeNum(c.mlRiskScore)}`);
+  return drivers.slice(0,3);
+}
+
+function stormClass(c){
+  const risk = safeNum(c.forecastStormRisk);
+  if(risk >= 70) return "storm-critical";
+  if(risk >= 45) return "storm-watch";
+  return "";
 }
