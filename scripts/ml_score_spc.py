@@ -9,9 +9,9 @@ OUTAGES_FILE = Path('outages.json')
 METADATA_FILE = Path('history/ml-risk-metadata.json')
 MODEL_FILE = Path('history/ml-risk-model.joblib')
 
-ML_WATCH_THRESHOLD = 40
-ML_ELEVATED_THRESHOLD = 65
-ML_CRITICAL_THRESHOLD = 80
+ML_WATCH_THRESHOLD = 45
+ML_ELEVATED_THRESHOLD = 70
+ML_CRITICAL_THRESHOLD = 85
 
 FEATURES = [
     'customersOut', 'percentCustomersOut', 'incidents', 'maxSingleOutage',
@@ -29,8 +29,9 @@ FEATURES = [
     'historicalAvgPercentOut', 'historicalP95PercentOut', 'historicalP99PercentOut',
     'historicalMonthlyAvgPercentOut', 'historicalMonthlyP95PercentOut',
     'historicalOutageVolatilityScore', 'outageVsHistoricalAvg',
-    'outageVsHistoricalP95', 'outageVsHistoricalMonthlyP95',
-    'historicalAnomalyScore',
+    'outageVsHistoricalP95', 'outageVsHistoricalP99', 'outageVsHistoricalMonthlyP95',
+    'percentOutMinusHistoricalAvg', 'percentOutMinusHistoricalMonthlyP95',
+    'historicalPercentileRank', 'volatilityAdjustedAnomaly', 'historicalAnomalyScore',
     'trend6h', 'trend12h', 'trend24h', 'trendVelocity',
     'decayedSevenDayPeak', 'sevenDayPeak'
 ]
@@ -48,11 +49,11 @@ def operational_band(score):
     return 'Stable'
 
 def risk_band(score):
-    if score >= 75:
+    if score >= 80:
         return 'High'
-    if score >= 50:
+    if score >= 60:
         return 'Elevated'
-    if score >= 25:
+    if score >= 40:
         return 'Watch'
     return 'Low'
 
@@ -76,19 +77,21 @@ def fallback_score(row):
     forecast = num(row.get('forecastStormRisk'))
     spc = num(row.get('spcRisk'))
     fema = num(row.get('baselineCountyFragility'))
-    historical = min(20, num(row.get('historicalAnomalyScore')) * 0.2)
-    pressure = min(18,
-        num(row.get('tornadoWarningCount')) * 12 +
-        num(row.get('severeThunderstormWarningCount')) * 9 +
-        num(row.get('highWindWarningCount')) * 10 +
-        num(row.get('winterStormWarningCount')) * 10 +
-        num(row.get('flashFloodWarningCount')) * 4 +
-        num(row.get('maxAlertSeverityScore')) * 2 +
-        num(row.get('maxAlertUrgencyScore')) * 2
+    historical = min(28,
+        num(row.get('historicalPercentileRank')) * 0.12 +
+        max(0, num(row.get('percentOutMinusHistoricalMonthlyP95'))) * 4 +
+        max(0, num(row.get('volatilityAdjustedAnomaly')))
     )
-    trend_boost = min(15, max(0, num(row.get('trend6h'))) ** 0.5)
-    fragility_boost = min(8, fema * 0.08)
-    return round(min(100, (base * 0.42) + (forecast * 0.08) + (spc * 0.08) + fragility_boost + pressure + trend_boost + historical))
+    pressure = min(16,
+        num(row.get('tornadoWarningCount')) * 10 +
+        num(row.get('severeThunderstormWarningCount')) * 8 +
+        num(row.get('highWindWarningCount')) * 8 +
+        num(row.get('winterStormWarningCount')) * 8 +
+        num(row.get('flashFloodWarningCount')) * 4
+    )
+    trend_boost = min(12, max(0, num(row.get('trend6h'))) ** 0.5)
+    fragility_boost = min(7, fema * 0.07)
+    return round(min(100, (base * 0.34) + (forecast * 0.10) + (spc * 0.06) + fragility_boost + pressure + trend_boost + historical))
 
 def score_model(rows, metadata):
     if not MODEL_FILE.exists() or not metadata.get('ok'):
@@ -134,7 +137,7 @@ def main():
             'elevated': ML_ELEVATED_THRESHOLD,
             'critical': ML_CRITICAL_THRESHOLD
         }
-        row['blendedPredictedRisk'] = round((rule * 0.35) + (ml * 0.65))
+        row['blendedPredictedRisk'] = round((rule * 0.45) + (ml * 0.55))
         row['predictedRiskBand'] = risk_band(row['blendedPredictedRisk'])
         row['mlScoringMode'] = mode
 
@@ -153,7 +156,7 @@ def main():
             'elevatedThreshold': ML_ELEVATED_THRESHOLD,
             'criticalThreshold': ML_CRITICAL_THRESHOLD,
             'bandCounts': band_counts,
-            'purpose': 'Historical anomaly + live signal blended calibration'
+            'purpose': 'Advanced historical anomaly + live signal calibrated scoring'
         }
     }
 
