@@ -27,7 +27,7 @@ function renderCounties(){
       const selected = keyCounty(f.properties.NAME) === keyCounty(STATE.selectedCounty);
       return {
         fillColor: activeColor(c, max),
-        fillOpacity: selected ? .9 : .68,
+        fillOpacity: selected ? .9 : .72,
         color: selected ? "#fff" : "rgba(255,255,255,.75)",
         weight: selected ? 3 : 1
       };
@@ -39,7 +39,7 @@ function renderCounties(){
         STATE.selectedCounty = c.name;
         renderAll();
       });
-      layer.bindTooltip(`${c.name} County · Severity ${c.currentSeverity} · Risk ${c.blendedPredictedRisk || c.predictedRisk || 0} · Forecast ${c.forecastStormRisk || 0}`);
+      layer.bindTooltip(`${c.name} County · ${activeModeLabel(c)} · Severity ${c.currentSeverity} · Risk ${c.blendedPredictedRisk || c.predictedRisk || 0}`);
     }
   }).addTo(STATE.map);
 
