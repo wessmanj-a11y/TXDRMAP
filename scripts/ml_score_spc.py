@@ -9,8 +9,6 @@ OUTAGES_FILE = Path('outages.json')
 METADATA_FILE = Path('history/ml-risk-metadata.json')
 MODEL_FILE = Path('history/ml-risk-model.joblib')
 
-# Operational calibration thresholds.
-# These do not change the model probability; they change how probability is interpreted.
 ML_WATCH_THRESHOLD = 40
 ML_ELEVATED_THRESHOLD = 65
 ML_CRITICAL_THRESHOLD = 80
@@ -27,14 +25,18 @@ FEATURES = [
     'roadClosures', 'roadClosureRisk', 'femaRiskScore',
     'baselineCountyFragility', 'femaExpectedAnnualLoss',
     'femaSocialVulnerability', 'femaCommunityResilience',
-    'femaStrongWindRisk', 'femaTornadoRisk', 'trend6h', 'trend12h',
-    'trend24h', 'trendVelocity', 'decayedSevenDayPeak', 'sevenDayPeak'
+    'femaStrongWindRisk', 'femaTornadoRisk',
+    'historicalAvgPercentOut', 'historicalP95PercentOut', 'historicalP99PercentOut',
+    'historicalMonthlyAvgPercentOut', 'historicalMonthlyP95PercentOut',
+    'historicalOutageVolatilityScore', 'outageVsHistoricalAvg',
+    'outageVsHistoricalP95', 'outageVsHistoricalMonthlyP95',
+    'historicalAnomalyScore',
+    'trend6h', 'trend12h', 'trend24h', 'trendVelocity',
+    'decayedSevenDayPeak', 'sevenDayPeak'
 ]
-
 
 def now():
     return datetime.now(timezone.utc).isoformat()
-
 
 def operational_band(score):
     if score >= ML_CRITICAL_THRESHOLD:
@@ -45,7 +47,6 @@ def operational_band(score):
         return 'Watch'
     return 'Stable'
 
-
 def risk_band(score):
     if score >= 75:
         return 'High'
@@ -55,13 +56,11 @@ def risk_band(score):
         return 'Watch'
     return 'Low'
 
-
 def num(value):
     try:
         return float(value or 0)
     except Exception:
         return 0.0
-
 
 def load_metadata():
     try:
@@ -69,16 +68,15 @@ def load_metadata():
     except Exception:
         return {}
 
-
 def build_frame(rows, features):
     return pd.DataFrame([{f: num(row.get(f)) for f in features} for row in rows], columns=features).fillna(0)
-
 
 def fallback_score(row):
     base = num(row.get('predictedRisk'))
     forecast = num(row.get('forecastStormRisk'))
     spc = num(row.get('spcRisk'))
     fema = num(row.get('baselineCountyFragility'))
+    historical = min(20, num(row.get('historicalAnomalyScore')) * 0.2)
     pressure = min(18,
         num(row.get('tornadoWarningCount')) * 12 +
         num(row.get('severeThunderstormWarningCount')) * 9 +
@@ -90,8 +88,7 @@ def fallback_score(row):
     )
     trend_boost = min(15, max(0, num(row.get('trend6h'))) ** 0.5)
     fragility_boost = min(8, fema * 0.08)
-    return round(min(100, (base * 0.52) + (forecast * 0.1) + (spc * 0.1) + fragility_boost + pressure + trend_boost))
-
+    return round(min(100, (base * 0.42) + (forecast * 0.08) + (spc * 0.08) + fragility_boost + pressure + trend_boost + historical))
 
 def score_model(rows, metadata):
     if not MODEL_FILE.exists() or not metadata.get('ok'):
@@ -100,7 +97,6 @@ def score_model(rows, metadata):
     model = joblib.load(MODEL_FILE)
     probs = model.predict_proba(build_frame(rows, features))[:, 1]
     return [round(float(p), 4) for p in probs]
-
 
 def main():
     if not OUTAGES_FILE.exists():
@@ -138,7 +134,7 @@ def main():
             'elevated': ML_ELEVATED_THRESHOLD,
             'critical': ML_CRITICAL_THRESHOLD
         }
-        row['blendedPredictedRisk'] = round((rule * 0.45) + (ml * 0.55))
+        row['blendedPredictedRisk'] = round((rule * 0.35) + (ml * 0.65))
         row['predictedRiskBand'] = risk_band(row['blendedPredictedRisk'])
         row['mlScoringMode'] = mode
 
@@ -157,14 +153,13 @@ def main():
             'elevatedThreshold': ML_ELEVATED_THRESHOLD,
             'criticalThreshold': ML_CRITICAL_THRESHOLD,
             'bandCounts': band_counts,
-            'purpose': 'Reduce false positives while preserving operational recall'
+            'purpose': 'Historical anomaly + live signal blended calibration'
         }
     }
 
     OUTAGES_FILE.write_text(json.dumps(payload, indent=2))
     print(f'Scored {len(rows)} rows using {mode}')
     print('ML band counts:', band_counts)
-
 
 if __name__ == '__main__':
     main()
