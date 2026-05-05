@@ -20,9 +20,9 @@ async function tryFetch(url){
 
 function colorByScore(v){
   const score = safeNum(v);
-  if(score >= 80) return "#dc2626";
-  if(score >= 60) return "#f97316";
-  if(score >= 40) return "#facc15";
+  if(score >= 95) return "#dc2626";
+  if(score >= 75) return "#f97316";
+  if(score >= 50) return "#facc15";
   if(score >= 20) return "#60a5fa";
   return "#334155";
 }
@@ -45,9 +45,14 @@ function colorByValue(v, max){
   return "#60a5fa";
 }
 
+function countyRarityScore(c){
+  return safeNum(c.historicalPercentileRank || c.historicalAnomalyScore || 0);
+}
+
 function activeColor(c, max){
   if(STATE.mode === "outage") return colorByOutagePercent(c.percentCustomersOut || 0);
   if(STATE.mode === "prediction") return colorByScore(c.blendedPredictedRisk || c.predictedRisk || 0);
+  if(STATE.mode === "rarity") return colorByScore(countyRarityScore(c));
   if(STATE.mode === "forecast") return colorByScore(c.forecastStormRisk || 0);
   if(STATE.mode === "weather") return colorByScore(c.weatherRisk || 0);
   return colorByScore(c.currentSeverity || 0);
@@ -55,6 +60,7 @@ function activeColor(c, max){
 
 function activeValue(c){
   if(STATE.mode === "prediction") return c.blendedPredictedRisk || c.predictedRisk || 0;
+  if(STATE.mode === "rarity") return countyRarityScore(c);
   if(STATE.mode === "forecast") return c.forecastStormRisk || 0;
   if(STATE.mode === "outage") return c.percentCustomersOut || c.customersOut || 0;
   if(STATE.mode === "weather") return c.weatherRisk || 0;
@@ -83,7 +89,7 @@ function trendArrow(c){
 
 function historicalBadge(c){
   const ratio = safeNum(c.outageVsHistoricalMonthlyP95 || c.outageVsHistoricalP95);
-  const percentile = safeNum(c.historicalPercentileRank);
+  const percentile = countyRarityScore(c);
   const anomaly = safeNum(c.historicalAnomalyScore);
   if(percentile >= 99 || ratio >= 2 || anomaly >= 90) return { label:"Extreme outlier", cls:"bad" };
   if(percentile >= 95 || ratio >= 1 || anomaly >= 75) return { label:"Rare event", cls:"warn" };
@@ -92,7 +98,7 @@ function historicalBadge(c){
 }
 
 function rarityLabel(c){
-  const p = safeNum(c.historicalPercentileRank || c.historicalAnomalyScore);
+  const p = countyRarityScore(c);
   if(p >= 99) return { title:"99th+ percentile", detail:"Extreme county outlier", cls:"bad", pct:p };
   if(p >= 95) return { title:"95th+ percentile", detail:"Rare county event", cls:"warn", pct:p };
   if(p >= 75) return { title:"75th+ percentile", detail:"Above normal", cls:"watch", pct:p };
