@@ -1,0 +1,99 @@
+name: Build historical PowerOutage baselines
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: txdrmap-historical-baseline-build
+  cancel-in-progress: true
+
+jobs:
+  build-historical-baselines:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync latest main
+        shell: bash
+        run: |
+          git fetch origin main
+          git checkout main
+          git reset --hard origin/main
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Verify historical raw archive folder
+        shell: bash
+        run: |
+          mkdir -p data/poweroutage-history/raw
+          echo "Historical raw files:"
+          find data/poweroutage-history/raw -maxdepth 1 -type f \( -name "*.zip" -o -name "*.csv" \) -print
+
+      - name: Normalize historical PowerOutage archives
+        run: node scripts/normalize-poweroutage-archives.js
+
+      - name: Build historical county baselines
+        run: node scripts/build-historical-baselines.js
+
+      - name: Show baseline summary
+        shell: bash
+        run: |
+          echo "Generated files:"
+          ls -lh history/historical-county-baselines.json || true
+          echo "Normalized files:"
+          ls -lh data/poweroutage-history/normalized || true
+
+      - name: Commit historical baseline outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/poweroutage-history/normalized/*.csv history/historical-county-baselines.json
+
+          if git diff --cached --quiet; then
+            echo "No historical baseline changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Build historical PowerOutage county baselines"
+
+          if git push origin main; then
+            echo "Historical baselines pushed successfully."
+            exit 0
+          fi
+
+          echo "Initial push failed because main changed. Re-applying generated outputs on latest main."
+          tmpdir="$(mktemp -d)"
+          mkdir -p "$tmpdir/data/poweroutage-history/normalized" "$tmpdir/history"
+          cp -f data/poweroutage-history/normalized/*.csv "$tmpdir/data/poweroutage-history/normalized/" 2>/dev/null || true
+          cp -f history/historical-county-baselines.json "$tmpdir/history/" 2>/dev/null || true
+
+          git fetch origin main
+          git reset --hard origin/main
+
+          mkdir -p data/poweroutage-history/normalized history
+          cp -f "$tmpdir/data/poweroutage-history/normalized/"*.csv data/poweroutage-history/normalized/ 2>/dev/null || true
+          cp -f "$tmpdir/history/historical-county-baselines.json" history/ 2>/dev/null || true
+
+          git add data/poweroutage-history/normalized/*.csv history/historical-county-baselines.json
+
+          if git diff --cached --quiet; then
+            echo "No historical baseline changes after syncing latest main."
+            exit 0
+          fi
+
+          git commit -m "Build historical PowerOutage county baselines"
+          git push origin main
