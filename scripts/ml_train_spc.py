@@ -25,8 +25,14 @@ FEATURES = [
     'roadClosures', 'roadClosureRisk', 'femaRiskScore',
     'baselineCountyFragility', 'femaExpectedAnnualLoss',
     'femaSocialVulnerability', 'femaCommunityResilience',
-    'femaStrongWindRisk', 'femaTornadoRisk', 'trend6h', 'trend12h',
-    'trend24h', 'trendVelocity', 'sevenDayPeak'
+    'femaStrongWindRisk', 'femaTornadoRisk',
+    'historicalAvgPercentOut', 'historicalP95PercentOut', 'historicalP99PercentOut',
+    'historicalMonthlyAvgPercentOut', 'historicalMonthlyP95PercentOut',
+    'historicalOutageVolatilityScore', 'outageVsHistoricalAvg',
+    'outageVsHistoricalP95', 'outageVsHistoricalMonthlyP95',
+    'historicalAnomalyScore',
+    'trend6h', 'trend12h', 'trend24h', 'trendVelocity',
+    'decayedSevenDayPeak', 'sevenDayPeak'
 ]
 
 TARGET = 'worsened'
@@ -99,7 +105,7 @@ def main():
     y = df[TARGET].astype(int)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42, stratify=y)
 
-    model = RandomForestClassifier(n_estimators=400, max_depth=12, min_samples_leaf=3, random_state=42, class_weight='balanced')
+    model = RandomForestClassifier(n_estimators=500, max_depth=14, min_samples_leaf=3, random_state=42, class_weight='balanced')
     model.fit(X_train, y_train)
     preds = model.predict(X_test)
 
