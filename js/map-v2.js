@@ -26,7 +26,7 @@ function renderCounties(){
       const c = STATE.countyData[keyCounty(f.properties.NAME)] || {};
       const selected = keyCounty(f.properties.NAME) === keyCounty(STATE.selectedCounty);
       return {
-        fillColor: colorByValue(activeValue(c), max),
+        fillColor: activeColor(c, max),
         fillOpacity: selected ? .9 : .68,
         color: selected ? "#fff" : "rgba(255,255,255,.75)",
         weight: selected ? 3 : 1
