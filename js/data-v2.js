@@ -34,6 +34,21 @@ function initCounties(){
         roadClosureRisk: 0,
         roadEvents: [],
         restorationDifficulty: 0,
+        historicalAvgPercentOut: 0,
+        historicalP95PercentOut: 0,
+        historicalP99PercentOut: 0,
+        historicalMonthlyAvgPercentOut: 0,
+        historicalMonthlyP95PercentOut: 0,
+        historicalOutageVolatilityScore: 0,
+        outageVsHistoricalAvg: 0,
+        outageVsHistoricalP95: 0,
+        outageVsHistoricalP99: 0,
+        outageVsHistoricalMonthlyP95: 0,
+        percentOutMinusHistoricalAvg: 0,
+        percentOutMinusHistoricalMonthlyP95: 0,
+        historicalPercentileRank: 0,
+        volatilityAdjustedAnomaly: 0,
+        historicalAnomalyScore: 0,
         predictionExplanation: "",
         points: []
       };
@@ -75,6 +90,21 @@ function processOutages(){
     c.roadClosureRisk = safeNum(o.roadClosureRisk);
     c.roadEvents = o.roadEvents || [];
     c.restorationDifficulty = safeNum(o.restorationDifficulty);
+    c.historicalAvgPercentOut = safeNum(o.historicalAvgPercentOut);
+    c.historicalP95PercentOut = safeNum(o.historicalP95PercentOut);
+    c.historicalP99PercentOut = safeNum(o.historicalP99PercentOut);
+    c.historicalMonthlyAvgPercentOut = safeNum(o.historicalMonthlyAvgPercentOut);
+    c.historicalMonthlyP95PercentOut = safeNum(o.historicalMonthlyP95PercentOut);
+    c.historicalOutageVolatilityScore = safeNum(o.historicalOutageVolatilityScore);
+    c.outageVsHistoricalAvg = safeNum(o.outageVsHistoricalAvg);
+    c.outageVsHistoricalP95 = safeNum(o.outageVsHistoricalP95);
+    c.outageVsHistoricalP99 = safeNum(o.outageVsHistoricalP99);
+    c.outageVsHistoricalMonthlyP95 = safeNum(o.outageVsHistoricalMonthlyP95);
+    c.percentOutMinusHistoricalAvg = safeNum(o.percentOutMinusHistoricalAvg);
+    c.percentOutMinusHistoricalMonthlyP95 = safeNum(o.percentOutMinusHistoricalMonthlyP95);
+    c.historicalPercentileRank = safeNum(o.historicalPercentileRank);
+    c.volatilityAdjustedAnomaly = safeNum(o.volatilityAdjustedAnomaly);
+    c.historicalAnomalyScore = safeNum(o.historicalAnomalyScore);
     c.predictionExplanation = o.predictionExplanation || "";
   });
 
@@ -109,6 +139,7 @@ async function loadData(){
     `Forecast counties: ${STATE.outageData.weatherForecast?.countyForecasts ?? "—"}`,
     `ML risk: ${STATE.outageData.mlRisk?.ok ? "active" : "pending"}`,
     `ML history points: ${(STATE.outageData.mlAccuracyHistory?.points || []).length}`,
+    `Historical baselines: ${STATE.outageData.historicalBaselines?.ok ? "active" : "pending"}`,
     `Last update: ${STATE.outageData.updated || "unknown"}`
   ].join("<br>");
 }
