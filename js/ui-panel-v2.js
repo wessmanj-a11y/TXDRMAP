@@ -16,12 +16,14 @@ function renderPanel(){
       <span class="context-pill ${history.cls}">${history.label}</span>
       <span class="context-pill ${confidence.cls}">${confidence.label}</span>
     </div>
+    ${rarityBar(c)}
     <div class="sparkline-box"><strong>24h trajectory:</strong> <span class="sparkline">${countySparkline(c)}</span></div>
 
     <div class="mini-grid">
       <div class="mini"><strong>${safeNum(c.currentSeverity)}</strong><span>Current severity</span></div>
       <div class="mini"><strong>${safeNum(c.blendedPredictedRisk || c.predictedRisk)}</strong><span>Blended risk</span></div>
       <div class="mini"><strong>${safeNum(c.mlRiskScore)}</strong><span>ML risk score</span></div>
+      <div class="mini"><strong>${safeNum(c.historicalPercentileRank)}</strong><span>Historical percentile</span></div>
       <div class="mini"><strong>${safeNum(c.forecastStormRisk)}</strong><span>Forecast storm risk</span></div>
       <div class="mini"><strong>${safeNum(c.forecastWindMax12h)} mph</strong><span>Max wind next 12h</span></div>
       <div class="mini"><strong>${safeNum(c.forecastPrecipChanceMax12h)}%</strong><span>Rain chance next 12h</span></div>
@@ -30,7 +32,6 @@ function renderPanel(){
       <div class="mini"><strong>${safeNum(c.incidents)}</strong><span>Outage incidents</span></div>
       <div class="mini"><strong>${safeNum(c.trend24h) >= 0 ? "+" : ""}${safeNum(c.trend24h).toLocaleString()}</strong><span>24h trend</span></div>
       <div class="mini"><strong>${safeNum(c.outageVsHistoricalAvg).toFixed(2)}x</strong><span>Vs historical avg</span></div>
-      <div class="mini"><strong>${safeNum(c.historicalAnomalyScore)}</strong><span>Historical anomaly</span></div>
     </div>
 
     <div class="explain"><strong>Why this county:</strong><br>${drivers.length ? drivers.map(d => `• ${d}`).join('<br>') : '• No dominant drivers detected.'}<br><br><strong>Prediction explanation:</strong><br>${c.predictionExplanation || "No prediction explanation available."}<br><br><strong>Forecast:</strong> ${c.forecastSummary12h || "No forecast summary available."}</div>
