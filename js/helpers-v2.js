@@ -18,13 +18,26 @@ async function tryFetch(url){
   catch { return null; }
 }
 
-function colorByScore(v){
+function colorByRiskScore(v){
+  const score = safeNum(v);
+  if(score >= 80) return "#dc2626";
+  if(score >= 60) return "#f97316";
+  if(score >= 40) return "#facc15";
+  if(score >= 20) return "#60a5fa";
+  return "#334155";
+}
+
+function colorByRarityScore(v){
   const score = safeNum(v);
   if(score >= 95) return "#dc2626";
   if(score >= 75) return "#f97316";
   if(score >= 50) return "#facc15";
   if(score >= 20) return "#60a5fa";
   return "#334155";
+}
+
+function colorByScore(v){
+  return colorByRiskScore(v);
 }
 
 function colorByOutagePercent(v){
@@ -51,11 +64,11 @@ function countyRarityScore(c){
 
 function activeColor(c, max){
   if(STATE.mode === "outage") return colorByOutagePercent(c.percentCustomersOut || 0);
-  if(STATE.mode === "prediction") return colorByScore(c.blendedPredictedRisk || c.predictedRisk || 0);
-  if(STATE.mode === "rarity") return colorByScore(countyRarityScore(c));
-  if(STATE.mode === "forecast") return colorByScore(c.forecastStormRisk || 0);
-  if(STATE.mode === "weather") return colorByScore(c.weatherRisk || 0);
-  return colorByScore(c.currentSeverity || 0);
+  if(STATE.mode === "prediction") return colorByRiskScore(c.blendedPredictedRisk || c.predictedRisk || 0);
+  if(STATE.mode === "rarity") return colorByRarityScore(countyRarityScore(c));
+  if(STATE.mode === "forecast") return colorByRiskScore(c.forecastStormRisk || 0);
+  if(STATE.mode === "weather") return colorByRiskScore(c.weatherRisk || 0);
+  return colorByRiskScore(c.currentSeverity || 0);
 }
 
 function activeValue(c){
@@ -65,6 +78,15 @@ function activeValue(c){
   if(STATE.mode === "outage") return c.percentCustomersOut || c.customersOut || 0;
   if(STATE.mode === "weather") return c.weatherRisk || 0;
   return c.currentSeverity || 0;
+}
+
+function activeModeLabel(c){
+  if(STATE.mode === "prediction") return `Predicted ${safeNum(c.blendedPredictedRisk || c.predictedRisk)}`;
+  if(STATE.mode === "rarity") return `County rarity ${safeNum(countyRarityScore(c)).toFixed(2)} percentile`;
+  if(STATE.mode === "forecast") return `Forecast ${safeNum(c.forecastStormRisk)}`;
+  if(STATE.mode === "outage") return `Outage ${safeNum(c.percentCustomersOut).toFixed(3)}%`;
+  if(STATE.mode === "weather") return `Weather ${safeNum(c.weatherRisk)}`;
+  return `Severity ${safeNum(c.currentSeverity)}`;
 }
 
 function priorityLabel(score){
