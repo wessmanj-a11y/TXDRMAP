@@ -55,6 +55,9 @@ jobs:
       - name: Merge SPC outlook into outage data
         run: node scripts/apply-spc-outlook.js
 
+      - name: Apply historical county baselines
+        run: node scripts/apply-historical-baselines.js
+
       - name: Build training rows
         run: node scripts/training_rows.js
 
