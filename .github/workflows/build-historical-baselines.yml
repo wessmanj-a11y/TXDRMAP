@@ -35,12 +35,31 @@ jobs:
       - name: Verify historical raw archive folder
         shell: bash
         run: |
+          set -euo pipefail
           mkdir -p data/poweroutage-history/raw
           echo "Historical raw files:"
           find data/poweroutage-history/raw -maxdepth 1 -type f \( -name "*.zip" -o -name "*.csv" \) -print
 
+          raw_count="$(find data/poweroutage-history/raw -maxdepth 1 -type f \( -name "*.zip" -o -name "*.csv" \) | wc -l | tr -d ' ')"
+          if [ "$raw_count" = "0" ]; then
+            echo "No raw ZIP or CSV files were found in data/poweroutage-history/raw."
+            echo "Upload the historical ZIP files into that exact repo folder, then rerun this workflow."
+            exit 1
+          fi
+
       - name: Normalize historical PowerOutage archives
         run: node scripts/normalize-poweroutage-archives.js
+
+      - name: Verify normalized files were created
+        shell: bash
+        run: |
+          set -euo pipefail
+          normalized_count="$(find data/poweroutage-history/normalized -maxdepth 1 -type f -name "*.csv" 2>/dev/null | wc -l | tr -d ' ')"
+          if [ "$normalized_count" = "0" ]; then
+            echo "No normalized CSV files were created. Check whether the ZIP files contain CSV files at any folder level."
+            exit 1
+          fi
+          echo "Created $normalized_count normalized CSV file(s)."
 
       - name: Build historical county baselines
         run: node scripts/build-historical-baselines.js
