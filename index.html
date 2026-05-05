@@ -51,6 +51,10 @@
       <h3 class="panel-title">Top Operational Priorities</h3>
       <div id="topCounties"></div>
     </div>
+
+    <div class="card side-card">
+      <div id="topMovers"></div>
+    </div>
   </section>
 
   <section class="map-area">
@@ -66,10 +70,11 @@
       <div id="map"></div>
 
       <div class="legend">
-        <span><i class="swatch" style="background:#334155"></i> Low</span>
-        <span><i class="swatch" style="background:#facc15"></i> Elevated</span>
-        <span><i class="swatch" style="background:#f97316"></i> High</span>
-        <span><i class="swatch" style="background:#dc2626"></i> Severe</span>
+        <span><i class="swatch" style="background:#334155"></i> 0–19 Stable</span>
+        <span><i class="swatch" style="background:#60a5fa"></i> 20–39 Watch</span>
+        <span><i class="swatch" style="background:#facc15"></i> 40–59 Elevated</span>
+        <span><i class="swatch" style="background:#f97316"></i> 60–79 High</span>
+        <span><i class="swatch" style="background:#dc2626"></i> 80+ Critical</span>
         <span><i class="swatch" style="background:rgba(239,68,68,.35)"></i> NWS polygon</span>
         <span><i class="swatch" style="background:#22c55e"></i> outage point</span>
         <span><i class="swatch" style="background:#38bdf8"></i> radar layer</span>
@@ -109,7 +114,7 @@
     </div>
 
     <div class="card side-card source-note">
-      Predictive risk now blends rules, outage momentum, ML scoring, and forecast weather features where available.
+      Predictive risk now blends rules, outage momentum, ML scoring, forecast weather, historical abnormality, and confidence scoring where available.
     </div>
   </aside>
 </main>
