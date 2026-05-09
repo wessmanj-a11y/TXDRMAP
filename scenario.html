@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TXDRMAP Scenario Simulator</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="scenario.css">
 </head>
 <body>
@@ -11,7 +12,7 @@
     <section class="hero">
       <p class="eyebrow">TXDRMAP</p>
       <h1>Texas Disaster Scenario Simulator</h1>
-      <p>Build a county-level what-if disaster scenario and estimate infrastructure impact, response demand, economic damage, and recovery time.</p>
+      <p>Draw a storm path across Texas, then estimate infrastructure impact, response demand, economic damage, and recovery time.</p>
       <a class="back-link" href="index.html">Back to dashboard</a>
     </section>
 
@@ -24,8 +25,18 @@
         <label>Rainfall inches<input id="rainfall" type="number" min="0" max="40" value="10"></label>
         <label>Duration hours<input id="duration" type="number" min="1" max="96" value="18"></label>
         <label>Track counties<textarea id="trackCounties" rows="5">Galveston, Harris, Montgomery, Walker, Dallas</textarea></label>
+        <div class="map-actions">
+          <button id="clearPath" type="button">Clear Map Path</button>
+          <button id="useSamplePath" type="button">Sample Hurricane Path</button>
+        </div>
         <button type="submit">Run Scenario</button>
       </form>
+
+      <section class="panel map-panel">
+        <h2>Draw Storm Path</h2>
+        <p class="hint">Click counties on the map in storm travel order. The simulator will update the track counties list automatically.</p>
+        <div id="scenarioMap"></div>
+      </section>
 
       <section class="panel results">
         <h2>Impact Report</h2>
@@ -37,6 +48,7 @@
       </section>
     </section>
   </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="scenario.js"></script>
 </body>
 </html>
