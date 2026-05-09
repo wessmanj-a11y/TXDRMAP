@@ -27,116 +27,23 @@ function findFutureSnapshot(history, startMs) {
     .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))[0];
 }
 
-function hasSevereOperationalSignal(county) {
-  return (
-    num(county.tornadoWarningCount) > 0 ||
-    num(county.severeThunderstormWarningCount) > 0 ||
-    num(county.highWindWarningCount) > 0 ||
-    num(county.winterStormWarningCount) > 0 ||
-    num(county.forecastStormRisk) >= 30 ||
-    num(county.spcRisk) >= 3 ||
-    num(county.roadClosureRisk) >= 30 ||
-    num(county.gridStressScore) >= 6
-  );
-}
-
-function minimumMaterialIncrease(currentOut) {
-  if (currentOut >= 2000) return 750;
-  if (currentOut >= 500) return 200;
-  if (currentOut >= 100) return 75;
-  return 25;
-}
-
-function classifyOperationalWorsening(county, futureCounty) {
-  const currentOut = num(county.customersOut);
-  const futureOut = num(futureCounty.customersOut);
-  const currentPct = num(county.percentCustomersOut);
-  const futurePct = num(futureCounty.percentCustomersOut);
+function classifyWorsened(currentOut, futureOut) {
   const increase = futureOut - currentOut;
   const relativeIncrease = currentOut > 0 ? increase / currentOut : futureOut > 0 ? 1 : 0;
-  const percentPointIncrease = futurePct - currentPct;
-  const materialIncrease = minimumMaterialIncrease(currentOut);
-  const severeSignal = hasSevereOperationalSignal(county);
-
-  if (increase <= 0) {
-    return {
-      worsened: 0,
-      worseningSeverity: 0,
-      worseningReason: 'stable-or-improving',
-      outageIncrease: increase,
-      relativeIncrease,
-      percentPointIncrease
-    };
-  }
-
-  if (futureOut < 50 && increase < 25) {
-    return {
-      worsened: 0,
-      worseningSeverity: 0,
-      worseningReason: 'too-small-to-be-operational',
-      outageIncrease: increase,
-      relativeIncrease,
-      percentPointIncrease
-    };
-  }
-
-  const criticalEscalation =
-    increase >= 2000 ||
-    percentPointIncrease >= 0.5 ||
-    (currentOut >= 500 && relativeIncrease >= 1.0 && increase >= 500);
-
-  if (criticalEscalation) {
-    return {
-      worsened: 1,
-      worseningSeverity: 3,
-      worseningReason: 'critical-operational-escalation',
-      outageIncrease: increase,
-      relativeIncrease,
-      percentPointIncrease
-    };
-  }
-
-  const significantOutageEscalation =
-    increase >= materialIncrease &&
-    relativeIncrease >= 0.18 &&
-    (percentPointIncrease >= 0.02 || increase >= 500);
-
-  if (significantOutageEscalation) {
-    return {
-      worsened: 1,
-      worseningSeverity: 2,
-      worseningReason: 'material-outage-escalation',
-      outageIncrease: increase,
-      relativeIncrease,
-      percentPointIncrease
-    };
-  }
-
-  const stressAssistedEscalation =
-    severeSignal &&
-    increase >= Math.max(25, Math.round(materialIncrease / 2)) &&
-    relativeIncrease >= 0.10;
-
-  if (stressAssistedEscalation) {
-    return {
-      worsened: 1,
-      worseningSeverity: 2,
-      worseningReason: 'weather-road-grid-assisted-escalation',
-      outageIncrease: increase,
-      relativeIncrease,
-      percentPointIncrease
-    };
-  }
-
-  const minorWorsening = increase > 0;
+  const worsened = increase >= 500 || (currentOut > 0 && futureOut >= currentOut * 1.5);
 
   return {
-    worsened: 0,
-    worseningSeverity: minorWorsening ? 1 : 0,
-    worseningReason: 'minor-non-actionable-increase',
+    worsened: worsened ? 1 : 0,
+    worseningSeverity: worsened ? (increase >= 2000 ? 3 : 2) : increase > 0 ? 1 : 0,
+    worseningReason: worsened
+      ? increase >= 500
+        ? 'absolute-or-material-outage-growth'
+        : 'relative-outage-growth'
+      : increase > 0
+        ? 'minor-non-actionable-increase'
+        : 'stable-or-improving',
     outageIncrease: increase,
-    relativeIncrease,
-    percentPointIncrease
+    relativeIncrease
   };
 }
 
@@ -148,7 +55,9 @@ function rowForCounty(snapshot, future, county) {
 
   const currentOut = num(county.customersOut);
   const futureOut = num(futureCounty.customersOut);
-  const label = classifyOperationalWorsening(county, futureCounty);
+  const currentPct = num(county.percentCustomersOut);
+  const futurePct = num(futureCounty.percentCustomersOut);
+  const label = classifyWorsened(currentOut, futureOut);
 
   return {
     timestamp: snapshot.timestamp,
@@ -156,7 +65,7 @@ function rowForCounty(snapshot, future, county) {
     lookaheadHours: LOOKAHEAD_HOURS,
     county: county.county,
     customersOut: currentOut,
-    percentCustomersOut: num(county.percentCustomersOut),
+    percentCustomersOut: currentPct,
     incidents: num(county.incidents),
     maxSingleOutage: num(county.maxSingleOutage),
     weatherAlerts: num(county.weatherAlerts),
@@ -213,10 +122,10 @@ function rowForCounty(snapshot, future, county) {
     sevenDayPeak: num(county.sevenDayPeak),
     decayedSevenDayPeak: num(county.decayedSevenDayPeak),
     futureCustomersOut: futureOut,
-    futurePercentCustomersOut: num(futureCounty.percentCustomersOut),
+    futurePercentCustomersOut: futurePct,
     outageIncrease3h: label.outageIncrease,
     outageRelativeIncrease3h: Number(label.relativeIncrease.toFixed(4)),
-    percentPointIncrease3h: Number(label.percentPointIncrease.toFixed(4)),
+    percentPointIncrease3h: Number((futurePct - currentPct).toFixed(4)),
     worseningSeverity: label.worseningSeverity,
     worseningReason: label.worseningReason,
     worsened: label.worsened
@@ -253,13 +162,12 @@ async function main() {
     lookaheadHours: LOOKAHEAD_HOURS,
     labelDefinition: {
       target: 'worsened',
-      meaning: 'Operationally meaningful county outage escalation within the lookahead window',
-      positiveClass: 'worseningSeverity >= 2',
+      meaning: 'County outage level materially increases within the lookahead window',
+      positiveClass: 'increase >= 500 customers OR future outage count >= 150% of current outage count',
       rules: [
-        'Critical if increase >= 2000 customers, percent-out rises >= 0.5 points, or large county doubles with >= 500 added customers',
-        'Material if increase exceeds county-size adjusted minimum, relative increase >= 18%, and percent-out rises >= 0.02 points or increase >= 500',
-        'Stress-assisted if severe weather/road/grid signal exists, increase exceeds half material threshold with a 25-customer floor, and relative increase >= 10%',
-        'Minor increases are tracked but not labeled positive'
+        'Positive if customer outage increase is at least 500',
+        'Positive if current outage count is greater than zero and future outage count is at least 1.5x current outage count',
+        'Smaller increases are tracked as minor but not labeled positive'
       ]
     },
     labelSummary,
