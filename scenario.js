@@ -3,95 +3,82 @@ let scenarioMap = null;
 let pathLayer = null;
 let markerLayer = null;
 let selectedPath = [];
+let scenarioStarted = false;
 
 const COUNTY_POINTS = {
-  Galveston: [29.3013, -94.7977],
-  Harris: [29.7604, -95.3698],
-  Montgomery: [30.3213, -95.4778],
-  Walker: [30.7235, -95.5508],
-  Madison: [30.9499, -95.9116],
-  Dallas: [32.7767, -96.7970],
-  Tarrant: [32.7555, -97.3308],
-  Bexar: [29.4241, -98.4936],
-  Travis: [30.2672, -97.7431],
-  Collin: [33.1795, -96.4930],
-  Denton: [33.2148, -97.1331],
-  FortBend: [29.5693, -95.8143],
-  Hidalgo: [26.1004, -98.2631],
-  ElPaso: [31.7619, -106.4850],
-  Brazoria: [29.1694, -95.4344]
+  Galveston: [29.3013, -94.7977], Harris: [29.7604, -95.3698], Montgomery: [30.3213, -95.4778], Walker: [30.7235, -95.5508], Madison: [30.9499, -95.9116], Dallas: [32.7767, -96.7970], Tarrant: [32.7555, -97.3308], Bexar: [29.4241, -98.4936], Travis: [30.2672, -97.7431], Collin: [33.1795, -96.4930], Denton: [33.2148, -97.1331], FortBend: [29.5693, -95.8143], Hidalgo: [26.1004, -98.2631], ElPaso: [31.7619, -106.4850], Brazoria: [29.1694, -95.4344]
 };
 
 fetch('texas_county_data.json')
-  .then(function (response) { return response.json(); })
-  .then(function (data) { texasCountyData = data || {}; initializeScenario(); })
-  .catch(function () { initializeScenario(); });
+  .then(function (response) { return response.ok ? response.json() : {}; })
+  .then(function (data) { texasCountyData = data || {}; startWhenReady(); })
+  .catch(function () { startWhenReady(); });
 
-function initializeScenario() {
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('scenarioForm');
-    if (!form) return;
+startWhenReady();
 
-    initMap();
-    wireMapButtons();
+function startWhenReady() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startScenarioApp, { once: true });
+  } else {
+    startScenarioApp();
+  }
+}
 
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      const scenario = readScenario();
-      const impacts = runScenario(scenario);
-      renderScenario(impacts, scenario);
-      drawImpactMarkers(impacts);
-    });
-
-    setPathFromText();
-    form.dispatchEvent(new Event('submit'));
+function startScenarioApp() {
+  if (scenarioStarted) return;
+  const form = document.getElementById('scenarioForm');
+  if (!form) return;
+  scenarioStarted = true;
+  initMap();
+  wireMapButtons();
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    runAndRender();
   });
+  setPathFromText();
+  runAndRender();
+}
+
+function runAndRender() {
+  const scenario = readScenario();
+  const impacts = runScenario(scenario);
+  renderScenario(impacts, scenario);
+  redrawPath();
+  drawImpactMarkers(impacts);
 }
 
 function initMap() {
   const mapDiv = document.getElementById('scenarioMap');
   if (!mapDiv || typeof L === 'undefined') return;
-
   scenarioMap = L.map('scenarioMap').setView([31.2, -99.2], 6);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 10,
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(scenarioMap);
-
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 10, attribution: '&copy; OpenStreetMap contributors' }).addTo(scenarioMap);
   markerLayer = L.layerGroup().addTo(scenarioMap);
   pathLayer = L.layerGroup().addTo(scenarioMap);
+  drawCountyClickMarkers();
+}
 
-  Object.keys(COUNTY_POINTS).forEach(function (county) {
-    const marker = L.circleMarker(COUNTY_POINTS[county], {
-      radius: 8,
-      weight: 2,
-      color: '#ffffff',
-      fillColor: '#e20074',
-      fillOpacity: 0.9
-    }).addTo(markerLayer);
-    marker.bindTooltip(displayCounty(county));
-    marker.on('click', function () { addCountyToPath(displayCounty(county)); });
+function drawCountyClickMarkers() {
+  if (!markerLayer || typeof L === 'undefined') return;
+  markerLayer.clearLayers();
+  Object.keys(COUNTY_POINTS).forEach(function (countyKeyName) {
+    const countyName = displayCounty(countyKeyName);
+    const marker = L.circleMarker(COUNTY_POINTS[countyKeyName], { radius: 8, weight: 2, color: '#ffffff', fillColor: '#e20074', fillOpacity: 0.9 }).addTo(markerLayer);
+    marker.bindTooltip(countyName);
+    marker.on('click', function () { addCountyToPath(countyName); });
   });
 }
 
 function wireMapButtons() {
   const clear = document.getElementById('clearPath');
   const sample = document.getElementById('useSamplePath');
-  if (clear) clear.addEventListener('click', function () {
-    selectedPath = [];
-    syncPathText();
-    redrawPath();
-  });
-  if (sample) sample.addEventListener('click', function () {
-    selectedPath = ['Galveston', 'Harris', 'Montgomery', 'Walker', 'Dallas'];
-    syncPathText();
-    redrawPath();
-    document.getElementById('scenarioForm').dispatchEvent(new Event('submit'));
-  });
+  if (clear) clear.addEventListener('click', function () { selectedPath = []; syncPathText(); runAndRender(); });
+  if (sample) sample.addEventListener('click', function () { selectedPath = ['Galveston', 'Harris', 'Montgomery', 'Walker', 'Dallas']; syncPathText(); runAndRender(); });
 }
 
 function displayCounty(key) {
-  return key.replace(/([A-Z])/g, ' $1').trim().replace('El Paso', 'El Paso').replace('Fort Bend', 'Fort Bend');
+  if (key === 'FortBend') return 'Fort Bend';
+  if (key === 'ElPaso') return 'El Paso';
+  return key.replace(/([A-Z])/g, ' $1').trim();
 }
 
 function countyKey(name) {
@@ -101,15 +88,11 @@ function countyKey(name) {
 function addCountyToPath(county) {
   selectedPath.push(county);
   syncPathText();
-  redrawPath();
-  document.getElementById('scenarioForm').dispatchEvent(new Event('submit'));
+  runAndRender();
 }
 
 function setPathFromText() {
-  selectedPath = valueOf('trackCounties').split(',').map(function (county) {
-    return county.trim();
-  }).filter(Boolean);
-  redrawPath();
+  selectedPath = valueOf('trackCounties').split(',').map(function (county) { return county.trim(); }).filter(Boolean);
 }
 
 function syncPathText() {
@@ -118,75 +101,39 @@ function syncPathText() {
 }
 
 function redrawPath() {
-  if (!scenarioMap || !pathLayer) return;
+  if (!scenarioMap || !pathLayer || typeof L === 'undefined') return;
   pathLayer.clearLayers();
-  const points = selectedPath.map(function (county) {
-    return COUNTY_POINTS[countyKey(county)];
-  }).filter(Boolean);
+  const points = selectedPath.map(function (county) { return COUNTY_POINTS[countyKey(county)]; }).filter(Boolean);
   if (points.length > 1) {
     L.polyline(points, { color: '#e20074', weight: 5, opacity: 0.85 }).addTo(pathLayer);
     scenarioMap.fitBounds(points, { padding: [40, 40] });
   }
   points.forEach(function (point, index) {
-    L.marker(point, {
-      icon: L.divIcon({ className: 'county-marker', html: String(index + 1), iconSize: [24, 24] })
-    }).addTo(pathLayer);
+    L.marker(point, { icon: L.divIcon({ className: 'county-marker', html: String(index + 1), iconSize: [24, 24] }) }).addTo(pathLayer);
   });
 }
 
 function drawImpactMarkers(impacts) {
-  if (!scenarioMap || !markerLayer) return;
+  if (!scenarioMap || !markerLayer || typeof L === 'undefined') return;
   markerLayer.clearLayers();
   impacts.forEach(function (impact) {
     const point = COUNTY_POINTS[countyKey(impact.county)];
     if (!point) return;
-    const marker = L.circleMarker(point, {
-      radius: 7 + impact.hazard / 10,
-      weight: 2,
-      color: '#ffffff',
-      fillColor: impact.hazard >= 80 ? '#ef4444' : impact.hazard >= 60 ? '#f59e0b' : '#e20074',
-      fillOpacity: 0.75
-    }).addTo(markerLayer);
+    const marker = L.circleMarker(point, { radius: 7 + impact.hazard / 10, weight: 2, color: '#ffffff', fillColor: impact.hazard >= 80 ? '#ef4444' : impact.hazard >= 60 ? '#f59e0b' : '#e20074', fillOpacity: 0.75 }).addTo(markerLayer);
     marker.bindPopup('<strong>' + impact.county + '</strong><br>Hazard: ' + impact.hazard + '%<br>Power: ' + impact.outagePercent + '%<br>Damage: $' + impact.damage.toLocaleString());
   });
 }
 
 function readScenario() {
-  return {
-    name: valueOf('scenarioName') || 'Custom Texas Scenario',
-    type: valueOf('scenarioType') || 'hurricane',
-    wind: numberOf('windSpeed'),
-    rain: numberOf('rainfall'),
-    duration: numberOf('duration'),
-    counties: valueOf('trackCounties').split(',').map(function (county) {
-      return county.trim();
-    }).filter(Boolean)
-  };
+  setPathFromText();
+  return { name: valueOf('scenarioName') || 'Custom Texas Scenario', type: valueOf('scenarioType') || 'hurricane', wind: numberOf('windSpeed'), rain: numberOf('rainfall'), duration: numberOf('duration'), counties: selectedPath };
 }
 
-function valueOf(id) {
-  const element = document.getElementById(id);
-  return element ? element.value : '';
-}
-
-function numberOf(id) {
-  const value = Number(valueOf(id));
-  return Number.isFinite(value) ? value : 0;
-}
-
-function clamp(value, min, max) {
-  return Math.max(min, Math.min(max, value));
-}
-
-function scenarioMultiplier(type) {
-  if (type === 'hurricane') return 1.15;
-  if (type === 'winterstorm') return 1.05;
-  return 0.92;
-}
-
-function countyProfile(name) {
-  return texasCountyData[name] || { population: 120000, hospitalBeds: 300, fireStations: 8, cellTowers: 120, ercotZone: 'Unknown' };
-}
+function valueOf(id) { const element = document.getElementById(id); return element ? element.value : ''; }
+function numberOf(id) { const value = Number(valueOf(id)); return Number.isFinite(value) ? value : 0; }
+function clamp(value, min, max) { return Math.max(min, Math.min(max, value)); }
+function scenarioMultiplier(type) { if (type === 'hurricane') return 1.15; if (type === 'winterstorm') return 1.05; return 0.92; }
+function countyProfile(name) { return texasCountyData[name] || { population: 120000, hospitalBeds: 300, fireStations: 8, cellTowers: 120, ercotZone: 'Unknown' }; }
 
 function runScenario(scenario) {
   return scenario.counties.map(function (county, index) {
@@ -194,7 +141,6 @@ function runScenario(scenario) {
     const trackDecay = Math.max(0.45, 1 - index * 0.08);
     const populationFactor = clamp(countyData.population / 500000, 0.4, 10);
     const infrastructureFactor = clamp((countyData.cellTowers + countyData.hospitalBeds) / 5000, 0.3, 8);
-
     const hazard = clamp(Math.round(((scenario.wind * 0.42) + (scenario.rain * 1.9) + (scenario.duration * 0.55)) * scenarioMultiplier(scenario.type) * trackDecay), 1, 100);
     const outagePercent = clamp(Math.round(hazard * (0.58 + infrastructureFactor * 0.08)), 1, 100);
     const roadPercent = clamp(Math.round((hazard * 0.44) + (scenario.rain * 0.9)), 1, 100);
@@ -204,51 +150,22 @@ function runScenario(scenario) {
     const injuries = Math.round((hazard * 4.5 + roadPercent * 1.8) * populationFactor);
     const damage = Math.round(hazard * hazard * 240000 * populationFactor * infrastructureFactor);
     const recoveryDays = clamp(Math.round(1 + hazard / 9 + outagePercent / 16 + roadPercent / 22), 1, 60);
-
     return { county, ercotZone: countyData.ercotZone, population: countyData.population, hazard, outagePercent, roadPercent, telcoPercent, hospitalSurge, responderCalls, injuries, damage, recoveryDays };
   }).sort(function (a, b) { return b.hazard - a.hazard; });
 }
 
 function renderScenario(impacts, scenario) {
   const totals = impacts.reduce(function (acc, item) {
-    acc.damage += item.damage;
-    acc.responders += item.responderCalls;
-    acc.injuries += item.injuries;
-    acc.outagePercent += item.outagePercent;
-    acc.recovery = Math.max(acc.recovery, item.recoveryDays);
-    acc.hospitalStress += item.hospitalSurge >= 70 ? 1 : 0;
-    acc.severeRoad += item.roadPercent >= 60 ? 1 : 0;
-    return acc;
+    acc.damage += item.damage; acc.responders += item.responderCalls; acc.injuries += item.injuries; acc.outagePercent += item.outagePercent; acc.recovery = Math.max(acc.recovery, item.recoveryDays); acc.hospitalStress += item.hospitalSurge >= 70 ? 1 : 0; acc.severeRoad += item.roadPercent >= 60 ? 1 : 0; return acc;
   }, { damage: 0, responders: 0, injuries: 0, outagePercent: 0, recovery: 0, hospitalStress: 0, severeRoad: 0 });
-
   const averageOutage = impacts.length ? Math.round(totals.outagePercent / impacts.length) : 0;
-  renderCards(totals, averageOutage, scenario);
-  renderBars(impacts);
-  renderRows(impacts);
+  renderCards(totals, averageOutage, scenario); renderBars(impacts); renderRows(impacts);
 }
 
 function renderCards(totals, averageOutage, scenario) {
-  const summary = document.getElementById('summaryCards');
-  if (!summary) return;
+  const summary = document.getElementById('summaryCards'); if (!summary) return;
   summary.innerHTML = [card('Scenario', scenario.name), card('Avg Power Impact', averageOutage + '%'), card('Economic Damage', '$' + totals.damage.toLocaleString()), card('Responder Calls', totals.responders.toLocaleString()), card('Estimated Injuries', totals.injuries.toLocaleString()), card('Hospital Stress Counties', totals.hospitalStress.toLocaleString()), card('Severe Road Counties', totals.severeRoad.toLocaleString()), card('Max Recovery', totals.recovery + ' days')].join('');
 }
-
-function card(label, value) {
-  return '<div class="card"><div class="label">' + label + '</div><div class="value">' + value + '</div></div>';
-}
-
-function renderBars(impacts) {
-  const container = document.getElementById('countyBars');
-  if (!container) return;
-  container.innerHTML = impacts.slice(0, 12).map(function (item) {
-    return '<div class="bar-row"><span>' + item.county + '</span><div class="bar"><div class="fill" style="width:' + item.hazard + '%"></div></div><strong>' + item.hazard + '%</strong></div>';
-  }).join('');
-}
-
-function renderRows(impacts) {
-  const rows = document.getElementById('impactRows');
-  if (!rows) return;
-  rows.innerHTML = impacts.map(function (item) {
-    return '<tr><td>' + item.county + ' (' + item.ercotZone + ')</td><td>' + item.hazard + '%</td><td>' + item.outagePercent + '%</td><td>' + item.roadPercent + '%</td><td>' + item.telcoPercent + '%</td><td>' + item.hospitalSurge + '%</td><td>$' + item.damage.toLocaleString() + '</td><td>' + item.recoveryDays + 'd</td></tr>';
-  }).join('');
-}
+function card(label, value) { return '<div class="card"><div class="label">' + label + '</div><div class="value">' + value + '</div></div>'; }
+function renderBars(impacts) { const container = document.getElementById('countyBars'); if (!container) return; container.innerHTML = impacts.slice(0, 12).map(function (item) { return '<div class="bar-row"><span>' + item.county + '</span><div class="bar"><div class="fill" style="width:' + item.hazard + '%"></div></div><strong>' + item.hazard + '%</strong></div>'; }).join(''); }
+function renderRows(impacts) { const rows = document.getElementById('impactRows'); if (!rows) return; rows.innerHTML = impacts.map(function (item) { return '<tr><td>' + item.county + ' (' + item.ercotZone + ')</td><td>' + item.hazard + '%</td><td>' + item.outagePercent + '%</td><td>' + item.roadPercent + '%</td><td>' + item.telcoPercent + '%</td><td>' + item.hospitalSurge + '%</td><td>$' + item.damage.toLocaleString() + '</td><td>' + item.recoveryDays + 'd</td></tr>'; }).join(''); }
