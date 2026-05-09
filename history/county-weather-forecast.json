@@ -1,8 +1,8 @@
 {
-  "updated": "2026-05-09T14:09:51.325Z",
+  "updated": "2026-05-09T15:20:38.994Z",
   "source": "NWS hourly forecast via api.weather.gov county centroids",
-  "count": 232,
-  "errorCount": 22,
+  "count": 246,
+  "errorCount": 8,
   "forecasts": [
     {
       "county": "Anderson",
@@ -16,11 +16,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/129,60/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 17,
+      "forecastPrecipChanceMax12h": 6,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 67,
-      "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastTempMin12h": 73,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
     },
     {
@@ -37,7 +37,7 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 93,
-      "forecastTempMin12h": 66,
+      "forecastTempMin12h": 80,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -52,13 +52,13 @@
       "gridX": 33,
       "gridY": 17,
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/33,17/forecast/hourly",
-      "forecastWindMax6h": 0,
+      "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 64,
+      "forecastPrecipChanceMax12h": 37,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 68,
-      "forecastStormRisk": 22,
-      "forecastSummary12h": "Showers And Thunderstorms Likely",
+      "forecastTempMin12h": 73,
+      "forecastStormRisk": 15,
+      "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -71,11 +71,11 @@
       "gridX": 127,
       "gridY": 46,
       "hourlyUrl": "https://api.weather.gov/gridpoints/CRP/127,46/forecast/hourly",
-      "forecastWindMax6h": 6,
+      "forecastWindMax6h": 8,
       "forecastWindMax12h": 9,
-      "forecastPrecipChanceMax12h": 21,
+      "forecastPrecipChanceMax12h": 16,
       "forecastTempMax12h": 82,
-      "forecastTempMin12h": 76,
+      "forecastTempMin12h": 78,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -90,13 +90,13 @@
       "gridX": 53,
       "gridY": 14,
       "hourlyUrl": "https://api.weather.gov/gridpoints/OUN/53,14/forecast/hourly",
-      "forecastWindMax6h": 6,
+      "forecastWindMax6h": 8,
       "forecastWindMax12h": 14,
       "forecastPrecipChanceMax12h": 14,
       "forecastTempMax12h": 90,
-      "forecastTempMin12h": 64,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -113,9 +113,9 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 9,
       "forecastTempMax12h": 94,
-      "forecastTempMin12h": 57,
+      "forecastTempMin12h": 70,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -130,11 +130,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/124,29/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 23,
+      "forecastPrecipChanceMax12h": 15,
       "forecastTempMax12h": 89,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -151,9 +151,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 18,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -170,7 +170,7 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 92,
-      "forecastTempMin12h": 55,
+      "forecastTempMin12h": 70,
       "forecastStormRisk": 5,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -185,13 +185,13 @@
       "gridX": 100,
       "gridY": 68,
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/100,68/forecast/hourly",
-      "forecastWindMax6h": 0,
+      "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 13,
+      "forecastPrecipChanceMax12h": 6,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
     },
     {
@@ -206,11 +206,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/171,87/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 9,
+      "forecastPrecipChanceMax12h": 6,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 77,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -223,13 +223,13 @@
       "gridX": 30,
       "gridY": 16,
       "hourlyUrl": "https://api.weather.gov/gridpoints/OUN/30,16/forecast/hourly",
-      "forecastWindMax6h": 7,
-      "forecastWindMax12h": 14,
+      "forecastWindMax6h": 9,
+      "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 9,
       "forecastTempMax12h": 93,
-      "forecastTempMin12h": 63,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -246,7 +246,7 @@
       "forecastWindMax12h": 7,
       "forecastPrecipChanceMax12h": 15,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 72,
+      "forecastTempMin12h": 77,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
@@ -261,13 +261,13 @@
       "gridX": 61,
       "gridY": 27,
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/61,27/forecast/hourly",
-      "forecastWindMax6h": 0,
+      "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 9,
+      "forecastPrecipChanceMax12h": 6,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Cloudy",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -280,13 +280,13 @@
       "gridX": 130,
       "gridY": 59,
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/130,59/forecast/hourly",
-      "forecastWindMax6h": 0,
+      "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 20,
+      "forecastPrecipChanceMax12h": 11,
       "forecastTempMax12h": 89,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 77,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
     },
     {
@@ -303,9 +303,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 6,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 70,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -322,7 +322,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 95,
-      "forecastTempMin12h": 65,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -341,9 +341,9 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 66,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Partly Sunny",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -360,7 +360,7 @@
       "forecastWindMax12h": 0,
       "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 63,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Slight Chance Rain Showers",
       "periodsUsed": 12
@@ -375,11 +375,11 @@
       "gridX": 62,
       "gridY": 72,
       "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/62,72/forecast/hourly",
-      "forecastWindMax6h": 0,
+      "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 29,
       "forecastTempMax12h": 82,
-      "forecastTempMin12h": 72,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -396,11 +396,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/26,130/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 21,
+      "forecastPrecipChanceMax12h": 9,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 69,
-      "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastTempMin12h": 74,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -417,7 +417,7 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 91,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -436,9 +436,9 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 8,
       "forecastTempMax12h": 94,
-      "forecastTempMin12h": 60,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 5,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -453,11 +453,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/BRO/48,58/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 7,
-      "forecastPrecipChanceMax12h": 35,
+      "forecastPrecipChanceMax12h": 17,
       "forecastTempMax12h": 89,
-      "forecastTempMin12h": 74,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Chance Showers And Thunderstorms",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -470,13 +470,13 @@
       "gridX": 130,
       "gridY": 70,
       "hourlyUrl": "https://api.weather.gov/gridpoints/SJT/130,70/forecast/hourly",
-      "forecastWindMax6h": 0,
+      "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 65,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -491,11 +491,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/23,127/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 20,
+      "forecastPrecipChanceMax12h": 10,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 70,
-      "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastTempMin12h": 75,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
     },
     {
@@ -510,11 +510,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/140,114/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 6,
+      "forecastPrecipChanceMax12h": 4,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Cloudy",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -529,11 +529,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/161,73/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 14,
+      "forecastPrecipChanceMax12h": 10,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 72,
+      "forecastTempMin12h": 77,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
     },
     {
@@ -546,13 +546,13 @@
       "gridX": 141,
       "gridY": 61,
       "hourlyUrl": "https://api.weather.gov/gridpoints/CRP/141,61/forecast/hourly",
-      "forecastWindMax6h": 7,
+      "forecastWindMax6h": 8,
       "forecastWindMax12h": 9,
       "forecastPrecipChanceMax12h": 18,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 75,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Mostly Cloudy",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -569,9 +569,9 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 64,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -584,13 +584,13 @@
       "gridX": 83,
       "gridY": 16,
       "hourlyUrl": "https://api.weather.gov/gridpoints/BRO/83,16/forecast/hourly",
-      "forecastWindMax6h": 9,
+      "forecastWindMax6h": 10,
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 24,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 77,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Mostly Cloudy",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -607,9 +607,9 @@
       "forecastWindMax12h": 0,
       "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 82,
-      "forecastTempMin12h": 64,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Rain Showers",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -626,9 +626,9 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 8,
       "forecastTempMax12h": 91,
-      "forecastTempMin12h": 55,
+      "forecastTempMin12h": 71,
       "forecastStormRisk": 5,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -643,30 +643,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/58,95/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 22,
+      "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 64,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Rain Showers",
-      "periodsUsed": 12
-    },
-    {
-      "county": "Castro",
-      "key": "castro",
-      "lat": 34.56131,
-      "lon": -102.21077,
-      "nwsOffice": "LUB",
-      "gridId": "LUB",
-      "gridX": 38,
-      "gridY": 77,
-      "hourlyUrl": "https://api.weather.gov/gridpoints/LUB/38,77/forecast/hourly",
-      "forecastWindMax6h": 20,
-      "forecastWindMax12h": 20,
-      "forecastPrecipChanceMax12h": 4,
-      "forecastTempMax12h": 92,
-      "forecastTempMin12h": 53,
-      "forecastStormRisk": 5,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -681,11 +662,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/89,88/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 28,
+      "forecastPrecipChanceMax12h": 24,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 75,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Chance Showers And Thunderstorms",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -700,11 +681,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/21,35/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 51,
+      "forecastPrecipChanceMax12h": 21,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 67,
-      "forecastStormRisk": 19,
-      "forecastSummary12h": "Chance Showers And Thunderstorms",
+      "forecastTempMin12h": 72,
+      "forecastStormRisk": 15,
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -721,28 +702,9 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 14,
       "forecastTempMax12h": 94,
-      "forecastTempMin12h": 60,
+      "forecastTempMin12h": 71,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Partly Sunny",
-      "periodsUsed": 12
-    },
-    {
-      "county": "Clay",
-      "key": "clay",
-      "lat": 33.95541,
-      "lon": -98.20463,
-      "nwsOffice": "OUN",
-      "gridId": "OUN",
-      "gridX": 71,
-      "gridY": 27,
-      "hourlyUrl": "https://api.weather.gov/gridpoints/OUN/71,27/forecast/hourly",
-      "forecastWindMax6h": 5,
-      "forecastWindMax12h": 13,
-      "forecastPrecipChanceMax12h": 12,
-      "forecastTempMax12h": 89,
-      "forecastTempMin12h": 63,
-      "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -759,7 +721,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 92,
-      "forecastTempMin12h": 54,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -778,9 +740,9 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 92,
-      "forecastTempMin12h": 64,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -794,12 +756,12 @@
       "gridY": 63,
       "hourlyUrl": "https://api.weather.gov/gridpoints/SJT/111,63/forecast/hourly",
       "forecastWindMax6h": 5,
-      "forecastWindMax12h": 5,
+      "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 64,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -816,9 +778,9 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 3,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 66,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Cloudy",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -835,7 +797,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 18,
       "forecastTempMax12h": 92,
-      "forecastTempMin12h": 57,
+      "forecastTempMin12h": 71,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
@@ -854,9 +816,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 18,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 70,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
     },
     {
@@ -869,13 +831,13 @@
       "gridX": 132,
       "gridY": 69,
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/132,69/forecast/hourly",
-      "forecastWindMax6h": 0,
+      "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 13,
+      "forecastPrecipChanceMax12h": 7,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -888,13 +850,13 @@
       "gridX": 26,
       "gridY": 67,
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/26,67/forecast/hourly",
-      "forecastWindMax6h": 0,
+      "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 65,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -908,12 +870,12 @@
       "gridY": 52,
       "hourlyUrl": "https://api.weather.gov/gridpoints/SJT/97,52/forecast/hourly",
       "forecastWindMax6h": 5,
-      "forecastWindMax12h": 5,
+      "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 89,
-      "forecastTempMin12h": 67,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -930,9 +892,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Partly Sunny",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -949,9 +911,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 70,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Partly Sunny",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -968,9 +930,9 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 14,
       "forecastTempMax12h": 95,
-      "forecastTempMin12h": 65,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 5,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -987,9 +949,142 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 95,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Crockett",
+      "key": "crockett",
+      "lat": 30.73609,
+      "lon": -101.68625,
+      "nwsOffice": "SJT",
+      "gridId": "SJT",
+      "gridX": 27,
+      "gridY": 26,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/SJT/27,26/forecast/hourly",
+      "forecastWindMax6h": 5,
+      "forecastWindMax12h": 10,
+      "forecastPrecipChanceMax12h": 0,
+      "forecastTempMax12h": 91,
+      "forecastTempMin12h": 72,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Mostly Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Crosby",
+      "key": "crosby",
+      "lat": 33.6573,
+      "lon": -101.3528,
+      "nwsOffice": "LUB",
+      "gridId": "LUB",
+      "gridX": 68,
+      "gridY": 36,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/LUB/68,36/forecast/hourly",
+      "forecastWindMax6h": 20,
+      "forecastWindMax12h": 20,
+      "forecastPrecipChanceMax12h": 4,
+      "forecastTempMax12h": 92,
+      "forecastTempMin12h": 71,
+      "forecastStormRisk": 5,
+      "forecastSummary12h": "Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Culberson",
+      "key": "culberson",
+      "lat": 31.64883,
+      "lon": -104.60964,
+      "nwsOffice": "MAF",
+      "gridId": "MAF",
+      "gridX": 28,
+      "gridY": 123,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/MAF/28,123/forecast/hourly",
+      "forecastWindMax6h": 10,
+      "forecastWindMax12h": 10,
+      "forecastPrecipChanceMax12h": 0,
+      "forecastTempMax12h": 88,
+      "forecastTempMin12h": 79,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Dallas",
+      "key": "dallas",
+      "lat": 32.87635,
+      "lon": -96.74733,
+      "nwsOffice": "FWD",
+      "gridId": "FWD",
+      "gridX": 91,
+      "gridY": 108,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/91,108/forecast/hourly",
+      "forecastWindMax6h": 5,
+      "forecastWindMax12h": 5,
+      "forecastPrecipChanceMax12h": 1,
+      "forecastTempMax12h": 87,
+      "forecastTempMin12h": 74,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Mostly Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Dawson",
+      "key": "dawson",
+      "lat": 32.81466,
+      "lon": -102.01266,
+      "nwsOffice": "MAF",
+      "gridId": "MAF",
+      "gridX": 128,
+      "gridY": 169,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/MAF/128,169/forecast/hourly",
+      "forecastWindMax6h": 15,
+      "forecastWindMax12h": 15,
+      "forecastPrecipChanceMax12h": 0,
+      "forecastTempMax12h": 94,
+      "forecastTempMin12h": 78,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Deaf Smith",
+      "key": "deaf smith",
+      "lat": 35.03048,
+      "lon": -102.91665,
+      "nwsOffice": "AMA",
+      "gridId": "AMA",
+      "gridX": 8,
+      "gridY": 20,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/AMA/8,20/forecast/hourly",
+      "forecastWindMax6h": 15,
+      "forecastWindMax12h": 20,
+      "forecastPrecipChanceMax12h": 6,
+      "forecastTempMax12h": 89,
+      "forecastTempMin12h": 67,
+      "forecastStormRisk": 5,
+      "forecastSummary12h": "Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Delta",
+      "key": "delta",
+      "lat": 33.3785,
+      "lon": -95.58765,
+      "nwsOffice": "FWD",
+      "gridId": "FWD",
+      "gridX": 134,
+      "gridY": 130,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/134,130/forecast/hourly",
+      "forecastWindMax6h": 0,
+      "forecastWindMax12h": 5,
+      "forecastPrecipChanceMax12h": 3,
+      "forecastTempMax12h": 85,
+      "forecastTempMin12h": 73,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -1003,12 +1098,221 @@
       "gridY": 120,
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/79,120/forecast/hourly",
       "forecastWindMax6h": 5,
+      "forecastWindMax12h": 10,
+      "forecastPrecipChanceMax12h": 1,
+      "forecastTempMax12h": 87,
+      "forecastTempMin12h": 74,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Mostly Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "DeWitt",
+      "key": "dewitt",
+      "lat": 29.00266,
+      "lon": -97.43216,
+      "nwsOffice": "EWX",
+      "gridId": "EWX",
+      "gridX": 167,
+      "gridY": 35,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/167,35/forecast/hourly",
+      "forecastWindMax6h": 5,
+      "forecastWindMax12h": 5,
+      "forecastPrecipChanceMax12h": 21,
+      "forecastTempMax12h": 87,
+      "forecastTempMin12h": 76,
+      "forecastStormRisk": 15,
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Dickens",
+      "key": "dickens",
+      "lat": 33.6596,
+      "lon": -100.83145,
+      "nwsOffice": "LUB",
+      "gridId": "LUB",
+      "gridX": 87,
+      "gridY": 35,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/LUB/87,35/forecast/hourly",
+      "forecastWindMax6h": 20,
+      "forecastWindMax12h": 20,
+      "forecastPrecipChanceMax12h": 7,
+      "forecastTempMax12h": 92,
+      "forecastTempMin12h": 72,
+      "forecastStormRisk": 5,
+      "forecastSummary12h": "Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Dimmit",
+      "key": "dimmit",
+      "lat": 28.49667,
+      "lon": -99.75689,
+      "nwsOffice": "EWX",
+      "gridId": "EWX",
+      "gridX": 77,
+      "gridY": 15,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/77,15/forecast/hourly",
+      "forecastWindMax6h": 0,
+      "forecastWindMax12h": 5,
+      "forecastPrecipChanceMax12h": 8,
+      "forecastTempMax12h": 89,
+      "forecastTempMin12h": 77,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Partly Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Donley",
+      "key": "donley",
+      "lat": 34.93468,
+      "lon": -100.75452,
+      "nwsOffice": "AMA",
+      "gridId": "AMA",
+      "gridX": 86,
+      "gridY": 12,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/AMA/86,12/forecast/hourly",
+      "forecastWindMax6h": 15,
+      "forecastWindMax12h": 15,
+      "forecastPrecipChanceMax12h": 20,
+      "forecastTempMax12h": 92,
+      "forecastTempMin12h": 71,
+      "forecastStormRisk": 15,
+      "forecastSummary12h": "Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Duval",
+      "key": "duval",
+      "lat": 27.59402,
+      "lon": -98.53103,
+      "nwsOffice": "CRP",
+      "gridId": "CRP",
+      "gridX": 66,
+      "gridY": 26,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/CRP/66,26/forecast/hourly",
+      "forecastWindMax6h": 5,
+      "forecastWindMax12h": 8,
+      "forecastPrecipChanceMax12h": 25,
+      "forecastTempMax12h": 87,
+      "forecastTempMin12h": 77,
+      "forecastStormRisk": 15,
+      "forecastSummary12h": "Mostly Cloudy",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Eastland",
+      "key": "eastland",
+      "lat": 32.34054,
+      "lon": -98.74872,
+      "nwsOffice": "FWD",
+      "gridId": "FWD",
+      "gridX": 16,
+      "gridY": 86,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/16,86/forecast/hourly",
+      "forecastWindMax6h": 5,
+      "forecastWindMax12h": 5,
+      "forecastPrecipChanceMax12h": 0,
+      "forecastTempMax12h": 87,
+      "forecastTempMin12h": 73,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Ector",
+      "key": "ector",
+      "lat": 31.81451,
+      "lon": -102.5432,
+      "nwsOffice": "MAF",
+      "gridId": "MAF",
+      "gridX": 105,
+      "gridY": 126,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/MAF/105,126/forecast/hourly",
+      "forecastWindMax6h": 10,
+      "forecastWindMax12h": 10,
+      "forecastPrecipChanceMax12h": 0,
+      "forecastTempMax12h": 93,
+      "forecastTempMin12h": 78,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Edwards",
+      "key": "edwards",
+      "lat": 30.02933,
+      "lon": -100.17418,
+      "nwsOffice": "EWX",
+      "gridId": "EWX",
+      "gridX": 63,
+      "gridY": 83,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/63,83/forecast/hourly",
+      "forecastWindMax6h": 5,
+      "forecastWindMax12h": 5,
+      "forecastPrecipChanceMax12h": 4,
+      "forecastTempMax12h": 85,
+      "forecastTempMin12h": 71,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Mostly Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "El Paso",
+      "key": "el paso",
+      "lat": 31.78507,
+      "lon": -106.42314,
+      "nwsOffice": "EPZ",
+      "gridId": "EPZ",
+      "gridX": 102,
+      "gridY": 57,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/EPZ/102,57/forecast/hourly",
+      "forecastWindMax6h": 5,
+      "forecastWindMax12h": 7,
+      "forecastPrecipChanceMax12h": 0,
+      "forecastTempMax12h": 93,
+      "forecastTempMin12h": 69,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Ellis",
+      "key": "ellis",
+      "lat": 32.39714,
+      "lon": -96.8601,
+      "nwsOffice": "FWD",
+      "gridId": "FWD",
+      "gridX": 87,
+      "gridY": 87,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/87,87/forecast/hourly",
+      "forecastWindMax6h": 5,
+      "forecastWindMax12h": 5,
+      "forecastPrecipChanceMax12h": 1,
+      "forecastTempMax12h": 85,
+      "forecastTempMin12h": 73,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Partly Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Erath",
+      "key": "erath",
+      "lat": 32.18482,
+      "lon": -98.1716,
+      "nwsOffice": "FWD",
+      "gridId": "FWD",
+      "gridX": 38,
+      "gridY": 79,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/38,79/forecast/hourly",
+      "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 70,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -1023,11 +1327,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/83,34/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 14,
+      "forecastPrecipChanceMax12h": 5,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 70,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Slight Chance Rain Showers",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -1042,11 +1346,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/112,144/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 4,
+      "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Partly Sunny",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -1063,9 +1367,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 19,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 74,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -1082,7 +1386,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 9,
       "forecastTempMax12h": 97,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 77,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -1101,7 +1405,7 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 6,
       "forecastTempMax12h": 92,
-      "forecastTempMin12h": 62,
+      "forecastTempMin12h": 71,
       "forecastStormRisk": 5,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -1116,13 +1420,13 @@
       "gridX": 15,
       "gridY": 30,
       "hourlyUrl": "https://api.weather.gov/gridpoints/OUN/15,30/forecast/hourly",
-      "forecastWindMax6h": 10,
+      "forecastWindMax6h": 12,
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 94,
-      "forecastTempMin12h": 65,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -1139,7 +1443,7 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 27,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -1155,10 +1459,10 @@
       "gridY": 96,
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/20,96/forecast/hourly",
       "forecastWindMax6h": 0,
-      "forecastWindMax12h": 0,
+      "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 82,
-      "forecastTempMin12h": 67,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Slight Chance Rain Showers",
       "periodsUsed": 12
@@ -1175,9 +1479,9 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/117,61/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 12,
+      "forecastPrecipChanceMax12h": 4,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
@@ -1194,11 +1498,30 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/102,31/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 20,
+      "forecastPrecipChanceMax12h": 14,
       "forecastTempMax12h": 89,
-      "forecastTempMin12h": 72,
-      "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastTempMin12h": 75,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Partly Sunny",
+      "periodsUsed": 12
+    },
+    {
+      "county": "Gaines",
+      "key": "gaines",
+      "lat": 32.75882,
+      "lon": -102.92039,
+      "nwsOffice": "MAF",
+      "gridId": "MAF",
+      "gridX": 94,
+      "gridY": 168,
+      "hourlyUrl": "https://api.weather.gov/gridpoints/MAF/94,168/forecast/hourly",
+      "forecastWindMax6h": 15,
+      "forecastWindMax12h": 15,
+      "forecastPrecipChanceMax12h": 1,
+      "forecastTempMax12h": 93,
+      "forecastTempMin12h": 79,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -1215,7 +1538,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 3,
       "forecastTempMax12h": 95,
-      "forecastTempMin12h": 66,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -1234,7 +1557,7 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 8,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 70,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
@@ -1253,7 +1576,7 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 93,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 77,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -1272,9 +1595,9 @@
       "forecastWindMax12h": 6,
       "forecastPrecipChanceMax12h": 15,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 74,
+      "forecastTempMin12h": 77,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
     },
     {
@@ -1289,11 +1612,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/166,56/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 25,
+      "forecastPrecipChanceMax12h": 22,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -1310,7 +1633,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 22,
       "forecastTempMax12h": 90,
-      "forecastTempMin12h": 62,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -1327,11 +1650,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/94,150/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 3,
+      "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Partly Sunny",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -1346,11 +1669,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/35,65/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 25,
+      "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Chance Rain Showers",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -1365,11 +1688,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/40,123/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 25,
+      "forecastPrecipChanceMax12h": 19,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Chance Showers And Thunderstorms",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -1384,11 +1707,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/144,61/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 19,
+      "forecastPrecipChanceMax12h": 12,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 72,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
     },
     {
@@ -1405,9 +1728,9 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 4,
       "forecastTempMax12h": 92,
-      "forecastTempMin12h": 60,
+      "forecastTempMin12h": 70,
       "forecastStormRisk": 5,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -1424,9 +1747,9 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 14,
       "forecastTempMax12h": 95,
-      "forecastTempMin12h": 63,
+      "forecastTempMin12h": 70,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -1440,12 +1763,12 @@
       "gridY": 57,
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/38,57/forecast/hourly",
       "forecastWindMax6h": 5,
-      "forecastWindMax12h": 5,
+      "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -1462,7 +1785,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 3,
       "forecastTempMax12h": 89,
-      "forecastTempMin12h": 57,
+      "forecastTempMin12h": 68,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -1477,13 +1800,13 @@
       "gridX": 14,
       "gridY": 48,
       "hourlyUrl": "https://api.weather.gov/gridpoints/OUN/14,48/forecast/hourly",
-      "forecastWindMax6h": 12,
+      "forecastWindMax6h": 13,
       "forecastWindMax12h": 16,
       "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 94,
-      "forecastTempMin12h": 64,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -1500,7 +1823,7 @@
       "forecastWindMax12h": 0,
       "forecastPrecipChanceMax12h": 52,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 19,
       "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -1519,7 +1842,7 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 34,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 75,
+      "forecastTempMin12h": 77,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -1536,11 +1859,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/57,69/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 26,
+      "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Chance Rain Showers",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -1557,7 +1880,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 3,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 56,
+      "forecastTempMin12h": 67,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -1576,7 +1899,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 11,
       "forecastTempMax12h": 94,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -1593,11 +1916,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/145,81/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 6,
+      "forecastPrecipChanceMax12h": 5,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -1614,28 +1937,9 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 21,
       "forecastTempMax12h": 90,
-      "forecastTempMin12h": 61,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Mostly Sunny",
-      "periodsUsed": 12
-    },
-    {
-      "county": "Henderson",
-      "key": "henderson",
-      "lat": 32.18679,
-      "lon": -95.81191,
-      "nwsOffice": "FWD",
-      "gridId": "FWD",
-      "gridX": 126,
-      "gridY": 77,
-      "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/126,77/forecast/hourly",
-      "forecastWindMax6h": 0,
-      "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 12,
-      "forecastTempMax12h": 83,
-      "forecastTempMin12h": 69,
-      "forecastStormRisk": 0,
-      "forecastSummary12h": "Partly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -1652,7 +1956,7 @@
       "forecastWindMax12h": 8,
       "forecastPrecipChanceMax12h": 19,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 76,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -1671,9 +1975,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Partly Sunny",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -1690,7 +1994,7 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 93,
-      "forecastTempMin12h": 62,
+      "forecastTempMin12h": 71,
       "forecastStormRisk": 5,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -1709,9 +2013,9 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -1726,11 +2030,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/132,120/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 6,
+      "forecastPrecipChanceMax12h": 3,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Cloudy",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -1745,11 +2049,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/70,165/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 20,
+      "forecastPrecipChanceMax12h": 13,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 70,
-      "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastTempMin12h": 73,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -1766,7 +2070,7 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 94,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 78,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -1785,7 +2089,7 @@
       "forecastWindMax12h": 8,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 62,
+      "forecastTempMin12h": 69,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -1804,9 +2108,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 3,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Cloudy",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -1823,7 +2127,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 3,
       "forecastTempMax12h": 94,
-      "forecastTempMin12h": 60,
+      "forecastTempMin12h": 70,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -1839,12 +2143,12 @@
       "gridY": 50,
       "hourlyUrl": "https://api.weather.gov/gridpoints/SJT/54,50/forecast/hourly",
       "forecastWindMax6h": 5,
-      "forecastWindMax12h": 5,
+      "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 91,
-      "forecastTempMin12h": 67,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -1861,9 +2165,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 67,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -1878,9 +2182,9 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/16,55/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 10,
-      "forecastPrecipChanceMax12h": 20,
+      "forecastPrecipChanceMax12h": 17,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 75,
+      "forecastTempMin12h": 77,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -1899,9 +2203,9 @@
       "forecastWindMax12h": 0,
       "forecastPrecipChanceMax12h": 55,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 19,
-      "forecastSummary12h": "Showers And Thunderstorms Likely",
+      "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -1914,7 +2218,7 @@
       "gridX": 37,
       "gridY": 79,
       "hourlyUrl": "https://api.weather.gov/gridpoints/MAF/37,79/forecast/hourly",
-      "forecastWindMax6h": 5,
+      "forecastWindMax6h": 10,
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 84,
@@ -1954,11 +2258,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/BRO/33,59/forecast/hourly",
       "forecastWindMax6h": 3,
       "forecastWindMax12h": 6,
-      "forecastPrecipChanceMax12h": 21,
+      "forecastPrecipChanceMax12h": 13,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 75,
-      "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastTempMin12h": 78,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -1975,7 +2279,7 @@
       "forecastWindMax12h": 9,
       "forecastPrecipChanceMax12h": 26,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 76,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
@@ -1994,9 +2298,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 70,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Partly Sunny",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -2009,11 +2313,11 @@
       "gridX": 100,
       "gridY": 111,
       "hourlyUrl": "https://api.weather.gov/gridpoints/SJT/100,111/forecast/hourly",
-      "forecastWindMax6h": 5,
+      "forecastWindMax6h": 10,
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 12,
       "forecastTempMax12h": 94,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -2030,11 +2334,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/149,30/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 25,
+      "forecastPrecipChanceMax12h": 16,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Chance Showers And Thunderstorms",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -2051,7 +2355,7 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 70,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
@@ -2070,9 +2374,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 8,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -2089,7 +2393,7 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 5,
       "forecastTempMax12h": 94,
-      "forecastTempMin12h": 67,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 5,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -2108,9 +2412,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 11,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 70,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -2127,9 +2431,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 6,
       "forecastTempMax12h": 89,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -2146,7 +2450,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 14,
       "forecastTempMax12h": 94,
-      "forecastTempMin12h": 66,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -2165,7 +2469,7 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 89,
-      "forecastTempMin12h": 72,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
@@ -2180,13 +2484,13 @@
       "gridX": 111,
       "gridY": 21,
       "hourlyUrl": "https://api.weather.gov/gridpoints/CRP/111,21/forecast/hourly",
-      "forecastWindMax6h": 8,
+      "forecastWindMax6h": 9,
       "forecastWindMax12h": 10,
-      "forecastPrecipChanceMax12h": 27,
+      "forecastPrecipChanceMax12h": 21,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 78,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Chance Showers And Thunderstorms",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -2199,11 +2503,11 @@
       "gridX": 16,
       "gridY": 16,
       "hourlyUrl": "https://api.weather.gov/gridpoints/OUN/16,16/forecast/hourly",
-      "forecastWindMax6h": 9,
+      "forecastWindMax6h": 10,
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 12,
       "forecastTempMax12h": 94,
-      "forecastTempMin12h": 66,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -2218,11 +2522,11 @@
       "gridX": 46,
       "gridY": 59,
       "hourlyUrl": "https://api.weather.gov/gridpoints/CRP/46,59/forecast/hourly",
-      "forecastWindMax6h": 5,
+      "forecastWindMax6h": 3,
       "forecastWindMax12h": 7,
       "forecastPrecipChanceMax12h": 12,
       "forecastTempMax12h": 90,
-      "forecastTempMin12h": 74,
+      "forecastTempMin12h": 78,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
@@ -2239,29 +2543,10 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/134,148/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 5,
+      "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 66,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Partly Sunny",
-      "periodsUsed": 12
-    },
-    {
-      "county": "Lamb",
-      "key": "lamb",
-      "lat": 34.15031,
-      "lon": -102.40967,
-      "nwsOffice": "LUB",
-      "gridId": "LUB",
-      "gridX": 30,
-      "gridY": 60,
-      "hourlyUrl": "https://api.weather.gov/gridpoints/LUB/30,60/forecast/hourly",
-      "forecastWindMax6h": 20,
-      "forecastWindMax12h": 20,
-      "forecastPrecipChanceMax12h": 3,
-      "forecastTempMax12h": 93,
-      "forecastTempMin12h": 59,
-      "forecastStormRisk": 5,
       "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
@@ -2279,9 +2564,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -2298,9 +2583,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 25,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -2315,11 +2600,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/185,89/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 16,
+      "forecastPrecipChanceMax12h": 10,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 74,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
     },
     {
@@ -2334,11 +2619,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/117,40/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 19,
+      "forecastPrecipChanceMax12h": 5,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 69,
-      "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastTempMin12h": 73,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
     },
     {
@@ -2355,7 +2640,7 @@
       "forecastWindMax12h": 0,
       "forecastPrecipChanceMax12h": 39,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 72,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -2372,11 +2657,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/99,49/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 11,
+      "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Cloudy",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -2393,7 +2678,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 23,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 60,
+      "forecastTempMin12h": 70,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -2412,9 +2697,9 @@
       "forecastWindMax12h": 7,
       "forecastPrecipChanceMax12h": 18,
       "forecastTempMax12h": 89,
-      "forecastTempMin12h": 75,
+      "forecastTempMin12h": 78,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Mostly Cloudy",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -2428,12 +2713,12 @@
       "gridY": 109,
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/124,109/forecast/hourly",
       "forecastWindMax6h": 0,
-      "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 5,
+      "forecastWindMax12h": 10,
+      "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 70,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Partly Sunny",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -2450,7 +2735,7 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 95,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 78,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -2469,7 +2754,7 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 3,
       "forecastTempMax12h": 93,
-      "forecastTempMin12h": 62,
+      "forecastTempMin12h": 71,
       "forecastStormRisk": 5,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -2488,7 +2773,7 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 93,
-      "forecastTempMin12h": 64,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 5,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -2505,11 +2790,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/45,148/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 25,
+      "forecastPrecipChanceMax12h": 12,
       "forecastTempMax12h": 82,
-      "forecastTempMin12h": 70,
-      "forecastStormRisk": 15,
-      "forecastSummary12h": "Chance Showers And Thunderstorms",
+      "forecastTempMin12h": 73,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -2524,11 +2809,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/57,81/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 23,
+      "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Rain Showers",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -2545,7 +2830,7 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 94,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -2564,9 +2849,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -2581,11 +2866,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/33,45/forecast/hourly",
       "forecastWindMax6h": 10,
       "forecastWindMax12h": 10,
-      "forecastPrecipChanceMax12h": 16,
+      "forecastPrecipChanceMax12h": 14,
       "forecastTempMax12h": 82,
       "forecastTempMin12h": 77,
-      "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -2602,9 +2887,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 8,
       "forecastTempMax12h": 90,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -2618,12 +2903,12 @@
       "gridY": 46,
       "hourlyUrl": "https://api.weather.gov/gridpoints/SJT/114,46/forecast/hourly",
       "forecastWindMax6h": 5,
-      "forecastWindMax12h": 5,
+      "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -2638,11 +2923,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/73,49/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 5,
+      "forecastPrecipChanceMax12h": 3,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Partly Sunny",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -2659,7 +2944,7 @@
       "forecastWindMax12h": 6,
       "forecastPrecipChanceMax12h": 14,
       "forecastTempMax12h": 90,
-      "forecastTempMin12h": 75,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
@@ -2676,11 +2961,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/107,53/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 21,
+      "forecastPrecipChanceMax12h": 13,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 72,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
     },
     {
@@ -2697,9 +2982,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 66,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -2716,7 +3001,7 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 93,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -2733,11 +3018,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/82,18/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 16,
+      "forecastPrecipChanceMax12h": 6,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 71,
-      "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastTempMin12h": 75,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -2750,13 +3035,13 @@
       "gridX": 19,
       "gridY": 49,
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/19,49/forecast/hourly",
-      "forecastWindMax6h": 0,
-      "forecastWindMax12h": 5,
+      "forecastWindMax6h": 5,
+      "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -2769,11 +3054,11 @@
       "gridX": 169,
       "gridY": 146,
       "hourlyUrl": "https://api.weather.gov/gridpoints/MAF/169,146/forecast/hourly",
-      "forecastWindMax6h": 5,
+      "forecastWindMax6h": 10,
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 95,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 77,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -2792,9 +3077,9 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 6,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 67,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Partly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -2811,7 +3096,7 @@
       "forecastWindMax12h": 0,
       "forecastPrecipChanceMax12h": 32,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -2830,7 +3115,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 4,
       "forecastTempMax12h": 91,
-      "forecastTempMin12h": 59,
+      "forecastTempMin12h": 68,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -2849,9 +3134,9 @@
       "forecastWindMax12h": 0,
       "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 67,
+      "forecastTempMin12h": 71,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Rain Showers",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -2868,7 +3153,7 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 9,
       "forecastTempMax12h": 95,
-      "forecastTempMin12h": 65,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 5,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -2885,11 +3170,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/43,24/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 62,
+      "forecastPrecipChanceMax12h": 34,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 68,
-      "forecastStormRisk": 22,
-      "forecastSummary12h": "Showers And Thunderstorms Likely",
+      "forecastTempMin12h": 72,
+      "forecastStormRisk": 15,
+      "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -2904,9 +3189,9 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/100,71/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 3,
+      "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
@@ -2925,7 +3210,7 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 66,
       "forecastTempMax12h": 81,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 22,
       "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -2944,7 +3229,7 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 92,
-      "forecastTempMin12h": 67,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -2959,13 +3244,13 @@
       "gridX": 108,
       "gridY": 32,
       "hourlyUrl": "https://api.weather.gov/gridpoints/CRP/108,32/forecast/hourly",
-      "forecastWindMax6h": 7,
+      "forecastWindMax6h": 8,
       "forecastWindMax12h": 10,
-      "forecastPrecipChanceMax12h": 26,
+      "forecastPrecipChanceMax12h": 15,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 77,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Chance Showers And Thunderstorms",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -2982,7 +3267,7 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 7,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 59,
+      "forecastTempMin12h": 69,
       "forecastStormRisk": 5,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3001,7 +3286,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 3,
       "forecastTempMax12h": 90,
-      "forecastTempMin12h": 58,
+      "forecastTempMin12h": 66,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3020,9 +3305,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 66,
       "forecastTempMax12h": 81,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 22,
-      "forecastSummary12h": "Chance Showers And Thunderstorms",
+      "forecastSummary12h": "Showers And Thunderstorms Likely",
       "periodsUsed": 12
     },
     {
@@ -3036,12 +3321,12 @@
       "gridY": 101,
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/30,101/forecast/hourly",
       "forecastWindMax6h": 5,
-      "forecastWindMax12h": 5,
+      "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 89,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -3056,11 +3341,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/58,53/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 40,
+      "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 68,
-      "forecastStormRisk": 19,
-      "forecastSummary12h": "Chance Showers And Thunderstorms",
+      "forecastTempMin12h": 72,
+      "forecastStormRisk": 15,
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -3077,9 +3362,9 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -3096,7 +3381,7 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 3,
       "forecastTempMax12h": 92,
-      "forecastTempMin12h": 57,
+      "forecastTempMin12h": 68,
       "forecastStormRisk": 5,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3112,10 +3397,10 @@
       "gridY": 79,
       "hourlyUrl": "https://api.weather.gov/gridpoints/MAF/111,79/forecast/hourly",
       "forecastWindMax6h": 10,
-      "forecastWindMax12h": 10,
+      "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 91,
-      "forecastTempMin12h": 72,
+      "forecastTempMin12h": 78,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3132,9 +3417,9 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/82,138/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 36,
+      "forecastPrecipChanceMax12h": 34,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 72,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -3153,7 +3438,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 3,
       "forecastTempMax12h": 93,
-      "forecastTempMin12h": 60,
+      "forecastTempMin12h": 70,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3172,7 +3457,7 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 72,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3189,9 +3474,9 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/126,108/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 4,
+      "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
@@ -3210,9 +3495,9 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 5,
       "forecastTempMax12h": 92,
-      "forecastTempMin12h": 60,
+      "forecastTempMin12h": 69,
       "forecastStormRisk": 5,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -3229,9 +3514,9 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 91,
-      "forecastTempMin12h": 70,
+      "forecastTempMin12h": 77,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -3248,9 +3533,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 7,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -3267,7 +3552,7 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 66,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Slight Chance Rain Showers",
       "periodsUsed": 12
@@ -3286,7 +3571,7 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 96,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 81,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3303,9 +3588,9 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/CRP/127,57/forecast/hourly",
       "forecastWindMax6h": 6,
       "forecastWindMax12h": 7,
-      "forecastPrecipChanceMax12h": 21,
+      "forecastPrecipChanceMax12h": 16,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 76,
+      "forecastTempMin12h": 78,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -3324,7 +3609,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 11,
       "forecastTempMax12h": 91,
-      "forecastTempMin12h": 61,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3341,11 +3626,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/99,22/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 19,
+      "forecastPrecipChanceMax12h": 5,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 70,
-      "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastTempMin12h": 73,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -3358,13 +3643,13 @@
       "gridX": 102,
       "gridY": 108,
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/102,108/forecast/hourly",
-      "forecastWindMax6h": 0,
+      "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 2,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 70,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Cloudy",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -3381,9 +3666,9 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 89,
-      "forecastTempMin12h": 66,
+      "forecastTempMin12h": 71,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -3398,11 +3683,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/39,50/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 37,
+      "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Chance Showers And Thunderstorms",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -3417,11 +3702,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/74,16/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 65,
+      "forecastPrecipChanceMax12h": 49,
       "forecastTempMax12h": 81,
-      "forecastTempMin12h": 70,
-      "forecastStormRisk": 22,
-      "forecastSummary12h": "Showers And Thunderstorms Likely",
+      "forecastTempMin12h": 71,
+      "forecastStormRisk": 19,
+      "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -3436,11 +3721,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/57,19/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 64,
+      "forecastPrecipChanceMax12h": 43,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 69,
-      "forecastStormRisk": 22,
-      "forecastSummary12h": "Showers And Thunderstorms Likely",
+      "forecastTempMin12h": 72,
+      "forecastStormRisk": 19,
+      "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -3457,7 +3742,7 @@
       "forecastWindMax12h": 0,
       "forecastPrecipChanceMax12h": 34,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -3472,13 +3757,13 @@
       "gridX": 113,
       "gridY": 38,
       "hourlyUrl": "https://api.weather.gov/gridpoints/CRP/113,38/forecast/hourly",
-      "forecastWindMax6h": 7,
+      "forecastWindMax6h": 8,
       "forecastWindMax12h": 9,
-      "forecastPrecipChanceMax12h": 25,
+      "forecastPrecipChanceMax12h": 16,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 78,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Chance Showers And Thunderstorms",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -3491,13 +3776,13 @@
       "gridX": 138,
       "gridY": 43,
       "hourlyUrl": "https://api.weather.gov/gridpoints/SJT/138,43/forecast/hourly",
-      "forecastWindMax6h": 0,
+      "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -3514,28 +3799,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 66,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
-      "periodsUsed": 12
-    },
-    {
-      "county": "Scurry",
-      "key": "scurry",
-      "lat": 32.82009,
-      "lon": -100.95696,
-      "nwsOffice": "MAF",
-      "gridId": "MAF",
-      "gridX": 167,
-      "gridY": 167,
-      "hourlyUrl": "https://api.weather.gov/gridpoints/MAF/167,167/forecast/hourly",
-      "forecastWindMax6h": 10,
-      "forecastWindMax12h": 10,
-      "forecastPrecipChanceMax12h": 0,
-      "forecastTempMax12h": 93,
-      "forecastTempMin12h": 69,
-      "forecastStormRisk": 0,
-      "forecastSummary12h": "Sunny",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -3552,7 +3818,7 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 6,
       "forecastTempMax12h": 91,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3569,11 +3835,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/63,35/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 58,
+      "forecastPrecipChanceMax12h": 29,
       "forecastTempMax12h": 82,
-      "forecastTempMin12h": 69,
-      "forecastStormRisk": 19,
-      "forecastSummary12h": "Showers And Thunderstorms Likely",
+      "forecastTempMin12h": 72,
+      "forecastStormRisk": 15,
+      "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -3590,7 +3856,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 4,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 56,
+      "forecastTempMin12h": 68,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3607,11 +3873,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/17,63/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 24,
+      "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Rain Showers",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -3624,11 +3890,11 @@
       "gridX": 51,
       "gridY": 79,
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/51,79/forecast/hourly",
-      "forecastWindMax6h": 0,
-      "forecastWindMax12h": 5,
+      "forecastWindMax6h": 5,
+      "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3645,11 +3911,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/BRO/29,32/forecast/hourly",
       "forecastWindMax6h": 3,
       "forecastWindMax12h": 6,
-      "forecastPrecipChanceMax12h": 16,
+      "forecastPrecipChanceMax12h": 10,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 75,
-      "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastTempMin12h": 78,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
     },
     {
@@ -3666,9 +3932,9 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 90,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -3685,9 +3951,9 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 93,
-      "forecastTempMin12h": 66,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -3704,7 +3970,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 10,
       "forecastTempMax12h": 96,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3723,9 +3989,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 67,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -3742,9 +4008,9 @@
       "forecastWindMax12h": 20,
       "forecastPrecipChanceMax12h": 5,
       "forecastTempMax12h": 92,
-      "forecastTempMin12h": 59,
+      "forecastTempMin12h": 70,
       "forecastStormRisk": 5,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -3761,9 +4027,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Partly Sunny",
+      "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
     },
     {
@@ -3776,11 +4042,11 @@
       "gridX": 101,
       "gridY": 90,
       "hourlyUrl": "https://api.weather.gov/gridpoints/SJT/101,90/forecast/hourly",
-      "forecastWindMax6h": 5,
+      "forecastWindMax6h": 10,
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 9,
       "forecastTempMax12h": 90,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3799,9 +4065,9 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 91,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Cloudy",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -3818,7 +4084,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 93,
-      "forecastTempMin12h": 62,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3837,7 +4103,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 3,
       "forecastTempMax12h": 91,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3856,7 +4122,7 @@
       "forecastWindMax12h": 0,
       "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 67,
+      "forecastTempMin12h": 71,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Slight Chance Rain Showers",
       "periodsUsed": 12
@@ -3875,9 +4141,9 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 90,
-      "forecastTempMin12h": 66,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -3890,13 +4156,13 @@
       "gridX": 157,
       "gridY": 94,
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/157,94/forecast/hourly",
-      "forecastWindMax6h": 0,
+      "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 5,
       "forecastTempMax12h": 87,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Cloudy",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -3911,9 +4177,9 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/72,151/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 24,
+      "forecastPrecipChanceMax12h": 22,
       "forecastTempMax12h": 82,
-      "forecastTempMin12h": 70,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -3930,9 +4196,9 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/LCH/18,120/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 54,
+      "forecastPrecipChanceMax12h": 47,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 19,
       "forecastSummary12h": "Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -3949,11 +4215,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/32,79/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 22,
+      "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 82,
-      "forecastTempMin12h": 67,
+      "forecastTempMin12h": 71,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Rain Showers",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -3970,7 +4236,7 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 91,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 78,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -3987,11 +4253,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/76,58/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 12,
+      "forecastPrecipChanceMax12h": 6,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
     },
     {
@@ -4008,7 +4274,7 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 72,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
@@ -4025,11 +4291,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/128,98/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 6,
+      "forecastPrecipChanceMax12h": 3,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 69,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Cloudy",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -4046,7 +4312,7 @@
       "forecastWindMax12h": 7,
       "forecastPrecipChanceMax12h": 22,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 77,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -4063,11 +4329,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/57,142/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 26,
+      "forecastPrecipChanceMax12h": 21,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 72,
+      "forecastTempMin12h": 74,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Chance Showers And Thunderstorms",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -4082,11 +4348,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/40,109/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 21,
+      "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 72,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -4103,7 +4369,7 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 95,
-      "forecastTempMin12h": 72,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -4120,11 +4386,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/HGX/25,116/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 19,
+      "forecastPrecipChanceMax12h": 12,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 71,
-      "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
+      "forecastTempMin12h": 74,
+      "forecastStormRisk": 0,
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -4141,7 +4407,7 @@
       "forecastWindMax12h": 8,
       "forecastPrecipChanceMax12h": 18,
       "forecastTempMax12h": 90,
-      "forecastTempMin12h": 74,
+      "forecastTempMin12h": 77,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
@@ -4160,7 +4426,7 @@
       "forecastWindMax12h": 5,
       "forecastPrecipChanceMax12h": 27,
       "forecastTempMax12h": 84,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
@@ -4179,9 +4445,9 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 21,
       "forecastTempMax12h": 91,
-      "forecastTempMin12h": 61,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -4194,11 +4460,11 @@
       "gridX": 54,
       "gridY": 33,
       "hourlyUrl": "https://api.weather.gov/gridpoints/OUN/54,33/forecast/hourly",
-      "forecastWindMax6h": 9,
+      "forecastWindMax6h": 10,
       "forecastWindMax12h": 17,
       "forecastPrecipChanceMax12h": 17,
       "forecastTempMax12h": 90,
-      "forecastTempMin12h": 66,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 15,
       "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
@@ -4213,13 +4479,13 @@
       "gridX": 32,
       "gridY": 42,
       "hourlyUrl": "https://api.weather.gov/gridpoints/OUN/32,42/forecast/hourly",
-      "forecastWindMax6h": 10,
-      "forecastWindMax12h": 15,
+      "forecastWindMax6h": 12,
+      "forecastWindMax12h": 16,
       "forecastPrecipChanceMax12h": 17,
       "forecastTempMax12h": 93,
-      "forecastTempMin12h": 64,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -4232,13 +4498,13 @@
       "gridX": 76,
       "gridY": 29,
       "hourlyUrl": "https://api.weather.gov/gridpoints/BRO/76,29/forecast/hourly",
-      "forecastWindMax6h": 7,
+      "forecastWindMax6h": 8,
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 18,
       "forecastTempMax12h": 87,
       "forecastTempMin12h": 78,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Partly Sunny",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -4253,11 +4519,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/162,106/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 7,
+      "forecastPrecipChanceMax12h": 6,
       "forecastTempMax12h": 86,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Cloudy",
+      "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
     },
     {
@@ -4272,11 +4538,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/141,47/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 28,
+      "forecastPrecipChanceMax12h": 17,
       "forecastTempMax12h": 88,
-      "forecastTempMin12h": 74,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Patchy Fog",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -4293,7 +4559,7 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 0,
       "forecastTempMax12h": 94,
-      "forecastTempMin12h": 71,
+      "forecastTempMin12h": 79,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -4309,10 +4575,10 @@
       "gridY": 125,
       "hourlyUrl": "https://api.weather.gov/gridpoints/FWD/62,125/forecast/hourly",
       "forecastWindMax6h": 5,
-      "forecastWindMax12h": 5,
+      "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 85,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 73,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Mostly Sunny",
       "periodsUsed": 12
@@ -4329,11 +4595,11 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/SHV/12,78/forecast/hourly",
       "forecastWindMax6h": 0,
       "forecastWindMax12h": 0,
-      "forecastPrecipChanceMax12h": 21,
+      "forecastPrecipChanceMax12h": 20,
       "forecastTempMax12h": 83,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 72,
       "forecastStormRisk": 15,
-      "forecastSummary12h": "Slight Chance Rain Showers",
+      "forecastSummary12h": "Slight Chance Showers And Thunderstorms",
       "periodsUsed": 12
     },
     {
@@ -4350,7 +4616,7 @@
       "forecastWindMax12h": 15,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 92,
-      "forecastTempMin12h": 61,
+      "forecastTempMin12h": 71,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Sunny",
       "periodsUsed": 12
@@ -4369,9 +4635,9 @@
       "forecastWindMax12h": 10,
       "forecastPrecipChanceMax12h": 1,
       "forecastTempMax12h": 91,
-      "forecastTempMin12h": 68,
+      "forecastTempMin12h": 75,
       "forecastStormRisk": 0,
-      "forecastSummary12h": "Mostly Sunny",
+      "forecastSummary12h": "Sunny",
       "periodsUsed": 12
     },
     {
@@ -4386,9 +4652,9 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/BRO/8,55/forecast/hourly",
       "forecastWindMax6h": 2,
       "forecastWindMax12h": 6,
-      "forecastPrecipChanceMax12h": 11,
+      "forecastPrecipChanceMax12h": 6,
       "forecastTempMax12h": 89,
-      "forecastTempMin12h": 76,
+      "forecastTempMin12h": 78,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Partly Sunny",
       "periodsUsed": 12
@@ -4405,9 +4671,9 @@
       "hourlyUrl": "https://api.weather.gov/gridpoints/EWX/80,33/forecast/hourly",
       "forecastWindMax6h": 5,
       "forecastWindMax12h": 5,
-      "forecastPrecipChanceMax12h": 14,
+      "forecastPrecipChanceMax12h": 10,
       "forecastTempMax12h": 89,
-      "forecastTempMin12h": 73,
+      "forecastTempMin12h": 76,
       "forecastStormRisk": 0,
       "forecastSummary12h": "Mostly Cloudy",
       "periodsUsed": 12
@@ -4415,83 +4681,15 @@
   ],
   "errors": [
     {
-      "county": "Crockett",
-      "error": "503 Service Unavailable"
+      "county": "Castro",
+      "error": "504 Gateway Time-out"
     },
     {
-      "county": "Crosby",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Culberson",
-      "error": "503 Service Unavailable"
+      "county": "Clay",
+      "error": "504 Gateway Time-out"
     },
     {
       "county": "Dallam",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Dallas",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Dawson",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Deaf Smith",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Delta",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "DeWitt",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Dickens",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Dimmit",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Donley",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Duval",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Eastland",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Ector",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Edwards",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "El Paso",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Ellis",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Erath",
-      "error": "503 Service Unavailable"
-    },
-    {
-      "county": "Gaines",
       "error": "504 Gateway Time-out"
     },
     {
@@ -4499,8 +4697,20 @@
       "error": "404 Not Found"
     },
     {
+      "county": "Henderson",
+      "error": "504 Gateway Time-out"
+    },
+    {
       "county": "Kenedy",
       "error": "404 Not Found"
+    },
+    {
+      "county": "Lamb",
+      "error": "504 Gateway Time-out"
+    },
+    {
+      "county": "Scurry",
+      "error": "504 Gateway Time-out"
     }
   ]
 }
