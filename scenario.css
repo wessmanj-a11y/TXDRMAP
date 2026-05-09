@@ -1,0 +1,13 @@
+body{margin:0;font-family:Arial,sans-serif;background:#0b1020;color:#f3f4f6}
+.scenario-page{padding:24px;max-width:1400px;margin:auto}
+.hero{margin-bottom:24px}
+.eyebrow{font-weight:bold}
+.grid{display:grid;grid-template-columns:360px 1fr;gap:24px}
+.panel{background:#151b34;border-radius:16px;padding:20px}
+form label{display:block;margin-bottom:14px}
+input,select,textarea,button{width:100%;margin-top:6px;padding:10px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.table-wrap{overflow:auto}
+table{width:100%;border-collapse:collapse}
+th,td{padding:8px;border-bottom:1px solid #333}
+@media(max-width:1000px){.grid{grid-template-columns:1fr}}
