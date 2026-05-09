@@ -12,6 +12,7 @@ MODEL_FILE = Path('history/ml-risk-model.joblib')
 ML_WATCH_THRESHOLD = 45
 ML_ELEVATED_THRESHOLD = 70
 ML_CRITICAL_THRESHOLD = 85
+DEFAULT_CLASSIFICATION_THRESHOLD = 0.50
 
 FEATURES = [
     'customersOut', 'percentCustomersOut', 'incidents', 'maxSingleOutage',
@@ -69,6 +70,12 @@ def load_metadata():
     except Exception:
         return {}
 
+def selected_threshold(metadata):
+    try:
+        return float(metadata.get('calibration', {}).get('selectedThreshold', DEFAULT_CLASSIFICATION_THRESHOLD))
+    except Exception:
+        return DEFAULT_CLASSIFICATION_THRESHOLD
+
 def build_frame(rows, features):
     return pd.DataFrame([{f: num(row.get(f)) for f in features} for row in rows], columns=features).fillna(0)
 
@@ -109,6 +116,7 @@ def main():
     payload = json.loads(OUTAGES_FILE.read_text())
     rows = payload.get('outages', [])
     metadata = load_metadata()
+    classification_threshold = selected_threshold(metadata)
     mode = 'trained-model'
     fallback_reason = None
 
@@ -120,19 +128,26 @@ def main():
         probs = [round(fallback_score(row) / 100, 4) for row in rows]
 
     band_counts = {'Stable': 0, 'Watch': 0, 'Elevated': 0, 'Critical': 0}
+    positive_classifications = 0
 
     for row, prob in zip(rows, probs):
         ml = round(prob * 100)
         rule = num(row.get('predictedRisk'))
         ml_band = operational_band(ml)
+        is_positive = prob >= classification_threshold
+        if is_positive:
+            positive_classifications += 1
         band_counts[ml_band] = band_counts.get(ml_band, 0) + 1
 
         row['mlRiskProbability'] = prob
         row['mlRiskScore'] = ml
         row['mlRiskBand'] = ml_band
+        row['mlPredictedWorsening'] = bool(is_positive)
+        row['mlClassificationThreshold'] = classification_threshold
         row['mlElevated'] = ml >= ML_ELEVATED_THRESHOLD
         row['mlCritical'] = ml >= ML_CRITICAL_THRESHOLD
         row['mlCalibrationThresholds'] = {
+            'classification': classification_threshold,
             'watch': ML_WATCH_THRESHOLD,
             'elevated': ML_ELEVATED_THRESHOLD,
             'critical': ML_CRITICAL_THRESHOLD
@@ -152,16 +167,19 @@ def main():
         'metrics': metadata.get('metrics'),
         'fallbackReason': fallback_reason,
         'calibration': {
+            'classificationThreshold': classification_threshold,
             'watchThreshold': ML_WATCH_THRESHOLD,
             'elevatedThreshold': ML_ELEVATED_THRESHOLD,
             'criticalThreshold': ML_CRITICAL_THRESHOLD,
+            'positiveClassifications': positive_classifications,
             'bandCounts': band_counts,
-            'purpose': 'Advanced historical anomaly + live signal calibrated scoring'
+            'purpose': 'Precision-tuned classification with recall floor'
         }
     }
 
     OUTAGES_FILE.write_text(json.dumps(payload, indent=2))
     print(f'Scored {len(rows)} rows using {mode}')
+    print('Classification threshold:', classification_threshold)
     print('ML band counts:', band_counts)
 
 if __name__ == '__main__':
