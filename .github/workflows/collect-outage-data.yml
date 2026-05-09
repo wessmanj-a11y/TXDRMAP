@@ -15,6 +15,8 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
+    env:
+      DRIVE_TEXAS_API_KEY: ${{ secrets.DRIVE_TEXAS_API_KEY }}
 
     steps:
       - name: Checkout repo
@@ -42,6 +44,9 @@ jobs:
 
       - name: Run outage collection
         run: node scripts/fetch-outages.js
+
+      - name: Apply DriveTexas road conditions
+        run: node scripts/apply-road-conditions.js
 
       - name: Apply FEMA county risk intelligence
         run: node scripts/apply-fema-risk.js
