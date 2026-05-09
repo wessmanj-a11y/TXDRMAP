@@ -41,10 +41,10 @@ function hasSevereOperationalSignal(county) {
 }
 
 function minimumMaterialIncrease(currentOut) {
-  if (currentOut >= 2000) return 1000;
-  if (currentOut >= 500) return 300;
-  if (currentOut >= 100) return 100;
-  return 50;
+  if (currentOut >= 2000) return 750;
+  if (currentOut >= 500) return 200;
+  if (currentOut >= 100) return 75;
+  return 25;
 }
 
 function classifyOperationalWorsening(county, futureCounty) {
@@ -69,7 +69,7 @@ function classifyOperationalWorsening(county, futureCounty) {
     };
   }
 
-  if (futureOut < 50 && increase < 50) {
+  if (futureOut < 50 && increase < 25) {
     return {
       worsened: 0,
       worseningSeverity: 0,
@@ -98,7 +98,7 @@ function classifyOperationalWorsening(county, futureCounty) {
 
   const significantOutageEscalation =
     increase >= materialIncrease &&
-    relativeIncrease >= 0.25 &&
+    relativeIncrease >= 0.18 &&
     (percentPointIncrease >= 0.02 || increase >= 500);
 
   if (significantOutageEscalation) {
@@ -114,8 +114,8 @@ function classifyOperationalWorsening(county, futureCounty) {
 
   const stressAssistedEscalation =
     severeSignal &&
-    increase >= Math.max(50, Math.round(materialIncrease / 2)) &&
-    relativeIncrease >= 0.15;
+    increase >= Math.max(25, Math.round(materialIncrease / 2)) &&
+    relativeIncrease >= 0.10;
 
   if (stressAssistedEscalation) {
     return {
@@ -257,8 +257,8 @@ async function main() {
       positiveClass: 'worseningSeverity >= 2',
       rules: [
         'Critical if increase >= 2000 customers, percent-out rises >= 0.5 points, or large county doubles with >= 500 added customers',
-        'Material if increase exceeds county-size adjusted minimum, relative increase >= 25%, and percent-out rises >= 0.02 points or increase >= 500',
-        'Stress-assisted if severe weather/road/grid signal exists, increase exceeds half material threshold, and relative increase >= 15%',
+        'Material if increase exceeds county-size adjusted minimum, relative increase >= 18%, and percent-out rises >= 0.02 points or increase >= 500',
+        'Stress-assisted if severe weather/road/grid signal exists, increase exceeds half material threshold with a 25-customer floor, and relative increase >= 10%',
         'Minor increases are tracked but not labeled positive'
       ]
     },
