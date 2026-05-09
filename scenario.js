@@ -1,16 +1,25 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('scenarioForm');
-  if (!form) return;
+let texasCountyData = {};
 
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    const scenario = readScenario();
-    const impacts = runScenario(scenario);
-    renderScenario(impacts, scenario);
+fetch('texas_county_data.json')
+  .then(function (response) { return response.json(); })
+  .then(function (data) { texasCountyData = data || {}; initializeScenario(); })
+  .catch(function () { initializeScenario(); });
+
+function initializeScenario() {
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('scenarioForm');
+    if (!form) return;
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const scenario = readScenario();
+      const impacts = runScenario(scenario);
+      renderScenario(impacts, scenario);
+    });
+
+    form.dispatchEvent(new Event('submit'));
   });
-
-  form.dispatchEvent(new Event('submit'));
-});
+}
 
 function readScenario() {
   return {
@@ -45,21 +54,31 @@ function scenarioMultiplier(type) {
   return 0.92;
 }
 
+function countyProfile(name) {
+  return texasCountyData[name] || { population: 120000, hospitalBeds: 300, fireStations: 8, cellTowers: 120, ercotZone: 'Unknown' };
+}
+
 function runScenario(scenario) {
   return scenario.counties.map(function (county, index) {
+    const countyData = countyProfile(county);
     const trackDecay = Math.max(0.45, 1 - index * 0.08);
+    const populationFactor = clamp(countyData.population / 500000, 0.4, 10);
+    const infrastructureFactor = clamp((countyData.cellTowers + countyData.hospitalBeds) / 5000, 0.3, 8);
+
     const hazard = clamp(Math.round(((scenario.wind * 0.42) + (scenario.rain * 1.9) + (scenario.duration * 0.55)) * scenarioMultiplier(scenario.type) * trackDecay), 1, 100);
-    const outagePercent = clamp(Math.round(hazard * 0.74), 1, 100);
+    const outagePercent = clamp(Math.round(hazard * (0.58 + infrastructureFactor * 0.08)), 1, 100);
     const roadPercent = clamp(Math.round((hazard * 0.44) + (scenario.rain * 0.9)), 1, 100);
-    const telcoPercent = clamp(Math.round((hazard * 0.52) + (outagePercent * 0.22)), 1, 100);
-    const hospitalSurge = clamp(Math.round((hazard * 0.35) + (scenario.duration * 0.4)), 1, 100);
-    const responderCalls = Math.round(hazard * 35 + roadPercent * 12 + hospitalSurge * 18);
-    const injuries = Math.round(hazard * 7.5 + roadPercent * 2.5);
-    const damage = Math.round(hazard * hazard * 540000);
-    const recoveryDays = clamp(Math.round(1 + hazard / 8 + outagePercent / 18 + roadPercent / 25), 1, 45);
+    const telcoPercent = clamp(Math.round(hazard * (0.4 + countyData.cellTowers / 10000)), 1, 100);
+    const hospitalSurge = clamp(Math.round((hazard * 0.3) + (populationFactor * 6)), 1, 100);
+    const responderCalls = Math.round((hazard * 35 + roadPercent * 12 + hospitalSurge * 18) * populationFactor);
+    const injuries = Math.round((hazard * 4.5 + roadPercent * 1.8) * populationFactor);
+    const damage = Math.round(hazard * hazard * 240000 * populationFactor * infrastructureFactor);
+    const recoveryDays = clamp(Math.round(1 + hazard / 9 + outagePercent / 16 + roadPercent / 22), 1, 60);
 
     return {
       county: county,
+      ercotZone: countyData.ercotZone,
+      population: countyData.population,
       hazard: hazard,
       outagePercent: outagePercent,
       roadPercent: roadPercent,
@@ -124,6 +143,6 @@ function renderRows(impacts) {
   const rows = document.getElementById('impactRows');
   if (!rows) return;
   rows.innerHTML = impacts.map(function (item) {
-    return '<tr><td>' + item.county + '</td><td>' + item.hazard + '%</td><td>' + item.outagePercent + '%</td><td>' + item.roadPercent + '%</td><td>' + item.telcoPercent + '%</td><td>' + item.hospitalSurge + '%</td><td>$' + item.damage.toLocaleString() + '</td><td>' + item.recoveryDays + 'd</td></tr>';
+    return '<tr><td>' + item.county + ' (' + item.ercotZone + ')</td><td>' + item.hazard + '%</td><td>' + item.outagePercent + '%</td><td>' + item.roadPercent + '%</td><td>' + item.telcoPercent + '%</td><td>' + item.hospitalSurge + '%</td><td>$' + item.damage.toLocaleString() + '</td><td>' + item.recoveryDays + 'd</td></tr>';
   }).join('');
 }
