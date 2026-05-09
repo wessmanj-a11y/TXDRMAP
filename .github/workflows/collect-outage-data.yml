@@ -48,6 +48,9 @@ jobs:
       - name: Apply DriveTexas road conditions
         run: node scripts/apply-road-conditions.js
 
+      - name: Apply ERCOT grid stress
+        run: node scripts/apply-ercot-grid-status.js
+
       - name: Apply FEMA county risk intelligence
         run: node scripts/apply-fema-risk.js
 
