@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 
 import joblib
 import pandas as pd
+import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from sklearn.model_selection import train_test_split
@@ -37,6 +38,12 @@ FEATURES = [
 ]
 
 TARGET = 'worsened'
+MIN_RECALL_TARGET = 0.60
+PRECISION_TARGET = 0.55
+DEFAULT_THRESHOLD = 0.50
+THRESHOLD_MIN = 0.40
+THRESHOLD_MAX = 0.90
+THRESHOLD_STEP = 0.01
 
 def now():
     return datetime.now(timezone.utc).isoformat()
@@ -70,10 +77,68 @@ def append_history(entry):
 
 def not_ready(reason, rows=0, positives=0):
     ts = now()
-    payload = {'ok': False, 'reason': reason, 'updated': ts, 'rows': rows, 'positiveExamples': positives, 'features': FEATURES, 'target': TARGET}
+    payload = {
+        'ok': False,
+        'reason': reason,
+        'updated': ts,
+        'rows': rows,
+        'positiveExamples': positives,
+        'features': FEATURES,
+        'target': TARGET,
+        'calibration': {
+            'selectedThreshold': DEFAULT_THRESHOLD,
+            'minRecallTarget': MIN_RECALL_TARGET,
+            'precisionTarget': PRECISION_TARGET,
+            'status': 'not-ready'
+        }
+    }
     write_json(METADATA_FILE, payload)
-    append_history({'timestamp': ts, 'ok': False, 'reason': reason, 'rows': rows, 'positiveExamples': positives, 'accuracy': None, 'precision': None, 'recall': None, 'f1': None})
+    append_history({'timestamp': ts, 'ok': False, 'reason': reason, 'rows': rows, 'positiveExamples': positives, 'accuracy': None, 'precision': None, 'recall': None, 'f1': None, 'selectedThreshold': DEFAULT_THRESHOLD})
     print(reason)
+
+def metrics_for_threshold(y_true, probs, threshold):
+    preds = (probs >= threshold).astype(int)
+    return {
+        'threshold': round(float(threshold), 2),
+        'accuracy': round(float(accuracy_score(y_true, preds)), 4),
+        'precision': round(float(precision_score(y_true, preds, zero_division=0)), 4),
+        'recall': round(float(recall_score(y_true, preds, zero_division=0)), 4),
+        'f1': round(float(f1_score(y_true, preds, zero_division=0)), 4),
+        'predictedPositiveRate': round(float(preds.mean()), 4)
+    }
+
+def choose_threshold(y_true, probs):
+    sweep = []
+    for threshold in np.arange(THRESHOLD_MIN, THRESHOLD_MAX + 0.0001, THRESHOLD_STEP):
+        sweep.append(metrics_for_threshold(y_true, probs, threshold))
+
+    viable = [m for m in sweep if m['recall'] >= MIN_RECALL_TARGET]
+    precision_viable = [m for m in viable if m['precision'] >= PRECISION_TARGET]
+
+    if precision_viable:
+        selected = sorted(
+            precision_viable,
+            key=lambda m: (m['precision'], m['f1'], m['recall'], m['threshold']),
+            reverse=True
+        )[0]
+        reason = 'met precision and recall targets'
+    elif viable:
+        selected = sorted(
+            viable,
+            key=lambda m: (m['precision'], m['f1'], m['threshold']),
+            reverse=True
+        )[0]
+        reason = 'best precision while keeping recall target'
+    else:
+        selected = sorted(
+            sweep,
+            key=lambda m: (m['f1'], m['precision'], m['recall']),
+            reverse=True
+        )[0]
+        reason = 'fallback to best f1 because no threshold met recall target'
+
+    compact_sweep = [m for m in sweep if round((m['threshold'] * 100) % 5, 6) == 0]
+    return selected, compact_sweep, reason
 
 def main():
     if not TRAINING_FILE.exists():
@@ -101,7 +166,9 @@ def main():
 
     model = RandomForestClassifier(n_estimators=500, max_depth=14, min_samples_leaf=3, random_state=42, class_weight='balanced')
     model.fit(X_train, y_train)
-    preds = model.predict(X_test)
+    probs = model.predict_proba(X_test)[:, 1]
+    selected, threshold_sweep, selection_reason = choose_threshold(y_test, probs)
+    preds = (probs >= selected['threshold']).astype(int)
 
     MODEL_FILE.parent.mkdir(parents=True, exist_ok=True)
     joblib.dump(model, MODEL_FILE)
@@ -122,14 +189,32 @@ def main():
         'target': TARGET,
         'modelFile': str(MODEL_FILE),
         'metrics': metrics,
+        'calibration': {
+            'selectedThreshold': selected['threshold'],
+            'selectedThresholdPct': round(selected['threshold'] * 100),
+            'selectionReason': selection_reason,
+            'minRecallTarget': MIN_RECALL_TARGET,
+            'precisionTarget': PRECISION_TARGET,
+            'selectedMetrics': selected,
+            'thresholdSweep': threshold_sweep
+        },
         'featureImportance': sorted([
             {'feature': f, 'importance': round(float(i), 5)}
             for f, i in zip(FEATURES, model.feature_importances_)
         ], key=lambda item: item['importance'], reverse=True)
     }
     write_json(METADATA_FILE, metadata)
-    append_history({'timestamp': ts, 'ok': True, 'rows': len(df), 'positiveExamples': positives, **metrics})
+    append_history({
+        'timestamp': ts,
+        'ok': True,
+        'rows': len(df),
+        'positiveExamples': positives,
+        'selectedThreshold': selected['threshold'],
+        'selectionReason': selection_reason,
+        **metrics
+    })
     print('Trained ML model on ' + str(len(df)) + ' rows')
+    print('Selected threshold:', selected['threshold'], selection_reason)
     print(metrics)
 
 if __name__ == '__main__':
