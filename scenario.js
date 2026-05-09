@@ -1,4 +1,26 @@
 let texasCountyData = {};
+let scenarioMap = null;
+let pathLayer = null;
+let markerLayer = null;
+let selectedPath = [];
+
+const COUNTY_POINTS = {
+  Galveston: [29.3013, -94.7977],
+  Harris: [29.7604, -95.3698],
+  Montgomery: [30.3213, -95.4778],
+  Walker: [30.7235, -95.5508],
+  Madison: [30.9499, -95.9116],
+  Dallas: [32.7767, -96.7970],
+  Tarrant: [32.7555, -97.3308],
+  Bexar: [29.4241, -98.4936],
+  Travis: [30.2672, -97.7431],
+  Collin: [33.1795, -96.4930],
+  Denton: [33.2148, -97.1331],
+  FortBend: [29.5693, -95.8143],
+  Hidalgo: [26.1004, -98.2631],
+  ElPaso: [31.7619, -106.4850],
+  Brazoria: [29.1694, -95.4344]
+};
 
 fetch('texas_county_data.json')
   .then(function (response) { return response.json(); })
@@ -10,14 +32,122 @@ function initializeScenario() {
     const form = document.getElementById('scenarioForm');
     if (!form) return;
 
+    initMap();
+    wireMapButtons();
+
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       const scenario = readScenario();
       const impacts = runScenario(scenario);
       renderScenario(impacts, scenario);
+      drawImpactMarkers(impacts);
     });
 
+    setPathFromText();
     form.dispatchEvent(new Event('submit'));
+  });
+}
+
+function initMap() {
+  const mapDiv = document.getElementById('scenarioMap');
+  if (!mapDiv || typeof L === 'undefined') return;
+
+  scenarioMap = L.map('scenarioMap').setView([31.2, -99.2], 6);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 10,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(scenarioMap);
+
+  markerLayer = L.layerGroup().addTo(scenarioMap);
+  pathLayer = L.layerGroup().addTo(scenarioMap);
+
+  Object.keys(COUNTY_POINTS).forEach(function (county) {
+    const marker = L.circleMarker(COUNTY_POINTS[county], {
+      radius: 8,
+      weight: 2,
+      color: '#ffffff',
+      fillColor: '#e20074',
+      fillOpacity: 0.9
+    }).addTo(markerLayer);
+    marker.bindTooltip(displayCounty(county));
+    marker.on('click', function () { addCountyToPath(displayCounty(county)); });
+  });
+}
+
+function wireMapButtons() {
+  const clear = document.getElementById('clearPath');
+  const sample = document.getElementById('useSamplePath');
+  if (clear) clear.addEventListener('click', function () {
+    selectedPath = [];
+    syncPathText();
+    redrawPath();
+  });
+  if (sample) sample.addEventListener('click', function () {
+    selectedPath = ['Galveston', 'Harris', 'Montgomery', 'Walker', 'Dallas'];
+    syncPathText();
+    redrawPath();
+    document.getElementById('scenarioForm').dispatchEvent(new Event('submit'));
+  });
+}
+
+function displayCounty(key) {
+  return key.replace(/([A-Z])/g, ' $1').trim().replace('El Paso', 'El Paso').replace('Fort Bend', 'Fort Bend');
+}
+
+function countyKey(name) {
+  return String(name || '').replace(/\s+/g, '').replace(/[^A-Za-z]/g, '');
+}
+
+function addCountyToPath(county) {
+  selectedPath.push(county);
+  syncPathText();
+  redrawPath();
+  document.getElementById('scenarioForm').dispatchEvent(new Event('submit'));
+}
+
+function setPathFromText() {
+  selectedPath = valueOf('trackCounties').split(',').map(function (county) {
+    return county.trim();
+  }).filter(Boolean);
+  redrawPath();
+}
+
+function syncPathText() {
+  const textarea = document.getElementById('trackCounties');
+  if (textarea) textarea.value = selectedPath.join(', ');
+}
+
+function redrawPath() {
+  if (!scenarioMap || !pathLayer) return;
+  pathLayer.clearLayers();
+  const points = selectedPath.map(function (county) {
+    return COUNTY_POINTS[countyKey(county)];
+  }).filter(Boolean);
+  if (points.length > 1) {
+    L.polyline(points, { color: '#e20074', weight: 5, opacity: 0.85 }).addTo(pathLayer);
+    scenarioMap.fitBounds(points, { padding: [40, 40] });
+  }
+  points.forEach(function (point, index) {
+    L.marker(point, {
+      icon: L.divIcon({ className: 'county-marker', html: String(index + 1), iconSize: [24, 24] })
+    }).addTo(pathLayer);
+  });
+}
+
+function drawImpactMarkers(impacts) {
+  if (!scenarioMap || !markerLayer) return;
+  markerLayer.clearLayers();
+  impacts.forEach(function (impact) {
+    const point = COUNTY_POINTS[countyKey(impact.county)];
+    if (!point) return;
+    const marker = L.circleMarker(point, {
+      radius: 7 + impact.hazard / 10,
+      weight: 2,
+      color: '#ffffff',
+      fillColor: impact.hazard >= 80 ? '#ef4444' : impact.hazard >= 60 ? '#f59e0b' : '#e20074',
+      fillOpacity: 0.75
+    }).addTo(markerLayer);
+    marker.bindPopup('<strong>' + impact.county + '</strong><br>Hazard: ' + impact.hazard + '%<br>Power: ' + impact.outagePercent + '%<br>Damage: $' + impact.damage.toLocaleString());
   });
 }
 
@@ -75,23 +205,8 @@ function runScenario(scenario) {
     const damage = Math.round(hazard * hazard * 240000 * populationFactor * infrastructureFactor);
     const recoveryDays = clamp(Math.round(1 + hazard / 9 + outagePercent / 16 + roadPercent / 22), 1, 60);
 
-    return {
-      county: county,
-      ercotZone: countyData.ercotZone,
-      population: countyData.population,
-      hazard: hazard,
-      outagePercent: outagePercent,
-      roadPercent: roadPercent,
-      telcoPercent: telcoPercent,
-      hospitalSurge: hospitalSurge,
-      responderCalls: responderCalls,
-      injuries: injuries,
-      damage: damage,
-      recoveryDays: recoveryDays
-    };
-  }).sort(function (a, b) {
-    return b.hazard - a.hazard;
-  });
+    return { county, ercotZone: countyData.ercotZone, population: countyData.population, hazard, outagePercent, roadPercent, telcoPercent, hospitalSurge, responderCalls, injuries, damage, recoveryDays };
+  }).sort(function (a, b) { return b.hazard - a.hazard; });
 }
 
 function renderScenario(impacts, scenario) {
@@ -115,16 +230,7 @@ function renderScenario(impacts, scenario) {
 function renderCards(totals, averageOutage, scenario) {
   const summary = document.getElementById('summaryCards');
   if (!summary) return;
-  summary.innerHTML = [
-    card('Scenario', scenario.name),
-    card('Avg Power Impact', averageOutage + '%'),
-    card('Economic Damage', '$' + totals.damage.toLocaleString()),
-    card('Responder Calls', totals.responders.toLocaleString()),
-    card('Estimated Injuries', totals.injuries.toLocaleString()),
-    card('Hospital Stress Counties', totals.hospitalStress.toLocaleString()),
-    card('Severe Road Counties', totals.severeRoad.toLocaleString()),
-    card('Max Recovery', totals.recovery + ' days')
-  ].join('');
+  summary.innerHTML = [card('Scenario', scenario.name), card('Avg Power Impact', averageOutage + '%'), card('Economic Damage', '$' + totals.damage.toLocaleString()), card('Responder Calls', totals.responders.toLocaleString()), card('Estimated Injuries', totals.injuries.toLocaleString()), card('Hospital Stress Counties', totals.hospitalStress.toLocaleString()), card('Severe Road Counties', totals.severeRoad.toLocaleString()), card('Max Recovery', totals.recovery + ' days')].join('');
 }
 
 function card(label, value) {
