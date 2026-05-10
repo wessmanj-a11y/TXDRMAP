@@ -43,13 +43,20 @@
         <div id="countyBars" class="bars"></div>
         <h3>County impact table</h3>
         <div class="table-wrap"><table><thead><tr><th>County</th><th>Hazard</th><th>Outage %</th><th>Road %</th><th>Telco %</th><th>Hospital Surge</th><th>Damage</th><th>Recovery</th></tr></thead><tbody id="impactRows"></tbody></table></div>
+        <h3>Operational Resource Impact</h3>
+        <div id="resourceImpactResults"></div>
       </section>
     </section>
   </main>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="src/lib/scenario/stormPathCountyMapper.js"></script>
+  <script src="src/lib/scenario/countyImpactResolver.js"></script>
+  <script src="src/components/scenario/ScenarioResultsPanel.js"></script>
+  <script src="src/lib/scenario/runScenarioPipeline.js"></script>
   <script src="scenario.js"></script>
   <script src="scenario-heatmap.js"></script>
   <script src="public/js/scenario-zones.js"></script>
   <script src="public/js/scenario-zones-integration.js"></script>
+  <script src="public/js/scenario-controller.js"></script>
 </body>
 </html>
