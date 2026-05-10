@@ -9,10 +9,31 @@ const TEXAS_BBOX = '-106.7,25.7,-93.3,36.6';
 const EMPTY_FEATURE_COLLECTION = { type: 'FeatureCollection', features: [] };
 
 const DATASETS = [
-  { key: 'hospitals', output: 'hospitals_tx.geojson', service: 'https://maps.nccs.nasa.gov/mapping/rest/services/hifld_open/public_health/FeatureServer/0/query', countField: 'hospitals', capacityField: 'hospitalBeds' },
-  { key: 'fireStations', output: 'fire_stations_tx.geojson', service: 'https://maps.nccs.nasa.gov/mapping/rest/services/hifld_open/emergency_services/MapServer/4/query', countField: 'fireStations' },
-  { key: 'emsStations', output: 'ems_stations_tx.geojson', service: 'https://maps.nccs.nasa.gov/mapping/rest/services/hifld_open/emergency_services/MapServer/2/query', countField: 'emsStations' },
-  { key: 'policeStations', output: 'police_stations_tx.geojson', service: 'https://maps.nccs.nasa.gov/mapping/rest/services/hifld_open/law_enforcement/MapServer/3/query', countField: 'policeDepartments' }
+  {
+    key: 'hospitals',
+    output: 'hospitals_tx.geojson',
+    service: 'https://services.arcgis.com/XG15cJAlne2vxtgt/ArcGIS/rest/services/Hospitals_hifld/FeatureServer/0/query',
+    countField: 'hospitals',
+    capacityField: 'hospitalBeds'
+  },
+  {
+    key: 'fireStations',
+    output: 'fire_stations_tx.geojson',
+    service: 'https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Fire_Stations/FeatureServer/0/query',
+    countField: 'fireStations'
+  },
+  {
+    key: 'emsStations',
+    output: 'ems_stations_tx.geojson',
+    service: 'https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Emergency_Medical_Service_Stations/FeatureServer/0/query',
+    countField: 'emsStations'
+  },
+  {
+    key: 'policeStations',
+    output: 'police_stations_tx.geojson',
+    service: 'https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Structures_Law_Enforcement_v1/FeatureServer/0/query',
+    countField: 'policeDepartments'
+  }
 ];
 
 function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
@@ -76,11 +97,7 @@ function esriFeatureToGeojsonFeature(feature) {
   const x = Number(geom.x);
   const y = Number(geom.y);
   if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
-  return {
-    type: 'Feature',
-    properties: attrs,
-    geometry: { type: 'Point', coordinates: [x, y] }
-  };
+  return { type: 'Feature', properties: attrs, geometry: { type: 'Point', coordinates: [x, y] } };
 }
 
 function esriJsonToGeojson(data) {
@@ -101,7 +118,7 @@ async function fetchGeojson(dataset) {
     allFeatures = allFeatures.concat(geojson.features);
     page += 1;
     const exceeded = data.exceededTransferLimit === true;
-    if (!exceeded || !geojson.features.length || page > 60) break;
+    if (!exceeded || !geojson.features.length || page > 80) break;
     offset += geojson.features.length;
   }
   allFeatures = allFeatures.filter(feature => {
@@ -182,7 +199,7 @@ function emptyProfile(existing) {
 
 function estimateBeds(feature) {
   const p = feature.properties || {};
-  const candidates = [p.BEDS, p.BED_COUNT, p.NUM_BEDS, p.BEDSIZE, p.BED_CAPACITY, p.BEDS_TOTAL];
+  const candidates = [p.BEDS, p.BED_COUNT, p.NUM_BEDS, p.BEDSIZE, p.BED_CAPACITY, p.BEDS_TOTAL, p.NUM_BEDS];
   for (const value of candidates) {
     const number = Number(value);
     if (Number.isFinite(number) && number > 0) return number;
@@ -220,7 +237,7 @@ async function main() {
 
   const payload = {
     generatedAt: new Date().toISOString(),
-    sourceNote: 'County resources aggregated from HIFLD ArcGIS JSON services using Texas county polygons. If an upstream service is unavailable, cached data is used; if no cache exists, that layer is left empty and the workflow continues.',
+    sourceNote: 'County resources aggregated from verified HIFLD/ArcGIS service endpoints using Texas county polygons. If an upstream service is unavailable, cached data is used; if no cache exists, that layer is left empty and the workflow continues.',
     warnings: fetchErrors.length ? ['Empty or unavailable layers: ' + fetchErrors.join(', ')] : [],
     fields: ['population','hospitals','hospitalBeds','fireStations','emsStations','policeDepartments','cellTowers','ercotZone'],
     counties: model
