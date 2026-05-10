@@ -1,0 +1,30 @@
+name: Build Texas County GeoJSON
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 1 * *'
+
+permissions:
+  contents: write
+
+jobs:
+  build-texas-counties:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build Texas county GeoJSON
+        run: node scripts/fetchTexasCountyGeojson.js
+
+      - name: Commit generated GeoJSON
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Build Texas county GeoJSON
+          file_pattern: public/data/geo/texas_counties.geojson
