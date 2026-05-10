@@ -1,12 +1,10 @@
 const fs = require('fs');
 const path = require('path');
-const https = require('https');
 
 const GEO_PATH = path.join(process.cwd(), 'public', 'data', 'geo', 'texas_counties.geojson');
 const RESOURCE_PATH = path.join(process.cwd(), 'public', 'data', 'texas_county_resources.json');
 const OUTPUT_PATH = path.join(process.cwd(), 'public', 'data', 'texas_county_baseline.json');
-
-const CENSUS_URL = 'https://api.census.gov/data/2024/pep/population?get=NAME,POP&for=county:*&in=state:48';
+const LEGACY_COUNTY_DATA_PATH = path.join(process.cwd(), 'texas_county_data.json');
 
 const ERCOT_ZONE_RULES = [
   { zone: 'North', counties: ['Dallas','Tarrant','Collin','Denton','Grayson','Wise','Parker','Rockwall','Ellis','Johnson'] },
@@ -16,20 +14,6 @@ const ERCOT_ZONE_RULES = [
   { zone: 'Central', counties: ['Travis','Williamson','Hays','Bell','McLennan'] }
 ];
 
-function fetchText(url) {
-  return new Promise((resolve, reject) => {
-    https.get(url, { headers: { 'User-Agent': 'TXDRMAP/1.0 baseline-builder' } }, res => {
-      if (res.statusCode !== 200) {
-        reject(new Error('HTTP ' + res.statusCode + ' for ' + url));
-        return;
-      }
-      let body = '';
-      res.on('data', chunk => body += chunk);
-      res.on('end', () => resolve(body));
-    }).on('error', reject);
-  });
-}
-
 function readJson(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); }
   catch (error) { return fallback; }
@@ -38,6 +22,10 @@ function readJson(file, fallback) {
 function countyName(feature) {
   const p = feature.properties || {};
   return String(p.NAME || p.NAMELSAD || '').replace(/ County$/i, '').trim();
+}
+
+function normalizeCountyName(name) {
+  return String(name || '').replace(/ County$/i, '').replace(/\s+/g, '').trim().toLowerCase();
 }
 
 function estimateCellTowers(population) {
@@ -58,15 +46,48 @@ function assignErcotZone(county) {
   return 'Unknown';
 }
 
-async function fetchPopulationMap() {
-  const raw = await fetchText(CENSUS_URL);
-  const rows = JSON.parse(raw);
+function derivePopulationFromLegacy(record) {
+  if (!record) return null;
+
+  const directCandidates = [
+    record.population,
+    record.Population,
+    record.pop,
+    record.countyPopulation
+  ];
+
+  for (const value of directCandidates) {
+    const num = Number(value);
+    if (Number.isFinite(num) && num > 0) return num;
+  }
+
+  const customerCandidates = [
+    record.customers,
+    record.totalCustomers,
+    record.utilityCustomers,
+    record.customerCount
+  ];
+
+  for (const customers of customerCandidates) {
+    const num = Number(customers);
+    if (Number.isFinite(num) && num > 0) {
+      return Math.round(num * 2.6);
+    }
+  }
+
+  return null;
+}
+
+function buildLegacyPopulationMap() {
+  const legacy = readJson(LEGACY_COUNTY_DATA_PATH, {});
   const map = {};
-  rows.slice(1).forEach(row => {
-    const fullName = String(row[0] || '');
-    const county = fullName.replace(/ County, Texas$/i, '').trim();
-    map[county] = Number(row[1]) || 120000;
+
+  Object.keys(legacy || {}).forEach(county => {
+    const normalized = normalizeCountyName(county);
+    const population = derivePopulationFromLegacy(legacy[county]);
+    if (population) map[normalized] = population;
   });
+
   return map;
 }
 
@@ -75,7 +96,7 @@ async function main() {
   if (!geo) throw new Error('Missing texas_counties.geojson');
 
   const resources = readJson(RESOURCE_PATH, { counties: {} });
-  const populations = await fetchPopulationMap();
+  const legacyPopulationMap = buildLegacyPopulationMap();
 
   const counties = {};
 
@@ -83,8 +104,16 @@ async function main() {
     const county = countyName(feature);
     if (!county) return;
 
-    const population = populations[county] || 120000;
+    const normalized = normalizeCountyName(county);
     const resource = (resources.counties || {})[county] || {};
+
+    const existingPopulation = Number(resource.population);
+    const legacyPopulation = legacyPopulationMap[normalized];
+
+    const population =
+      (Number.isFinite(existingPopulation) && existingPopulation > 0 && existingPopulation !== 120000)
+        ? existingPopulation
+        : (legacyPopulation || 120000);
 
     counties[county] = {
       population,
@@ -94,13 +123,15 @@ async function main() {
       emsStations: resource.emsStations || 0,
       policeDepartments: resource.policeDepartments || 0,
       cellTowers: resource.cellTowers || estimateCellTowers(population),
-      ercotZone: resource.ercotZone && resource.ercotZone !== 'Unknown' ? resource.ercotZone : assignErcotZone(county)
+      ercotZone: resource.ercotZone && resource.ercotZone !== 'Unknown'
+        ? resource.ercotZone
+        : assignErcotZone(county)
     };
   });
 
   const payload = {
     generatedAt: new Date().toISOString(),
-    sourceNote: 'Texas county baseline enriched with Census population, HIFLD resource layers, estimated cell towers, and ERCOT regional assignment.',
+    sourceNote: 'Texas county baseline enriched primarily from existing TXDRMAP county data, HIFLD resource layers, estimated cell towers, and ERCOT regional assignment. Population prioritizes legacy internal county data before fallback assumptions.',
     fields: ['population','hospitals','hospitalBeds','fireStations','emsStations','policeDepartments','cellTowers','ercotZone'],
     counties
   };
