@@ -1,6 +1,14 @@
 {
-  "generatedAt": "2026-05-10T07:48:25.081Z",
-  "sourceNote": "Texas county baseline enriched primarily from existing TXDRMAP county data, HIFLD resource layers, estimated cell towers, and ERCOT regional assignment. Population prioritizes legacy internal county data before fallback assumptions.",
+  "generatedAt": "2026-05-10T17:07:47.167Z",
+  "sourceNote": "Texas county baseline enriched from existing committed TXDRMAP population sources, HIFLD resource layers, estimated cell towers, and ERCOT regional assignment. No external population API is called.",
+  "populationSources": [
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/data/texas_county_population.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/data/county_population.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/data/texas_counties_population.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/data/texas_county_data.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/texas_county_data.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/texas_county_data.json"
+  ],
   "fields": [
     "population",
     "hospitals",
