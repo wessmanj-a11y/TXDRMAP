@@ -1,21 +1,23 @@
-body{margin:0;font-family:Arial,sans-serif;background:#0b1020;color:#f3f4f6}
-.scenario-page{padding:24px;max-width:1600px;margin:auto}
-.hero{margin-bottom:24px}
-.eyebrow{font-weight:bold}
-.grid{display:grid;grid-template-columns:360px 520px 1fr;gap:24px;align-items:start}
-.panel{background:#151b34;border-radius:16px;padding:20px}
-form label{display:block;margin-bottom:14px}
-input,select,textarea,button{width:100%;margin-top:6px;padding:10px;border-radius:8px;border:none}
-button{cursor:pointer;font-weight:bold}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.table-wrap{overflow:auto}
-table{width:100%;border-collapse:collapse}
-th,td{padding:8px;border-bottom:1px solid #333;text-align:left}
-#scenarioMap{height:520px;border-radius:16px;overflow:hidden;margin-top:12px}
-.map-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
-.hint{font-size:.95rem;opacity:.8}
-.county-marker{background:#e20074;color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:bold}
-.bar-row{display:grid;grid-template-columns:120px 1fr 50px;gap:10px;align-items:center;margin-bottom:8px}
-.bar{background:#2b355f;border-radius:999px;height:12px;overflow:hidden}
-.fill{background:#e20074;height:100%}
-@media(max-width:1400px){.grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}}
+:root{--bg:#07111f;--panel:#0f1b2d;--panel2:#13223a;--line:#263852;--text:#eef4ff;--muted:#9fb1c7;--accent:#e20074;--accent2:#ff4aae;--good:#22c55e;--warn:#f59e0b;--bad:#ef4444;--shadow:0 18px 50px rgba(0,0,0,.28)}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Arial,sans-serif;background:radial-gradient(circle at top left,rgba(226,0,116,.16),transparent 34%),linear-gradient(135deg,#07111f 0%,#0b1020 55%,#111827 100%);color:var(--text)}
+.scenario-page{padding:28px;max-width:1720px;margin:auto}
+.hero{position:relative;margin-bottom:26px;padding:30px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(135deg,rgba(15,27,45,.96),rgba(19,34,58,.86));box-shadow:var(--shadow);overflow:hidden}
+.hero:after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:rgba(226,0,116,.18);filter:blur(8px)}
+.eyebrow{margin:0 0 8px;color:var(--accent2);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
+h1{margin:0;font-size:clamp(2rem,3vw,3.5rem);letter-spacing:-.04em}h2{margin:0 0 16px;font-size:1.12rem}h3{margin:22px 0 12px;color:#dbeafe}.hero p:not(.eyebrow){max-width:850px;color:var(--muted);font-size:1.05rem;line-height:1.55}.back-link{display:inline-flex;margin-top:10px;color:#f0abfc;text-decoration:none;font-weight:700}
+.grid{display:grid;grid-template-columns:360px minmax(480px,560px) minmax(520px,1fr);gap:22px;align-items:start}
+.panel{background:rgba(15,27,45,.92);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow);backdrop-filter:blur(10px)}
+form label,.map-panel label{display:block;margin-bottom:15px;color:#cbd5e1;font-size:.86rem;font-weight:700;letter-spacing:.01em}
+input,select,textarea{width:100%;margin-top:7px;padding:12px 13px;border-radius:12px;border:1px solid #31435f;background:#071426;color:var(--text);outline:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+input:focus,select:focus,textarea:focus{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(226,0,116,.18)}
+button{width:100%;margin-top:8px;padding:12px 14px;border-radius:13px;border:0;background:linear-gradient(135deg,var(--accent),#ff4aae);color:white;font-weight:800;cursor:pointer;box-shadow:0 10px 24px rgba(226,0,116,.25);transition:transform .15s ease,filter .15s ease}button:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.map-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.map-actions button{background:#1d2b46;box-shadow:none;border:1px solid #31435f}.map-actions button:hover{border-color:var(--accent2)}
+.cards,.resource-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.card{background:linear-gradient(180deg,#16243d,#0d1829);border:1px solid #263852;border-radius:16px;padding:15px;min-height:86px}.label{color:var(--muted);font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.value{font-size:1.28rem;font-weight:900;margin-top:8px;letter-spacing:-.02em}
+#scenarioMap{height:560px;border-radius:18px;overflow:hidden;margin-top:12px;border:1px solid #31435f;box-shadow:0 18px 40px rgba(0,0,0,.25)}.leaflet-control-attribution{font-size:10px}.hint{font-size:.92rem;color:var(--muted);line-height:1.5}.county-marker{background:var(--accent);color:white;border:2px solid white;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900;box-shadow:0 4px 12px rgba(0,0,0,.35)}
+.bar-row{display:grid;grid-template-columns:128px 1fr 54px;gap:10px;align-items:center;margin-bottom:10px;color:#dbeafe;font-size:.88rem}.bar{background:#243554;border-radius:999px;height:13px;overflow:hidden;border:1px solid #334766}.fill{background:linear-gradient(90deg,var(--accent),#f59e0b,#ef4444);height:100%;border-radius:999px}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px}table{width:100%;border-collapse:collapse;font-size:.86rem}th{position:sticky;top:0;background:#16243d;color:#cbd5e1;text-transform:uppercase;font-size:.72rem;letter-spacing:.08em}th,td{padding:11px 10px;border-bottom:1px solid #263852;text-align:left;white-space:nowrap}tr:hover td{background:rgba(226,0,116,.06)}
+.stress-extreme td{border-left:3px solid var(--bad)}.stress-high td{border-left:3px solid var(--warn)}.stress-moderate td{border-left:3px solid #eab308}.stress-low td{border-left:3px solid var(--good)}
+.results{min-width:0}.map-panel{min-width:0}
+@media(max-width:1450px){.grid{grid-template-columns:360px 1fr}.results{grid-column:1/-1}.cards,.resource-summary{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:900px){.scenario-page{padding:16px}.grid{grid-template-columns:1fr}.cards,.resource-summary{grid-template-columns:repeat(2,1fr)}#scenarioMap{height:420px}.hero{padding:22px}.bar-row{grid-template-columns:100px 1fr 48px}}
