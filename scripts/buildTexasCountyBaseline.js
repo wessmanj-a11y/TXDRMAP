@@ -4,7 +4,12 @@ const path = require('path');
 const GEO_PATH = path.join(process.cwd(), 'public', 'data', 'geo', 'texas_counties.geojson');
 const RESOURCE_PATH = path.join(process.cwd(), 'public', 'data', 'texas_county_resources.json');
 const OUTPUT_PATH = path.join(process.cwd(), 'public', 'data', 'texas_county_baseline.json');
-const LEGACY_COUNTY_DATA_PATH = path.join(process.cwd(), 'texas_county_data.json');
+
+const LEGACY_PATH_OPTIONS = [
+  path.join(process.cwd(), 'texas_county_data.json'),
+  path.join(process.cwd(), 'public', 'data', 'texas_county_data.json'),
+  path.join(process.cwd(), 'public', 'texas_county_data.json')
+];
 
 const ERCOT_ZONE_RULES = [
   { zone: 'North', counties: ['Dallas','Tarrant','Collin','Denton','Grayson','Wise','Parker','Rockwall','Ellis','Johnson'] },
@@ -17,6 +22,17 @@ const ERCOT_ZONE_RULES = [
 function readJson(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); }
   catch (error) { return fallback; }
+}
+
+function findLegacyData() {
+  for (const filePath of LEGACY_PATH_OPTIONS) {
+    if (fs.existsSync(filePath)) {
+      console.log('Using legacy county data from: ' + filePath);
+      return readJson(filePath, {});
+    }
+  }
+  console.warn('No legacy county data file found. Checked: ' + LEGACY_PATH_OPTIONS.join(', '));
+  return {};
 }
 
 function countyName(feature) {
@@ -48,46 +64,29 @@ function assignErcotZone(county) {
 
 function derivePopulationFromLegacy(record) {
   if (!record) return null;
-
-  const directCandidates = [
-    record.population,
-    record.Population,
-    record.pop,
-    record.countyPopulation
-  ];
-
+  const directCandidates = [record.population, record.Population, record.pop, record.countyPopulation];
   for (const value of directCandidates) {
     const num = Number(value);
     if (Number.isFinite(num) && num > 0) return num;
   }
-
-  const customerCandidates = [
-    record.customers,
-    record.totalCustomers,
-    record.utilityCustomers,
-    record.customerCount
-  ];
-
+  const customerCandidates = [record.customers, record.totalCustomers, record.utilityCustomers, record.customerCount, record.customersTracked];
   for (const customers of customerCandidates) {
     const num = Number(customers);
-    if (Number.isFinite(num) && num > 0) {
-      return Math.round(num * 2.6);
-    }
+    if (Number.isFinite(num) && num > 0) return Math.round(num * 2.6);
   }
-
   return null;
 }
 
 function buildLegacyPopulationMap() {
-  const legacy = readJson(LEGACY_COUNTY_DATA_PATH, {});
+  const legacyRaw = findLegacyData();
+  const legacy = legacyRaw.counties || legacyRaw;
   const map = {};
-
   Object.keys(legacy || {}).forEach(county => {
     const normalized = normalizeCountyName(county);
     const population = derivePopulationFromLegacy(legacy[county]);
     if (population) map[normalized] = population;
   });
-
+  console.log('Loaded legacy population entries: ' + Object.keys(map).length);
   return map;
 }
 
@@ -97,7 +96,6 @@ async function main() {
 
   const resources = readJson(RESOURCE_PATH, { counties: {} });
   const legacyPopulationMap = buildLegacyPopulationMap();
-
   const counties = {};
 
   (geo.features || []).forEach(feature => {
@@ -123,9 +121,7 @@ async function main() {
       emsStations: resource.emsStations || 0,
       policeDepartments: resource.policeDepartments || 0,
       cellTowers: resource.cellTowers || estimateCellTowers(population),
-      ercotZone: resource.ercotZone && resource.ercotZone !== 'Unknown'
-        ? resource.ercotZone
-        : assignErcotZone(county)
+      ercotZone: resource.ercotZone && resource.ercotZone !== 'Unknown' ? resource.ercotZone : assignErcotZone(county)
     };
   });
 
