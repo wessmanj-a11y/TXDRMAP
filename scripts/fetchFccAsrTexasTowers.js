@@ -7,7 +7,6 @@ const OUT_DIR = path.join(process.cwd(), 'public', 'data', 'resources');
 const COUNTY_GEOJSON = path.join(process.cwd(), 'public', 'data', 'geo', 'texas_counties.geojson');
 const RESOURCE_MODEL = path.join(process.cwd(), 'public', 'data', 'texas_county_resources.json');
 const OUTPUT_GEOJSON = path.join(OUT_DIR, 'fcc_asr_towers_tx.geojson');
-
 const FCC_ASR_URL = process.env.FCC_ASR_URL || 'https://data.fcc.gov/download/pub/uls/complete/r_tower.zip';
 const FCC_ASR_LOCAL_FILE = process.env.FCC_ASR_LOCAL_FILE || path.join(process.cwd(), 'data', 'raw', 'r_tower.zip');
 
@@ -40,10 +39,9 @@ function extractZipEntries(buffer) {
     const dataStart = offset + 30 + fileNameLength + extraLength;
     const dataEnd = dataStart + compressedSize;
     const compressed = buffer.slice(dataStart, dataEnd);
-    let data;
+    let data = Buffer.alloc(0);
     if (compression === 0) data = compressed;
     else if (compression === 8) data = zlib.inflateRawSync(compressed);
-    else data = Buffer.alloc(0);
     entries.push({ name, text: data.toString('utf8') });
     offset = dataEnd;
   }
@@ -80,24 +78,25 @@ function normalizeHeaders(row) { const out = {}; Object.keys(row || {}).forEach(
 function get(row, keys) { const n = normalizeHeaders(row); for (const key of keys) if (n[key] !== undefined && n[key] !== '') return n[key]; return null; }
 
 function coordinatesFromRow(row) {
-  let lat = numberFrom(get(row, ['latdd','latitude','latitudedecimal','latdec','ddlat']));
-  let lng = numberFrom(get(row, ['londd','longdd','longitude','longitudedecimal','londec','longdec','ddlon']));
+  let lat = numberFrom(get(row, ['latdd','latitude','latitudedecimal','latdec','ddlat','latdd83']));
+  let lng = numberFrom(get(row, ['londd','longdd','longitude','longitudedecimal','londec','longdec','ddlon','londd83']));
   if (Number.isFinite(lat) && Number.isFinite(lng)) return { lat, lng };
-  lat = dmsToDecimal(get(row, ['latdeg','latdegrees','latd']), get(row, ['latmin','latminutes','latm']), get(row, ['latsec','latseconds','lats']), get(row, ['latdir','latdirection','latns']));
-  lng = dmsToDecimal(get(row, ['londeg','longdeg','longdegrees','lond']), get(row, ['lonmin','longmin','longminutes','lonm']), get(row, ['lonsec','longsec','longseconds','lons']), get(row, ['londir','longdir','longdirection','lonew']));
+  lat = dmsToDecimal(get(row, ['latdeg','latdegrees','latd','latdeg83']), get(row, ['latmin','latminutes','latm','latmin83']), get(row, ['latsec','latseconds','lats','latsec83']), get(row, ['latdir','latdirection','latns']));
+  lng = dmsToDecimal(get(row, ['londeg','longdeg','longdegrees','lond','londeg83']), get(row, ['lonmin','longmin','longminutes','lonm','lonmin83']), get(row, ['lonsec','longsec','longseconds','lons','lonsec83']), get(row, ['londir','longdir','longdirection','lonew']));
   if (Number.isFinite(lat) && Number.isFinite(lng)) return { lat, lng };
   return null;
 }
 
-function rowToFeature(row, index) {
+function rowToFeature(row, index, sourceFile) {
   const coords = coordinatesFromRow(row);
   if (!coords) return null;
   const lat = coords.lat, lng = coords.lng;
   if (lng < -106.7 || lng > -93.3 || lat < 25.7 || lat > 36.6) return null;
-  return { type: 'Feature', id: get(row, ['registrationnumber','regnum','uniqueid']) || index, properties: row, geometry: { type: 'Point', coordinates: [lng, lat] } };
+  const properties = Object.assign({ sourceFile }, row);
+  return { type: 'Feature', id: get(row, ['registrationnumber','regnum','uniqueid']) || sourceFile + '-' + index, properties, geometry: { type: 'Point', coordinates: [lng, lat] } };
 }
 
-async function loadAsrRows() {
+async function loadZipEntries() {
   let buffer;
   if (fs.existsSync(FCC_ASR_LOCAL_FILE)) {
     console.log('Reading local FCC ASR source: ' + FCC_ASR_LOCAL_FILE);
@@ -107,14 +106,25 @@ async function loadAsrRows() {
     buffer = await fetchBuffer(FCC_ASR_URL);
   }
   const entries = extractZipEntries(buffer);
-  if (!entries.length) return rowsFromText(buffer.toString('utf8'));
+  if (!entries.length) return [{ name: 'raw.txt', text: buffer.toString('utf8') }];
   console.log('FCC ASR ZIP entries: ' + entries.map(e => e.name).join(', '));
-  const preferred = entries.find(e => /^(CO|RA|EN)\.dat$/i.test(path.basename(e.name))) || entries.find(e => /\.dat$/i.test(e.name)) || entries[0];
-  console.log('Parsing FCC ASR entry: ' + preferred.name);
-  return rowsFromText(preferred.text);
+  return entries.filter(e => /\.(dat|csv|txt)$/i.test(e.name));
 }
 
-async function fetchFccAsrTexasGeojson() { const rows = await loadAsrRows(); const features = rows.map(rowToFeature).filter(Boolean); console.log('Parsed FCC ASR rows: ' + rows.length + '; Texas features with coordinates: ' + features.length); return { type: 'FeatureCollection', features }; }
+async function fetchFccAsrTexasGeojson() {
+  const entries = await loadZipEntries();
+  let best = { name: null, rows: [], features: [] };
+  entries.forEach(entry => {
+    const rows = rowsFromText(entry.text);
+    const features = rows.map((row, i) => rowToFeature(row, i, path.basename(entry.name))).filter(Boolean);
+    const sampleHeaders = rows[0] ? Object.keys(rows[0]).slice(0, 10).join(', ') : 'none';
+    console.log('FCC ASR candidate ' + entry.name + ': rows=' + rows.length + ', Texas coordinate features=' + features.length + ', headers=' + sampleHeaders);
+    if (features.length > best.features.length) best = { name: entry.name, rows, features };
+  });
+  console.log('Selected FCC ASR entry: ' + (best.name || 'none') + ' with Texas features: ' + best.features.length);
+  return { type: 'FeatureCollection', features: best.features };
+}
+
 function getPoint(feature) { if (!feature || !feature.geometry || feature.geometry.type !== 'Point') return null; return { lng: Number(feature.geometry.coordinates[0]), lat: Number(feature.geometry.coordinates[1]) }; }
 function countyName(feature) { const p = feature.properties || {}; return String(p.NAME || p.NAMELSAD || p.name || '').replace(/ County$/i, '').trim(); }
 function pointInRing(point, ring) { let inside = false; for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) { const xi = ring[i][0], yi = ring[i][1]; const xj = ring[j][0], yj = ring[j][1]; const intersect = ((yi > point.lat) !== (yj > point.lat)) && (point.lng < (xj - xi) * (point.lat - yi) / ((yj - yi) || 1e-12) + xi); if (intersect) inside = !inside; } return inside; }
@@ -133,7 +143,7 @@ async function main() {
   writeJson(OUTPUT_GEOJSON, texasGeojson);
   texasGeojson.features.forEach(feature => { const point = getPoint(feature); const county = point ? findCounty(point, countiesGeo) : null; if (!county) return; towerCounts[county] = (towerCounts[county] || 0) + 1; });
   Object.keys(model).forEach(county => { const profile = ensureCountyProfile(model[county]); const registeredTowers = towerCounts[county] || 0; profile.registeredTowers = registeredTowers; profile.cellTowers = registeredTowers || profile.cellTowersEstimated; profile.towerDataSource = registeredTowers ? 'FCC_ASR' : 'ESTIMATED'; model[county] = profile; });
-  const payload = { generatedAt: new Date().toISOString(), sourceNote: 'Texas county resources enriched with FCC ULS ASR tower records from r_tower.zip. registeredTowers is ASR structure count, not guaranteed carrier cell-site count.', towerSource: FCC_ASR_URL, towerFeatureCount: texasGeojson.features.length, fields: ['population','hospitals','hospitalBeds','fireStations','emsStations','policeDepartments','cellTowersEstimated','registeredTowers','cellTowers','towerDataSource','ercotZone'], counties: model };
+  const payload = { generatedAt: new Date().toISOString(), sourceNote: 'Texas county resources enriched with FCC ULS ASR tower records from r_tower.zip. The parser scans all DAT/CSV/TXT files in the ZIP and selects the file with the most Texas coordinate features. registeredTowers is ASR structure count, not guaranteed carrier cell-site count.', towerSource: FCC_ASR_URL, towerFeatureCount: texasGeojson.features.length, fields: ['population','hospitals','hospitalBeds','fireStations','emsStations','policeDepartments','cellTowersEstimated','registeredTowers','cellTowers','towerDataSource','ercotZone'], counties: model };
   writeJson(RESOURCE_MODEL, payload);
   console.log('Wrote ' + OUTPUT_GEOJSON + ' with ' + texasGeojson.features.length + ' FCC ASR structures');
   console.log('Updated ' + RESOURCE_MODEL + ' with registered tower counts for ' + Object.keys(towerCounts).length + ' counties');
