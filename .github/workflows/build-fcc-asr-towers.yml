@@ -1,0 +1,42 @@
+name: Build FCC ASR Texas Towers
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 10 1 * *'
+
+permissions:
+  contents: write
+
+jobs:
+  build-fcc-asr-towers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Ensure Texas county polygons exist
+        run: |
+          if [ ! -f public/data/geo/texas_counties.geojson ]; then
+            node scripts/fetchTexasCountyGeojson.js
+          fi
+
+      - name: Ensure baseline exists
+        run: |
+          if [ ! -f public/data/texas_county_resources.json ]; then
+            node scripts/buildTexasCountyBaseline.js
+          fi
+
+      - name: Build FCC ASR Texas towers
+        run: node scripts/fetchFccAsrTexasTowers.js
+
+      - name: Commit generated FCC ASR tower data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Build FCC ASR Texas towers
+          file_pattern: public/data/resources/fcc_asr_towers_tx.geojson public/data/texas_county_resources.json
