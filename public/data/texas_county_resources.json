@@ -1,6 +1,7 @@
 {
-  "generatedAt": "2026-05-10T17:07:47.167Z",
-  "sourceNote": "Texas county baseline enriched from existing committed TXDRMAP population sources, HIFLD resource layers, estimated cell towers, and ERCOT regional assignment. No external population API is called.",
+  "generatedAt": "2026-05-10T19:40:00.718Z",
+  "sourceNote": "Texas county baseline enriched from committed county population fallback, optional TXDRMAP population sources, HIFLD resource layers, estimated cell towers, and ERCOT regional assignment. No external population API is called.",
+  "populationFallbackCount": 16,
   "populationSources": [
     "/home/runner/work/TXDRMAP/TXDRMAP/public/data/texas_county_population.json",
     "/home/runner/work/TXDRMAP/TXDRMAP/public/data/county_population.json",
@@ -21,7 +22,7 @@
   ],
   "counties": {
     "Ochiltree": {
-      "population": 120000,
+      "population": 9723,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 4,
@@ -31,7 +32,7 @@
       "ercotZone": "Unknown"
     },
     "Oldham": {
-      "population": 120000,
+      "population": 1861,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 4,
@@ -41,7 +42,7 @@
       "ercotZone": "Unknown"
     },
     "Parker": {
-      "population": 120000,
+      "population": 184840,
       "hospitals": 2,
       "hospitalBeds": 125,
       "fireStations": 26,
@@ -61,7 +62,7 @@
       "ercotZone": "Unknown"
     },
     "Randall": {
-      "population": 120000,
+      "population": 143854,
       "hospitals": 1,
       "hospitalBeds": 4,
       "fireStations": 12,
@@ -71,7 +72,7 @@
       "ercotZone": "West"
     },
     "Roberts": {
-      "population": 120000,
+      "population": 827,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 2,
@@ -81,7 +82,7 @@
       "ercotZone": "Unknown"
     },
     "Rockwall": {
-      "population": 120000,
+      "population": 130983,
       "hospitals": 3,
       "hospitalBeds": 170,
       "fireStations": 9,
@@ -91,7 +92,7 @@
       "ercotZone": "North"
     },
     "San Saba": {
-      "population": 120000,
+      "population": 5730,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 3,
@@ -101,7 +102,7 @@
       "ercotZone": "Unknown"
     },
     "Somervell": {
-      "population": 120000,
+      "population": 9704,
       "hospitals": 1,
       "hospitalBeds": 16,
       "fireStations": 1,
@@ -111,7 +112,7 @@
       "ercotZone": "Unknown"
     },
     "Stephens": {
-      "population": 120000,
+      "population": 9365,
       "hospitals": 1,
       "hospitalBeds": 40,
       "fireStations": 1,
@@ -121,7 +122,7 @@
       "ercotZone": "Unknown"
     },
     "Stonewall": {
-      "population": 120000,
+      "population": 1245,
       "hospitals": 1,
       "hospitalBeds": 20,
       "fireStations": 1,
@@ -131,7 +132,7 @@
       "ercotZone": "Unknown"
     },
     "Terry": {
-      "population": 120000,
+      "population": 12008,
       "hospitals": 1,
       "hospitalBeds": 45,
       "fireStations": 1,
@@ -161,7 +162,7 @@
       "ercotZone": "Unknown"
     },
     "Uvalde": {
-      "population": 120000,
+      "population": 24384,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 5,
@@ -171,7 +172,7 @@
       "ercotZone": "Unknown"
     },
     "Ward": {
-      "population": 120000,
+      "population": 11644,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 3,
@@ -181,7 +182,7 @@
       "ercotZone": "Unknown"
     },
     "Williamson": {
-      "population": 120000,
+      "population": 697191,
       "hospitals": 12,
       "hospitalBeds": 1009,
       "fireStations": 36,
@@ -191,7 +192,7 @@
       "ercotZone": "Central"
     },
     "Wise": {
-      "population": 120000,
+      "population": 76211,
       "hospitals": 3,
       "hospitalBeds": 184,
       "fireStations": 18,
@@ -201,7 +202,7 @@
       "ercotZone": "North"
     },
     "Zavala": {
-      "population": 120000,
+      "population": 9534,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -211,7 +212,7 @@
       "ercotZone": "Unknown"
     },
     "Archer": {
-      "population": 120000,
+      "population": 9057,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 7,
@@ -221,7 +222,7 @@
       "ercotZone": "Unknown"
     },
     "Armstrong": {
-      "population": 120000,
+      "population": 1848,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 3,
@@ -231,27 +232,27 @@
       "ercotZone": "Unknown"
     },
     "Bastrop": {
-      "population": 120000,
+      "population": 106432,
       "hospitals": 1,
       "hospitalBeds": 8,
       "fireStations": 13,
       "emsStations": 5,
       "policeDepartments": 5,
       "cellTowers": 350,
-      "ercotZone": "Unknown"
+      "ercotZone": "Central"
     },
     "Blanco": {
-      "population": 120000,
+      "population": 13397,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 3,
       "emsStations": 2,
       "policeDepartments": 3,
       "cellTowers": 350,
-      "ercotZone": "Unknown"
+      "ercotZone": "Central"
     },
     "Brooks": {
-      "population": 120000,
+      "population": 7093,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 2,
@@ -261,14 +262,14 @@
       "ercotZone": "Unknown"
     },
     "Burnet": {
-      "population": 120000,
+      "population": 56017,
       "hospitals": 2,
       "hospitalBeds": 71,
       "fireStations": 11,
       "emsStations": 6,
       "policeDepartments": 7,
       "cellTowers": 350,
-      "ercotZone": "Unknown"
+      "ercotZone": "Central"
     },
     "Camp": {
       "population": 120000,
@@ -281,7 +282,7 @@
       "ercotZone": "Unknown"
     },
     "Castro": {
-      "population": 120000,
+      "population": 7515,
       "hospitals": 1,
       "hospitalBeds": 17,
       "fireStations": 3,
@@ -291,7 +292,7 @@
       "ercotZone": "Unknown"
     },
     "Cochran": {
-      "population": 120000,
+      "population": 2547,
       "hospitals": 1,
       "hospitalBeds": 18,
       "fireStations": 2,
@@ -301,7 +302,7 @@
       "ercotZone": "Unknown"
     },
     "Concho": {
-      "population": 120000,
+      "population": 3830,
       "hospitals": 1,
       "hospitalBeds": 16,
       "fireStations": 3,
@@ -311,7 +312,7 @@
       "ercotZone": "Unknown"
     },
     "Coryell": {
-      "population": 120000,
+      "population": 89900,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 11,
@@ -321,7 +322,7 @@
       "ercotZone": "Unknown"
     },
     "Crane": {
-      "population": 120000,
+      "population": 4675,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 1,
@@ -331,7 +332,7 @@
       "ercotZone": "Unknown"
     },
     "Dawson": {
-      "population": 120000,
+      "population": 12413,
       "hospitals": 1,
       "hospitalBeds": 22,
       "fireStations": 5,
@@ -341,7 +342,7 @@
       "ercotZone": "Unknown"
     },
     "DeWitt": {
-      "population": 120000,
+      "population": 19952,
       "hospitals": 1,
       "hospitalBeds": 49,
       "fireStations": 6,
@@ -351,7 +352,7 @@
       "ercotZone": "Unknown"
     },
     "Dimmit": {
-      "population": 120000,
+      "population": 8155,
       "hospitals": 1,
       "hospitalBeds": 48,
       "fireStations": 2,
@@ -361,7 +362,7 @@
       "ercotZone": "Unknown"
     },
     "Edwards": {
-      "population": 120000,
+      "population": 1422,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -371,7 +372,7 @@
       "ercotZone": "Unknown"
     },
     "Fayette": {
-      "population": 120000,
+      "population": 25255,
       "hospitals": 1,
       "hospitalBeds": 65,
       "fireStations": 10,
@@ -391,7 +392,7 @@
       "ercotZone": "Unknown"
     },
     "Garza": {
-      "population": 120000,
+      "population": 5816,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -401,7 +402,7 @@
       "ercotZone": "Unknown"
     },
     "Gonzales": {
-      "population": 120000,
+      "population": 20251,
       "hospitals": 1,
       "hospitalBeds": 34,
       "fireStations": 5,
@@ -411,7 +412,7 @@
       "ercotZone": "Unknown"
     },
     "Gray": {
-      "population": 120000,
+      "population": 21333,
       "hospitals": 1,
       "hospitalBeds": 115,
       "fireStations": 6,
@@ -421,7 +422,7 @@
       "ercotZone": "Unknown"
     },
     "Grimes": {
-      "population": 120000,
+      "population": 30106,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 7,
@@ -431,7 +432,7 @@
       "ercotZone": "Unknown"
     },
     "Hall": {
-      "population": 120000,
+      "population": 2810,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -441,7 +442,7 @@
       "ercotZone": "Unknown"
     },
     "Hansford": {
-      "population": 120000,
+      "population": 5128,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 2,
@@ -451,7 +452,7 @@
       "ercotZone": "Unknown"
     },
     "Hill": {
-      "population": 120000,
+      "population": 36773,
       "hospitals": 2,
       "hospitalBeds": 165,
       "fireStations": 13,
@@ -461,7 +462,7 @@
       "ercotZone": "Unknown"
     },
     "Howard": {
-      "population": 120000,
+      "population": 34860,
       "hospitals": 3,
       "hospitalBeds": 470,
       "fireStations": 15,
@@ -471,7 +472,7 @@
       "ercotZone": "Unknown"
     },
     "Hutchinson": {
-      "population": 120000,
+      "population": 20446,
       "hospitals": 2,
       "hospitalBeds": 50,
       "fireStations": 4,
@@ -481,7 +482,7 @@
       "ercotZone": "Unknown"
     },
     "Jim Hogg": {
-      "population": 120000,
+      "population": 4838,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -491,7 +492,7 @@
       "ercotZone": "Unknown"
     },
     "Johnson": {
-      "population": 120000,
+      "population": 197723,
       "hospitals": 1,
       "hospitalBeds": 137,
       "fireStations": 18,
@@ -501,7 +502,7 @@
       "ercotZone": "North"
     },
     "Kent": {
-      "population": 120000,
+      "population": 753,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 0,
@@ -511,7 +512,7 @@
       "ercotZone": "Unknown"
     },
     "Kerr": {
-      "population": 120000,
+      "population": 53955,
       "hospitals": 3,
       "hospitalBeds": 446,
       "fireStations": 11,
@@ -521,7 +522,7 @@
       "ercotZone": "Unknown"
     },
     "Knox": {
-      "population": 120000,
+      "population": 3406,
       "hospitals": 1,
       "hospitalBeds": 28,
       "fireStations": 4,
@@ -531,7 +532,7 @@
       "ercotZone": "Unknown"
     },
     "La Salle": {
-      "population": 120000,
+      "population": 6809,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -541,7 +542,7 @@
       "ercotZone": "Unknown"
     },
     "Live Oak": {
-      "population": 120000,
+      "population": 11537,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 4,
@@ -551,7 +552,7 @@
       "ercotZone": "Unknown"
     },
     "Lubbock": {
-      "population": 120000,
+      "population": 323610,
       "hospitals": 10,
       "hospitalBeds": 1683,
       "fireStations": 23,
@@ -561,7 +562,7 @@
       "ercotZone": "West"
     },
     "McLennan": {
-      "population": 120000,
+      "population": 269708,
       "hospitals": 5,
       "hospitalBeds": 1101,
       "fireStations": 35,
@@ -571,7 +572,7 @@
       "ercotZone": "Central"
     },
     "Mason": {
-      "population": 120000,
+      "population": 3943,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 2,
@@ -581,7 +582,7 @@
       "ercotZone": "Unknown"
     },
     "Midland": {
-      "population": 120000,
+      "population": 176832,
       "hospitals": 5,
       "hospitalBeds": 669,
       "fireStations": 12,
@@ -601,7 +602,7 @@
       "ercotZone": "Coast"
     },
     "Navarro": {
-      "population": 120000,
+      "population": 55865,
       "hospitals": 1,
       "hospitalBeds": 162,
       "fireStations": 19,
@@ -611,7 +612,7 @@
       "ercotZone": "Unknown"
     },
     "Nolan": {
-      "population": 120000,
+      "population": 14312,
       "hospitals": 1,
       "hospitalBeds": 85,
       "fireStations": 6,
@@ -621,7 +622,7 @@
       "ercotZone": "Unknown"
     },
     "Briscoe": {
-      "population": 120000,
+      "population": 1397,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 2,
@@ -631,7 +632,7 @@
       "ercotZone": "Unknown"
     },
     "Brown": {
-      "population": 120000,
+      "population": 38011,
       "hospitals": 1,
       "hospitalBeds": 194,
       "fireStations": 12,
@@ -641,17 +642,17 @@
       "ercotZone": "Unknown"
     },
     "Caldwell": {
-      "population": 120000,
+      "population": 48276,
       "hospitals": 2,
       "hospitalBeds": 59,
       "fireStations": 12,
       "emsStations": 7,
       "policeDepartments": 4,
       "cellTowers": 350,
-      "ercotZone": "Unknown"
+      "ercotZone": "Central"
     },
     "Cameron": {
-      "population": 120000,
+      "population": 431275,
       "hospitals": 11,
       "hospitalBeds": 1639,
       "fireStations": 26,
@@ -661,7 +662,7 @@
       "ercotZone": "South"
     },
     "Carson": {
-      "population": 120000,
+      "population": 5970,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 5,
@@ -681,7 +682,7 @@
       "ercotZone": "Unknown"
     },
     "Cherokee": {
-      "population": 120000,
+      "population": 52246,
       "hospitals": 3,
       "hospitalBeds": 429,
       "fireStations": 13,
@@ -691,7 +692,7 @@
       "ercotZone": "Unknown"
     },
     "Clay": {
-      "population": 120000,
+      "population": 10461,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 14,
@@ -701,7 +702,7 @@
       "ercotZone": "Unknown"
     },
     "Coke": {
-      "population": 120000,
+      "population": 3234,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 2,
@@ -711,7 +712,7 @@
       "ercotZone": "Unknown"
     },
     "Collin": {
-      "population": 120000,
+      "population": 1194145,
       "hospitals": 29,
       "hospitalBeds": 2673,
       "fireStations": 56,
@@ -721,7 +722,7 @@
       "ercotZone": "North"
     },
     "Collingsworth": {
-      "population": 120000,
+      "population": 2652,
       "hospitals": 1,
       "hospitalBeds": 16,
       "fireStations": 3,
@@ -731,17 +732,17 @@
       "ercotZone": "Unknown"
     },
     "Comal": {
-      "population": 120000,
+      "population": 190980,
       "hospitals": 4,
       "hospitalBeds": 340,
       "fireStations": 18,
       "emsStations": 15,
       "policeDepartments": 4,
       "cellTowers": 350,
-      "ercotZone": "Unknown"
+      "ercotZone": "Central"
     },
     "Orange": {
-      "population": 120000,
+      "population": 84987,
       "hospitals": 1,
       "hospitalBeds": 94,
       "fireStations": 12,
@@ -751,7 +752,7 @@
       "ercotZone": "Coast"
     },
     "Parmer": {
-      "population": 120000,
+      "population": 9534,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 5,
@@ -761,7 +762,7 @@
       "ercotZone": "Unknown"
     },
     "Reagan": {
-      "population": 120000,
+      "population": 3326,
       "hospitals": 2,
       "hospitalBeds": 21,
       "fireStations": 2,
@@ -771,7 +772,7 @@
       "ercotZone": "Unknown"
     },
     "Real": {
-      "population": 120000,
+      "population": 2765,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 2,
@@ -791,7 +792,7 @@
       "ercotZone": "Unknown"
     },
     "Robertson": {
-      "population": 120000,
+      "population": 17074,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 5,
@@ -801,7 +802,7 @@
       "ercotZone": "Unknown"
     },
     "Runnels": {
-      "population": 120000,
+      "population": 9532,
       "hospitals": 2,
       "hospitalBeds": 50,
       "fireStations": 3,
@@ -811,7 +812,7 @@
       "ercotZone": "Unknown"
     },
     "Sabine": {
-      "population": 120000,
+      "population": 10062,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 8,
@@ -821,7 +822,7 @@
       "ercotZone": "Unknown"
     },
     "Scurry": {
-      "population": 120000,
+      "population": 16921,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 1,
@@ -831,7 +832,7 @@
       "ercotZone": "Unknown"
     },
     "Shackelford": {
-      "population": 120000,
+      "population": 3105,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -841,7 +842,7 @@
       "ercotZone": "Unknown"
     },
     "Shelby": {
-      "population": 120000,
+      "population": 23814,
       "hospitals": 1,
       "hospitalBeds": 120,
       "fireStations": 5,
@@ -851,7 +852,7 @@
       "ercotZone": "Unknown"
     },
     "Smith": {
-      "population": 120000,
+      "population": 244730,
       "hospitals": 10,
       "hospitalBeds": 1337,
       "fireStations": 31,
@@ -861,17 +862,17 @@
       "ercotZone": "Unknown"
     },
     "Starr": {
-      "population": 120000,
+      "population": 65761,
       "hospitals": 1,
       "hospitalBeds": 48,
       "fireStations": 7,
       "emsStations": 2,
       "policeDepartments": 4,
       "cellTowers": 350,
-      "ercotZone": "Unknown"
+      "ercotZone": "South"
     },
     "Sterling": {
-      "population": 120000,
+      "population": 1372,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -881,7 +882,7 @@
       "ercotZone": "Unknown"
     },
     "Sutton": {
-      "population": 120000,
+      "population": 3372,
       "hospitals": 1,
       "hospitalBeds": 12,
       "fireStations": 1,
@@ -891,7 +892,7 @@
       "ercotZone": "Unknown"
     },
     "Swisher": {
-      "population": 120000,
+      "population": 7391,
       "hospitals": 1,
       "hospitalBeds": 20,
       "fireStations": 4,
@@ -901,7 +902,7 @@
       "ercotZone": "Unknown"
     },
     "Taylor": {
-      "population": 120000,
+      "population": 149712,
       "hospitals": 6,
       "hospitalBeds": 956,
       "fireStations": 20,
@@ -911,7 +912,7 @@
       "ercotZone": "Unknown"
     },
     "Throckmorton": {
-      "population": 120000,
+      "population": 1530,
       "hospitals": 1,
       "hospitalBeds": 14,
       "fireStations": 2,
@@ -921,7 +922,7 @@
       "ercotZone": "Unknown"
     },
     "Tom Green": {
-      "population": 120000,
+      "population": 121619,
       "hospitals": 4,
       "hospitalBeds": 614,
       "fireStations": 16,
@@ -941,7 +942,7 @@
       "ercotZone": "Central"
     },
     "Tyler": {
-      "population": 120000,
+      "population": 20250,
       "hospitals": 1,
       "hospitalBeds": 49,
       "fireStations": 6,
@@ -951,7 +952,7 @@
       "ercotZone": "Unknown"
     },
     "Van Zandt": {
-      "population": 120000,
+      "population": 65581,
       "hospitals": 1,
       "hospitalBeds": 52,
       "fireStations": 14,
@@ -961,7 +962,7 @@
       "ercotZone": "Unknown"
     },
     "Victoria": {
-      "population": 120000,
+      "population": 92740,
       "hospitals": 6,
       "hospitalBeds": 723,
       "fireStations": 21,
@@ -971,7 +972,7 @@
       "ercotZone": "Unknown"
     },
     "Washington": {
-      "population": 120000,
+      "population": 36795,
       "hospitals": 1,
       "hospitalBeds": 60,
       "fireStations": 11,
@@ -981,7 +982,7 @@
       "ercotZone": "Unknown"
     },
     "Wheeler": {
-      "population": 120000,
+      "population": 5017,
       "hospitals": 2,
       "hospitalBeds": 41,
       "fireStations": 6,
@@ -991,7 +992,7 @@
       "ercotZone": "Unknown"
     },
     "Wichita": {
-      "population": 120000,
+      "population": 130675,
       "hospitals": 7,
       "hospitalBeds": 679,
       "fireStations": 17,
@@ -1001,14 +1002,14 @@
       "ercotZone": "Unknown"
     },
     "Willacy": {
-      "population": 120000,
+      "population": 20059,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 4,
       "emsStations": 2,
       "policeDepartments": 4,
       "cellTowers": 350,
-      "ercotZone": "Unknown"
+      "ercotZone": "South"
     },
     "Wood": {
       "population": 120000,
@@ -1021,7 +1022,7 @@
       "ercotZone": "Unknown"
     },
     "Anderson": {
-      "population": 120000,
+      "population": 57863,
       "hospitals": 2,
       "hospitalBeds": 156,
       "fireStations": 21,
@@ -1031,7 +1032,7 @@
       "ercotZone": "Unknown"
     },
     "Atascosa": {
-      "population": 120000,
+      "population": 51667,
       "hospitals": 1,
       "hospitalBeds": 67,
       "fireStations": 5,
@@ -1041,7 +1042,7 @@
       "ercotZone": "Unknown"
     },
     "Austin": {
-      "population": 120000,
+      "population": 31133,
       "hospitals": 1,
       "hospitalBeds": 32,
       "fireStations": 8,
@@ -1051,7 +1052,7 @@
       "ercotZone": "Unknown"
     },
     "Bailey": {
-      "population": 120000,
+      "population": 6972,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 1,
@@ -1061,7 +1062,7 @@
       "ercotZone": "Unknown"
     },
     "Baylor": {
-      "population": 120000,
+      "population": 3409,
       "hospitals": 1,
       "hospitalBeds": 49,
       "fireStations": 1,
@@ -1071,7 +1072,7 @@
       "ercotZone": "Unknown"
     },
     "Bee": {
-      "population": 120000,
+      "population": 31537,
       "hospitals": 1,
       "hospitalBeds": 69,
       "fireStations": 6,
@@ -1091,7 +1092,7 @@
       "ercotZone": "South"
     },
     "Borden": {
-      "population": 120000,
+      "population": 631,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -1101,7 +1102,7 @@
       "ercotZone": "Unknown"
     },
     "Bosque": {
-      "population": 120000,
+      "population": 18953,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 12,
@@ -1111,7 +1112,7 @@
       "ercotZone": "Unknown"
     },
     "Brazoria": {
-      "population": 120000,
+      "population": 389314,
       "hospitals": 5,
       "hospitalBeds": 357,
       "fireStations": 37,
@@ -1121,7 +1122,7 @@
       "ercotZone": "Coast"
     },
     "Kimble": {
-      "population": 120000,
+      "population": 4304,
       "hospitals": 1,
       "hospitalBeds": 15,
       "fireStations": 1,
@@ -1131,7 +1132,7 @@
       "ercotZone": "Unknown"
     },
     "Kinney": {
-      "population": 120000,
+      "population": 3135,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -1151,7 +1152,7 @@
       "ercotZone": "Unknown"
     },
     "Lampasas": {
-      "population": 120000,
+      "population": 22650,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 5,
@@ -1161,7 +1162,7 @@
       "ercotZone": "Unknown"
     },
     "Lavaca": {
-      "population": 120000,
+      "population": 20426,
       "hospitals": 2,
       "hospitalBeds": 50,
       "fireStations": 6,
@@ -1171,7 +1172,7 @@
       "ercotZone": "Unknown"
     },
     "Lee": {
-      "population": 120000,
+      "population": 18366,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 4,
@@ -1181,7 +1182,7 @@
       "ercotZone": "Unknown"
     },
     "Liberty": {
-      "population": 120000,
+      "population": 99980,
       "hospitals": 3,
       "hospitalBeds": 136,
       "fireStations": 19,
@@ -1191,7 +1192,7 @@
       "ercotZone": "Unknown"
     },
     "Limestone": {
-      "population": 120000,
+      "population": 22464,
       "hospitals": 2,
       "hospitalBeds": 79,
       "fireStations": 8,
@@ -1201,7 +1202,7 @@
       "ercotZone": "Unknown"
     },
     "Lipscomb": {
-      "population": 120000,
+      "population": 2893,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 6,
@@ -1211,7 +1212,7 @@
       "ercotZone": "Unknown"
     },
     "Loving": {
-      "population": 120000,
+      "population": 64,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 0,
@@ -1221,7 +1222,7 @@
       "ercotZone": "Unknown"
     },
     "Lynn": {
-      "population": 120000,
+      "population": 5603,
       "hospitals": 1,
       "hospitalBeds": 24,
       "fireStations": 4,
@@ -1231,7 +1232,7 @@
       "ercotZone": "Unknown"
     },
     "McCulloch": {
-      "population": 120000,
+      "population": 7667,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 6,
@@ -1241,7 +1242,7 @@
       "ercotZone": "Unknown"
     },
     "Martin": {
-      "population": 120000,
+      "population": 5237,
       "hospitals": 2,
       "hospitalBeds": 43,
       "fireStations": 2,
@@ -1251,7 +1252,7 @@
       "ercotZone": "Unknown"
     },
     "Maverick": {
-      "population": 120000,
+      "population": 57940,
       "hospitals": 1,
       "hospitalBeds": 101,
       "fireStations": 3,
@@ -1261,7 +1262,7 @@
       "ercotZone": "South"
     },
     "Menard": {
-      "population": 120000,
+      "population": 1942,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -1271,7 +1272,7 @@
       "ercotZone": "Unknown"
     },
     "Milam": {
-      "population": 120000,
+      "population": 25183,
       "hospitals": 2,
       "hospitalBeds": 35,
       "fireStations": 8,
@@ -1281,7 +1282,7 @@
       "ercotZone": "Unknown"
     },
     "Mills": {
-      "population": 120000,
+      "population": 4595,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 4,
@@ -1291,7 +1292,7 @@
       "ercotZone": "Unknown"
     },
     "Moore": {
-      "population": 120000,
+      "population": 21768,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 3,
@@ -1301,7 +1302,7 @@
       "ercotZone": "Unknown"
     },
     "Nueces": {
-      "population": 120000,
+      "population": 353178,
       "hospitals": 14,
       "hospitalBeds": 2224,
       "fireStations": 26,
@@ -1311,7 +1312,7 @@
       "ercotZone": "Coast"
     },
     "Palo Pinto": {
-      "population": 120000,
+      "population": 28725,
       "hospitals": 1,
       "hospitalBeds": 74,
       "fireStations": 14,
@@ -1321,7 +1322,7 @@
       "ercotZone": "Unknown"
     },
     "Polk": {
-      "population": 120000,
+      "population": 53870,
       "hospitals": 1,
       "hospitalBeds": 66,
       "fireStations": 12,
@@ -1331,17 +1332,17 @@
       "ercotZone": "Unknown"
     },
     "Reeves": {
-      "population": 120000,
+      "population": 14901,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 3,
       "emsStations": 2,
       "policeDepartments": 2,
       "cellTowers": 350,
-      "ercotZone": "Unknown"
+      "ercotZone": "West"
     },
     "San Augustine": {
-      "population": 120000,
+      "population": 7886,
       "hospitals": 1,
       "hospitalBeds": 18,
       "fireStations": 6,
@@ -1351,7 +1352,7 @@
       "ercotZone": "Unknown"
     },
     "Schleicher": {
-      "population": 120000,
+      "population": 2447,
       "hospitals": 1,
       "hospitalBeds": 14,
       "fireStations": 1,
@@ -1361,7 +1362,7 @@
       "ercotZone": "Unknown"
     },
     "Sherman": {
-      "population": 120000,
+      "population": 2809,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 0,
@@ -1381,7 +1382,7 @@
       "ercotZone": "North"
     },
     "Trinity": {
-      "population": 120000,
+      "population": 13783,
       "hospitals": 1,
       "hospitalBeds": 45,
       "fireStations": 4,
@@ -1401,7 +1402,7 @@
       "ercotZone": "Unknown"
     },
     "Wharton": {
-      "population": 120000,
+      "population": 41909,
       "hospitals": 2,
       "hospitalBeds": 210,
       "fireStations": 7,
@@ -1411,7 +1412,7 @@
       "ercotZone": "Unknown"
     },
     "Wilson": {
-      "population": 120000,
+      "population": 56895,
       "hospitals": 1,
       "hospitalBeds": 44,
       "fireStations": 11,
@@ -1421,7 +1422,7 @@
       "ercotZone": "Unknown"
     },
     "Young": {
-      "population": 120000,
+      "population": 17900,
       "hospitals": 2,
       "hospitalBeds": 67,
       "fireStations": 7,
@@ -1431,7 +1432,7 @@
       "ercotZone": "Unknown"
     },
     "Andrews": {
-      "population": 120000,
+      "population": 18610,
       "hospitals": 1,
       "hospitalBeds": 34,
       "fireStations": 1,
@@ -1441,7 +1442,7 @@
       "ercotZone": "Unknown"
     },
     "Bandera": {
-      "population": 120000,
+      "population": 24519,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 7,
@@ -1451,7 +1452,7 @@
       "ercotZone": "Unknown"
     },
     "Bell": {
-      "population": 120000,
+      "population": 388386,
       "hospitals": 10,
       "hospitalBeds": 1451,
       "fireStations": 30,
@@ -1461,7 +1462,7 @@
       "ercotZone": "Central"
     },
     "Brazos": {
-      "population": 120000,
+      "population": 242014,
       "hospitals": 6,
       "hospitalBeds": 658,
       "fireStations": 23,
@@ -1471,7 +1472,7 @@
       "ercotZone": "Unknown"
     },
     "Callahan": {
-      "population": 120000,
+      "population": 13645,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 6,
@@ -1481,7 +1482,7 @@
       "ercotZone": "Unknown"
     },
     "Childress": {
-      "population": 120000,
+      "population": 6610,
       "hospitals": 1,
       "hospitalBeds": 39,
       "fireStations": 1,
@@ -1491,7 +1492,7 @@
       "ercotZone": "Unknown"
     },
     "Coleman": {
-      "population": 120000,
+      "population": 7808,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 3,
@@ -1501,7 +1502,7 @@
       "ercotZone": "Unknown"
     },
     "Colorado": {
-      "population": 120000,
+      "population": 20928,
       "hospitals": 3,
       "hospitalBeds": 103,
       "fireStations": 8,
@@ -1511,7 +1512,7 @@
       "ercotZone": "Unknown"
     },
     "Crosby": {
-      "population": 120000,
+      "population": 5157,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 1,
@@ -1531,7 +1532,7 @@
       "ercotZone": "Unknown"
     },
     "Duval": {
-      "population": 120000,
+      "population": 9652,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 3,
@@ -1541,7 +1542,7 @@
       "ercotZone": "Unknown"
     },
     "Erath": {
-      "population": 120000,
+      "population": 45980,
       "hospitals": 1,
       "hospitalBeds": 98,
       "fireStations": 10,
@@ -1551,7 +1552,7 @@
       "ercotZone": "Unknown"
     },
     "Floyd": {
-      "population": 120000,
+      "population": 5639,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 2,
@@ -1561,7 +1562,7 @@
       "ercotZone": "Unknown"
     },
     "Frio": {
-      "population": 120000,
+      "population": 18091,
       "hospitals": 2,
       "hospitalBeds": 40,
       "fireStations": 2,
@@ -1571,7 +1572,7 @@
       "ercotZone": "Unknown"
     },
     "Gillespie": {
-      "population": 120000,
+      "population": 27847,
       "hospitals": 1,
       "hospitalBeds": 86,
       "fireStations": 9,
@@ -1581,7 +1582,7 @@
       "ercotZone": "Unknown"
     },
     "Glasscock": {
-      "population": 120000,
+      "population": 1213,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 2,
@@ -1591,7 +1592,7 @@
       "ercotZone": "Unknown"
     },
     "Goliad": {
-      "population": 120000,
+      "population": 7022,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 4,
@@ -1601,7 +1602,7 @@
       "ercotZone": "Unknown"
     },
     "Gregg": {
-      "population": 120000,
+      "population": 124239,
       "hospitals": 6,
       "hospitalBeds": 846,
       "fireStations": 16,
@@ -1611,17 +1612,17 @@
       "ercotZone": "Unknown"
     },
     "Guadalupe": {
-      "population": 120000,
+      "population": 184033,
       "hospitals": 2,
       "hospitalBeds": 133,
       "fireStations": 18,
       "emsStations": 16,
       "policeDepartments": 7,
       "cellTowers": 350,
-      "ercotZone": "Unknown"
+      "ercotZone": "Central"
     },
     "Hartley": {
-      "population": 120000,
+      "population": 5459,
       "hospitals": 1,
       "hospitalBeds": 21,
       "fireStations": 3,
@@ -1631,7 +1632,7 @@
       "ercotZone": "Unknown"
     },
     "Hays": {
-      "population": 120000,
+      "population": 269225,
       "hospitals": 4,
       "hospitalBeds": 354,
       "fireStations": 23,
@@ -1641,7 +1642,7 @@
       "ercotZone": "Central"
     },
     "Hockley": {
-      "population": 120000,
+      "population": 21109,
       "hospitals": 1,
       "hospitalBeds": 48,
       "fireStations": 5,
@@ -1651,7 +1652,7 @@
       "ercotZone": "Unknown"
     },
     "Hunt": {
-      "population": 120000,
+      "population": 108282,
       "hospitals": 3,
       "hospitalBeds": 271,
       "fireStations": 16,
@@ -1661,7 +1662,7 @@
       "ercotZone": "Unknown"
     },
     "Jasper": {
-      "population": 120000,
+      "population": 32574,
       "hospitals": 1,
       "hospitalBeds": 59,
       "fireStations": 13,
@@ -1671,7 +1672,7 @@
       "ercotZone": "Unknown"
     },
     "Karnes": {
-      "population": 120000,
+      "population": 14824,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 4,
@@ -1681,7 +1682,7 @@
       "ercotZone": "Unknown"
     },
     "King": {
-      "population": 120000,
+      "population": 265,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -1691,7 +1692,7 @@
       "ercotZone": "Unknown"
     },
     "Lamb": {
-      "population": 120000,
+      "population": 12901,
       "hospitals": 1,
       "hospitalBeds": 75,
       "fireStations": 5,
@@ -1701,7 +1702,7 @@
       "ercotZone": "Unknown"
     },
     "Leon": {
-      "population": 120000,
+      "population": 18042,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 8,
@@ -1711,7 +1712,7 @@
       "ercotZone": "Unknown"
     },
     "Llano": {
-      "population": 120000,
+      "population": 22203,
       "hospitals": 1,
       "hospitalBeds": 30,
       "fireStations": 9,
@@ -1721,7 +1722,7 @@
       "ercotZone": "Unknown"
     },
     "Madison": {
-      "population": 120000,
+      "population": 14310,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 3,
@@ -1731,7 +1732,7 @@
       "ercotZone": "Unknown"
     },
     "Medina": {
-      "population": 120000,
+      "population": 54565,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 10,
@@ -1741,7 +1742,7 @@
       "ercotZone": "Unknown"
     },
     "Mitchell": {
-      "population": 120000,
+      "population": 8649,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 2,
@@ -1761,7 +1762,7 @@
       "ercotZone": "Unknown"
     },
     "Cottle": {
-      "population": 120000,
+      "population": 1380,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 2,
@@ -1771,7 +1772,7 @@
       "ercotZone": "Unknown"
     },
     "Crockett": {
-      "population": 120000,
+      "population": 3098,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -1781,7 +1782,7 @@
       "ercotZone": "Unknown"
     },
     "Culberson": {
-      "population": 120000,
+      "population": 2193,
       "hospitals": 1,
       "hospitalBeds": 14,
       "fireStations": 2,
@@ -1791,7 +1792,7 @@
       "ercotZone": "Unknown"
     },
     "Dallam": {
-      "population": 120000,
+      "population": 7175,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 2,
@@ -1811,7 +1812,7 @@
       "ercotZone": "North"
     },
     "Denton": {
-      "population": 120000,
+      "population": 1014212,
       "hospitals": 18,
       "hospitalBeds": 1556,
       "fireStations": 49,
@@ -1821,7 +1822,7 @@
       "ercotZone": "North"
     },
     "Dickens": {
-      "population": 120000,
+      "population": 1768,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 3,
@@ -1831,7 +1832,7 @@
       "ercotZone": "Unknown"
     },
     "Eastland": {
-      "population": 120000,
+      "population": 18010,
       "hospitals": 1,
       "hospitalBeds": 52,
       "fireStations": 8,
@@ -1841,7 +1842,7 @@
       "ercotZone": "Unknown"
     },
     "Ellis": {
-      "population": 120000,
+      "population": 230953,
       "hospitals": 3,
       "hospitalBeds": 233,
       "fireStations": 26,
@@ -1871,7 +1872,7 @@
       "ercotZone": "Unknown"
     },
     "Fisher": {
-      "population": 120000,
+      "population": 3672,
       "hospitals": 1,
       "hospitalBeds": 14,
       "fireStations": 2,
@@ -1881,7 +1882,7 @@
       "ercotZone": "Unknown"
     },
     "Fort Bend": {
-      "population": 120000,
+      "population": 916778,
       "hospitals": 12,
       "hospitalBeds": 1105,
       "fireStations": 34,
@@ -1891,7 +1892,7 @@
       "ercotZone": "Coast"
     },
     "Grayson": {
-      "population": 120000,
+      "population": 149552,
       "hospitals": 8,
       "hospitalBeds": 602,
       "fireStations": 26,
@@ -1901,7 +1902,7 @@
       "ercotZone": "North"
     },
     "Hale": {
-      "population": 120000,
+      "population": 32347,
       "hospitals": 2,
       "hospitalBeds": 88,
       "fireStations": 8,
@@ -1911,7 +1912,7 @@
       "ercotZone": "Unknown"
     },
     "Hamilton": {
-      "population": 120000,
+      "population": 8580,
       "hospitals": 1,
       "hospitalBeds": 42,
       "fireStations": 4,
@@ -1921,7 +1922,7 @@
       "ercotZone": "Unknown"
     },
     "Motley": {
-      "population": 120000,
+      "population": 1063,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -1931,7 +1932,7 @@
       "ercotZone": "Unknown"
     },
     "Nacogdoches": {
-      "population": 120000,
+      "population": 64902,
       "hospitals": 3,
       "hospitalBeds": 390,
       "fireStations": 21,
@@ -1941,7 +1942,7 @@
       "ercotZone": "Unknown"
     },
     "Newton": {
-      "population": 120000,
+      "population": 12189,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 5,
@@ -1951,7 +1952,7 @@
       "ercotZone": "Unknown"
     },
     "Hardeman": {
-      "population": 120000,
+      "population": 3549,
       "hospitals": 2,
       "hospitalBeds": 45,
       "fireStations": 2,
@@ -1961,7 +1962,7 @@
       "ercotZone": "Unknown"
     },
     "Hardin": {
-      "population": 120000,
+      "population": 58756,
       "hospitals": 1,
       "hospitalBeds": 120,
       "fireStations": 14,
@@ -1981,7 +1982,7 @@
       "ercotZone": "Coast"
     },
     "Harrison": {
-      "population": 120000,
+      "population": 69641,
       "hospitals": 1,
       "hospitalBeds": 149,
       "fireStations": 16,
@@ -1991,7 +1992,7 @@
       "ercotZone": "Unknown"
     },
     "Hemphill": {
-      "population": 120000,
+      "population": 3382,
       "hospitals": 1,
       "hospitalBeds": 26,
       "fireStations": 3,
@@ -2001,7 +2002,7 @@
       "ercotZone": "Unknown"
     },
     "Henderson": {
-      "population": 120000,
+      "population": 85621,
       "hospitals": 1,
       "hospitalBeds": 117,
       "fireStations": 28,
@@ -2011,7 +2012,7 @@
       "ercotZone": "Unknown"
     },
     "Hidalgo": {
-      "population": 120000,
+      "population": 888367,
       "hospitals": 17,
       "hospitalBeds": 2506,
       "fireStations": 37,
@@ -2031,7 +2032,7 @@
       "ercotZone": "Unknown"
     },
     "Irion": {
-      "population": 120000,
+      "population": 1550,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 2,
@@ -2041,7 +2042,7 @@
       "ercotZone": "Unknown"
     },
     "Jack": {
-      "population": 120000,
+      "population": 8754,
       "hospitals": 2,
       "hospitalBeds": 58,
       "fireStations": 9,
@@ -2051,7 +2052,7 @@
       "ercotZone": "Unknown"
     },
     "Jackson": {
-      "population": 120000,
+      "population": 14839,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 7,
@@ -2061,7 +2062,7 @@
       "ercotZone": "Unknown"
     },
     "Jeff Davis": {
-      "population": 120000,
+      "population": 1975,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 2,
@@ -2071,7 +2072,7 @@
       "ercotZone": "Unknown"
     },
     "Jim Wells": {
-      "population": 120000,
+      "population": 38440,
       "hospitals": 1,
       "hospitalBeds": 159,
       "fireStations": 4,
@@ -2081,7 +2082,7 @@
       "ercotZone": "Unknown"
     },
     "Jones": {
-      "population": 120000,
+      "population": 19898,
       "hospitals": 3,
       "hospitalBeds": 95,
       "fireStations": 5,
@@ -2091,7 +2092,7 @@
       "ercotZone": "Unknown"
     },
     "Kendall": {
-      "population": 120000,
+      "population": 51783,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 6,
@@ -2101,17 +2102,17 @@
       "ercotZone": "Unknown"
     },
     "Pecos": {
-      "population": 120000,
+      "population": 15379,
       "hospitals": 2,
       "hospitalBeds": 41,
       "fireStations": 5,
       "emsStations": 4,
       "policeDepartments": 2,
       "cellTowers": 350,
-      "ercotZone": "Unknown"
+      "ercotZone": "West"
     },
     "Presidio": {
-      "population": 120000,
+      "population": 6131,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 3,
@@ -2121,7 +2122,7 @@
       "ercotZone": "Unknown"
     },
     "Refugio": {
-      "population": 120000,
+      "population": 6741,
       "hospitals": 1,
       "hospitalBeds": 20,
       "fireStations": 6,
@@ -2131,7 +2132,7 @@
       "ercotZone": "Unknown"
     },
     "Rusk": {
-      "population": 120000,
+      "population": 54374,
       "hospitals": 1,
       "hospitalBeds": 96,
       "fireStations": 16,
@@ -2141,7 +2142,7 @@
       "ercotZone": "Unknown"
     },
     "San Jacinto": {
-      "population": 120000,
+      "population": 29504,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 10,
@@ -2151,7 +2152,7 @@
       "ercotZone": "Unknown"
     },
     "San Patricio": {
-      "population": 120000,
+      "population": 68633,
       "hospitals": 1,
       "hospitalBeds": 75,
       "fireStations": 11,
@@ -2161,7 +2162,7 @@
       "ercotZone": "Unknown"
     },
     "Terrell": {
-      "population": 120000,
+      "population": 726,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -2171,7 +2172,7 @@
       "ercotZone": "Unknown"
     },
     "Upton": {
-      "population": 120000,
+      "population": 3339,
       "hospitals": 3,
       "hospitalBeds": 44,
       "fireStations": 2,
@@ -2181,7 +2182,7 @@
       "ercotZone": "Unknown"
     },
     "Val Verde": {
-      "population": 120000,
+      "population": 47668,
       "hospitals": 1,
       "hospitalBeds": 93,
       "fireStations": 9,
@@ -2191,7 +2192,7 @@
       "ercotZone": "Unknown"
     },
     "Waller": {
-      "population": 120000,
+      "population": 64027,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 10,
@@ -2201,7 +2202,7 @@
       "ercotZone": "Unknown"
     },
     "Webb": {
-      "population": 120000,
+      "population": 269124,
       "hospitals": 6,
       "hospitalBeds": 698,
       "fireStations": 12,
@@ -2211,7 +2212,7 @@
       "ercotZone": "South"
     },
     "Wilbarger": {
-      "population": 120000,
+      "population": 12542,
       "hospitals": 2,
       "hospitalBeds": 687,
       "fireStations": 2,
@@ -2221,7 +2222,7 @@
       "ercotZone": "Unknown"
     },
     "Winkler": {
-      "population": 120000,
+      "population": 7805,
       "hospitals": 1,
       "hospitalBeds": 19,
       "fireStations": 2,
@@ -2231,7 +2232,7 @@
       "ercotZone": "Unknown"
     },
     "Yoakum": {
-      "population": 120000,
+      "population": 7335,
       "hospitals": 1,
       "hospitalBeds": 24,
       "fireStations": 2,
@@ -2241,17 +2242,17 @@
       "ercotZone": "Unknown"
     },
     "Zapata": {
-      "population": 120000,
+      "population": 14075,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 3,
       "emsStations": 2,
       "policeDepartments": 1,
       "cellTowers": 350,
-      "ercotZone": "Unknown"
+      "ercotZone": "South"
     },
     "Angelina": {
-      "population": 120000,
+      "population": 86395,
       "hospitals": 4,
       "hospitalBeds": 470,
       "fireStations": 16,
@@ -2261,7 +2262,7 @@
       "ercotZone": "Unknown"
     },
     "Aransas": {
-      "population": 120000,
+      "population": 24068,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 7,
@@ -2281,7 +2282,7 @@
       "ercotZone": "Unknown"
     },
     "Brewster": {
-      "population": 120000,
+      "population": 9584,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 4,
@@ -2291,7 +2292,7 @@
       "ercotZone": "Unknown"
     },
     "Burleson": {
-      "population": 120000,
+      "population": 18613,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 8,
@@ -2301,7 +2302,7 @@
       "ercotZone": "Unknown"
     },
     "Calhoun": {
-      "population": 120000,
+      "population": 19950,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 8,
@@ -2311,17 +2312,17 @@
       "ercotZone": "Unknown"
     },
     "Chambers": {
-      "population": 120000,
+      "population": 51784,
       "hospitals": 2,
       "hospitalBeds": 39,
       "fireStations": 8,
       "emsStations": 5,
       "policeDepartments": 2,
       "cellTowers": 350,
-      "ercotZone": "Unknown"
+      "ercotZone": "Coast"
     },
     "Comanche": {
-      "population": 120000,
+      "population": 14013,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 8,
@@ -2331,7 +2332,7 @@
       "ercotZone": "Unknown"
     },
     "Cooke": {
-      "population": 120000,
+      "population": 43160,
       "hospitals": 2,
       "hospitalBeds": 78,
       "fireStations": 12,
@@ -2341,7 +2342,7 @@
       "ercotZone": "Unknown"
     },
     "Kleberg": {
-      "population": 120000,
+      "population": 31040,
       "hospitals": 1,
       "hospitalBeds": 100,
       "fireStations": 6,
@@ -2351,7 +2352,7 @@
       "ercotZone": "Unknown"
     },
     "McMullen": {
-      "population": 120000,
+      "population": 600,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 0,
@@ -2371,7 +2372,7 @@
       "ercotZone": "Unknown"
     },
     "Matagorda": {
-      "population": 120000,
+      "population": 36646,
       "hospitals": 2,
       "hospitalBeds": 75,
       "fireStations": 11,
@@ -2381,7 +2382,7 @@
       "ercotZone": "Unknown"
     },
     "Montague": {
-      "population": 120000,
+      "population": 20287,
       "hospitals": 2,
       "hospitalBeds": 87,
       "fireStations": 8,
@@ -2391,7 +2392,7 @@
       "ercotZone": "Unknown"
     },
     "Deaf Smith": {
-      "population": 120000,
+      "population": 18583,
       "hospitals": 2,
       "hospitalBeds": 82,
       "fireStations": 1,
@@ -2401,7 +2402,7 @@
       "ercotZone": "Unknown"
     },
     "Kenedy": {
-      "population": 120000,
+      "population": 352,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -2411,7 +2412,7 @@
       "ercotZone": "Unknown"
     },
     "Ector": {
-      "population": 120000,
+      "population": 169384,
       "hospitals": 4,
       "hospitalBeds": 669,
       "fireStations": 12,
@@ -2421,7 +2422,7 @@
       "ercotZone": "West"
     },
     "El Paso": {
-      "population": 120000,
+      "population": 868763,
       "hospitals": 18,
       "hospitalBeds": 2933,
       "fireStations": 44,
@@ -2431,7 +2432,7 @@
       "ercotZone": "West"
     },
     "Foard": {
-      "population": 120000,
+      "population": 1095,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -2441,7 +2442,7 @@
       "ercotZone": "Unknown"
     },
     "Freestone": {
-      "population": 120000,
+      "population": 19589,
       "hospitals": 1,
       "hospitalBeds": 37,
       "fireStations": 6,
@@ -2451,7 +2452,7 @@
       "ercotZone": "Unknown"
     },
     "Gaines": {
-      "population": 120000,
+      "population": 22278,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 2,
@@ -2461,7 +2462,7 @@
       "ercotZone": "Unknown"
     },
     "Donley": {
-      "population": 120000,
+      "population": 3325,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 3,
@@ -2481,7 +2482,7 @@
       "ercotZone": "Coast"
     },
     "Hood": {
-      "population": 120000,
+      "population": 68722,
       "hospitals": 1,
       "hospitalBeds": 83,
       "fireStations": 10,
@@ -2491,7 +2492,7 @@
       "ercotZone": "Unknown"
     },
     "Houston": {
-      "population": 120000,
+      "population": 22985,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 11,
@@ -2501,7 +2502,7 @@
       "ercotZone": "Unknown"
     },
     "Hudspeth": {
-      "population": 120000,
+      "population": 3287,
       "hospitals": 0,
       "hospitalBeds": 0,
       "fireStations": 1,
@@ -2511,7 +2512,7 @@
       "ercotZone": "Unknown"
     },
     "Jefferson": {
-      "population": 120000,
+      "population": 253704,
       "hospitals": 14,
       "hospitalBeds": 1699,
       "fireStations": 30,
@@ -2521,7 +2522,7 @@
       "ercotZone": "Coast"
     },
     "Kaufman": {
-      "population": 120000,
+      "population": 172366,
       "hospitals": 3,
       "hospitalBeds": 527,
       "fireStations": 18,
@@ -2531,7 +2532,7 @@
       "ercotZone": "Unknown"
     },
     "Panola": {
-      "population": 120000,
+      "population": 22136,
       "hospitals": 1,
       "hospitalBeds": 49,
       "fireStations": 12,
@@ -2541,7 +2542,7 @@
       "ercotZone": "Unknown"
     },
     "Haskell": {
-      "population": 120000,
+      "population": 5416,
       "hospitals": 1,
       "hospitalBeds": 25,
       "fireStations": 4,
@@ -2551,7 +2552,7 @@
       "ercotZone": "Unknown"
     },
     "Potter": {
-      "population": 120000,
+      "population": 116547,
       "hospitals": 9,
       "hospitalBeds": 1266,
       "fireStations": 13,
