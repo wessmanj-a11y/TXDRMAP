@@ -14,9 +14,9 @@ const counties = {
   Walker: { population: 76000, hospitals: 2, hospitalBeds: 260, fireStations: 12, emsStations: 6, policeDepartments: 6, cellTowers: 130, ercotZone: 'Coast' },
   Collin: { population: 1190000, hospitals: 18, hospitalBeds: 4100, fireStations: 54, emsStations: 28, policeDepartments: 22, cellTowers: 1850, ercotZone: 'North' },
   Denton: { population: 1000000, hospitals: 14, hospitalBeds: 3400, fireStations: 48, emsStations: 25, policeDepartments: 20, cellTowers: 1700, ercotZone: 'North' },
-  FortBend: { population: 900000, hospitals: 12, hospitalBeds: 3000, fireStations: 42, emsStations: 23, policeDepartments: 18, cellTowers: 1450, ercotZone: 'Coast' },
+  'Fort Bend': { population: 900000, hospitals: 12, hospitalBeds: 3000, fireStations: 42, emsStations: 23, policeDepartments: 18, cellTowers: 1450, ercotZone: 'Coast' },
   Hidalgo: { population: 888000, hospitals: 17, hospitalBeds: 3600, fireStations: 38, emsStations: 28, policeDepartments: 24, cellTowers: 1350, ercotZone: 'South' },
-  ElPaso: { population: 868000, hospitals: 15, hospitalBeds: 3900, fireStations: 36, emsStations: 25, policeDepartments: 15, cellTowers: 1250, ercotZone: 'West' },
+  'El Paso': { population: 868000, hospitals: 15, hospitalBeds: 3900, fireStations: 36, emsStations: 25, policeDepartments: 15, cellTowers: 1250, ercotZone: 'West' },
   Brazoria: { population: 390000, hospitals: 7, hospitalBeds: 1300, fireStations: 30, emsStations: 18, policeDepartments: 14, cellTowers: 620, ercotZone: 'Coast' },
   Madison: { population: 15000, hospitals: 1, hospitalBeds: 40, fireStations: 5, emsStations: 3, policeDepartments: 3, cellTowers: 35, ercotZone: 'Coast' }
 };
