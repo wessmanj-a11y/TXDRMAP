@@ -29,45 +29,34 @@ const TEXAS_COUNTY_POPULATION_FALLBACK = {
   Grimes: 30106, Burleson: 18613, Limestone: 22464, Freestone: 19589, Hill: 36773,
   Bosque: 18953, Somervell: 9704, Erath: 45980, Comanche: 14013, Brown: 38011,
   Mills: 4595, Hamilton: 8580, Lampasas: 22650, SanSaba: 5730, Llano: 22203,
-  Mason: 3943, Gillespie: 27847, Blanco: 13397, LlanoCounty: 22203, Real: 2765,
-  Bandera: 24519, Edwards: 1422, Kinney: 3135, Maverick: 57940, Zavala: 9534,
-  Frio: 18091, LaSalle: 6809, Dimmit: 8155, McMullen: 600, LiveOak: 11537,
-  Karnes: 14824, Goliad: 7022, Refugio: 6741, Calhoun: 19950, Jackson: 14839,
-  JimHogg: 4838, Brooks: 7093, Kenedy: 352, Starr: 65761, Zapata: 14075,
-  Willacy: 20059, Duval: 9652, ZapataCounty: 14075, Moore: 21768, Hansford: 5128,
-  Ochiltree: 9723, Lipscomb: 2893, Hemphill: 3382, Roberts: 827, Hutchinson: 20446,
-  Carson: 5970, Gray: 21333, Wheeler: 5017, Donley: 3325, Collingsworth: 2652,
-  Childress: 6610, Hall: 2810, Briscoe: 1397, Swisher: 7391, Castro: 7515,
-  Parmer: 9534, DeafSmith: 18583, Oldham: 1861, Hartley: 5459, Dallam: 7175,
-  Sherman: 2809, Cimarron: 2150, Armstrong: 1848, PotterCounty: 116547, RandallCounty: 143854,
+  Mason: 3943, Gillespie: 27847, Blanco: 13397, Real: 2765, Bandera: 24519,
+  Edwards: 1422, Kinney: 3135, Maverick: 57940, Zavala: 9534, Frio: 18091,
+  LaSalle: 6809, Dimmit: 8155, McMullen: 600, LiveOak: 11537, Karnes: 14824,
+  Goliad: 7022, Refugio: 6741, Calhoun: 19950, Jackson: 14839, JimHogg: 4838,
+  Brooks: 7093, Kenedy: 352, Starr: 65761, Zapata: 14075, Willacy: 20059,
+  Duval: 9652, Moore: 21768, Hansford: 5128, Ochiltree: 9723, Lipscomb: 2893,
+  Hemphill: 3382, Roberts: 827, Hutchinson: 20446, Carson: 5970, Gray: 21333,
+  Wheeler: 5017, Donley: 3325, Collingsworth: 2652, Childress: 6610, Hall: 2810,
+  Briscoe: 1397, Swisher: 7391, Castro: 7515, Parmer: 9534, DeafSmith: 18583,
+  Oldham: 1861, Hartley: 5459, Dallam: 7175, Sherman: 2809, Armstrong: 1848,
   Bailey: 6972, Lamb: 12901, Hale: 32347, Floyd: 5639, Motley: 1063,
   Cottle: 1380, Foard: 1095, Hardeman: 3549, Wilbarger: 12542, Baylor: 3409,
   Archer: 9057, Clay: 10461, Montague: 20287, Cooke: 43160, Jack: 8754,
   Young: 17900, Throckmorton: 1530, Haskell: 5416, Knox: 3406, King: 265,
-  Dickens: 1768, Crosby: 5157, LubbockCounty: 323610, Hockley: 21109, Cochran: 2547,
-  Yoakum: 7335, Terry: 12008, Lynn: 5603, Garza: 5816, Kent: 753,
-  Stonewall: 1245, Jones: 19898, Shackelford: 3105, Stephens: 9365, PaloPinto: 28725,
-  HoodCounty: 68722, ParkerCounty: 184840, Eastland: 18010, Callahan: 13645, TaylorCounty: 149712,
-  Nolan: 14312, Fisher: 3672, Scurry: 16921, Borden: 631, Dawson: 12413,
-  Gaines: 22278, Andrews: 18610, Martin: 5237, Howard: 34860, Mitchell: 8649,
-  Coke: 3234, Runnels: 9532, Coleman: 7808, McCulloch: 7667, Concho: 3830,
-  Irion: 1550, Sterling: 1372, Glasscock: 1213, Reagan: 3326, Upton: 3339,
-  Crane: 4675, Ward: 11644, Winkler: 7805, Loving: 64, Reeves: 14901,
-  Pecos: 15379, Terrell: 726, Crockett: 3098, Schleicher: 2447, Sutton: 3372,
-  Kimble: 4304, Menard: 1942, McCullochCounty: 7667, TomGreenCounty: 121619, ConchoCounty: 3830,
-  Presidio: 6131, Brewster: 9584, JeffDavis: 1975, Culberson: 2193, Hudspeth: 3287,
-  SuttonCounty: 3372, ValVerdeCounty: 47668, ElPasoCounty: 868763
+  Dickens: 1768, Crosby: 5157, Hockley: 21109, Cochran: 2547, Yoakum: 7335,
+  Terry: 12008, Lynn: 5603, Garza: 5816, Kent: 753, Stonewall: 1245,
+  Jones: 19898, Shackelford: 3105, Stephens: 9365, PaloPinto: 28725, Eastland: 18010,
+  Callahan: 13645, Nolan: 14312, Fisher: 3672, Scurry: 16921, Borden: 631,
+  Dawson: 12413, Gaines: 22278, Andrews: 18610, Martin: 5237, Howard: 34860,
+  Mitchell: 8649, Coke: 3234, Runnels: 9532, Coleman: 7808, McCulloch: 7667,
+  Concho: 3830, Irion: 1550, Sterling: 1372, Glasscock: 1213, Reagan: 3326,
+  Upton: 3339, Crane: 4675, Ward: 11644, Winkler: 7805, Loving: 64,
+  Reeves: 14901, Pecos: 15379, Terrell: 726, Crockett: 3098, Schleicher: 2447,
+  Sutton: 3372, Kimble: 4304, Menard: 1942, Presidio: 6131, Brewster: 9584,
+  JeffDavis: 1975, Culberson: 2193, Hudspeth: 3287
 };
 
-const POPULATION_SOURCE_PATHS = [
-  process.env.TXDR_POPULATION_SOURCE,
-  path.join(process.cwd(), 'public', 'data', 'texas_county_population.json'),
-  path.join(process.cwd(), 'public', 'data', 'county_population.json'),
-  path.join(process.cwd(), 'public', 'data', 'texas_counties_population.json'),
-  path.join(process.cwd(), 'public', 'data', 'texas_county_data.json'),
-  path.join(process.cwd(), 'texas_county_data.json'),
-  path.join(process.cwd(), 'public', 'texas_county_data.json')
-].filter(Boolean);
+const POPULATION_SOURCE_PATHS = [process.env.TXDR_POPULATION_SOURCE, path.join(process.cwd(), 'public', 'data', 'texas_county_population.json'), path.join(process.cwd(), 'public', 'data', 'county_population.json'), path.join(process.cwd(), 'public', 'data', 'texas_counties_population.json'), path.join(process.cwd(), 'public', 'data', 'texas_county_data.json'), path.join(process.cwd(), 'texas_county_data.json'), path.join(process.cwd(), 'public', 'texas_county_data.json')].filter(Boolean);
 
 const ERCOT_ZONE_RULES = [
   { zone: 'North', counties: ['Dallas','Tarrant','Collin','Denton','Grayson','Wise','Parker','Rockwall','Ellis','Johnson'] },
@@ -83,43 +72,25 @@ function normalizeCountyName(name) { return String(name || '').replace(/ County$
 function numberFrom(value) { const num = Number(String(value ?? '').replace(/,/g, '')); return Number.isFinite(num) && num > 0 ? num : null; }
 
 function estimateCellTowers(population) {
-  if (population >= 4000000) return 9000;
-  if (population >= 1500000) return 4200;
-  if (population >= 800000) return 2200;
-  if (population >= 300000) return 950;
-  if (population >= 100000) return 350;
-  if (population >= 50000) return 180;
-  if (population >= 20000) return 75;
-  return 25;
+  const pop = numberFrom(population) || 0;
+  if (!pop) return 0;
+  // Estimated macro/small-cell serving sites. This is intentionally population-scaled until a real FCC/ASR or carrier asset layer is added.
+  return Math.max(1, Math.round(pop / 2100));
+}
+
+function isPlaceholderTowerValue(value, population) {
+  const towers = Number(value);
+  if (!Number.isFinite(towers) || towers <= 0) return true;
+  if ([25, 75, 180, 350, 950, 2200, 4200, 9000].includes(towers)) return true;
+  const estimated = estimateCellTowers(population);
+  return towers === estimated;
 }
 
 function assignErcotZone(county) { for (const rule of ERCOT_ZONE_RULES) if (rule.counties.includes(county)) return rule.zone; return 'Unknown'; }
-
-function derivePopulation(record) {
-  if (!record || typeof record !== 'object') return null;
-  const directFields = ['population','Population','POPULATION','pop','POP','countyPopulation','totalPopulation','estimatedPopulation','populationEstimate','residents','people'];
-  for (const field of directFields) { const num = numberFrom(record[field]); if (num) return Math.round(num); }
-  const customerFields = ['customers','totalCustomers','utilityCustomers','customerCount','customersTracked','totalMeters','meters','accounts'];
-  for (const field of customerFields) { const num = numberFrom(record[field]); if (num) return Math.round(num * 2.6); }
-  return null;
-}
-
+function derivePopulation(record) { if (!record || typeof record !== 'object') return null; const directFields = ['population','Population','POPULATION','pop','POP','countyPopulation','totalPopulation','estimatedPopulation','populationEstimate','residents','people']; for (const field of directFields) { const num = numberFrom(record[field]); if (num) return Math.round(num); } const customerFields = ['customers','totalCustomers','utilityCustomers','customerCount','customersTracked','totalMeters','meters','accounts']; for (const field of customerFields) { const num = numberFrom(record[field]); if (num) return Math.round(num * 2.6); } return null; }
 function deriveCountyName(record) { if (!record || typeof record !== 'object') return null; return record.county || record.County || record.COUNTY || record.countyName || record.name || record.NAME || null; }
-
-function ingestPopulationObject(obj, map) {
-  if (!obj || typeof obj !== 'object') return;
-  if (Array.isArray(obj)) { obj.forEach(item => { const county = deriveCountyName(item); const population = derivePopulation(item); if (county && population) map[normalizeCountyName(county)] = population; }); return; }
-  [obj.counties, obj.Counties, obj.data, obj.records, obj.features].filter(Boolean).forEach(container => ingestPopulationObject(container, map));
-  Object.keys(obj).forEach(key => { const value = obj[key]; if (!value || typeof value !== 'object') return; const population = derivePopulation(value); if (population) map[normalizeCountyName(key)] = population; });
-}
-
-function buildPopulationMap() {
-  const map = {};
-  Object.keys(TEXAS_COUNTY_POPULATION_FALLBACK).forEach(county => { map[normalizeCountyName(county)] = TEXAS_COUNTY_POPULATION_FALLBACK[county]; });
-  POPULATION_SOURCE_PATHS.forEach(filePath => { if (!fs.existsSync(filePath)) return; console.log('Reading population source: ' + filePath); ingestPopulationObject(readJson(filePath, null), map); });
-  console.log('Loaded population entries: ' + Object.keys(map).length);
-  return map;
-}
+function ingestPopulationObject(obj, map) { if (!obj || typeof obj !== 'object') return; if (Array.isArray(obj)) { obj.forEach(item => { const county = deriveCountyName(item); const population = derivePopulation(item); if (county && population) map[normalizeCountyName(county)] = population; }); return; } [obj.counties, obj.Counties, obj.data, obj.records, obj.features].filter(Boolean).forEach(container => ingestPopulationObject(container, map)); Object.keys(obj).forEach(key => { const value = obj[key]; if (!value || typeof value !== 'object') return; const population = derivePopulation(value); if (population) map[normalizeCountyName(key)] = population; }); }
+function buildPopulationMap() { const map = {}; Object.keys(TEXAS_COUNTY_POPULATION_FALLBACK).forEach(county => { map[normalizeCountyName(county)] = TEXAS_COUNTY_POPULATION_FALLBACK[county]; }); POPULATION_SOURCE_PATHS.forEach(filePath => { if (!fs.existsSync(filePath)) return; console.log('Reading population source: ' + filePath); ingestPopulationObject(readJson(filePath, null), map); }); console.log('Loaded population entries: ' + Object.keys(map).length); return map; }
 
 async function main() {
   const geo = readJson(GEO_PATH, null);
@@ -128,6 +99,7 @@ async function main() {
   const populationMap = buildPopulationMap();
   const counties = {};
   let fallbackCount = 0;
+  let towerEstimateCount = 0;
 
   (geo.features || []).forEach(feature => {
     const county = countyName(feature);
@@ -138,6 +110,9 @@ async function main() {
     const sourcePopulation = populationMap[normalized];
     const population = sourcePopulation || (resourcePopulation && resourcePopulation !== 120000 ? resourcePopulation : null) || 120000;
     if (population === 120000 && !sourcePopulation) fallbackCount += 1;
+    const estimatedTowers = estimateCellTowers(population);
+    const cellTowers = isPlaceholderTowerValue(resource.cellTowers, population) ? estimatedTowers : Number(resource.cellTowers);
+    if (cellTowers === estimatedTowers) towerEstimateCount += 1;
     counties[county] = {
       population,
       hospitals: resource.hospitals || 0,
@@ -145,15 +120,16 @@ async function main() {
       fireStations: resource.fireStations || 0,
       emsStations: resource.emsStations || 0,
       policeDepartments: resource.policeDepartments || 0,
-      cellTowers: resource.cellTowers || estimateCellTowers(population),
+      cellTowers,
       ercotZone: resource.ercotZone && resource.ercotZone !== 'Unknown' ? resource.ercotZone : assignErcotZone(county)
     };
   });
 
   const payload = {
     generatedAt: new Date().toISOString(),
-    sourceNote: 'Texas county baseline enriched from committed county population fallback, optional TXDRMAP population sources, HIFLD resource layers, estimated cell towers, and ERCOT regional assignment. No external population API is called.',
+    sourceNote: 'Texas county baseline enriched from committed county population fallback, optional TXDRMAP population sources, HIFLD resource layers, estimated population-scaled cell tower counts, and ERCOT regional assignment. Cell towers are estimates until a real tower dataset is added.',
     populationFallbackCount: fallbackCount,
+    estimatedCellTowerCounties: towerEstimateCount,
     populationSources: POPULATION_SOURCE_PATHS,
     fields: ['population','hospitals','hospitalBeds','fireStations','emsStations','policeDepartments','cellTowers','ercotZone'],
     counties
@@ -161,7 +137,7 @@ async function main() {
 
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(payload, null, 2));
   fs.writeFileSync(RESOURCE_PATH, JSON.stringify(payload, null, 2));
-  console.log('Built Texas county baseline for ' + Object.keys(counties).length + ' counties. Remaining fallback population counties: ' + fallbackCount);
+  console.log('Built Texas county baseline for ' + Object.keys(counties).length + ' counties. Remaining fallback population counties: ' + fallbackCount + '. Estimated tower counties: ' + towerEstimateCount);
 }
 
 main().catch(error => { console.error(error); process.exit(1); });
