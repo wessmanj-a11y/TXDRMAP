@@ -15,7 +15,6 @@
       <p>Draw a storm path across Texas, then estimate infrastructure impact, response demand, economic damage, and recovery time.</p>
       <a class="back-link" href="index.html">Back to dashboard</a>
     </section>
-
     <section class="grid">
       <form id="scenarioForm" class="panel">
         <h2>Scenario Builder</h2>
@@ -31,14 +30,12 @@
         </div>
         <button type="submit">Run Scenario</button>
       </form>
-
       <section class="panel map-panel">
         <h2>Draw Storm Path</h2>
         <p class="hint">Click counties on the map in storm travel order. The simulator will update the track counties list automatically.</p>
         <label>Map heat layer<select id="heatMetric"><option value="hazard">Hazard</option><option value="outagePercent">Power Outage</option><option value="roadPercent">Road Impact</option><option value="telcoPercent">Telco Impact</option><option value="hospitalSurge">Hospital Surge</option></select></label>
         <div id="scenarioMap"></div>
       </section>
-
       <section class="panel results">
         <h2>Impact Report</h2>
         <div id="summaryCards" class="cards"></div>
@@ -51,5 +48,6 @@
   </main>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="scenario.js"></script>
+  <script src="scenario-heatmap.js"></script>
 </body>
 </html>
