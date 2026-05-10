@@ -6,7 +6,6 @@ const OUT_DIR = path.join(process.cwd(), 'public', 'data', 'resources');
 const COUNTY_GEOJSON = path.join(process.cwd(), 'public', 'data', 'geo', 'texas_counties.geojson');
 const RESOURCE_MODEL = path.join(process.cwd(), 'public', 'data', 'texas_county_resources.json');
 const TEXAS_BBOX = '-106.7,25.7,-93.3,36.6';
-
 const EMPTY_FEATURE_COLLECTION = { type: 'FeatureCollection', features: [] };
 
 const DATASETS = [
@@ -41,9 +40,8 @@ function fetchTextOnce(url) {
 async function fetchText(url, attempts = 4) {
   let lastError;
   for (let attempt = 1; attempt <= attempts; attempt++) {
-    try {
-      return await fetchTextOnce(url);
-    } catch (error) {
+    try { return await fetchTextOnce(url); }
+    catch (error) {
       lastError = error;
       const retryable = /HTTP 429|HTTP 500|HTTP 502|HTTP 503|HTTP 504|timed out/i.test(error.message);
       if (!retryable || attempt === attempts) break;
@@ -55,32 +53,68 @@ async function fetchText(url, attempts = 4) {
   throw lastError;
 }
 
-function buildArcgisUrl(serviceUrl) {
+function buildArcgisUrl(serviceUrl, resultOffset) {
   const params = new URLSearchParams({
-    f: 'geojson', where: '1=1', outFields: '*', returnGeometry: 'true',
-    geometry: TEXAS_BBOX, geometryType: 'esriGeometryEnvelope', inSR: '4326',
-    spatialRel: 'esriSpatialRelIntersects', outSR: '4326', resultRecordCount: '100000'
+    f: 'json',
+    where: '1=1',
+    outFields: '*',
+    returnGeometry: 'true',
+    geometry: TEXAS_BBOX,
+    geometryType: 'esriGeometryEnvelope',
+    inSR: '4326',
+    spatialRel: 'esriSpatialRelIntersects',
+    outSR: '4326',
+    resultRecordCount: '2000',
+    resultOffset: String(resultOffset || 0)
   });
   return serviceUrl + '?' + params.toString();
 }
 
+function esriFeatureToGeojsonFeature(feature) {
+  const attrs = feature.attributes || {};
+  const geom = feature.geometry || {};
+  const x = Number(geom.x);
+  const y = Number(geom.y);
+  if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+  return {
+    type: 'Feature',
+    properties: attrs,
+    geometry: { type: 'Point', coordinates: [x, y] }
+  };
+}
+
+function esriJsonToGeojson(data) {
+  const features = (data.features || []).map(esriFeatureToGeojsonFeature).filter(Boolean);
+  return { type: 'FeatureCollection', features };
+}
+
 async function fetchGeojson(dataset) {
-  const url = buildArcgisUrl(dataset.service);
-  const text = await fetchText(url);
-  const data = JSON.parse(text);
-  if (!data || data.type !== 'FeatureCollection') throw new Error('Unexpected response for ' + dataset.key);
-  data.features = (data.features || []).filter(feature => {
+  let allFeatures = [];
+  let offset = 0;
+  let page = 0;
+  while (true) {
+    const url = buildArcgisUrl(dataset.service, offset);
+    const text = await fetchText(url);
+    const data = JSON.parse(text);
+    if (data.error) throw new Error('ArcGIS error for ' + dataset.key + ': ' + JSON.stringify(data.error));
+    const geojson = esriJsonToGeojson(data);
+    allFeatures = allFeatures.concat(geojson.features);
+    page += 1;
+    const exceeded = data.exceededTransferLimit === true;
+    if (!exceeded || !geojson.features.length || page > 60) break;
+    offset += geojson.features.length;
+  }
+  allFeatures = allFeatures.filter(feature => {
     const coords = getPoint(feature);
     return coords && coords.lng >= -106.7 && coords.lng <= -93.3 && coords.lat >= 25.7 && coords.lat <= 36.6;
   });
-  return data;
+  return { type: 'FeatureCollection', features: allFeatures };
 }
 
 async function getDatasetGeojson(dataset) {
   const outputFile = path.join(OUT_DIR, dataset.output);
-  try {
-    return await fetchGeojson(dataset);
-  } catch (error) {
+  try { return await fetchGeojson(dataset); }
+  catch (error) {
     console.warn('WARNING: Could not fetch ' + dataset.key + ': ' + error.message);
     const cached = readJson(outputFile, null);
     if (cached && cached.type === 'FeatureCollection') {
@@ -186,7 +220,7 @@ async function main() {
 
   const payload = {
     generatedAt: new Date().toISOString(),
-    sourceNote: 'County resources aggregated from HIFLD Open ArcGIS services using Texas county polygons. If an upstream service is unavailable, cached data is used; if no cache exists, that layer is left empty and the workflow continues.',
+    sourceNote: 'County resources aggregated from HIFLD ArcGIS JSON services using Texas county polygons. If an upstream service is unavailable, cached data is used; if no cache exists, that layer is left empty and the workflow continues.',
     warnings: fetchErrors.length ? ['Empty or unavailable layers: ' + fetchErrors.join(', ')] : [],
     fields: ['population','hospitals','hospitalBeds','fireStations','emsStations','policeDepartments','cellTowers','ercotZone'],
     counties: model
