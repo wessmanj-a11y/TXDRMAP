@@ -1,7 +1,8 @@
 {
-  "generatedAt": "2026-05-10T19:40:00.718Z",
-  "sourceNote": "Texas county baseline enriched from committed county population fallback, optional TXDRMAP population sources, HIFLD resource layers, estimated cell towers, and ERCOT regional assignment. No external population API is called.",
+  "generatedAt": "2026-05-10T19:48:55.668Z",
+  "sourceNote": "Texas county baseline enriched from committed county population fallback, optional TXDRMAP population sources, HIFLD resource layers, estimated population-scaled cell tower counts, and ERCOT regional assignment. Cell towers are estimates until a real tower dataset is added.",
   "populationFallbackCount": 16,
+  "estimatedCellTowerCounties": 254,
   "populationSources": [
     "/home/runner/work/TXDRMAP/TXDRMAP/public/data/texas_county_population.json",
     "/home/runner/work/TXDRMAP/TXDRMAP/public/data/county_population.json",
@@ -28,7 +29,7 @@
       "fireStations": 4,
       "emsStations": 4,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 5,
       "ercotZone": "Unknown"
     },
     "Oldham": {
@@ -38,7 +39,7 @@
       "fireStations": 4,
       "emsStations": 3,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Parker": {
@@ -48,7 +49,7 @@
       "fireStations": 26,
       "emsStations": 6,
       "policeDepartments": 7,
-      "cellTowers": 350,
+      "cellTowers": 88,
       "ercotZone": "North"
     },
     "Rains": {
@@ -58,7 +59,7 @@
       "fireStations": 4,
       "emsStations": 0,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Randall": {
@@ -68,7 +69,7 @@
       "fireStations": 12,
       "emsStations": 4,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 69,
       "ercotZone": "West"
     },
     "Roberts": {
@@ -78,7 +79,7 @@
       "fireStations": 2,
       "emsStations": 2,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Rockwall": {
@@ -88,7 +89,7 @@
       "fireStations": 9,
       "emsStations": 1,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 62,
       "ercotZone": "North"
     },
     "San Saba": {
@@ -98,7 +99,7 @@
       "fireStations": 3,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Somervell": {
@@ -108,7 +109,7 @@
       "fireStations": 1,
       "emsStations": 3,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 5,
       "ercotZone": "Unknown"
     },
     "Stephens": {
@@ -118,7 +119,7 @@
       "fireStations": 1,
       "emsStations": 0,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 4,
       "ercotZone": "Unknown"
     },
     "Stonewall": {
@@ -128,7 +129,7 @@
       "fireStations": 1,
       "emsStations": 0,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Terry": {
@@ -138,7 +139,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 6,
       "ercotZone": "Unknown"
     },
     "Titus": {
@@ -148,7 +149,7 @@
       "fireStations": 8,
       "emsStations": 3,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Upshur": {
@@ -158,7 +159,7 @@
       "fireStations": 11,
       "emsStations": 1,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Uvalde": {
@@ -168,7 +169,7 @@
       "fireStations": 5,
       "emsStations": 3,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 12,
       "ercotZone": "Unknown"
     },
     "Ward": {
@@ -178,7 +179,7 @@
       "fireStations": 3,
       "emsStations": 2,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 6,
       "ercotZone": "Unknown"
     },
     "Williamson": {
@@ -188,7 +189,7 @@
       "fireStations": 36,
       "emsStations": 41,
       "policeDepartments": 13,
-      "cellTowers": 350,
+      "cellTowers": 332,
       "ercotZone": "Central"
     },
     "Wise": {
@@ -198,7 +199,7 @@
       "fireStations": 18,
       "emsStations": 9,
       "policeDepartments": 6,
-      "cellTowers": 350,
+      "cellTowers": 36,
       "ercotZone": "North"
     },
     "Zavala": {
@@ -208,7 +209,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 5,
       "ercotZone": "Unknown"
     },
     "Archer": {
@@ -218,7 +219,7 @@
       "fireStations": 7,
       "emsStations": 5,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 4,
       "ercotZone": "Unknown"
     },
     "Armstrong": {
@@ -228,7 +229,7 @@
       "fireStations": 3,
       "emsStations": 2,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Bastrop": {
@@ -238,7 +239,7 @@
       "fireStations": 13,
       "emsStations": 5,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 51,
       "ercotZone": "Central"
     },
     "Blanco": {
@@ -248,7 +249,7 @@
       "fireStations": 3,
       "emsStations": 2,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 6,
       "ercotZone": "Central"
     },
     "Brooks": {
@@ -258,7 +259,7 @@
       "fireStations": 2,
       "emsStations": 0,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Burnet": {
@@ -268,7 +269,7 @@
       "fireStations": 11,
       "emsStations": 6,
       "policeDepartments": 7,
-      "cellTowers": 350,
+      "cellTowers": 27,
       "ercotZone": "Central"
     },
     "Camp": {
@@ -278,7 +279,7 @@
       "fireStations": 2,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Castro": {
@@ -288,7 +289,7 @@
       "fireStations": 3,
       "emsStations": 0,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 4,
       "ercotZone": "Unknown"
     },
     "Cochran": {
@@ -298,7 +299,7 @@
       "fireStations": 2,
       "emsStations": 2,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Concho": {
@@ -308,7 +309,7 @@
       "fireStations": 3,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Coryell": {
@@ -318,7 +319,7 @@
       "fireStations": 11,
       "emsStations": 9,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 43,
       "ercotZone": "Unknown"
     },
     "Crane": {
@@ -328,7 +329,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Dawson": {
@@ -338,7 +339,7 @@
       "fireStations": 5,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 6,
       "ercotZone": "Unknown"
     },
     "DeWitt": {
@@ -348,7 +349,7 @@
       "fireStations": 6,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 10,
       "ercotZone": "Unknown"
     },
     "Dimmit": {
@@ -358,7 +359,7 @@
       "fireStations": 2,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 4,
       "ercotZone": "Unknown"
     },
     "Edwards": {
@@ -368,7 +369,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Fayette": {
@@ -378,7 +379,7 @@
       "fireStations": 10,
       "emsStations": 14,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 12,
       "ercotZone": "Unknown"
     },
     "Franklin": {
@@ -388,7 +389,7 @@
       "fireStations": 6,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Garza": {
@@ -398,7 +399,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Gonzales": {
@@ -408,7 +409,7 @@
       "fireStations": 5,
       "emsStations": 3,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 10,
       "ercotZone": "Unknown"
     },
     "Gray": {
@@ -418,7 +419,7 @@
       "fireStations": 6,
       "emsStations": 3,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 10,
       "ercotZone": "Unknown"
     },
     "Grimes": {
@@ -428,7 +429,7 @@
       "fireStations": 7,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 14,
       "ercotZone": "Unknown"
     },
     "Hall": {
@@ -438,7 +439,7 @@
       "fireStations": 1,
       "emsStations": 2,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Hansford": {
@@ -448,7 +449,7 @@
       "fireStations": 2,
       "emsStations": 2,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Hill": {
@@ -458,7 +459,7 @@
       "fireStations": 13,
       "emsStations": 5,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 18,
       "ercotZone": "Unknown"
     },
     "Howard": {
@@ -468,7 +469,7 @@
       "fireStations": 15,
       "emsStations": 2,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 17,
       "ercotZone": "Unknown"
     },
     "Hutchinson": {
@@ -478,7 +479,7 @@
       "fireStations": 4,
       "emsStations": 2,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 10,
       "ercotZone": "Unknown"
     },
     "Jim Hogg": {
@@ -488,7 +489,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Johnson": {
@@ -498,7 +499,7 @@
       "fireStations": 18,
       "emsStations": 20,
       "policeDepartments": 10,
-      "cellTowers": 350,
+      "cellTowers": 94,
       "ercotZone": "North"
     },
     "Kent": {
@@ -508,7 +509,7 @@
       "fireStations": 0,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Kerr": {
@@ -518,7 +519,7 @@
       "fireStations": 11,
       "emsStations": 4,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 26,
       "ercotZone": "Unknown"
     },
     "Knox": {
@@ -528,7 +529,7 @@
       "fireStations": 4,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "La Salle": {
@@ -538,7 +539,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Live Oak": {
@@ -548,7 +549,7 @@
       "fireStations": 4,
       "emsStations": 2,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 5,
       "ercotZone": "Unknown"
     },
     "Lubbock": {
@@ -558,7 +559,7 @@
       "fireStations": 23,
       "emsStations": 16,
       "policeDepartments": 13,
-      "cellTowers": 350,
+      "cellTowers": 154,
       "ercotZone": "West"
     },
     "McLennan": {
@@ -568,7 +569,7 @@
       "fireStations": 35,
       "emsStations": 17,
       "policeDepartments": 20,
-      "cellTowers": 350,
+      "cellTowers": 128,
       "ercotZone": "Central"
     },
     "Mason": {
@@ -578,7 +579,7 @@
       "fireStations": 2,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Midland": {
@@ -588,7 +589,7 @@
       "fireStations": 12,
       "emsStations": 8,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 84,
       "ercotZone": "West"
     },
     "Montgomery": {
@@ -598,7 +599,7 @@
       "fireStations": 57,
       "emsStations": 43,
       "policeDepartments": 22,
-      "cellTowers": 950,
+      "cellTowers": 356,
       "ercotZone": "Coast"
     },
     "Navarro": {
@@ -608,7 +609,7 @@
       "fireStations": 19,
       "emsStations": 6,
       "policeDepartments": 7,
-      "cellTowers": 350,
+      "cellTowers": 27,
       "ercotZone": "Unknown"
     },
     "Nolan": {
@@ -618,7 +619,7 @@
       "fireStations": 6,
       "emsStations": 3,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 7,
       "ercotZone": "Unknown"
     },
     "Briscoe": {
@@ -628,7 +629,7 @@
       "fireStations": 2,
       "emsStations": 2,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Brown": {
@@ -638,7 +639,7 @@
       "fireStations": 12,
       "emsStations": 4,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 18,
       "ercotZone": "Unknown"
     },
     "Caldwell": {
@@ -648,7 +649,7 @@
       "fireStations": 12,
       "emsStations": 7,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 23,
       "ercotZone": "Central"
     },
     "Cameron": {
@@ -658,7 +659,7 @@
       "fireStations": 26,
       "emsStations": 12,
       "policeDepartments": 18,
-      "cellTowers": 350,
+      "cellTowers": 205,
       "ercotZone": "South"
     },
     "Carson": {
@@ -668,7 +669,7 @@
       "fireStations": 5,
       "emsStations": 5,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Cass": {
@@ -678,7 +679,7 @@
       "fireStations": 17,
       "emsStations": 8,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Cherokee": {
@@ -688,7 +689,7 @@
       "fireStations": 13,
       "emsStations": 7,
       "policeDepartments": 7,
-      "cellTowers": 350,
+      "cellTowers": 25,
       "ercotZone": "Unknown"
     },
     "Clay": {
@@ -698,7 +699,7 @@
       "fireStations": 14,
       "emsStations": 10,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 5,
       "ercotZone": "Unknown"
     },
     "Coke": {
@@ -708,7 +709,7 @@
       "fireStations": 2,
       "emsStations": 2,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Collin": {
@@ -718,7 +719,7 @@
       "fireStations": 56,
       "emsStations": 47,
       "policeDepartments": 22,
-      "cellTowers": 350,
+      "cellTowers": 569,
       "ercotZone": "North"
     },
     "Collingsworth": {
@@ -728,7 +729,7 @@
       "fireStations": 3,
       "emsStations": 2,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Comal": {
@@ -738,7 +739,7 @@
       "fireStations": 18,
       "emsStations": 15,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 91,
       "ercotZone": "Central"
     },
     "Orange": {
@@ -748,7 +749,7 @@
       "fireStations": 12,
       "emsStations": 8,
       "policeDepartments": 9,
-      "cellTowers": 350,
+      "cellTowers": 40,
       "ercotZone": "Coast"
     },
     "Parmer": {
@@ -758,7 +759,7 @@
       "fireStations": 5,
       "emsStations": 4,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 5,
       "ercotZone": "Unknown"
     },
     "Reagan": {
@@ -768,7 +769,7 @@
       "fireStations": 2,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Real": {
@@ -778,7 +779,7 @@
       "fireStations": 2,
       "emsStations": 2,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Red River": {
@@ -788,7 +789,7 @@
       "fireStations": 9,
       "emsStations": 4,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Robertson": {
@@ -798,7 +799,7 @@
       "fireStations": 5,
       "emsStations": 3,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 8,
       "ercotZone": "Unknown"
     },
     "Runnels": {
@@ -808,7 +809,7 @@
       "fireStations": 3,
       "emsStations": 0,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 5,
       "ercotZone": "Unknown"
     },
     "Sabine": {
@@ -818,7 +819,7 @@
       "fireStations": 8,
       "emsStations": 2,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 5,
       "ercotZone": "Unknown"
     },
     "Scurry": {
@@ -828,7 +829,7 @@
       "fireStations": 1,
       "emsStations": 2,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 8,
       "ercotZone": "Unknown"
     },
     "Shackelford": {
@@ -838,7 +839,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Shelby": {
@@ -848,7 +849,7 @@
       "fireStations": 5,
       "emsStations": 2,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 11,
       "ercotZone": "Unknown"
     },
     "Smith": {
@@ -858,7 +859,7 @@
       "fireStations": 31,
       "emsStations": 1,
       "policeDepartments": 12,
-      "cellTowers": 350,
+      "cellTowers": 117,
       "ercotZone": "Unknown"
     },
     "Starr": {
@@ -868,7 +869,7 @@
       "fireStations": 7,
       "emsStations": 2,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 31,
       "ercotZone": "South"
     },
     "Sterling": {
@@ -878,7 +879,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Sutton": {
@@ -888,7 +889,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Swisher": {
@@ -898,7 +899,7 @@
       "fireStations": 4,
       "emsStations": 2,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 4,
       "ercotZone": "Unknown"
     },
     "Taylor": {
@@ -908,7 +909,7 @@
       "fireStations": 20,
       "emsStations": 10,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 71,
       "ercotZone": "Unknown"
     },
     "Throckmorton": {
@@ -918,7 +919,7 @@
       "fireStations": 2,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Tom Green": {
@@ -928,7 +929,7 @@
       "fireStations": 16,
       "emsStations": 15,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 58,
       "ercotZone": "Unknown"
     },
     "Travis": {
@@ -938,7 +939,7 @@
       "fireStations": 79,
       "emsStations": 73,
       "policeDepartments": 20,
-      "cellTowers": 2200,
+      "cellTowers": 633,
       "ercotZone": "Central"
     },
     "Tyler": {
@@ -948,7 +949,7 @@
       "fireStations": 6,
       "emsStations": 2,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 10,
       "ercotZone": "Unknown"
     },
     "Van Zandt": {
@@ -958,7 +959,7 @@
       "fireStations": 14,
       "emsStations": 3,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 31,
       "ercotZone": "Unknown"
     },
     "Victoria": {
@@ -968,7 +969,7 @@
       "fireStations": 21,
       "emsStations": 9,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 44,
       "ercotZone": "Unknown"
     },
     "Washington": {
@@ -978,7 +979,7 @@
       "fireStations": 11,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 18,
       "ercotZone": "Unknown"
     },
     "Wheeler": {
@@ -988,7 +989,7 @@
       "fireStations": 6,
       "emsStations": 2,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Wichita": {
@@ -998,7 +999,7 @@
       "fireStations": 17,
       "emsStations": 5,
       "policeDepartments": 7,
-      "cellTowers": 350,
+      "cellTowers": 62,
       "ercotZone": "Unknown"
     },
     "Willacy": {
@@ -1008,7 +1009,7 @@
       "fireStations": 4,
       "emsStations": 2,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 10,
       "ercotZone": "South"
     },
     "Wood": {
@@ -1018,7 +1019,7 @@
       "fireStations": 11,
       "emsStations": 9,
       "policeDepartments": 6,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Anderson": {
@@ -1028,7 +1029,7 @@
       "fireStations": 21,
       "emsStations": 13,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 28,
       "ercotZone": "Unknown"
     },
     "Atascosa": {
@@ -1038,7 +1039,7 @@
       "fireStations": 5,
       "emsStations": 7,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 25,
       "ercotZone": "Unknown"
     },
     "Austin": {
@@ -1048,7 +1049,7 @@
       "fireStations": 8,
       "emsStations": 6,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 15,
       "ercotZone": "Unknown"
     },
     "Bailey": {
@@ -1058,7 +1059,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Baylor": {
@@ -1068,7 +1069,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Bee": {
@@ -1078,7 +1079,7 @@
       "fireStations": 6,
       "emsStations": 2,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 15,
       "ercotZone": "Unknown"
     },
     "Bexar": {
@@ -1088,7 +1089,7 @@
       "fireStations": 87,
       "emsStations": 88,
       "policeDepartments": 42,
-      "cellTowers": 4200,
+      "cellTowers": 1012,
       "ercotZone": "South"
     },
     "Borden": {
@@ -1098,7 +1099,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Bosque": {
@@ -1108,7 +1109,7 @@
       "fireStations": 12,
       "emsStations": 8,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 9,
       "ercotZone": "Unknown"
     },
     "Brazoria": {
@@ -1118,7 +1119,7 @@
       "fireStations": 37,
       "emsStations": 14,
       "policeDepartments": 19,
-      "cellTowers": 350,
+      "cellTowers": 185,
       "ercotZone": "Coast"
     },
     "Kimble": {
@@ -1128,7 +1129,7 @@
       "fireStations": 1,
       "emsStations": 2,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Kinney": {
@@ -1138,7 +1139,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Lamar": {
@@ -1148,7 +1149,7 @@
       "fireStations": 25,
       "emsStations": 21,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Lampasas": {
@@ -1158,7 +1159,7 @@
       "fireStations": 5,
       "emsStations": 4,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 11,
       "ercotZone": "Unknown"
     },
     "Lavaca": {
@@ -1168,7 +1169,7 @@
       "fireStations": 6,
       "emsStations": 3,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 10,
       "ercotZone": "Unknown"
     },
     "Lee": {
@@ -1178,7 +1179,7 @@
       "fireStations": 4,
       "emsStations": 2,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 9,
       "ercotZone": "Unknown"
     },
     "Liberty": {
@@ -1188,7 +1189,7 @@
       "fireStations": 19,
       "emsStations": 12,
       "policeDepartments": 6,
-      "cellTowers": 350,
+      "cellTowers": 48,
       "ercotZone": "Unknown"
     },
     "Limestone": {
@@ -1198,7 +1199,7 @@
       "fireStations": 8,
       "emsStations": 6,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 11,
       "ercotZone": "Unknown"
     },
     "Lipscomb": {
@@ -1208,7 +1209,7 @@
       "fireStations": 6,
       "emsStations": 4,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Loving": {
@@ -1218,7 +1219,7 @@
       "fireStations": 0,
       "emsStations": 0,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Lynn": {
@@ -1228,7 +1229,7 @@
       "fireStations": 4,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "McCulloch": {
@@ -1238,7 +1239,7 @@
       "fireStations": 6,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 4,
       "ercotZone": "Unknown"
     },
     "Martin": {
@@ -1248,7 +1249,7 @@
       "fireStations": 2,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Maverick": {
@@ -1258,7 +1259,7 @@
       "fireStations": 3,
       "emsStations": 6,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 28,
       "ercotZone": "South"
     },
     "Menard": {
@@ -1268,7 +1269,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Milam": {
@@ -1278,7 +1279,7 @@
       "fireStations": 8,
       "emsStations": 4,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 12,
       "ercotZone": "Unknown"
     },
     "Mills": {
@@ -1288,7 +1289,7 @@
       "fireStations": 4,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Moore": {
@@ -1298,7 +1299,7 @@
       "fireStations": 3,
       "emsStations": 2,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 10,
       "ercotZone": "Unknown"
     },
     "Nueces": {
@@ -1308,7 +1309,7 @@
       "fireStations": 26,
       "emsStations": 23,
       "policeDepartments": 7,
-      "cellTowers": 350,
+      "cellTowers": 168,
       "ercotZone": "Coast"
     },
     "Palo Pinto": {
@@ -1318,7 +1319,7 @@
       "fireStations": 14,
       "emsStations": 10,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 14,
       "ercotZone": "Unknown"
     },
     "Polk": {
@@ -1328,7 +1329,7 @@
       "fireStations": 12,
       "emsStations": 5,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 26,
       "ercotZone": "Unknown"
     },
     "Reeves": {
@@ -1338,7 +1339,7 @@
       "fireStations": 3,
       "emsStations": 2,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 7,
       "ercotZone": "West"
     },
     "San Augustine": {
@@ -1348,7 +1349,7 @@
       "fireStations": 6,
       "emsStations": 2,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 4,
       "ercotZone": "Unknown"
     },
     "Schleicher": {
@@ -1358,7 +1359,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Sherman": {
@@ -1368,7 +1369,7 @@
       "fireStations": 0,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Tarrant": {
@@ -1378,7 +1379,7 @@
       "fireStations": 121,
       "emsStations": 65,
       "policeDepartments": 47,
-      "cellTowers": 4200,
+      "cellTowers": 1042,
       "ercotZone": "North"
     },
     "Trinity": {
@@ -1388,7 +1389,7 @@
       "fireStations": 4,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 7,
       "ercotZone": "Unknown"
     },
     "Walker": {
@@ -1398,7 +1399,7 @@
       "fireStations": 11,
       "emsStations": 8,
       "policeDepartments": 4,
-      "cellTowers": 180,
+      "cellTowers": 36,
       "ercotZone": "Unknown"
     },
     "Wharton": {
@@ -1408,7 +1409,7 @@
       "fireStations": 7,
       "emsStations": 5,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 20,
       "ercotZone": "Unknown"
     },
     "Wilson": {
@@ -1418,7 +1419,7 @@
       "fireStations": 11,
       "emsStations": 5,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 27,
       "ercotZone": "Unknown"
     },
     "Young": {
@@ -1428,7 +1429,7 @@
       "fireStations": 7,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 9,
       "ercotZone": "Unknown"
     },
     "Andrews": {
@@ -1438,7 +1439,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 9,
       "ercotZone": "Unknown"
     },
     "Bandera": {
@@ -1448,7 +1449,7 @@
       "fireStations": 7,
       "emsStations": 2,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 12,
       "ercotZone": "Unknown"
     },
     "Bell": {
@@ -1458,7 +1459,7 @@
       "fireStations": 30,
       "emsStations": 34,
       "policeDepartments": 12,
-      "cellTowers": 350,
+      "cellTowers": 185,
       "ercotZone": "Central"
     },
     "Brazos": {
@@ -1468,7 +1469,7 @@
       "fireStations": 23,
       "emsStations": 16,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 115,
       "ercotZone": "Unknown"
     },
     "Callahan": {
@@ -1478,7 +1479,7 @@
       "fireStations": 6,
       "emsStations": 3,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 6,
       "ercotZone": "Unknown"
     },
     "Childress": {
@@ -1488,7 +1489,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Coleman": {
@@ -1498,7 +1499,7 @@
       "fireStations": 3,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 4,
       "ercotZone": "Unknown"
     },
     "Colorado": {
@@ -1508,7 +1509,7 @@
       "fireStations": 8,
       "emsStations": 4,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 10,
       "ercotZone": "Unknown"
     },
     "Crosby": {
@@ -1518,7 +1519,7 @@
       "fireStations": 1,
       "emsStations": 2,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Delta": {
@@ -1528,7 +1529,7 @@
       "fireStations": 4,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Duval": {
@@ -1538,7 +1539,7 @@
       "fireStations": 3,
       "emsStations": 3,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 5,
       "ercotZone": "Unknown"
     },
     "Erath": {
@@ -1548,7 +1549,7 @@
       "fireStations": 10,
       "emsStations": 5,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 22,
       "ercotZone": "Unknown"
     },
     "Floyd": {
@@ -1558,7 +1559,7 @@
       "fireStations": 2,
       "emsStations": 2,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Frio": {
@@ -1568,7 +1569,7 @@
       "fireStations": 2,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 9,
       "ercotZone": "Unknown"
     },
     "Gillespie": {
@@ -1578,7 +1579,7 @@
       "fireStations": 9,
       "emsStations": 2,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 13,
       "ercotZone": "Unknown"
     },
     "Glasscock": {
@@ -1588,7 +1589,7 @@
       "fireStations": 2,
       "emsStations": 0,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Goliad": {
@@ -1598,7 +1599,7 @@
       "fireStations": 4,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Gregg": {
@@ -1608,7 +1609,7 @@
       "fireStations": 16,
       "emsStations": 12,
       "policeDepartments": 15,
-      "cellTowers": 350,
+      "cellTowers": 59,
       "ercotZone": "Unknown"
     },
     "Guadalupe": {
@@ -1618,7 +1619,7 @@
       "fireStations": 18,
       "emsStations": 16,
       "policeDepartments": 7,
-      "cellTowers": 350,
+      "cellTowers": 88,
       "ercotZone": "Central"
     },
     "Hartley": {
@@ -1628,7 +1629,7 @@
       "fireStations": 3,
       "emsStations": 2,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Hays": {
@@ -1638,7 +1639,7 @@
       "fireStations": 23,
       "emsStations": 5,
       "policeDepartments": 9,
-      "cellTowers": 350,
+      "cellTowers": 128,
       "ercotZone": "Central"
     },
     "Hockley": {
@@ -1648,7 +1649,7 @@
       "fireStations": 5,
       "emsStations": 4,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 10,
       "ercotZone": "Unknown"
     },
     "Hunt": {
@@ -1658,7 +1659,7 @@
       "fireStations": 16,
       "emsStations": 6,
       "policeDepartments": 11,
-      "cellTowers": 350,
+      "cellTowers": 52,
       "ercotZone": "Unknown"
     },
     "Jasper": {
@@ -1668,7 +1669,7 @@
       "fireStations": 13,
       "emsStations": 5,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 16,
       "ercotZone": "Unknown"
     },
     "Karnes": {
@@ -1678,7 +1679,7 @@
       "fireStations": 4,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 7,
       "ercotZone": "Unknown"
     },
     "King": {
@@ -1688,7 +1689,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Lamb": {
@@ -1698,7 +1699,7 @@
       "fireStations": 5,
       "emsStations": 5,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 6,
       "ercotZone": "Unknown"
     },
     "Leon": {
@@ -1708,7 +1709,7 @@
       "fireStations": 8,
       "emsStations": 7,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 9,
       "ercotZone": "Unknown"
     },
     "Llano": {
@@ -1718,7 +1719,7 @@
       "fireStations": 9,
       "emsStations": 2,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 11,
       "ercotZone": "Unknown"
     },
     "Madison": {
@@ -1728,7 +1729,7 @@
       "fireStations": 3,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 7,
       "ercotZone": "Unknown"
     },
     "Medina": {
@@ -1738,7 +1739,7 @@
       "fireStations": 10,
       "emsStations": 3,
       "policeDepartments": 7,
-      "cellTowers": 350,
+      "cellTowers": 26,
       "ercotZone": "Unknown"
     },
     "Mitchell": {
@@ -1748,7 +1749,7 @@
       "fireStations": 2,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 4,
       "ercotZone": "Unknown"
     },
     "Morris": {
@@ -1758,7 +1759,7 @@
       "fireStations": 6,
       "emsStations": 4,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Cottle": {
@@ -1768,7 +1769,7 @@
       "fireStations": 2,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Crockett": {
@@ -1778,7 +1779,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Culberson": {
@@ -1788,7 +1789,7 @@
       "fireStations": 2,
       "emsStations": 0,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Dallam": {
@@ -1798,7 +1799,7 @@
       "fireStations": 2,
       "emsStations": 2,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Dallas": {
@@ -1808,7 +1809,7 @@
       "fireStations": 133,
       "emsStations": 147,
       "policeDepartments": 47,
-      "cellTowers": 4200,
+      "cellTowers": 1245,
       "ercotZone": "North"
     },
     "Denton": {
@@ -1818,7 +1819,7 @@
       "fireStations": 49,
       "emsStations": 39,
       "policeDepartments": 21,
-      "cellTowers": 350,
+      "cellTowers": 483,
       "ercotZone": "North"
     },
     "Dickens": {
@@ -1828,7 +1829,7 @@
       "fireStations": 3,
       "emsStations": 3,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Eastland": {
@@ -1838,7 +1839,7 @@
       "fireStations": 8,
       "emsStations": 7,
       "policeDepartments": 6,
-      "cellTowers": 350,
+      "cellTowers": 9,
       "ercotZone": "Unknown"
     },
     "Ellis": {
@@ -1848,7 +1849,7 @@
       "fireStations": 26,
       "emsStations": 17,
       "policeDepartments": 14,
-      "cellTowers": 350,
+      "cellTowers": 110,
       "ercotZone": "North"
     },
     "Falls": {
@@ -1858,7 +1859,7 @@
       "fireStations": 9,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Fannin": {
@@ -1868,7 +1869,7 @@
       "fireStations": 13,
       "emsStations": 6,
       "policeDepartments": 8,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Fisher": {
@@ -1878,7 +1879,7 @@
       "fireStations": 2,
       "emsStations": 0,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Fort Bend": {
@@ -1888,7 +1889,7 @@
       "fireStations": 34,
       "emsStations": 23,
       "policeDepartments": 14,
-      "cellTowers": 350,
+      "cellTowers": 437,
       "ercotZone": "Coast"
     },
     "Grayson": {
@@ -1898,7 +1899,7 @@
       "fireStations": 26,
       "emsStations": 23,
       "policeDepartments": 15,
-      "cellTowers": 350,
+      "cellTowers": 71,
       "ercotZone": "North"
     },
     "Hale": {
@@ -1908,7 +1909,7 @@
       "fireStations": 8,
       "emsStations": 6,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 15,
       "ercotZone": "Unknown"
     },
     "Hamilton": {
@@ -1918,7 +1919,7 @@
       "fireStations": 4,
       "emsStations": 3,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 4,
       "ercotZone": "Unknown"
     },
     "Motley": {
@@ -1928,7 +1929,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Nacogdoches": {
@@ -1938,7 +1939,7 @@
       "fireStations": 21,
       "emsStations": 15,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 31,
       "ercotZone": "Unknown"
     },
     "Newton": {
@@ -1948,7 +1949,7 @@
       "fireStations": 5,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 6,
       "ercotZone": "Unknown"
     },
     "Hardeman": {
@@ -1958,7 +1959,7 @@
       "fireStations": 2,
       "emsStations": 2,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Hardin": {
@@ -1968,7 +1969,7 @@
       "fireStations": 14,
       "emsStations": 7,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 28,
       "ercotZone": "Unknown"
     },
     "Harris": {
@@ -1978,7 +1979,7 @@
       "fireStations": 227,
       "emsStations": 300,
       "policeDepartments": 77,
-      "cellTowers": 9000,
+      "cellTowers": 2303,
       "ercotZone": "Coast"
     },
     "Harrison": {
@@ -1988,7 +1989,7 @@
       "fireStations": 16,
       "emsStations": 7,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 33,
       "ercotZone": "Unknown"
     },
     "Hemphill": {
@@ -1998,7 +1999,7 @@
       "fireStations": 3,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Henderson": {
@@ -2008,7 +2009,7 @@
       "fireStations": 28,
       "emsStations": 3,
       "policeDepartments": 14,
-      "cellTowers": 350,
+      "cellTowers": 41,
       "ercotZone": "Unknown"
     },
     "Hidalgo": {
@@ -2018,7 +2019,7 @@
       "fireStations": 37,
       "emsStations": 37,
       "policeDepartments": 28,
-      "cellTowers": 350,
+      "cellTowers": 423,
       "ercotZone": "South"
     },
     "Hopkins": {
@@ -2028,7 +2029,7 @@
       "fireStations": 11,
       "emsStations": 8,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Irion": {
@@ -2038,7 +2039,7 @@
       "fireStations": 2,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Jack": {
@@ -2048,7 +2049,7 @@
       "fireStations": 9,
       "emsStations": 3,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 4,
       "ercotZone": "Unknown"
     },
     "Jackson": {
@@ -2058,7 +2059,7 @@
       "fireStations": 7,
       "emsStations": 5,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 7,
       "ercotZone": "Unknown"
     },
     "Jeff Davis": {
@@ -2068,7 +2069,7 @@
       "fireStations": 2,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Jim Wells": {
@@ -2078,7 +2079,7 @@
       "fireStations": 4,
       "emsStations": 3,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 18,
       "ercotZone": "Unknown"
     },
     "Jones": {
@@ -2088,7 +2089,7 @@
       "fireStations": 5,
       "emsStations": 2,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 9,
       "ercotZone": "Unknown"
     },
     "Kendall": {
@@ -2098,7 +2099,7 @@
       "fireStations": 6,
       "emsStations": 7,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 25,
       "ercotZone": "Unknown"
     },
     "Pecos": {
@@ -2108,7 +2109,7 @@
       "fireStations": 5,
       "emsStations": 4,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 7,
       "ercotZone": "West"
     },
     "Presidio": {
@@ -2118,7 +2119,7 @@
       "fireStations": 3,
       "emsStations": 4,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Refugio": {
@@ -2128,7 +2129,7 @@
       "fireStations": 6,
       "emsStations": 0,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Rusk": {
@@ -2138,7 +2139,7 @@
       "fireStations": 16,
       "emsStations": 6,
       "policeDepartments": 6,
-      "cellTowers": 350,
+      "cellTowers": 26,
       "ercotZone": "Unknown"
     },
     "San Jacinto": {
@@ -2148,7 +2149,7 @@
       "fireStations": 10,
       "emsStations": 5,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 14,
       "ercotZone": "Unknown"
     },
     "San Patricio": {
@@ -2158,7 +2159,7 @@
       "fireStations": 11,
       "emsStations": 4,
       "policeDepartments": 8,
-      "cellTowers": 350,
+      "cellTowers": 33,
       "ercotZone": "Unknown"
     },
     "Terrell": {
@@ -2168,7 +2169,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Upton": {
@@ -2178,7 +2179,7 @@
       "fireStations": 2,
       "emsStations": 3,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Val Verde": {
@@ -2188,7 +2189,7 @@
       "fireStations": 9,
       "emsStations": 5,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 23,
       "ercotZone": "Unknown"
     },
     "Waller": {
@@ -2198,7 +2199,7 @@
       "fireStations": 10,
       "emsStations": 7,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 30,
       "ercotZone": "Unknown"
     },
     "Webb": {
@@ -2208,7 +2209,7 @@
       "fireStations": 12,
       "emsStations": 18,
       "policeDepartments": 9,
-      "cellTowers": 350,
+      "cellTowers": 128,
       "ercotZone": "South"
     },
     "Wilbarger": {
@@ -2218,7 +2219,7 @@
       "fireStations": 2,
       "emsStations": 2,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 6,
       "ercotZone": "Unknown"
     },
     "Winkler": {
@@ -2228,7 +2229,7 @@
       "fireStations": 2,
       "emsStations": 3,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 4,
       "ercotZone": "Unknown"
     },
     "Yoakum": {
@@ -2238,7 +2239,7 @@
       "fireStations": 2,
       "emsStations": 2,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Zapata": {
@@ -2248,7 +2249,7 @@
       "fireStations": 3,
       "emsStations": 2,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 7,
       "ercotZone": "South"
     },
     "Angelina": {
@@ -2258,7 +2259,7 @@
       "fireStations": 16,
       "emsStations": 11,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 41,
       "ercotZone": "Unknown"
     },
     "Aransas": {
@@ -2268,7 +2269,7 @@
       "fireStations": 7,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 11,
       "ercotZone": "Unknown"
     },
     "Bowie": {
@@ -2278,7 +2279,7 @@
       "fireStations": 20,
       "emsStations": 15,
       "policeDepartments": 11,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Brewster": {
@@ -2288,7 +2289,7 @@
       "fireStations": 4,
       "emsStations": 3,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 5,
       "ercotZone": "Unknown"
     },
     "Burleson": {
@@ -2298,7 +2299,7 @@
       "fireStations": 8,
       "emsStations": 2,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 9,
       "ercotZone": "Unknown"
     },
     "Calhoun": {
@@ -2308,7 +2309,7 @@
       "fireStations": 8,
       "emsStations": 7,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 10,
       "ercotZone": "Unknown"
     },
     "Chambers": {
@@ -2318,7 +2319,7 @@
       "fireStations": 8,
       "emsStations": 5,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 25,
       "ercotZone": "Coast"
     },
     "Comanche": {
@@ -2328,7 +2329,7 @@
       "fireStations": 8,
       "emsStations": 2,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 7,
       "ercotZone": "Unknown"
     },
     "Cooke": {
@@ -2338,7 +2339,7 @@
       "fireStations": 12,
       "emsStations": 2,
       "policeDepartments": 6,
-      "cellTowers": 350,
+      "cellTowers": 21,
       "ercotZone": "Unknown"
     },
     "Kleberg": {
@@ -2348,7 +2349,7 @@
       "fireStations": 6,
       "emsStations": 7,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 15,
       "ercotZone": "Unknown"
     },
     "McMullen": {
@@ -2358,7 +2359,7 @@
       "fireStations": 0,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Marion": {
@@ -2368,7 +2369,7 @@
       "fireStations": 6,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 57,
       "ercotZone": "Unknown"
     },
     "Matagorda": {
@@ -2378,7 +2379,7 @@
       "fireStations": 11,
       "emsStations": 4,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 17,
       "ercotZone": "Unknown"
     },
     "Montague": {
@@ -2388,7 +2389,7 @@
       "fireStations": 8,
       "emsStations": 5,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 10,
       "ercotZone": "Unknown"
     },
     "Deaf Smith": {
@@ -2398,7 +2399,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 9,
       "ercotZone": "Unknown"
     },
     "Kenedy": {
@@ -2408,7 +2409,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Ector": {
@@ -2418,7 +2419,7 @@
       "fireStations": 12,
       "emsStations": 13,
       "policeDepartments": 5,
-      "cellTowers": 350,
+      "cellTowers": 81,
       "ercotZone": "West"
     },
     "El Paso": {
@@ -2428,7 +2429,7 @@
       "fireStations": 44,
       "emsStations": 31,
       "policeDepartments": 19,
-      "cellTowers": 350,
+      "cellTowers": 414,
       "ercotZone": "West"
     },
     "Foard": {
@@ -2438,7 +2439,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 2,
-      "cellTowers": 350,
+      "cellTowers": 1,
       "ercotZone": "Unknown"
     },
     "Freestone": {
@@ -2448,7 +2449,7 @@
       "fireStations": 6,
       "emsStations": 2,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 9,
       "ercotZone": "Unknown"
     },
     "Gaines": {
@@ -2458,7 +2459,7 @@
       "fireStations": 2,
       "emsStations": 2,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 11,
       "ercotZone": "Unknown"
     },
     "Donley": {
@@ -2468,7 +2469,7 @@
       "fireStations": 3,
       "emsStations": 1,
       "policeDepartments": 1,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Galveston": {
@@ -2478,7 +2479,7 @@
       "fireStations": 33,
       "emsStations": 27,
       "policeDepartments": 18,
-      "cellTowers": 950,
+      "cellTowers": 167,
       "ercotZone": "Coast"
     },
     "Hood": {
@@ -2488,7 +2489,7 @@
       "fireStations": 10,
       "emsStations": 8,
       "policeDepartments": 4,
-      "cellTowers": 350,
+      "cellTowers": 33,
       "ercotZone": "Unknown"
     },
     "Houston": {
@@ -2498,7 +2499,7 @@
       "fireStations": 11,
       "emsStations": 3,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 11,
       "ercotZone": "Unknown"
     },
     "Hudspeth": {
@@ -2508,7 +2509,7 @@
       "fireStations": 1,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 2,
       "ercotZone": "Unknown"
     },
     "Jefferson": {
@@ -2518,7 +2519,7 @@
       "fireStations": 30,
       "emsStations": 23,
       "policeDepartments": 7,
-      "cellTowers": 350,
+      "cellTowers": 121,
       "ercotZone": "Coast"
     },
     "Kaufman": {
@@ -2528,7 +2529,7 @@
       "fireStations": 18,
       "emsStations": 11,
       "policeDepartments": 10,
-      "cellTowers": 350,
+      "cellTowers": 82,
       "ercotZone": "Unknown"
     },
     "Panola": {
@@ -2538,7 +2539,7 @@
       "fireStations": 12,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 11,
       "ercotZone": "Unknown"
     },
     "Haskell": {
@@ -2548,7 +2549,7 @@
       "fireStations": 4,
       "emsStations": 1,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 3,
       "ercotZone": "Unknown"
     },
     "Potter": {
@@ -2558,7 +2559,7 @@
       "fireStations": 13,
       "emsStations": 10,
       "policeDepartments": 3,
-      "cellTowers": 350,
+      "cellTowers": 55,
       "ercotZone": "West"
     }
   }
