@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-05-10T22:01:55.455Z",
-  "sourceNote": "Texas county resources enriched with FCC Antenna Structure Registration records when available. FCC may block automated downloads with HTTP 403; in that case, provide a local ASR CSV with FCC_ASR_LOCAL_FILE. registeredTowers is ASR structure count, not guaranteed carrier cell-site count.",
-  "towerSource": "https://wireless2.fcc.gov/UlsApp/AsrSearch/downloads/ASR_Registration.zip",
+  "generatedAt": "2026-05-10T22:31:06.586Z",
+  "sourceNote": "Texas county resources enriched with FCC ULS ASR tower records from r_tower.zip. registeredTowers is ASR structure count, not guaranteed carrier cell-site count.",
+  "towerSource": "https://data.fcc.gov/download/pub/uls/complete/r_tower.zip",
   "towerFeatureCount": 0,
   "fields": [
     "population",
