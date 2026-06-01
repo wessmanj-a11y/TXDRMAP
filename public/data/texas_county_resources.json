@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-06-01T15:29:45.426Z",
-  "sourceNote": "County resources aggregated from verified HIFLD/ArcGIS service endpoints using Texas county polygons. If an upstream service is unavailable, cached data is used; if no cache exists, that layer is left empty and the workflow continues.",
-  "warnings": [],
+  "generatedAt": "2026-06-01T15:40:45.550Z",
+  "sourceNote": "Texas county baseline enriched from committed county population fallback, optional TXDRMAP population sources, HIFLD resource layers, estimated population-scaled cell tower counts, and ERCOT regional assignment. Cell towers are estimates until a real tower dataset is added.",
+  "populationFallbackCount": 16,
+  "estimatedCellTowerCounties": 254,
+  "populationSources": [
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/data/texas_county_population.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/data/county_population.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/data/texas_counties_population.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/data/texas_county_data.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/texas_county_data.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/texas_county_data.json"
+  ],
   "fields": [
     "population",
     "hospitals",
