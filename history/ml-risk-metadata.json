@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "updated": "2026-06-09T13:51:46.570369+00:00",
+  "updated": "2026-06-09T14:29:39.502141+00:00",
   "rows": 15240,
   "positiveExamples": 1079,
   "features": [
@@ -24,315 +24,118 @@
     "maxAlertSeverityScore",
     "maxAlertUrgencyScore",
     "maxAlertCertaintyScore",
-    "spcRisk",
     "forecastWindMax6h",
     "forecastWindMax12h",
     "forecastPrecipChanceMax12h",
     "forecastStormRisk",
     "roadClosures",
     "roadClosureRisk",
-    "femaRiskScore",
-    "baselineCountyFragility",
-    "femaExpectedAnnualLoss",
-    "femaSocialVulnerability",
-    "femaCommunityResilience",
-    "femaStrongWindRisk",
-    "femaTornadoRisk",
-    "historicalAvgPercentOut",
-    "historicalP95PercentOut",
-    "historicalP99PercentOut",
-    "historicalMonthlyAvgPercentOut",
-    "historicalMonthlyP95PercentOut",
-    "historicalOutageVolatilityScore",
-    "outageVsHistoricalAvg",
-    "outageVsHistoricalP95",
-    "outageVsHistoricalP99",
-    "outageVsHistoricalMonthlyP95",
-    "percentOutMinusHistoricalAvg",
-    "percentOutMinusHistoricalMonthlyP95",
-    "historicalPercentileRank",
-    "volatilityAdjustedAnomaly",
-    "historicalAnomalyScore",
     "trend6h",
     "trend12h",
     "trend24h",
     "trendVelocity",
-    "decayedSevenDayPeak",
     "sevenDayPeak"
   ],
   "target": "worsened",
   "modelFile": "history/ml-risk-model.joblib",
   "metrics": {
-    "accuracy": 0.9068,
-    "precision": 0.3981,
-    "recall": 0.6148,
-    "f1": 0.4833
-  },
-  "calibration": {
-    "selectedThreshold": 0.68,
-    "selectedThresholdPct": 68,
-    "selectionReason": "best precision while keeping recall target",
-    "minRecallTarget": 0.6,
-    "precisionTarget": 0.55,
-    "selectedMetrics": {
-      "threshold": 0.68,
-      "accuracy": 0.9068,
-      "precision": 0.3981,
-      "recall": 0.6148,
-      "f1": 0.4833,
-      "predictedPositiveRate": 0.1094
-    },
-    "thresholdSweep": [
-      {
-        "threshold": 0.4,
-        "accuracy": 0.8199,
-        "precision": 0.262,
-        "recall": 0.8481,
-        "f1": 0.4003,
-        "predictedPositiveRate": 0.2294
-      },
-      {
-        "threshold": 0.45,
-        "accuracy": 0.8367,
-        "precision": 0.2772,
-        "recall": 0.8111,
-        "f1": 0.4132,
-        "predictedPositiveRate": 0.2073
-      },
-      {
-        "threshold": 0.5,
-        "accuracy": 0.8528,
-        "precision": 0.2965,
-        "recall": 0.7852,
-        "f1": 0.4305,
-        "predictedPositiveRate": 0.1877
-      },
-      {
-        "threshold": 0.55,
-        "accuracy": 0.8685,
-        "precision": 0.3158,
-        "recall": 0.7333,
-        "f1": 0.4415,
-        "predictedPositiveRate": 0.1646
-      },
-      {
-        "threshold": 0.6,
-        "accuracy": 0.8827,
-        "precision": 0.34,
-        "recall": 0.6963,
-        "f1": 0.4569,
-        "predictedPositiveRate": 0.1451
-      },
-      {
-        "threshold": 0.65,
-        "accuracy": 0.8976,
-        "precision": 0.3734,
-        "recall": 0.6556,
-        "f1": 0.4758,
-        "predictedPositiveRate": 0.1244
-      },
-      {
-        "threshold": 0.7,
-        "accuracy": 0.9102,
-        "precision": 0.4077,
-        "recall": 0.5889,
-        "f1": 0.4818,
-        "predictedPositiveRate": 0.1024
-      },
-      {
-        "threshold": 0.75,
-        "accuracy": 0.9231,
-        "precision": 0.4594,
-        "recall": 0.4815,
-        "f1": 0.4702,
-        "predictedPositiveRate": 0.0743
-      },
-      {
-        "threshold": 0.8,
-        "accuracy": 0.9333,
-        "precision": 0.5465,
-        "recall": 0.3481,
-        "f1": 0.4253,
-        "predictedPositiveRate": 0.0451
-      },
-      {
-        "threshold": 0.85,
-        "accuracy": 0.9331,
-        "precision": 0.5904,
-        "recall": 0.1815,
-        "f1": 0.2776,
-        "predictedPositiveRate": 0.0218
-      },
-      {
-        "threshold": 0.9,
-        "accuracy": 0.9318,
-        "precision": 0.7778,
-        "recall": 0.0519,
-        "f1": 0.0972,
-        "predictedPositiveRate": 0.0047
-      }
-    ]
+    "accuracy": 0.8105,
+    "precision": 0.2527,
+    "recall": 0.8556,
+    "f1": 0.3902
   },
   "featureImportance": [
     {
       "feature": "customersOut",
-      "importance": 0.1791
-    },
-    {
-      "feature": "maxSingleOutage",
-      "importance": 0.16188
+      "importance": 0.22386
     },
     {
       "feature": "incidents",
-      "importance": 0.13235
+      "importance": 0.19048
     },
     {
-      "feature": "trend12h",
-      "importance": 0.04295
-    },
-    {
-      "feature": "trend24h",
-      "importance": 0.04281
-    },
-    {
-      "feature": "baselineCountyFragility",
-      "importance": 0.04072
-    },
-    {
-      "feature": "trend6h",
-      "importance": 0.03947
-    },
-    {
-      "feature": "decayedSevenDayPeak",
-      "importance": 0.03817
-    },
-    {
-      "feature": "femaRiskScore",
-      "importance": 0.03524
+      "feature": "maxSingleOutage",
+      "importance": 0.18513
     },
     {
       "feature": "sevenDayPeak",
-      "importance": 0.03254
+      "importance": 0.08423
+    },
+    {
+      "feature": "trend6h",
+      "importance": 0.06312
+    },
+    {
+      "feature": "trend12h",
+      "importance": 0.06274
     },
     {
       "feature": "trendVelocity",
-      "importance": 0.03242
+      "importance": 0.05429
     },
     {
-      "feature": "femaExpectedAnnualLoss",
-      "importance": 0.02816
-    },
-    {
-      "feature": "femaTornadoRisk",
-      "importance": 0.02485
+      "feature": "trend24h",
+      "importance": 0.05181
     },
     {
       "feature": "forecastPrecipChanceMax12h",
-      "importance": 0.0211
-    },
-    {
-      "feature": "femaStrongWindRisk",
-      "importance": 0.01775
-    },
-    {
-      "feature": "femaCommunityResilience",
-      "importance": 0.01192
-    },
-    {
-      "feature": "historicalP95PercentOut",
-      "importance": 0.01126
-    },
-    {
-      "feature": "volatilityAdjustedAnomaly",
-      "importance": 0.01092
-    },
-    {
-      "feature": "percentOutMinusHistoricalAvg",
-      "importance": 0.01024
-    },
-    {
-      "feature": "femaSocialVulnerability",
-      "importance": 0.01023
-    },
-    {
-      "feature": "historicalAvgPercentOut",
-      "importance": 0.00942
-    },
-    {
-      "feature": "historicalMonthlyAvgPercentOut",
-      "importance": 0.00935
-    },
-    {
-      "feature": "percentOutMinusHistoricalMonthlyP95",
-      "importance": 0.00881
+      "importance": 0.03093
     },
     {
       "feature": "forecastStormRisk",
-      "importance": 0.00861
-    },
-    {
-      "feature": "historicalMonthlyP95PercentOut",
-      "importance": 0.0085
-    },
-    {
-      "feature": "historicalP99PercentOut",
-      "importance": 0.00677
+      "importance": 0.01256
     },
     {
       "feature": "forecastWindMax12h",
-      "importance": 0.00651
+      "importance": 0.01048
     },
     {
       "feature": "forecastWindMax6h",
-      "importance": 0.00589
+      "importance": 0.00981
     },
     {
       "feature": "weatherRisk",
-      "importance": 0.00256
-    },
-    {
-      "feature": "maxAlertUrgencyScore",
-      "importance": 0.00175
+      "importance": 0.00478
     },
     {
       "feature": "maxAlertCertaintyScore",
-      "importance": 0.00166
+      "importance": 0.0032
     },
     {
-      "feature": "weatherAlerts",
-      "importance": 0.0016
+      "feature": "maxAlertUrgencyScore",
+      "importance": 0.00311
     },
     {
       "feature": "maxAlertSeverityScore",
-      "importance": 0.00153
+      "importance": 0.00267
     },
     {
-      "feature": "historicalOutageVolatilityScore",
-      "importance": 0.0009
+      "feature": "weatherAlerts",
+      "importance": 0.00251
     },
     {
       "feature": "alertWatchCount",
-      "importance": 0.00075
+      "importance": 0.00166
     },
     {
       "feature": "alertAdvisoryCount",
-      "importance": 0.00047
+      "importance": 0.00091
     },
     {
       "feature": "alertWarningCount",
-      "importance": 0.00037
-    },
-    {
-      "feature": "floodWarningCount",
-      "importance": 0.00022
-    },
-    {
-      "feature": "severeThunderstormWarningCount",
-      "importance": 0.00014
+      "importance": 0.0008
     },
     {
       "feature": "flashFloodWarningCount",
-      "importance": 0.0001
+      "importance": 0.0004
+    },
+    {
+      "feature": "floodWarningCount",
+      "importance": 0.00037
+    },
+    {
+      "feature": "severeThunderstormWarningCount",
+      "importance": 0.00017
     },
     {
       "feature": "percentCustomersOut",
@@ -359,39 +162,11 @@
       "importance": 0.0
     },
     {
-      "feature": "spcRisk",
-      "importance": 0.0
-    },
-    {
       "feature": "roadClosures",
       "importance": 0.0
     },
     {
       "feature": "roadClosureRisk",
-      "importance": 0.0
-    },
-    {
-      "feature": "outageVsHistoricalAvg",
-      "importance": 0.0
-    },
-    {
-      "feature": "outageVsHistoricalP95",
-      "importance": 0.0
-    },
-    {
-      "feature": "outageVsHistoricalP99",
-      "importance": 0.0
-    },
-    {
-      "feature": "outageVsHistoricalMonthlyP95",
-      "importance": 0.0
-    },
-    {
-      "feature": "historicalPercentileRank",
-      "importance": 0.0
-    },
-    {
-      "feature": "historicalAnomalyScore",
       "importance": 0.0
     }
   ]
