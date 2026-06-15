@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-15T05:43:59.120262+00:00",
+  "updated": "2026-06-15T12:18:41.575745+00:00",
   "source": "scripts/ml_train_spc.py",
   "points": [
     {
@@ -5497,6 +5497,18 @@
       "precision": 0.3243,
       "recall": 0.6103,
       "f1": 0.4235
+    },
+    {
+      "timestamp": "2026-06-15T12:18:41.548538+00:00",
+      "ok": true,
+      "rows": 14986,
+      "positiveExamples": 784,
+      "selectedThreshold": 0.62,
+      "selectionReason": "best precision while keeping recall target",
+      "accuracy": 0.9034,
+      "precision": 0.2946,
+      "recall": 0.6071,
+      "f1": 0.3967
     }
   ]
 }
