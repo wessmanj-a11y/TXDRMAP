@@ -1,19 +1,7 @@
 {
-  "updated": "2026-07-18T19:20:47.884717+00:00",
+  "updated": "2026-07-18T20:25:42.810741+00:00",
   "source": "scripts/ml_train_spc.py",
   "points": [
-    {
-      "timestamp": "2026-05-29T12:25:02.066349+00:00",
-      "ok": true,
-      "rows": 17526,
-      "positiveExamples": 1310,
-      "selectedThreshold": 0.5,
-      "selectionReason": "best precision while keeping recall target",
-      "accuracy": 0.8848,
-      "precision": 0.3518,
-      "recall": 0.6402,
-      "f1": 0.4541
-    },
     {
       "timestamp": "2026-05-29T16:30:29.037985+00:00",
       "ok": true,
@@ -6001,6 +5989,18 @@
       "precision": 0.3835,
       "recall": 0.6035,
       "f1": 0.469
+    },
+    {
+      "timestamp": "2026-07-18T20:25:42.781639+00:00",
+      "ok": true,
+      "rows": 24384,
+      "positiveExamples": 1621,
+      "selectedThreshold": 0.68,
+      "selectionReason": "best precision while keeping recall target",
+      "accuracy": 0.9081,
+      "precision": 0.3802,
+      "recall": 0.6074,
+      "f1": 0.4677
     }
   ]
 }
