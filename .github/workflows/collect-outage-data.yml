@@ -15,6 +15,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     env:
       DRIVE_TEXAS_API_KEY: ${{ secrets.DRIVE_TEXAS_API_KEY }}
 
@@ -22,19 +23,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-
-      - name: Sync latest main before generating data
-        shell: bash
-        run: |
-          git fetch origin main
-          git checkout main
-          git reset --hard origin/main
+          fetch-depth: 1
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Fetch SPC outlook intelligence
         run: node scripts/fetch-spc.js
@@ -43,7 +37,7 @@ jobs:
         run: node scripts/fetch-fema-risk.js
 
       - name: Run outage collection
-        run: node scripts/fetch-outages.js
+        run: node scripts/fetch-outages-resilient.js
 
       - name: Apply DriveTexas road conditions
         run: node scripts/apply-road-conditions.js
@@ -91,15 +85,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # Keep only data required by the published dashboard/history in Git.
+          # training-data.json and ml-risk-model.joblib are regenerated every run
+          # and should not create a new large Git blob every 30 minutes.
           GENERATED_FILES=(
             outages.json
             history/outage-history.json
             history/county-weather-forecast.json
             history/spc-outlook.json
             history/fema-county-risk.json
-            history/training-data.json
             history/ml-risk-metadata.json
-            history/ml-risk-model.joblib
             history/ml-accuracy-history.json
           )
 
@@ -134,7 +129,7 @@ jobs:
             fi
           done
 
-          git fetch origin main
+          git fetch --depth=1 origin main
           git reset --hard origin/main
 
           for file in "${GENERATED_FILES[@]}"; do
