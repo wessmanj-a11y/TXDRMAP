@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TXDRMAP Scenario Simulator</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="scenario.css">
+</head>
+<body>
+  <main class="scenario-page">
+    <section class="hero">
+      <p class="eyebrow">TXDRMAP</p>
+      <h1>Texas Disaster Scenario Simulator</h1>
+      <p>Draw a storm path across Texas, then estimate infrastructure impact, response demand, economic damage, and recovery time.</p>
+      <a class="back-link" href="index.html">Back to dashboard</a>
+    </section>
+    <section class="grid">
+      <form id="scenarioForm" class="panel">
+        <h2>Scenario Builder</h2>
+        <label>Scenario name<input id="scenarioName" value="Custom Texas Scenario"></label>
+        <label>Scenario type<select id="scenarioType"><option value="hurricane">Hurricane</option><option value="thunderstorm">Thunderstorm</option><option value="winterstorm">Winter Storm</option></select></label>
+        <label>Wind speed mph<input id="windSpeed" type="number" min="0" max="180" value="95"></label>
+        <label>Rainfall inches<input id="rainfall" type="number" min="0" max="40" value="10"></label>
+        <label>Duration hours<input id="duration" type="number" min="1" max="96" value="18"></label>
+        <label>Track counties<textarea id="trackCounties" rows="5">Galveston, Harris, Montgomery, Walker, Dallas</textarea></label>
+        <div class="map-actions">
+          <button id="clearPath" type="button">Clear Map Path</button>
+          <button id="useSamplePath" type="button">Sample Hurricane Path</button>
+        </div>
+        <button type="submit">Run Scenario</button>
+      </form>
+      <section class="panel map-panel">
+        <h2>Draw Storm Path</h2>
+        <p class="hint">Click counties on the map in storm travel order. The simulator will update the track counties list automatically.</p>
+        <label>Map heat layer<select id="heatMetric"><option value="hazard">Hazard</option><option value="outagePercent">Power Outage</option><option value="roadPercent">Road Impact</option><option value="telcoPercent">Telco Impact</option><option value="hospitalSurge">Hospital Surge</option></select></label>
+        <div id="scenarioMap"></div>
+      </section>
+      <section class="panel results">
+        <h2>Impact Report</h2>
+        <div id="summaryCards" class="cards"></div>
+        <h3>ERCOT Grid Stress</h3>
+        <div id="ercotGridResults" class="cards"></div>
+        <h3>Top impacted counties</h3>
+        <div id="countyBars" class="bars"></div>
+        <h3>County impact table</h3>
+        <div class="table-wrap"><table><thead><tr><th>County</th><th>Hazard</th><th>Outage %</th><th>Road %</th><th>Telco %</th><th>Hospital Surge</th><th>Damage</th><th>Recovery</th></tr></thead><tbody id="impactRows"></tbody></table></div>
+        <h3>Operational Resource Impact</h3>
+        <div id="resourceImpactResults"></div>
+      </section>
+    </section>
+  </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="src/lib/scenario/stormPathCountyMapper.js"></script>
+  <script src="src/lib/scenario/countyImpactResolver.js"></script>
+  <script src="src/components/scenario/ScenarioResultsPanel.js"></script>
+  <script src="src/lib/scenario/runScenarioPipeline.js"></script>
+  <script src="scenario.js"></script>
+  <script src="scenario-heatmap.js"></script>
+  <script src="public/js/scenario-zones.js"></script>
+  <script src="public/js/scenario-zones-integration.js"></script>
+  <script src="public/js/ercot-grid-overlay.js"></script>
+  <script src="public/js/scenario-controller.js"></script>
+</body>
+</html>

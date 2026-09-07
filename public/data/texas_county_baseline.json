@@ -1,0 +1,2566 @@
+{
+  "generatedAt": "2026-09-01T14:15:16.770Z",
+  "sourceNote": "Texas county baseline enriched from committed county population fallback, optional TXDRMAP population sources, HIFLD resource layers, estimated population-scaled cell tower counts, and ERCOT regional assignment. Cell towers are estimates until a real tower dataset is added.",
+  "populationFallbackCount": 16,
+  "estimatedCellTowerCounties": 254,
+  "populationSources": [
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/data/texas_county_population.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/data/county_population.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/data/texas_counties_population.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/data/texas_county_data.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/texas_county_data.json",
+    "/home/runner/work/TXDRMAP/TXDRMAP/public/texas_county_data.json"
+  ],
+  "fields": [
+    "population",
+    "hospitals",
+    "hospitalBeds",
+    "fireStations",
+    "emsStations",
+    "policeDepartments",
+    "cellTowers",
+    "ercotZone"
+  ],
+  "counties": {
+    "Ochiltree": {
+      "population": 9723,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 4,
+      "emsStations": 4,
+      "policeDepartments": 2,
+      "cellTowers": 5,
+      "ercotZone": "Unknown"
+    },
+    "Oldham": {
+      "population": 1861,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 4,
+      "emsStations": 3,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Parker": {
+      "population": 184840,
+      "hospitals": 2,
+      "hospitalBeds": 125,
+      "fireStations": 26,
+      "emsStations": 6,
+      "policeDepartments": 7,
+      "cellTowers": 88,
+      "ercotZone": "North"
+    },
+    "Rains": {
+      "population": 120000,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 4,
+      "emsStations": 0,
+      "policeDepartments": 2,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Randall": {
+      "population": 143854,
+      "hospitals": 1,
+      "hospitalBeds": 4,
+      "fireStations": 12,
+      "emsStations": 4,
+      "policeDepartments": 3,
+      "cellTowers": 69,
+      "ercotZone": "West"
+    },
+    "Roberts": {
+      "population": 827,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 2,
+      "emsStations": 2,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Rockwall": {
+      "population": 130983,
+      "hospitals": 3,
+      "hospitalBeds": 170,
+      "fireStations": 9,
+      "emsStations": 1,
+      "policeDepartments": 4,
+      "cellTowers": 62,
+      "ercotZone": "North"
+    },
+    "San Saba": {
+      "population": 5730,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 3,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Somervell": {
+      "population": 9704,
+      "hospitals": 1,
+      "hospitalBeds": 16,
+      "fireStations": 1,
+      "emsStations": 3,
+      "policeDepartments": 1,
+      "cellTowers": 5,
+      "ercotZone": "Unknown"
+    },
+    "Stephens": {
+      "population": 9365,
+      "hospitals": 1,
+      "hospitalBeds": 40,
+      "fireStations": 1,
+      "emsStations": 0,
+      "policeDepartments": 2,
+      "cellTowers": 4,
+      "ercotZone": "Unknown"
+    },
+    "Stonewall": {
+      "population": 1245,
+      "hospitals": 1,
+      "hospitalBeds": 20,
+      "fireStations": 1,
+      "emsStations": 0,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Terry": {
+      "population": 12008,
+      "hospitals": 1,
+      "hospitalBeds": 45,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 6,
+      "ercotZone": "Unknown"
+    },
+    "Titus": {
+      "population": 120000,
+      "hospitals": 1,
+      "hospitalBeds": 164,
+      "fireStations": 8,
+      "emsStations": 3,
+      "policeDepartments": 2,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Upshur": {
+      "population": 120000,
+      "hospitals": 1,
+      "hospitalBeds": 37,
+      "fireStations": 11,
+      "emsStations": 1,
+      "policeDepartments": 5,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Uvalde": {
+      "population": 24384,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 5,
+      "emsStations": 3,
+      "policeDepartments": 3,
+      "cellTowers": 12,
+      "ercotZone": "Unknown"
+    },
+    "Ward": {
+      "population": 11644,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 3,
+      "emsStations": 2,
+      "policeDepartments": 2,
+      "cellTowers": 6,
+      "ercotZone": "Unknown"
+    },
+    "Williamson": {
+      "population": 697191,
+      "hospitals": 12,
+      "hospitalBeds": 1009,
+      "fireStations": 36,
+      "emsStations": 41,
+      "policeDepartments": 13,
+      "cellTowers": 332,
+      "ercotZone": "Central"
+    },
+    "Wise": {
+      "population": 76211,
+      "hospitals": 3,
+      "hospitalBeds": 184,
+      "fireStations": 18,
+      "emsStations": 9,
+      "policeDepartments": 6,
+      "cellTowers": 36,
+      "ercotZone": "North"
+    },
+    "Zavala": {
+      "population": 9534,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 5,
+      "ercotZone": "Unknown"
+    },
+    "Archer": {
+      "population": 9057,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 7,
+      "emsStations": 5,
+      "policeDepartments": 3,
+      "cellTowers": 4,
+      "ercotZone": "Unknown"
+    },
+    "Armstrong": {
+      "population": 1848,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 3,
+      "emsStations": 2,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Bastrop": {
+      "population": 106432,
+      "hospitals": 1,
+      "hospitalBeds": 8,
+      "fireStations": 13,
+      "emsStations": 5,
+      "policeDepartments": 5,
+      "cellTowers": 51,
+      "ercotZone": "Central"
+    },
+    "Blanco": {
+      "population": 13397,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 3,
+      "emsStations": 2,
+      "policeDepartments": 3,
+      "cellTowers": 6,
+      "ercotZone": "Central"
+    },
+    "Brooks": {
+      "population": 7093,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 2,
+      "emsStations": 0,
+      "policeDepartments": 2,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Burnet": {
+      "population": 56017,
+      "hospitals": 2,
+      "hospitalBeds": 71,
+      "fireStations": 11,
+      "emsStations": 6,
+      "policeDepartments": 7,
+      "cellTowers": 27,
+      "ercotZone": "Central"
+    },
+    "Camp": {
+      "population": 120000,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 2,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Castro": {
+      "population": 7515,
+      "hospitals": 1,
+      "hospitalBeds": 17,
+      "fireStations": 3,
+      "emsStations": 0,
+      "policeDepartments": 2,
+      "cellTowers": 4,
+      "ercotZone": "Unknown"
+    },
+    "Cochran": {
+      "population": 2547,
+      "hospitals": 1,
+      "hospitalBeds": 18,
+      "fireStations": 2,
+      "emsStations": 2,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Concho": {
+      "population": 3830,
+      "hospitals": 1,
+      "hospitalBeds": 16,
+      "fireStations": 3,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Coryell": {
+      "population": 89900,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 11,
+      "emsStations": 9,
+      "policeDepartments": 5,
+      "cellTowers": 43,
+      "ercotZone": "Unknown"
+    },
+    "Crane": {
+      "population": 4675,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Dawson": {
+      "population": 12413,
+      "hospitals": 1,
+      "hospitalBeds": 22,
+      "fireStations": 5,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 6,
+      "ercotZone": "Unknown"
+    },
+    "DeWitt": {
+      "population": 19952,
+      "hospitals": 1,
+      "hospitalBeds": 49,
+      "fireStations": 6,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 10,
+      "ercotZone": "Unknown"
+    },
+    "Dimmit": {
+      "population": 8155,
+      "hospitals": 1,
+      "hospitalBeds": 48,
+      "fireStations": 2,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 4,
+      "ercotZone": "Unknown"
+    },
+    "Edwards": {
+      "population": 1422,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Fayette": {
+      "population": 25255,
+      "hospitals": 1,
+      "hospitalBeds": 65,
+      "fireStations": 10,
+      "emsStations": 14,
+      "policeDepartments": 4,
+      "cellTowers": 12,
+      "ercotZone": "Unknown"
+    },
+    "Franklin": {
+      "population": 120000,
+      "hospitals": 1,
+      "hospitalBeds": 49,
+      "fireStations": 6,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Garza": {
+      "population": 5816,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Gonzales": {
+      "population": 20251,
+      "hospitals": 1,
+      "hospitalBeds": 34,
+      "fireStations": 5,
+      "emsStations": 3,
+      "policeDepartments": 4,
+      "cellTowers": 10,
+      "ercotZone": "Unknown"
+    },
+    "Gray": {
+      "population": 21333,
+      "hospitals": 1,
+      "hospitalBeds": 115,
+      "fireStations": 6,
+      "emsStations": 3,
+      "policeDepartments": 3,
+      "cellTowers": 10,
+      "ercotZone": "Unknown"
+    },
+    "Grimes": {
+      "population": 30106,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 7,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 14,
+      "ercotZone": "Unknown"
+    },
+    "Hall": {
+      "population": 2810,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 2,
+      "policeDepartments": 3,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Hansford": {
+      "population": 5128,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 2,
+      "emsStations": 2,
+      "policeDepartments": 3,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Hill": {
+      "population": 36773,
+      "hospitals": 2,
+      "hospitalBeds": 165,
+      "fireStations": 13,
+      "emsStations": 5,
+      "policeDepartments": 5,
+      "cellTowers": 18,
+      "ercotZone": "Unknown"
+    },
+    "Howard": {
+      "population": 34860,
+      "hospitals": 3,
+      "hospitalBeds": 470,
+      "fireStations": 15,
+      "emsStations": 2,
+      "policeDepartments": 2,
+      "cellTowers": 17,
+      "ercotZone": "Unknown"
+    },
+    "Hutchinson": {
+      "population": 20446,
+      "hospitals": 2,
+      "hospitalBeds": 50,
+      "fireStations": 4,
+      "emsStations": 2,
+      "policeDepartments": 4,
+      "cellTowers": 10,
+      "ercotZone": "Unknown"
+    },
+    "Jim Hogg": {
+      "population": 4838,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Johnson": {
+      "population": 197723,
+      "hospitals": 1,
+      "hospitalBeds": 137,
+      "fireStations": 18,
+      "emsStations": 20,
+      "policeDepartments": 10,
+      "cellTowers": 94,
+      "ercotZone": "North"
+    },
+    "Kent": {
+      "population": 753,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 0,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Kerr": {
+      "population": 53955,
+      "hospitals": 3,
+      "hospitalBeds": 446,
+      "fireStations": 11,
+      "emsStations": 4,
+      "policeDepartments": 2,
+      "cellTowers": 26,
+      "ercotZone": "Unknown"
+    },
+    "Knox": {
+      "population": 3406,
+      "hospitals": 1,
+      "hospitalBeds": 28,
+      "fireStations": 4,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "La Salle": {
+      "population": 6809,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Live Oak": {
+      "population": 11537,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 4,
+      "emsStations": 2,
+      "policeDepartments": 3,
+      "cellTowers": 5,
+      "ercotZone": "Unknown"
+    },
+    "Lubbock": {
+      "population": 323610,
+      "hospitals": 10,
+      "hospitalBeds": 1683,
+      "fireStations": 23,
+      "emsStations": 16,
+      "policeDepartments": 13,
+      "cellTowers": 154,
+      "ercotZone": "West"
+    },
+    "McLennan": {
+      "population": 269708,
+      "hospitals": 5,
+      "hospitalBeds": 1101,
+      "fireStations": 35,
+      "emsStations": 17,
+      "policeDepartments": 20,
+      "cellTowers": 128,
+      "ercotZone": "Central"
+    },
+    "Mason": {
+      "population": 3943,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 2,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Midland": {
+      "population": 176832,
+      "hospitals": 5,
+      "hospitalBeds": 669,
+      "fireStations": 12,
+      "emsStations": 8,
+      "policeDepartments": 4,
+      "cellTowers": 84,
+      "ercotZone": "West"
+    },
+    "Montgomery": {
+      "population": 748000,
+      "hospitals": 17,
+      "hospitalBeds": 1913,
+      "fireStations": 57,
+      "emsStations": 43,
+      "policeDepartments": 22,
+      "cellTowers": 356,
+      "ercotZone": "Coast"
+    },
+    "Navarro": {
+      "population": 55865,
+      "hospitals": 1,
+      "hospitalBeds": 162,
+      "fireStations": 19,
+      "emsStations": 6,
+      "policeDepartments": 7,
+      "cellTowers": 27,
+      "ercotZone": "Unknown"
+    },
+    "Nolan": {
+      "population": 14312,
+      "hospitals": 1,
+      "hospitalBeds": 85,
+      "fireStations": 6,
+      "emsStations": 3,
+      "policeDepartments": 3,
+      "cellTowers": 7,
+      "ercotZone": "Unknown"
+    },
+    "Briscoe": {
+      "population": 1397,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 2,
+      "emsStations": 2,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Brown": {
+      "population": 38011,
+      "hospitals": 1,
+      "hospitalBeds": 194,
+      "fireStations": 12,
+      "emsStations": 4,
+      "policeDepartments": 4,
+      "cellTowers": 18,
+      "ercotZone": "Unknown"
+    },
+    "Caldwell": {
+      "population": 48276,
+      "hospitals": 2,
+      "hospitalBeds": 59,
+      "fireStations": 12,
+      "emsStations": 7,
+      "policeDepartments": 4,
+      "cellTowers": 23,
+      "ercotZone": "Central"
+    },
+    "Cameron": {
+      "population": 431275,
+      "hospitals": 11,
+      "hospitalBeds": 1639,
+      "fireStations": 26,
+      "emsStations": 12,
+      "policeDepartments": 18,
+      "cellTowers": 205,
+      "ercotZone": "South"
+    },
+    "Carson": {
+      "population": 5970,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 5,
+      "emsStations": 5,
+      "policeDepartments": 3,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Cass": {
+      "population": 120000,
+      "hospitals": 2,
+      "hospitalBeds": 68,
+      "fireStations": 17,
+      "emsStations": 8,
+      "policeDepartments": 5,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Cherokee": {
+      "population": 52246,
+      "hospitals": 3,
+      "hospitalBeds": 429,
+      "fireStations": 13,
+      "emsStations": 7,
+      "policeDepartments": 7,
+      "cellTowers": 25,
+      "ercotZone": "Unknown"
+    },
+    "Clay": {
+      "population": 10461,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 14,
+      "emsStations": 10,
+      "policeDepartments": 1,
+      "cellTowers": 5,
+      "ercotZone": "Unknown"
+    },
+    "Coke": {
+      "population": 3234,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 2,
+      "emsStations": 2,
+      "policeDepartments": 1,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Collin": {
+      "population": 1194145,
+      "hospitals": 29,
+      "hospitalBeds": 2673,
+      "fireStations": 56,
+      "emsStations": 47,
+      "policeDepartments": 22,
+      "cellTowers": 569,
+      "ercotZone": "North"
+    },
+    "Collingsworth": {
+      "population": 2652,
+      "hospitals": 1,
+      "hospitalBeds": 16,
+      "fireStations": 3,
+      "emsStations": 2,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Comal": {
+      "population": 190980,
+      "hospitals": 4,
+      "hospitalBeds": 340,
+      "fireStations": 18,
+      "emsStations": 15,
+      "policeDepartments": 4,
+      "cellTowers": 91,
+      "ercotZone": "Central"
+    },
+    "Orange": {
+      "population": 84987,
+      "hospitals": 1,
+      "hospitalBeds": 94,
+      "fireStations": 12,
+      "emsStations": 8,
+      "policeDepartments": 9,
+      "cellTowers": 40,
+      "ercotZone": "Coast"
+    },
+    "Parmer": {
+      "population": 9534,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 5,
+      "emsStations": 4,
+      "policeDepartments": 4,
+      "cellTowers": 5,
+      "ercotZone": "Unknown"
+    },
+    "Reagan": {
+      "population": 3326,
+      "hospitals": 2,
+      "hospitalBeds": 21,
+      "fireStations": 2,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Real": {
+      "population": 2765,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 2,
+      "emsStations": 2,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Red River": {
+      "population": 120000,
+      "hospitals": 1,
+      "hospitalBeds": 49,
+      "fireStations": 9,
+      "emsStations": 4,
+      "policeDepartments": 3,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Robertson": {
+      "population": 17074,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 5,
+      "emsStations": 3,
+      "policeDepartments": 5,
+      "cellTowers": 8,
+      "ercotZone": "Unknown"
+    },
+    "Runnels": {
+      "population": 9532,
+      "hospitals": 2,
+      "hospitalBeds": 50,
+      "fireStations": 3,
+      "emsStations": 0,
+      "policeDepartments": 5,
+      "cellTowers": 5,
+      "ercotZone": "Unknown"
+    },
+    "Sabine": {
+      "population": 10062,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 8,
+      "emsStations": 2,
+      "policeDepartments": 3,
+      "cellTowers": 5,
+      "ercotZone": "Unknown"
+    },
+    "Scurry": {
+      "population": 16921,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 1,
+      "emsStations": 2,
+      "policeDepartments": 2,
+      "cellTowers": 8,
+      "ercotZone": "Unknown"
+    },
+    "Shackelford": {
+      "population": 3105,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Shelby": {
+      "population": 23814,
+      "hospitals": 1,
+      "hospitalBeds": 120,
+      "fireStations": 5,
+      "emsStations": 2,
+      "policeDepartments": 3,
+      "cellTowers": 11,
+      "ercotZone": "Unknown"
+    },
+    "Smith": {
+      "population": 244730,
+      "hospitals": 10,
+      "hospitalBeds": 1337,
+      "fireStations": 31,
+      "emsStations": 1,
+      "policeDepartments": 12,
+      "cellTowers": 117,
+      "ercotZone": "Unknown"
+    },
+    "Starr": {
+      "population": 65761,
+      "hospitals": 1,
+      "hospitalBeds": 48,
+      "fireStations": 7,
+      "emsStations": 2,
+      "policeDepartments": 4,
+      "cellTowers": 31,
+      "ercotZone": "South"
+    },
+    "Sterling": {
+      "population": 1372,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Sutton": {
+      "population": 3372,
+      "hospitals": 1,
+      "hospitalBeds": 12,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Swisher": {
+      "population": 7391,
+      "hospitals": 1,
+      "hospitalBeds": 20,
+      "fireStations": 4,
+      "emsStations": 2,
+      "policeDepartments": 3,
+      "cellTowers": 4,
+      "ercotZone": "Unknown"
+    },
+    "Taylor": {
+      "population": 149712,
+      "hospitals": 6,
+      "hospitalBeds": 956,
+      "fireStations": 20,
+      "emsStations": 10,
+      "policeDepartments": 4,
+      "cellTowers": 71,
+      "ercotZone": "Unknown"
+    },
+    "Throckmorton": {
+      "population": 1530,
+      "hospitals": 1,
+      "hospitalBeds": 14,
+      "fireStations": 2,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Tom Green": {
+      "population": 121619,
+      "hospitals": 4,
+      "hospitalBeds": 614,
+      "fireStations": 16,
+      "emsStations": 15,
+      "policeDepartments": 4,
+      "cellTowers": 58,
+      "ercotZone": "Unknown"
+    },
+    "Travis": {
+      "population": 1329800,
+      "hospitals": 28,
+      "hospitalBeds": 4024,
+      "fireStations": 79,
+      "emsStations": 73,
+      "policeDepartments": 20,
+      "cellTowers": 633,
+      "ercotZone": "Central"
+    },
+    "Tyler": {
+      "population": 20250,
+      "hospitals": 1,
+      "hospitalBeds": 49,
+      "fireStations": 6,
+      "emsStations": 2,
+      "policeDepartments": 2,
+      "cellTowers": 10,
+      "ercotZone": "Unknown"
+    },
+    "Van Zandt": {
+      "population": 65581,
+      "hospitals": 1,
+      "hospitalBeds": 52,
+      "fireStations": 14,
+      "emsStations": 3,
+      "policeDepartments": 5,
+      "cellTowers": 31,
+      "ercotZone": "Unknown"
+    },
+    "Victoria": {
+      "population": 92740,
+      "hospitals": 6,
+      "hospitalBeds": 723,
+      "fireStations": 21,
+      "emsStations": 9,
+      "policeDepartments": 3,
+      "cellTowers": 44,
+      "ercotZone": "Unknown"
+    },
+    "Washington": {
+      "population": 36795,
+      "hospitals": 1,
+      "hospitalBeds": 60,
+      "fireStations": 11,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 18,
+      "ercotZone": "Unknown"
+    },
+    "Wheeler": {
+      "population": 5017,
+      "hospitals": 2,
+      "hospitalBeds": 41,
+      "fireStations": 6,
+      "emsStations": 2,
+      "policeDepartments": 1,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Wichita": {
+      "population": 130675,
+      "hospitals": 7,
+      "hospitalBeds": 679,
+      "fireStations": 17,
+      "emsStations": 5,
+      "policeDepartments": 7,
+      "cellTowers": 62,
+      "ercotZone": "Unknown"
+    },
+    "Willacy": {
+      "population": 20059,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 4,
+      "emsStations": 2,
+      "policeDepartments": 4,
+      "cellTowers": 10,
+      "ercotZone": "South"
+    },
+    "Wood": {
+      "population": 120000,
+      "hospitals": 2,
+      "hospitalBeds": 50,
+      "fireStations": 11,
+      "emsStations": 9,
+      "policeDepartments": 6,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Anderson": {
+      "population": 57863,
+      "hospitals": 2,
+      "hospitalBeds": 156,
+      "fireStations": 21,
+      "emsStations": 13,
+      "policeDepartments": 3,
+      "cellTowers": 28,
+      "ercotZone": "Unknown"
+    },
+    "Atascosa": {
+      "population": 51667,
+      "hospitals": 1,
+      "hospitalBeds": 67,
+      "fireStations": 5,
+      "emsStations": 7,
+      "policeDepartments": 5,
+      "cellTowers": 25,
+      "ercotZone": "Unknown"
+    },
+    "Austin": {
+      "population": 31133,
+      "hospitals": 1,
+      "hospitalBeds": 32,
+      "fireStations": 8,
+      "emsStations": 6,
+      "policeDepartments": 4,
+      "cellTowers": 15,
+      "ercotZone": "Unknown"
+    },
+    "Bailey": {
+      "population": 6972,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Baylor": {
+      "population": 3409,
+      "hospitals": 1,
+      "hospitalBeds": 49,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Bee": {
+      "population": 31537,
+      "hospitals": 1,
+      "hospitalBeds": 69,
+      "fireStations": 6,
+      "emsStations": 2,
+      "policeDepartments": 2,
+      "cellTowers": 15,
+      "ercotZone": "Unknown"
+    },
+    "Bexar": {
+      "population": 2125800,
+      "hospitals": 47,
+      "hospitalBeds": 8344,
+      "fireStations": 87,
+      "emsStations": 88,
+      "policeDepartments": 43,
+      "cellTowers": 1012,
+      "ercotZone": "South"
+    },
+    "Borden": {
+      "population": 631,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Bosque": {
+      "population": 18953,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 12,
+      "emsStations": 8,
+      "policeDepartments": 4,
+      "cellTowers": 9,
+      "ercotZone": "Unknown"
+    },
+    "Brazoria": {
+      "population": 389314,
+      "hospitals": 5,
+      "hospitalBeds": 357,
+      "fireStations": 37,
+      "emsStations": 14,
+      "policeDepartments": 19,
+      "cellTowers": 185,
+      "ercotZone": "Coast"
+    },
+    "Kimble": {
+      "population": 4304,
+      "hospitals": 1,
+      "hospitalBeds": 15,
+      "fireStations": 1,
+      "emsStations": 2,
+      "policeDepartments": 2,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Kinney": {
+      "population": 3135,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Lamar": {
+      "population": 120000,
+      "hospitals": 3,
+      "hospitalBeds": 393,
+      "fireStations": 25,
+      "emsStations": 21,
+      "policeDepartments": 4,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Lampasas": {
+      "population": 22650,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 5,
+      "emsStations": 4,
+      "policeDepartments": 2,
+      "cellTowers": 11,
+      "ercotZone": "Unknown"
+    },
+    "Lavaca": {
+      "population": 20426,
+      "hospitals": 2,
+      "hospitalBeds": 50,
+      "fireStations": 6,
+      "emsStations": 3,
+      "policeDepartments": 4,
+      "cellTowers": 10,
+      "ercotZone": "Unknown"
+    },
+    "Lee": {
+      "population": 18366,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 4,
+      "emsStations": 2,
+      "policeDepartments": 3,
+      "cellTowers": 9,
+      "ercotZone": "Unknown"
+    },
+    "Liberty": {
+      "population": 99980,
+      "hospitals": 3,
+      "hospitalBeds": 136,
+      "fireStations": 19,
+      "emsStations": 12,
+      "policeDepartments": 6,
+      "cellTowers": 48,
+      "ercotZone": "Unknown"
+    },
+    "Limestone": {
+      "population": 22464,
+      "hospitals": 2,
+      "hospitalBeds": 79,
+      "fireStations": 8,
+      "emsStations": 6,
+      "policeDepartments": 5,
+      "cellTowers": 11,
+      "ercotZone": "Unknown"
+    },
+    "Lipscomb": {
+      "population": 2893,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 6,
+      "emsStations": 4,
+      "policeDepartments": 2,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Loving": {
+      "population": 64,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 0,
+      "emsStations": 0,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Lynn": {
+      "population": 5603,
+      "hospitals": 1,
+      "hospitalBeds": 24,
+      "fireStations": 4,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "McCulloch": {
+      "population": 7667,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 6,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 4,
+      "ercotZone": "Unknown"
+    },
+    "Martin": {
+      "population": 5237,
+      "hospitals": 2,
+      "hospitalBeds": 43,
+      "fireStations": 2,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Maverick": {
+      "population": 57940,
+      "hospitals": 1,
+      "hospitalBeds": 101,
+      "fireStations": 3,
+      "emsStations": 6,
+      "policeDepartments": 3,
+      "cellTowers": 28,
+      "ercotZone": "South"
+    },
+    "Menard": {
+      "population": 1942,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Milam": {
+      "population": 25183,
+      "hospitals": 2,
+      "hospitalBeds": 35,
+      "fireStations": 8,
+      "emsStations": 4,
+      "policeDepartments": 5,
+      "cellTowers": 12,
+      "ercotZone": "Unknown"
+    },
+    "Mills": {
+      "population": 4595,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 4,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Moore": {
+      "population": 21768,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 3,
+      "emsStations": 2,
+      "policeDepartments": 4,
+      "cellTowers": 10,
+      "ercotZone": "Unknown"
+    },
+    "Nueces": {
+      "population": 353178,
+      "hospitals": 14,
+      "hospitalBeds": 2224,
+      "fireStations": 26,
+      "emsStations": 23,
+      "policeDepartments": 7,
+      "cellTowers": 168,
+      "ercotZone": "Coast"
+    },
+    "Palo Pinto": {
+      "population": 28725,
+      "hospitals": 1,
+      "hospitalBeds": 74,
+      "fireStations": 14,
+      "emsStations": 10,
+      "policeDepartments": 4,
+      "cellTowers": 14,
+      "ercotZone": "Unknown"
+    },
+    "Polk": {
+      "population": 53870,
+      "hospitals": 1,
+      "hospitalBeds": 66,
+      "fireStations": 12,
+      "emsStations": 5,
+      "policeDepartments": 4,
+      "cellTowers": 26,
+      "ercotZone": "Unknown"
+    },
+    "Reeves": {
+      "population": 14901,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 3,
+      "emsStations": 2,
+      "policeDepartments": 2,
+      "cellTowers": 7,
+      "ercotZone": "West"
+    },
+    "San Augustine": {
+      "population": 7886,
+      "hospitals": 1,
+      "hospitalBeds": 18,
+      "fireStations": 6,
+      "emsStations": 2,
+      "policeDepartments": 2,
+      "cellTowers": 4,
+      "ercotZone": "Unknown"
+    },
+    "Schleicher": {
+      "population": 2447,
+      "hospitals": 1,
+      "hospitalBeds": 14,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Sherman": {
+      "population": 2809,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 0,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Tarrant": {
+      "population": 2188639,
+      "hospitals": 55,
+      "hospitalBeds": 6834,
+      "fireStations": 121,
+      "emsStations": 65,
+      "policeDepartments": 47,
+      "cellTowers": 1042,
+      "ercotZone": "North"
+    },
+    "Trinity": {
+      "population": 13783,
+      "hospitals": 1,
+      "hospitalBeds": 45,
+      "fireStations": 4,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 7,
+      "ercotZone": "Unknown"
+    },
+    "Walker": {
+      "population": 76000,
+      "hospitals": 1,
+      "hospitalBeds": 123,
+      "fireStations": 11,
+      "emsStations": 8,
+      "policeDepartments": 4,
+      "cellTowers": 36,
+      "ercotZone": "Unknown"
+    },
+    "Wharton": {
+      "population": 41909,
+      "hospitals": 2,
+      "hospitalBeds": 210,
+      "fireStations": 7,
+      "emsStations": 5,
+      "policeDepartments": 3,
+      "cellTowers": 20,
+      "ercotZone": "Unknown"
+    },
+    "Wilson": {
+      "population": 56895,
+      "hospitals": 1,
+      "hospitalBeds": 44,
+      "fireStations": 11,
+      "emsStations": 5,
+      "policeDepartments": 4,
+      "cellTowers": 27,
+      "ercotZone": "Unknown"
+    },
+    "Young": {
+      "population": 17900,
+      "hospitals": 2,
+      "hospitalBeds": 67,
+      "fireStations": 7,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 9,
+      "ercotZone": "Unknown"
+    },
+    "Andrews": {
+      "population": 18610,
+      "hospitals": 1,
+      "hospitalBeds": 34,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 9,
+      "ercotZone": "Unknown"
+    },
+    "Bandera": {
+      "population": 24519,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 7,
+      "emsStations": 2,
+      "policeDepartments": 1,
+      "cellTowers": 12,
+      "ercotZone": "Unknown"
+    },
+    "Bell": {
+      "population": 388386,
+      "hospitals": 10,
+      "hospitalBeds": 1451,
+      "fireStations": 30,
+      "emsStations": 34,
+      "policeDepartments": 12,
+      "cellTowers": 185,
+      "ercotZone": "Central"
+    },
+    "Brazos": {
+      "population": 242014,
+      "hospitals": 6,
+      "hospitalBeds": 658,
+      "fireStations": 23,
+      "emsStations": 16,
+      "policeDepartments": 3,
+      "cellTowers": 115,
+      "ercotZone": "Unknown"
+    },
+    "Callahan": {
+      "population": 13645,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 6,
+      "emsStations": 3,
+      "policeDepartments": 3,
+      "cellTowers": 6,
+      "ercotZone": "Unknown"
+    },
+    "Childress": {
+      "population": 6610,
+      "hospitals": 1,
+      "hospitalBeds": 39,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Coleman": {
+      "population": 7808,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 3,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 4,
+      "ercotZone": "Unknown"
+    },
+    "Colorado": {
+      "population": 20928,
+      "hospitals": 3,
+      "hospitalBeds": 103,
+      "fireStations": 8,
+      "emsStations": 4,
+      "policeDepartments": 4,
+      "cellTowers": 10,
+      "ercotZone": "Unknown"
+    },
+    "Crosby": {
+      "population": 5157,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 1,
+      "emsStations": 2,
+      "policeDepartments": 4,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Delta": {
+      "population": 120000,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 4,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Duval": {
+      "population": 9652,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 3,
+      "emsStations": 3,
+      "policeDepartments": 4,
+      "cellTowers": 5,
+      "ercotZone": "Unknown"
+    },
+    "Erath": {
+      "population": 45980,
+      "hospitals": 1,
+      "hospitalBeds": 98,
+      "fireStations": 10,
+      "emsStations": 5,
+      "policeDepartments": 3,
+      "cellTowers": 22,
+      "ercotZone": "Unknown"
+    },
+    "Floyd": {
+      "population": 5639,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 2,
+      "emsStations": 2,
+      "policeDepartments": 3,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Frio": {
+      "population": 18091,
+      "hospitals": 2,
+      "hospitalBeds": 40,
+      "fireStations": 2,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 9,
+      "ercotZone": "Unknown"
+    },
+    "Gillespie": {
+      "population": 27847,
+      "hospitals": 1,
+      "hospitalBeds": 86,
+      "fireStations": 9,
+      "emsStations": 2,
+      "policeDepartments": 2,
+      "cellTowers": 13,
+      "ercotZone": "Unknown"
+    },
+    "Glasscock": {
+      "population": 1213,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 2,
+      "emsStations": 0,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Goliad": {
+      "population": 7022,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 4,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Gregg": {
+      "population": 124239,
+      "hospitals": 6,
+      "hospitalBeds": 846,
+      "fireStations": 16,
+      "emsStations": 12,
+      "policeDepartments": 15,
+      "cellTowers": 59,
+      "ercotZone": "Unknown"
+    },
+    "Guadalupe": {
+      "population": 184033,
+      "hospitals": 2,
+      "hospitalBeds": 133,
+      "fireStations": 18,
+      "emsStations": 16,
+      "policeDepartments": 7,
+      "cellTowers": 88,
+      "ercotZone": "Central"
+    },
+    "Hartley": {
+      "population": 5459,
+      "hospitals": 1,
+      "hospitalBeds": 21,
+      "fireStations": 3,
+      "emsStations": 2,
+      "policeDepartments": 2,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Hays": {
+      "population": 269225,
+      "hospitals": 4,
+      "hospitalBeds": 354,
+      "fireStations": 23,
+      "emsStations": 5,
+      "policeDepartments": 8,
+      "cellTowers": 128,
+      "ercotZone": "Central"
+    },
+    "Hockley": {
+      "population": 21109,
+      "hospitals": 1,
+      "hospitalBeds": 48,
+      "fireStations": 5,
+      "emsStations": 4,
+      "policeDepartments": 5,
+      "cellTowers": 10,
+      "ercotZone": "Unknown"
+    },
+    "Hunt": {
+      "population": 108282,
+      "hospitals": 3,
+      "hospitalBeds": 271,
+      "fireStations": 16,
+      "emsStations": 6,
+      "policeDepartments": 11,
+      "cellTowers": 52,
+      "ercotZone": "Unknown"
+    },
+    "Jasper": {
+      "population": 32574,
+      "hospitals": 1,
+      "hospitalBeds": 59,
+      "fireStations": 13,
+      "emsStations": 5,
+      "policeDepartments": 4,
+      "cellTowers": 16,
+      "ercotZone": "Unknown"
+    },
+    "Karnes": {
+      "population": 14824,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 4,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 7,
+      "ercotZone": "Unknown"
+    },
+    "King": {
+      "population": 265,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Lamb": {
+      "population": 12901,
+      "hospitals": 1,
+      "hospitalBeds": 75,
+      "fireStations": 5,
+      "emsStations": 5,
+      "policeDepartments": 5,
+      "cellTowers": 6,
+      "ercotZone": "Unknown"
+    },
+    "Leon": {
+      "population": 18042,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 8,
+      "emsStations": 7,
+      "policeDepartments": 5,
+      "cellTowers": 9,
+      "ercotZone": "Unknown"
+    },
+    "Llano": {
+      "population": 22203,
+      "hospitals": 1,
+      "hospitalBeds": 30,
+      "fireStations": 9,
+      "emsStations": 2,
+      "policeDepartments": 4,
+      "cellTowers": 11,
+      "ercotZone": "Unknown"
+    },
+    "Madison": {
+      "population": 14310,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 3,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 7,
+      "ercotZone": "Unknown"
+    },
+    "Medina": {
+      "population": 54565,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 10,
+      "emsStations": 3,
+      "policeDepartments": 7,
+      "cellTowers": 26,
+      "ercotZone": "Unknown"
+    },
+    "Mitchell": {
+      "population": 8649,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 2,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 4,
+      "ercotZone": "Unknown"
+    },
+    "Morris": {
+      "population": 120000,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 6,
+      "emsStations": 4,
+      "policeDepartments": 4,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Cottle": {
+      "population": 1380,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 2,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Crockett": {
+      "population": 3098,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Culberson": {
+      "population": 2193,
+      "hospitals": 1,
+      "hospitalBeds": 14,
+      "fireStations": 2,
+      "emsStations": 0,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Dallam": {
+      "population": 7175,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 2,
+      "emsStations": 2,
+      "policeDepartments": 2,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Dallas": {
+      "population": 2613539,
+      "hospitals": 58,
+      "hospitalBeds": 9547,
+      "fireStations": 133,
+      "emsStations": 147,
+      "policeDepartments": 47,
+      "cellTowers": 1245,
+      "ercotZone": "North"
+    },
+    "Denton": {
+      "population": 1014212,
+      "hospitals": 18,
+      "hospitalBeds": 1556,
+      "fireStations": 49,
+      "emsStations": 39,
+      "policeDepartments": 21,
+      "cellTowers": 483,
+      "ercotZone": "North"
+    },
+    "Dickens": {
+      "population": 1768,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 3,
+      "emsStations": 3,
+      "policeDepartments": 2,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Eastland": {
+      "population": 18010,
+      "hospitals": 1,
+      "hospitalBeds": 52,
+      "fireStations": 8,
+      "emsStations": 7,
+      "policeDepartments": 6,
+      "cellTowers": 9,
+      "ercotZone": "Unknown"
+    },
+    "Ellis": {
+      "population": 230953,
+      "hospitals": 3,
+      "hospitalBeds": 233,
+      "fireStations": 26,
+      "emsStations": 17,
+      "policeDepartments": 14,
+      "cellTowers": 110,
+      "ercotZone": "North"
+    },
+    "Falls": {
+      "population": 120000,
+      "hospitals": 1,
+      "hospitalBeds": 36,
+      "fireStations": 9,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Fannin": {
+      "population": 120000,
+      "hospitals": 2,
+      "hospitalBeds": 145,
+      "fireStations": 13,
+      "emsStations": 6,
+      "policeDepartments": 8,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Fisher": {
+      "population": 3672,
+      "hospitals": 1,
+      "hospitalBeds": 14,
+      "fireStations": 2,
+      "emsStations": 0,
+      "policeDepartments": 1,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Fort Bend": {
+      "population": 916778,
+      "hospitals": 12,
+      "hospitalBeds": 1105,
+      "fireStations": 34,
+      "emsStations": 23,
+      "policeDepartments": 14,
+      "cellTowers": 437,
+      "ercotZone": "Coast"
+    },
+    "Grayson": {
+      "population": 149552,
+      "hospitals": 8,
+      "hospitalBeds": 602,
+      "fireStations": 26,
+      "emsStations": 23,
+      "policeDepartments": 15,
+      "cellTowers": 71,
+      "ercotZone": "North"
+    },
+    "Hale": {
+      "population": 32347,
+      "hospitals": 2,
+      "hospitalBeds": 88,
+      "fireStations": 8,
+      "emsStations": 6,
+      "policeDepartments": 5,
+      "cellTowers": 15,
+      "ercotZone": "Unknown"
+    },
+    "Hamilton": {
+      "population": 8580,
+      "hospitals": 1,
+      "hospitalBeds": 42,
+      "fireStations": 4,
+      "emsStations": 3,
+      "policeDepartments": 3,
+      "cellTowers": 4,
+      "ercotZone": "Unknown"
+    },
+    "Motley": {
+      "population": 1063,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Nacogdoches": {
+      "population": 64902,
+      "hospitals": 3,
+      "hospitalBeds": 390,
+      "fireStations": 21,
+      "emsStations": 15,
+      "policeDepartments": 4,
+      "cellTowers": 31,
+      "ercotZone": "Unknown"
+    },
+    "Newton": {
+      "population": 12189,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 5,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 6,
+      "ercotZone": "Unknown"
+    },
+    "Hardeman": {
+      "population": 3549,
+      "hospitals": 2,
+      "hospitalBeds": 45,
+      "fireStations": 2,
+      "emsStations": 2,
+      "policeDepartments": 2,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Hardin": {
+      "population": 58756,
+      "hospitals": 1,
+      "hospitalBeds": 120,
+      "fireStations": 14,
+      "emsStations": 7,
+      "policeDepartments": 6,
+      "cellTowers": 28,
+      "ercotZone": "Unknown"
+    },
+    "Harris": {
+      "population": 4836637,
+      "hospitals": 106,
+      "hospitalBeds": 17306,
+      "fireStations": 227,
+      "emsStations": 300,
+      "policeDepartments": 77,
+      "cellTowers": 2303,
+      "ercotZone": "Coast"
+    },
+    "Harrison": {
+      "population": 69641,
+      "hospitals": 1,
+      "hospitalBeds": 149,
+      "fireStations": 16,
+      "emsStations": 7,
+      "policeDepartments": 4,
+      "cellTowers": 33,
+      "ercotZone": "Unknown"
+    },
+    "Hemphill": {
+      "population": 3382,
+      "hospitals": 1,
+      "hospitalBeds": 26,
+      "fireStations": 3,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Henderson": {
+      "population": 85621,
+      "hospitals": 1,
+      "hospitalBeds": 117,
+      "fireStations": 28,
+      "emsStations": 3,
+      "policeDepartments": 14,
+      "cellTowers": 41,
+      "ercotZone": "Unknown"
+    },
+    "Hidalgo": {
+      "population": 888367,
+      "hospitals": 17,
+      "hospitalBeds": 2506,
+      "fireStations": 37,
+      "emsStations": 37,
+      "policeDepartments": 28,
+      "cellTowers": 423,
+      "ercotZone": "South"
+    },
+    "Hopkins": {
+      "population": 120000,
+      "hospitals": 1,
+      "hospitalBeds": 96,
+      "fireStations": 11,
+      "emsStations": 8,
+      "policeDepartments": 3,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Irion": {
+      "population": 1550,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 2,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Jack": {
+      "population": 8754,
+      "hospitals": 2,
+      "hospitalBeds": 58,
+      "fireStations": 9,
+      "emsStations": 3,
+      "policeDepartments": 2,
+      "cellTowers": 4,
+      "ercotZone": "Unknown"
+    },
+    "Jackson": {
+      "population": 14839,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 7,
+      "emsStations": 5,
+      "policeDepartments": 3,
+      "cellTowers": 7,
+      "ercotZone": "Unknown"
+    },
+    "Jeff Davis": {
+      "population": 1975,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 2,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Jim Wells": {
+      "population": 38440,
+      "hospitals": 1,
+      "hospitalBeds": 159,
+      "fireStations": 4,
+      "emsStations": 3,
+      "policeDepartments": 4,
+      "cellTowers": 18,
+      "ercotZone": "Unknown"
+    },
+    "Jones": {
+      "population": 19898,
+      "hospitals": 3,
+      "hospitalBeds": 95,
+      "fireStations": 5,
+      "emsStations": 2,
+      "policeDepartments": 5,
+      "cellTowers": 9,
+      "ercotZone": "Unknown"
+    },
+    "Kendall": {
+      "population": 51783,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 6,
+      "emsStations": 7,
+      "policeDepartments": 2,
+      "cellTowers": 25,
+      "ercotZone": "Unknown"
+    },
+    "Pecos": {
+      "population": 15379,
+      "hospitals": 2,
+      "hospitalBeds": 41,
+      "fireStations": 5,
+      "emsStations": 4,
+      "policeDepartments": 2,
+      "cellTowers": 7,
+      "ercotZone": "West"
+    },
+    "Presidio": {
+      "population": 6131,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 3,
+      "emsStations": 4,
+      "policeDepartments": 2,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Refugio": {
+      "population": 6741,
+      "hospitals": 1,
+      "hospitalBeds": 20,
+      "fireStations": 6,
+      "emsStations": 0,
+      "policeDepartments": 2,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Rusk": {
+      "population": 54374,
+      "hospitals": 1,
+      "hospitalBeds": 96,
+      "fireStations": 16,
+      "emsStations": 6,
+      "policeDepartments": 6,
+      "cellTowers": 26,
+      "ercotZone": "Unknown"
+    },
+    "San Jacinto": {
+      "population": 29504,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 10,
+      "emsStations": 5,
+      "policeDepartments": 2,
+      "cellTowers": 14,
+      "ercotZone": "Unknown"
+    },
+    "San Patricio": {
+      "population": 68633,
+      "hospitals": 1,
+      "hospitalBeds": 75,
+      "fireStations": 11,
+      "emsStations": 4,
+      "policeDepartments": 8,
+      "cellTowers": 33,
+      "ercotZone": "Unknown"
+    },
+    "Terrell": {
+      "population": 726,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Upton": {
+      "population": 3339,
+      "hospitals": 3,
+      "hospitalBeds": 44,
+      "fireStations": 2,
+      "emsStations": 3,
+      "policeDepartments": 2,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Val Verde": {
+      "population": 47668,
+      "hospitals": 1,
+      "hospitalBeds": 93,
+      "fireStations": 9,
+      "emsStations": 5,
+      "policeDepartments": 3,
+      "cellTowers": 23,
+      "ercotZone": "Unknown"
+    },
+    "Waller": {
+      "population": 64027,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 10,
+      "emsStations": 7,
+      "policeDepartments": 5,
+      "cellTowers": 30,
+      "ercotZone": "Unknown"
+    },
+    "Webb": {
+      "population": 269124,
+      "hospitals": 6,
+      "hospitalBeds": 698,
+      "fireStations": 12,
+      "emsStations": 18,
+      "policeDepartments": 9,
+      "cellTowers": 128,
+      "ercotZone": "South"
+    },
+    "Wilbarger": {
+      "population": 12542,
+      "hospitals": 2,
+      "hospitalBeds": 687,
+      "fireStations": 2,
+      "emsStations": 2,
+      "policeDepartments": 2,
+      "cellTowers": 6,
+      "ercotZone": "Unknown"
+    },
+    "Winkler": {
+      "population": 7805,
+      "hospitals": 1,
+      "hospitalBeds": 19,
+      "fireStations": 2,
+      "emsStations": 3,
+      "policeDepartments": 3,
+      "cellTowers": 4,
+      "ercotZone": "Unknown"
+    },
+    "Yoakum": {
+      "population": 7335,
+      "hospitals": 1,
+      "hospitalBeds": 24,
+      "fireStations": 2,
+      "emsStations": 2,
+      "policeDepartments": 3,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Zapata": {
+      "population": 14075,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 3,
+      "emsStations": 2,
+      "policeDepartments": 1,
+      "cellTowers": 7,
+      "ercotZone": "South"
+    },
+    "Angelina": {
+      "population": 86395,
+      "hospitals": 4,
+      "hospitalBeds": 470,
+      "fireStations": 16,
+      "emsStations": 11,
+      "policeDepartments": 5,
+      "cellTowers": 41,
+      "ercotZone": "Unknown"
+    },
+    "Aransas": {
+      "population": 24068,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 7,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 11,
+      "ercotZone": "Unknown"
+    },
+    "Bowie": {
+      "population": 120000,
+      "hospitals": 6,
+      "hospitalBeds": 841,
+      "fireStations": 20,
+      "emsStations": 15,
+      "policeDepartments": 11,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Brewster": {
+      "population": 9584,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 4,
+      "emsStations": 3,
+      "policeDepartments": 3,
+      "cellTowers": 5,
+      "ercotZone": "Unknown"
+    },
+    "Burleson": {
+      "population": 18613,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 8,
+      "emsStations": 2,
+      "policeDepartments": 2,
+      "cellTowers": 9,
+      "ercotZone": "Unknown"
+    },
+    "Calhoun": {
+      "population": 19950,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 8,
+      "emsStations": 7,
+      "policeDepartments": 4,
+      "cellTowers": 10,
+      "ercotZone": "Unknown"
+    },
+    "Chambers": {
+      "population": 51784,
+      "hospitals": 2,
+      "hospitalBeds": 39,
+      "fireStations": 8,
+      "emsStations": 5,
+      "policeDepartments": 2,
+      "cellTowers": 25,
+      "ercotZone": "Coast"
+    },
+    "Comanche": {
+      "population": 14013,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 8,
+      "emsStations": 2,
+      "policeDepartments": 3,
+      "cellTowers": 7,
+      "ercotZone": "Unknown"
+    },
+    "Cooke": {
+      "population": 43160,
+      "hospitals": 2,
+      "hospitalBeds": 78,
+      "fireStations": 12,
+      "emsStations": 2,
+      "policeDepartments": 6,
+      "cellTowers": 21,
+      "ercotZone": "Unknown"
+    },
+    "Kleberg": {
+      "population": 31040,
+      "hospitals": 1,
+      "hospitalBeds": 100,
+      "fireStations": 6,
+      "emsStations": 7,
+      "policeDepartments": 3,
+      "cellTowers": 15,
+      "ercotZone": "Unknown"
+    },
+    "McMullen": {
+      "population": 600,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 0,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Marion": {
+      "population": 120000,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 6,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 57,
+      "ercotZone": "Unknown"
+    },
+    "Matagorda": {
+      "population": 36646,
+      "hospitals": 2,
+      "hospitalBeds": 75,
+      "fireStations": 11,
+      "emsStations": 4,
+      "policeDepartments": 4,
+      "cellTowers": 17,
+      "ercotZone": "Unknown"
+    },
+    "Montague": {
+      "population": 20287,
+      "hospitals": 2,
+      "hospitalBeds": 87,
+      "fireStations": 8,
+      "emsStations": 5,
+      "policeDepartments": 4,
+      "cellTowers": 10,
+      "ercotZone": "Unknown"
+    },
+    "Deaf Smith": {
+      "population": 18583,
+      "hospitals": 2,
+      "hospitalBeds": 82,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 9,
+      "ercotZone": "Unknown"
+    },
+    "Kenedy": {
+      "population": 352,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Ector": {
+      "population": 169384,
+      "hospitals": 4,
+      "hospitalBeds": 669,
+      "fireStations": 12,
+      "emsStations": 13,
+      "policeDepartments": 5,
+      "cellTowers": 81,
+      "ercotZone": "West"
+    },
+    "El Paso": {
+      "population": 868763,
+      "hospitals": 18,
+      "hospitalBeds": 2933,
+      "fireStations": 44,
+      "emsStations": 31,
+      "policeDepartments": 19,
+      "cellTowers": 414,
+      "ercotZone": "West"
+    },
+    "Foard": {
+      "population": 1095,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 2,
+      "cellTowers": 1,
+      "ercotZone": "Unknown"
+    },
+    "Freestone": {
+      "population": 19589,
+      "hospitals": 1,
+      "hospitalBeds": 37,
+      "fireStations": 6,
+      "emsStations": 2,
+      "policeDepartments": 4,
+      "cellTowers": 9,
+      "ercotZone": "Unknown"
+    },
+    "Gaines": {
+      "population": 22278,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 2,
+      "emsStations": 2,
+      "policeDepartments": 3,
+      "cellTowers": 11,
+      "ercotZone": "Unknown"
+    },
+    "Donley": {
+      "population": 3325,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 3,
+      "emsStations": 1,
+      "policeDepartments": 1,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Galveston": {
+      "population": 350682,
+      "hospitals": 4,
+      "hospitalBeds": 711,
+      "fireStations": 33,
+      "emsStations": 27,
+      "policeDepartments": 18,
+      "cellTowers": 167,
+      "ercotZone": "Coast"
+    },
+    "Hood": {
+      "population": 68722,
+      "hospitals": 1,
+      "hospitalBeds": 83,
+      "fireStations": 10,
+      "emsStations": 8,
+      "policeDepartments": 3,
+      "cellTowers": 33,
+      "ercotZone": "Unknown"
+    },
+    "Houston": {
+      "population": 22985,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 11,
+      "emsStations": 3,
+      "policeDepartments": 3,
+      "cellTowers": 11,
+      "ercotZone": "Unknown"
+    },
+    "Hudspeth": {
+      "population": 3287,
+      "hospitals": 0,
+      "hospitalBeds": 0,
+      "fireStations": 1,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 2,
+      "ercotZone": "Unknown"
+    },
+    "Jefferson": {
+      "population": 253704,
+      "hospitals": 14,
+      "hospitalBeds": 1699,
+      "fireStations": 30,
+      "emsStations": 23,
+      "policeDepartments": 6,
+      "cellTowers": 121,
+      "ercotZone": "Coast"
+    },
+    "Kaufman": {
+      "population": 172366,
+      "hospitals": 3,
+      "hospitalBeds": 527,
+      "fireStations": 18,
+      "emsStations": 11,
+      "policeDepartments": 10,
+      "cellTowers": 82,
+      "ercotZone": "Unknown"
+    },
+    "Panola": {
+      "population": 22136,
+      "hospitals": 1,
+      "hospitalBeds": 49,
+      "fireStations": 12,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 11,
+      "ercotZone": "Unknown"
+    },
+    "Haskell": {
+      "population": 5416,
+      "hospitals": 1,
+      "hospitalBeds": 25,
+      "fireStations": 4,
+      "emsStations": 1,
+      "policeDepartments": 3,
+      "cellTowers": 3,
+      "ercotZone": "Unknown"
+    },
+    "Potter": {
+      "population": 116547,
+      "hospitals": 9,
+      "hospitalBeds": 1266,
+      "fireStations": 13,
+      "emsStations": 10,
+      "policeDepartments": 4,
+      "cellTowers": 55,
+      "ercotZone": "West"
+    }
+  }
+}

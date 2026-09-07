@@ -1,0 +1,147 @@
+name: Collect outage forecast and ML data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: txdrmap-data-pipeline-main
+  cancel-in-progress: true
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      DRIVE_TEXAS_API_KEY: ${{ secrets.DRIVE_TEXAS_API_KEY }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Fetch SPC outlook intelligence
+        run: node scripts/fetch-spc.js
+
+      - name: Fetch FEMA county risk intelligence
+        run: node scripts/fetch-fema-risk.js
+
+      - name: Run outage collection
+        run: node scripts/fetch-outages-resilient.js
+
+      - name: Apply DriveTexas road conditions
+        run: node scripts/apply-road-conditions.js
+
+      - name: Apply ERCOT grid stress
+        run: node scripts/apply-ercot-grid-status.js
+
+      - name: Apply FEMA county risk intelligence
+        run: node scripts/apply-fema-risk.js
+
+      - name: Fetch county forecast intelligence
+        run: node scripts/fetch-county-weather-forecast.js
+
+      - name: Merge county forecast into outage data
+        run: node scripts/apply-county-weather-forecast.js
+
+      - name: Merge SPC outlook into outage data
+        run: node scripts/apply-spc-outlook.js
+
+      - name: Apply historical county baselines
+        run: node scripts/apply-historical-baselines.js
+
+      - name: Build training rows
+        run: node scripts/training_rows.js
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Train ML risk model
+        run: python scripts/ml_train_spc.py
+
+      - name: Score ML risk
+        run: python scripts/ml_score_spc.py
+
+      - name: Commit outage forecast and ML outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Keep only data required by the published dashboard/history in Git.
+          # training-data.json and ml-risk-model.joblib are regenerated every run
+          # and should not create a new large Git blob every 30 minutes.
+          GENERATED_FILES=(
+            outages.json
+            history/outage-history.json
+            history/county-weather-forecast.json
+            history/spc-outlook.json
+            history/fema-county-risk.json
+            history/ml-risk-metadata.json
+            history/ml-accuracy-history.json
+          )
+
+          stage_and_commit() {
+            git add "${GENERATED_FILES[@]}"
+
+            if git diff --cached --quiet; then
+              echo "No data changes to commit."
+              return 1
+            fi
+
+            git commit -m "Update TXDRMAP outage forecast and ML data"
+            return 0
+          }
+
+          if ! stage_and_commit; then
+            exit 0
+          fi
+
+          if git push origin main; then
+            echo "Data update pushed successfully."
+            exit 0
+          fi
+
+          echo "Initial push failed, likely because main changed during the run. Re-applying generated outputs on latest main."
+
+          tmpdir="$(mktemp -d)"
+          for file in "${GENERATED_FILES[@]}"; do
+            if [ -e "$file" ]; then
+              mkdir -p "$tmpdir/$(dirname "$file")"
+              cp -f "$file" "$tmpdir/$file"
+            fi
+          done
+
+          git fetch --depth=1 origin main
+          git reset --hard origin/main
+
+          for file in "${GENERATED_FILES[@]}"; do
+            if [ -e "$tmpdir/$file" ]; then
+              mkdir -p "$(dirname "$file")"
+              cp -f "$tmpdir/$file" "$file"
+            fi
+          done
+
+          if ! stage_and_commit; then
+            echo "No data changes after syncing latest main."
+            exit 0
+          fi
+
+          git push origin main

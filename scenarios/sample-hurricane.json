@@ -1,0 +1,21 @@
+{
+  "name": "Sample Gulf Coast Hurricane",
+  "type": "hurricane",
+  "description": "A sample county-level hurricane scenario crossing the upper Texas coast and moving inland.",
+  "maxWindMph": 95,
+  "rainfallInches": 10,
+  "durationHours": 18,
+  "trackCounties": [
+    "Galveston",
+    "Harris",
+    "Montgomery",
+    "Walker",
+    "Madison",
+    "Dallas"
+  ],
+  "radiusCounties": 2,
+  "notes": [
+    "This is an MVP scenario input for the TXDRMAP disaster simulation engine.",
+    "Future versions can replace trackCounties with a drawn path and hazard polygons."
+  ]
+}

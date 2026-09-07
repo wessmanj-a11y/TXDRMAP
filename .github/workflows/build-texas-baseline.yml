@@ -1,0 +1,39 @@
+name: Build Texas County Baseline
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 9 1 * *'
+
+permissions:
+  contents: write
+
+jobs:
+  build-texas-baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Ensure Texas county polygons exist
+        run: |
+          if [ ! -f public/data/geo/texas_counties.geojson ]; then
+            node scripts/fetchTexasCountyGeojson.js
+          fi
+
+      - name: Build HIFLD Texas resources
+        run: node scripts/fetchHifldTexasResources.js
+
+      - name: Build Texas county baseline
+        run: node scripts/buildTexasCountyBaseline.js
+
+      - name: Commit generated baseline data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Build Texas county baseline
+          file_pattern: public/data/texas_county_baseline.json public/data/texas_county_resources.json public/data/resources/*.geojson
